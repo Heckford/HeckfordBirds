@@ -1,3 +1,4 @@
+.libPaths(c(.libPaths(), "/usr/lib/R/site-library"))
 library(httr)
 library(jsonlite)
 library(dplyr)
