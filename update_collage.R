@@ -9,19 +9,21 @@ library(grid)
 station_token <- Sys.getenv("BIRDWEATHER_TOKEN")
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = nchar(station_token) > 0)
 
-# 1. Fetch ALL detections from the last 24 hours (pages of 100 with timestamp cutoff)
+# 1. Fetch ALL detections from the last 24 hours using timestamp pagination
 api_url <- paste0(
   "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
   paste(c("api", "v1", "stations", station_token, "detections"), collapse = "/")
 )
 
 cutoff_utc <- Sys.time() - as.difftime(24, units = "hours")
-all_pages <- list()
-cursor_id <- NULL
+from_iso <- format(as.POSIXct(cutoff_utc, tz = "UTC"), "%Y-%m-%dT%H:%M:%SZ")
 
-for (page in 1:50) { # Up to 5,000 detections across the last 24 hours
-  q <- list(limit = 100)
-  if (!is.null(cursor_id)) q$before <- cursor_id
+all_pages <- list()
+before_cursor <- NULL
+
+for (page in 1:100) { # Up to 10,000 detections across the full 24-hour window
+  q <- list(limit = 100, from = from_iso)
+  if (!is.null(before_cursor)) q$before <- before_cursor
   
   res <- GET(
     url = api_url,
@@ -35,21 +37,23 @@ for (page in 1:50) { # Up to 5,000 detections across the last 24 hours
   if (is.null(batch) || nrow(batch) == 0) break
   all_pages[[length(all_pages) + 1]] <- batch
   
-  # Stop fetching older pages once timestamps pass the 24-hour window
-  if ("timestamp" %in% names(batch)) {
-    clean_ts <- sub("Z$", "+0000", batch$timestamp)
-    clean_ts <- sub("([+-][0-9]{2}):([0-9]{2})$", "\\1\\2", clean_ts)
-    parsed_ts <- suppressWarnings(as.POSIXct(clean_ts, format = "%Y-%m-%dT%H:%M:%OS%z", tz = "UTC"))
-    if (any(!is.na(parsed_ts)) && min(parsed_ts, na.rm = TRUE) < cutoff_utc) break
-  }
+  if (nrow(batch) < 100) break
   
-  if (nrow(batch) < 100 || !"id" %in% names(batch)) break
-  cursor_id <- tail(batch$id, 1)
+  # Advance cursor using oldest timestamp or ID in the batch
+  if ("timestamp" %in% names(batch)) {
+    next_cursor <- tail(batch$timestamp, 1)
+    if (!is.null(before_cursor) && identical(next_cursor, before_cursor)) break
+    before_cursor <- next_cursor
+  } else if ("id" %in% names(batch)) {
+    before_cursor <- tail(batch$id, 1)
+  } else {
+    break
+  }
 }
 
-detections_df <- bind_rows(all_pages)
+detections_df <- bind_rows(all_pages) %>% distinct()
 
-# Keep only detections within the exact last 24 hours
+# Strictly verify 24-hour window
 if ("timestamp" %in% names(detections_df) && nrow(detections_df) > 0) {
   clean_ts <- sub("Z$", "+0000", detections_df$timestamp)
   clean_ts <- sub("([+-][0-9]{2}):([0-9]{2})$", "\\1\\2", clean_ts)
@@ -78,7 +82,7 @@ flock_df <- detections_df %>%
 
 message("Unique species found: ", nrow(flock_df))
 
-# 3. Fetch full-color woodblock PNGs directly with readPNG()
+# 3. Fetch full-color woodblock PNGs (keeps ALL species even if a cutout is missing)
 get_bird_art <- function(sci_name, common_name, pose = 1) {
   cutout_url <- paste0(
     "https://", paste(c("bird", "onethreenine", "net"), collapse = "."),
@@ -99,22 +103,19 @@ get_bird_art <- function(sci_name, common_name, pose = 1) {
 }
 
 rasters <- mapply(get_bird_art, flock_df$clean_sci, flock_df$common_name, flock_df$pose, SIMPLIFY = FALSE)
-valid <- !sapply(rasters, is.null)
-message("Bird illustrations successfully decoded: ", sum(valid), " of ", nrow(flock_df))
+has_art <- !sapply(rasters, is.null)
+message("Woodblock art found for ", sum(has_art), " of ", nrow(flock_df), " species")
 
-flock_df <- flock_df[valid, ]
-rasters <- rasters[valid]
-
-# 4. Built-in center-out spiral circle packing (tighter cluster)
+# 4. Built-in center-out spiral circle packing for ALL species
 pack_spiral <- function(areas) {
   r <- sqrt(areas / pi)
   n <- length(r)
   x <- numeric(n)
   y <- numeric(n)
   if (n > 1) {
-    angles <- seq(0, 25 * pi, length.out = 2500)
+    angles <- seq(0, 30 * pi, length.out = 3000)
     for (i in 2:n) {
-      step <- r[i] * 0.04
+      step <- r * 0.035
       rad <- 0
       for (ang in angles) {
         cx <- rad * cos(ang) * 1.5
@@ -133,7 +134,7 @@ pack_spiral <- function(areas) {
 }
 
 packing <- pack_spiral(flock_df$area_score * 1.05)
-flock_df <- bind_cols(flock_df, packing)
+flock_df <- bind_cols(flock_df, packing) %>% mutate(has_art = has_art)
 
 # 5. Render warm cream woodblock collage
 bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
@@ -162,28 +163,38 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
     plot.margin = margin(15, 15, 15, 15)
   )
 
+# Draw woodblock art where available, or a subtle woodblock medallion if missing
 for (i in seq_len(nrow(flock_df))) {
-  img <- rasters[[i]]
-  h_px <- nrow(img)
-  w_px <- ncol(img)
-  scale_factor <- (flock_df$radius[i] * 1.55) / sqrt(h_px^2 + w_px^2)
-  half_w <- (w_px * scale_factor) / 2
-  half_h <- (h_px * scale_factor) / 2
-  
-  p <- p + annotation_raster(
-    img,
-    xmin = flock_df$x_wide[i] - half_w,
-    xmax = flock_df$x_wide[i] + half_w,
-    ymin = flock_df$y[i] - half_h,
-    ymax = flock_df$y[i] + half_h
-  )
+  if (flock_df$has_art[i]) {
+    img <- rasters[[i]]
+    h_px <- nrow(img)
+    w_px <- ncol(img)
+    scale_factor <- (flock_df$radius[i] * 1.55) / sqrt(h_px^2 + w_px^2)
+    half_w <- (w_px * scale_factor) / 2
+    half_h <- (h_px * scale_factor) / 2
+    
+    p <- p + annotation_raster(
+      img,
+      xmin = flock_df$x_wide[i] - half_w,
+      xmax = flock_df$x_wide[i] + half_w,
+      ymin = flock_df$y[i] - half_h,
+      ymax = flock_df$y[i] + half_h
+    )
+  } else {
+    p <- p + annotate(
+      "point",
+      x = flock_df$x_wide[i], y = flock_df$y[i],
+      size = flock_df$radius[i] * 4.5, shape = 21,
+      fill = "#e3d6be", color = "#8c7a65", stroke = 0.8
+    )
+  }
 }
 
 # Show ALL species labels (no check_overlap hiding small birds)
 p <- p + geom_text(
   data = flock_df,
   aes(x = x_wide, y = y - radius * 0.88, label = paste0(common_name, " (", detections, ")")),
-  size = 2.8, family = "serif", color = "#3b3228"
+  size = 2.7, family = "serif", color = "#3b3228"
 )
 
 ggsave("avian_visitors.png", plot = p, width = 11, height = 7.5, dpi = 200, bg = "#f6f0e2")
