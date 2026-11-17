@@ -1,12 +1,7 @@
-for (pkg in c("packcircles")) {
-  if (!requireNamespace(pkg, quietly = TRUE)) install.packages(pkg, repos = "https://r-project.org")
-}
-
 library(httr)
 library(jsonlite)
 library(dplyr)
 library(ggplot2)
-library(packcircles)
 library(png)
 library(grid)
 
@@ -39,10 +34,9 @@ repeat {
   if (is.null(batch) || nrow(batch) == 0) break
   all_pages[[length(all_pages) + 1]] <- batch
   
-  # Stop paging once timestamps are older than 24 hours or fewer than 500 returned
   ts_col <- grep("^timestamp$", names(batch), value = TRUE)
   if (length(ts_col) > 0) {
-    oldest_ts <- suppressWarnings(as.POSIXct(min(batch[[ts_col[1]]], na.rm = TRUE), format = "%Y-%m-%dT%H:%M:%S", tz = "UTC"))
+    oldest_ts <- suppressWarnings(as.POSIXct(min(batch[[ts_col]], na.rm = TRUE), format = "%Y-%m-%dT%H:%M:%S", tz = "UTC"))
     if (!is.na(oldest_ts) && oldest_ts < cutoff_utc) break
   }
   if (nrow(batch) < 500 || !"id" %in% names(batch)) break
@@ -51,7 +45,6 @@ repeat {
 
 detections_df <- bind_rows(all_pages)
 
-# Strictly filter to the last 24 hours if timestamp column is present
 if ("timestamp" %in% names(detections_df)) {
   ts_parsed <- suppressWarnings(as.POSIXct(detections_df$timestamp, format = "%Y-%m-%dT%H:%M:%S", tz = "UTC"))
   if (any(!is.na(ts_parsed))) {
@@ -97,10 +90,37 @@ valid <- !sapply(rasters, is.null)
 flock_df <- flock_df[valid, ]
 rasters <- rasters[valid]
 
-# 4. Pack birds & render warm cream woodblock collage
-packing <- circleProgressiveLayout(flock_df$area_score * 1.35, sizetype = "area")
-flock_df <- bind_cols(flock_df, packing) %>% mutate(x_wide = x * 1.45)
+# 4. Built-in center-out spiral circle packing (replaces external packcircles package)
+pack_spiral <- function(areas) {
+  r <- sqrt(areas / pi)
+  n <- length(r)
+  x <- numeric(n)
+  y <- numeric(n)
+  if (n > 1) {
+    angles <- seq(0, 25 * pi, length.out = 2500)
+    for (i in 2:n) {
+      step <- r[1] * 0.04
+      rad <- 0
+      for (ang in angles) {
+        cx <- rad * cos(ang) * 1.5 # 1.5x horizontal landscape bias
+        cy <- rad * sin(ang)
+        dists <- sqrt(((cx - x[1:(i - 1)]) / 1.5)^2 + (cy - y[1:(i - 1)])^2)
+        if (all(dists >= (r[i] + r[1:(i - 1)]))) {
+          x[i] <- cx
+          y[i] <- cy
+          break
+        }
+        rad <- rad + step
+      }
+    }
+  }
+  tibble(x_wide = x, y = y, radius = r)
+}
 
+packing <- pack_spiral(flock_df$area_score * 1.35)
+flock_df <- bind_cols(flock_df, packing)
+
+# 5. Render warm cream woodblock collage
 bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
 total_calls <- sum(flock_df$detections)
 
