@@ -263,4 +263,4 @@ p <- p + geom_text(
   size = 2.9, family = "serif", color = "#3b3228", vjust = 1
 )
 
-ggsave("avian_visitors.png", plot = p, width = 13, height = 8, dpi = 220, bg = "#f6f0e2")
+ggsave("HeckfordBirds.png", plot = p, width = 13, height = 8, dpi = 220, bg = "#f6f0e2")
