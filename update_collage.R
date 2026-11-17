@@ -6,36 +6,47 @@ library(ggplot2)
 library(png)
 library(grid)
 
-station_token <- Sys.getenv("BIRDWEATHER_TOKEN")
-stopifnot("Missing BIRDWEATHER_TOKEN secret" = nchar(station_token) > 0)
+# Read both Station Tokens from GitHub Secrets
+tokens <- c(Sys.getenv("BIRDWEATHER_TOKEN"), Sys.getenv("BIRDWEATHER_TOKEN_2"))
+tokens <- tokens[nchar(tokens) > 0]
+stopifnot("Missing BIRDWEATHER_TOKEN secret" = length(tokens) > 0)
 
-# 1. Fetch ALL 24-hour species counts directly from BirdWeather's /species endpoint
-species_url <- paste0(
-  "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
-  paste(c("api", "v1", "stations", station_token, "species"), collapse = "/")
-)
+# 1. Helper to fetch 24-hour species summary for a single station token
+fetch_station_species <- function(tok) {
+  species_url <- paste0(
+    "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
+    paste(c("api", "v1", "stations", tok, "species"), collapse = "/")
+  )
+  
+  res <- GET(
+    url = species_url,
+    query = list(period = "day", limit = 200),
+    add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0")
+  )
+  stop_for_status(res)
+  parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
+  sp_df <- if (!is.null(parsed$species)) parsed$species else as.data.frame(parsed)
+  
+  if (is.null(sp_df) || nrow(sp_df) == 0) return(tibble())
+  
+  common_col <- grep("commonName|common_name", names(sp_df), value = TRUE)
+  sci_col    <- grep("scientificName|scientific_name", names(sp_df), value = TRUE)
+  count_col  <- grep("detections_count|detections.total|count|total", names(sp_df), value = TRUE)
+  
+  sp_df %>%
+    transmute(
+      common_name = as.character(.data[[common_col]]),
+      sci_name    = as.character(.data[[sci_col]]),
+      detections  = as.numeric(.data[[count_col]])
+    ) %>%
+    filter(!is.na(common_name), !is.na(sci_name), detections > 0)
+}
 
-res <- GET(
-  url = species_url,
-  query = list(period = "day", limit = 200),
-  add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0")
-)
-stop_for_status(res)
-parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
+# Fetch and combine detections across all configured devices
+all_stations_df <- bind_rows(lapply(tokens, fetch_station_species))
+stopifnot("No detections found across stations" = nrow(all_stations_df) > 0)
 
-sp_df <- if (!is.null(parsed$species)) parsed$species else as.data.frame(parsed)
-
-common_col <- grep("commonName|common_name", names(sp_df), value = TRUE)
-sci_col    <- grep("scientificName|scientific_name", names(sp_df), value = TRUE)
-count_col  <- grep("detections_count|detections.total|count|total", names(sp_df), value = TRUE)
-
-flock_df <- sp_df %>%
-  transmute(
-    common_name = as.character(.data[[common_col]]),
-    sci_name    = as.character(.data[[sci_col]]),
-    detections  = as.numeric(.data[[count_col]])
-  ) %>%
-  filter(!is.na(common_name), !is.na(sci_name), detections > 0) %>%
+flock_df <- all_stations_df %>%
   mutate(clean_sci = sub("^(\\S+\\s+\\S+).*", "\\1", sci_name)) %>%
   group_by(common_name, clean_sci) %>%
   summarise(detections = sum(detections), .groups = "drop") %>%
@@ -131,7 +142,7 @@ flock_df <- flock_df %>%
     has_art = has_art
   )
 
-# Generic perched bird silhouette coordinates (normalized to [-0.5, 0.5])
+# Generic perched bird silhouette coordinates
 bird_poly_template <- tibble(
   px = c(
     -0.48, -0.25, -0.08,  0.08,  0.22,  0.34,  0.48,  0.35,  0.32,
@@ -154,7 +165,7 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
   scale_y_continuous(expand = expansion(mult = 0.05)) +
   labs(
     title = "Bird Detections",
-    subtitle = paste0("Last 24 Hours: ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
+    subtitle = paste0("Last 24 Hours (", length(tokens), " Stations): ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
   ) +
   theme_void() +
   theme(
@@ -186,7 +197,6 @@ for (i in seq_len(n)) {
       ymax = y_bird_center + half_h
     )
   } else {
-    # Draw warm sepia woodblock-style perched bird silhouette
     poly_i <- bird_poly_template %>%
       mutate(
         x = flock_df$x_wide[i] + px * flock_df$bird_w[i],
