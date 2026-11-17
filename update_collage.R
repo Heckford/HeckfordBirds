@@ -45,7 +45,6 @@ flock_df <- sp_df %>%
     scale_r = (detections^0.32)
   )
 
-# Normalize radius so largest bird is ~2.3 units and smallest is ~0.90 units
 flock_df <- flock_df %>%
   mutate(
     radius = 0.90 + 1.40 * ((scale_r - min(scale_r)) / max(1e-6, max(scale_r) - min(scale_r))),
@@ -91,16 +90,15 @@ for (i in seq_len(n)) {
     bird_w[i] <- w_px * sf
     bird_h[i] <- h_px * sf
   } else {
-    bird_w[i] <- flock_df$radius[i] * 0.95
-    bird_h[i] <- flock_df$radius[i] * 0.95
+    bird_w[i] <- flock_df$radius[i] * 1.25
+    bird_h[i] <- flock_df$radius[i] * 1.05
   }
-  # Generous 0.165 width per character guarantees long labels NEVER touch neighbors
   est_text_w <- nchar(flock_df$label_txt[i]) * 0.165
   box_hw[i] <- max(bird_w[i], est_text_w) / 2 + 0.14
   box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.12
 }
 
-# 4. Pack non-overlapping rectangles tightly around center (no empty ring!)
+# 4. Pack non-overlapping rectangles tightly around center
 cx <- numeric(n)
 cy <- numeric(n)
 
@@ -133,7 +131,19 @@ flock_df <- flock_df %>%
     has_art = has_art
   )
 
-# 5. Render warm cream woodblock collage filling the canvas cleanly
+# Generic perched bird silhouette coordinates (normalized to [-0.5, 0.5])
+bird_poly_template <- tibble(
+  px = c(
+    -0.48, -0.25, -0.08,  0.08,  0.22,  0.34,  0.48,  0.35,  0.32,
+     0.24,  0.10,  0.06,  0.12,  0.02, -0.04, -0.02, -0.16, -0.45, -0.36
+  ),
+  py = c(
+    -0.28, -0.08,  0.14,  0.22,  0.38,  0.34,  0.28,  0.22,  0.08,
+    -0.10, -0.22, -0.44, -0.46, -0.46, -0.24, -0.45, -0.22, -0.35, -0.26
+  )
+)
+
+# 5. Render warm cream woodblock collage
 bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
 total_calls <- sum(flock_df$detections)
 
@@ -160,7 +170,7 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
     plot.margin = margin(8, 8, 8, 8)
   )
 
-# Place each bird in the upper portion of its collision-free box
+# Place each woodblock bird illustration or custom woodblock bird silhouette
 for (i in seq_len(n)) {
   y_bird_center <- flock_df$y[i] + (label_band / 2)
   if (flock_df$has_art[i]) {
@@ -176,16 +186,23 @@ for (i in seq_len(n)) {
       ymax = y_bird_center + half_h
     )
   } else {
-    p <- p + annotate(
-      "point",
-      x = flock_df$x_wide[i], y = y_bird_center,
-      size = flock_df$radius[i] * 7.5, shape = 21,
-      fill = "#dfd0b4", color = "#7a6855", stroke = 1.1
+    # Draw warm sepia woodblock-style perched bird silhouette
+    poly_i <- bird_poly_template %>%
+      mutate(
+        x = flock_df$x_wide[i] + px * flock_df$bird_w[i],
+        y = y_bird_center + py * flock_df$bird_h[i]
+      )
+    p <- p + geom_polygon(
+      data = poly_i,
+      aes(x = x, y = y),
+      fill = "#7d6b57",
+      color = "#3b3228",
+      linewidth = 0.45
     )
   }
 }
 
-# Place every label cleanly beneath its own bird (zero overlap)
+# Place every label cleanly beneath its own bird
 p <- p + geom_text(
   data = flock_df,
   aes(x = x_wide, y = y - (bird_h / 2) - 0.06, label = label_txt),
