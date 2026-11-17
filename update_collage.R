@@ -11,12 +11,14 @@ tokens <- c(Sys.getenv("BIRDWEATHER_TOKEN"), Sys.getenv("BIRDWEATHER_TOKEN_2"))
 tokens <- tokens[nchar(tokens) > 0]
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = length(tokens) > 0)
 
-# 1. Fetch 24-hour species summary for a single station token
+# 1. Helper to fetch 48-hour species summary for a single station token
 fetch_station_species <- function(tok) {
   species_url <- paste0(
     "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
     paste(c("api", "v1", "stations", tok, "species"), collapse = "/")
   )
+  
+  cutoff_48h <- format(as.POSIXct(Sys.time() - as.difftime(48, units = "hours"), tz = "UTC"), "%Y-%m-%dT%H:%M:%SZ")
   
   res <- GET(
     url = species_url,
@@ -125,7 +127,6 @@ if (n > 1) {
   
   for (i in 2:n) {
     placed <- FALSE
-    # Rotate starting angle per bird so species distribute evenly all around the center
     rot_angles <- angles[((seq_along(angles) + (i * 37)) %% length(angles)) + 1]
     
     for (rad in radii_steps) {
@@ -157,7 +158,6 @@ flock_df <- flock_df %>%
     has_art = has_art
   )
 
-# Calculate exact outer edges including full text box widths so nothing is ever clipped
 x_limits <- c(min(flock_df$x_wide - flock_df$box_hw) - 0.4, max(flock_df$x_wide + flock_df$box_hw) + 0.4)
 y_limits <- c(min(flock_df$y - flock_df$box_hh) - 0.3, max(flock_df$y + flock_df$box_hh) + 0.3)
 
