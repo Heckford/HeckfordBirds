@@ -9,80 +9,50 @@ library(grid)
 station_token <- Sys.getenv("BIRDWEATHER_TOKEN")
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = nchar(station_token) > 0)
 
-# 1. Fetch ALL detections from the last 24 hours using timestamp pagination
-api_url <- paste0(
+# 1. Fetch ALL 24-hour species counts directly from BirdWeather's /species endpoint
+species_url <- paste0(
   "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
-  paste(c("api", "v1", "stations", station_token, "detections"), collapse = "/")
+  paste(c("api", "v1", "stations", station_token, "species"), collapse = "/")
 )
 
-cutoff_utc <- Sys.time() - as.difftime(24, units = "hours")
-from_iso <- format(as.POSIXct(cutoff_utc, tz = "UTC"), "%Y-%m-%dT%H:%M:%SZ")
+res <- GET(
+  url = species_url,
+  query = list(period = "day", limit = 200),
+  add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0")
+)
+stop_for_status(res)
+parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
 
-all_pages <- list()
-before_cursor <- NULL
+# Handle list structure returned by /species endpoint
+sp_df <- if (!is.null(parsed$species)) parsed$species else as.data.frame(parsed)
 
-for (page in 1:100) { # Up to 10,000 detections across the full 24-hour window
-  q <- list(limit = 100, from = from_iso)
-  if (!is.null(before_cursor)) q$before <- before_cursor
-  
-  res <- GET(
-    url = api_url,
-    query = q,
-    add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0")
-  )
-  stop_for_status(res)
-  parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
-  batch <- parsed$detections
-  
-  if (is.null(batch) || nrow(batch) == 0) break
-  all_pages[[length(all_pages) + 1]] <- batch
-  
-  if (nrow(batch) < 100) break
-  
-  # Advance cursor using oldest timestamp or ID in the batch
-  if ("timestamp" %in% names(batch)) {
-    next_cursor <- tail(batch$timestamp, 1)
-    if (!is.null(before_cursor) && identical(next_cursor, before_cursor)) break
-    before_cursor <- next_cursor
-  } else if ("id" %in% names(batch)) {
-    before_cursor <- tail(batch$id, 1)
-  } else {
-    break
-  }
-}
+common_col <- grep("commonName|common_name", names(sp_df), value = TRUE)
+sci_col    <- grep("scientificName|scientific_name", names(sp_df), value = TRUE)
+count_col  <- grep("detections.total|detections|count", names(sp_df), value = TRUE)
 
-detections_df <- bind_rows(all_pages) %>% distinct()
-
-# Strictly verify 24-hour window
-if ("timestamp" %in% names(detections_df) && nrow(detections_df) > 0) {
-  clean_ts <- sub("Z$", "+0000", detections_df$timestamp)
-  clean_ts <- sub("([+-][0-9]{2}):([0-9]{2})$", "\\1\\2", clean_ts)
-  parsed_ts <- suppressWarnings(as.POSIXct(clean_ts, format = "%Y-%m-%dT%H:%M:%OS%z", tz = "UTC"))
-  if (any(!is.na(parsed_ts))) {
-    detections_df <- detections_df[!is.na(parsed_ts) & parsed_ts >= cutoff_utc, ]
-  }
-}
-
-message("Total 24h detections fetched: ", nrow(detections_df))
-
-# 2. Summarize ALL detected species & apply Avian Visitors scaling (count^0.65)
-common_col <- grep("commonName|common_name", names(detections_df), value = TRUE)
-sci_col    <- grep("scientificName|scientific_name", names(detections_df), value = TRUE)
-
-flock_df <- detections_df %>%
-  rename(common_name = all_of(common_col), sci_name = all_of(sci_col)) %>%
-  filter(!is.na(common_name), !is.na(sci_name)) %>%
-  mutate(clean_sci = sub("^(\\S+\\s+\\S+).*", "\\1", sci_name)) %>%
-  count(common_name, clean_sci, name = "detections") %>%
+flock_df <- sp_df %>%
+  rename(
+    common_name = all_of(common_col),
+    sci_name = all_of(sci_col),
+    detections = all_of(count_col)
+  ) %>%
+  filter(!is.na(common_name), !is.na(sci_name), detections > 0) %>%
+  mutate(
+    clean_sci = sub("^(\\S+\\s+\\S+).*", "\\1", sci_name),
+    detections = as.numeric(detections)
+  ) %>%
+  group_by(common_name, clean_sci) %>%
+  summarise(detections = sum(detections), .groups = "drop") %>%
   arrange(desc(detections)) %>%
   mutate(
     pose = ifelse(row_number() %% 2 == 1, 1, 2),
-    area_score = detections^0.65
+    # Gentle exponent (0.45) keeps all 19 species readable without tiny specks or giant overlaps
+    area_score = detections^0.45
   )
 
-message("Unique species found: ", nrow(flock_df))
+message("24-hour unique species fetched: ", nrow(flock_df))
 
-# 3. Fetch full-color woodblock PNGs (keeps ALL species even if a cutout is missing)
+# 2. Fetch full-color woodblock PNGs (keeps ALL species even if a cutout is missing)
 get_bird_art <- function(sci_name, common_name, pose = 1) {
   cutout_url <- paste0(
     "https://", paste(c("bird", "onethreenine", "net"), collapse = "."),
@@ -106,22 +76,24 @@ rasters <- mapply(get_bird_art, flock_df$clean_sci, flock_df$common_name, flock_
 has_art <- !sapply(rasters, is.null)
 message("Woodblock art found for ", sum(has_art), " of ", nrow(flock_df), " species")
 
-# 4. Built-in center-out spiral circle packing for ALL species
+# 3. True Non-Overlapping Elliptical Spiral Packing (accounts for both bird + text label)
 pack_spiral <- function(areas) {
   r <- sqrt(areas / pi)
   n <- length(r)
   x <- numeric(n)
   y <- numeric(n)
   if (n > 1) {
-    angles <- seq(0, 30 * pi, length.out = 3000)
+    angles <- seq(0, 40 * pi, length.out = 5000)
     for (i in 2:n) {
-      step <- r * 0.035
+      step <- r[i] * 0.02
       rad <- 0
       for (ang in angles) {
-        cx <- rad * cos(ang) * 1.5
+        cx <- rad * cos(ang) * 1.45
         cy <- rad * sin(ang)
-        dists <- sqrt(((cx - x[1:(i - 1)]) / 1.5)^2 + (cy - y[1:(i - 1)])^2)
-        if (all(dists >= (r[i] + r[1:(i - 1)]))) {
+        # Enforce strict spacing: horizontal gap >= 1.25x sum of radii, vertical >= 1.35x sum of radii
+        dx <- abs(cx - x[1:(i - 1)]) / ((r[i] + r[1:(i - 1)]) * 1.25)
+        dy <- abs(cy - y[1:(i - 1)]) / ((r[i] + r[1:(i - 1)]) * 1.35)
+        if (all(sqrt(dx^2 + dy^2) >= 1.0)) {
           x[i] <- cx
           y[i] <- cy
           break
@@ -133,18 +105,18 @@ pack_spiral <- function(areas) {
   tibble(x_wide = x, y = y, radius = r)
 }
 
-packing <- pack_spiral(flock_df$area_score * 1.05)
+packing <- pack_spiral(flock_df$area_score)
 flock_df <- bind_cols(flock_df, packing) %>% mutate(has_art = has_art)
 
-# 5. Render warm cream woodblock collage
+# 4. Render warm cream woodblock collage
 bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
 total_calls <- sum(flock_df$detections)
 
 p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
   geom_blank() +
   coord_equal(expand = TRUE) +
-  scale_x_continuous(expand = expansion(mult = 0.22)) +
-  scale_y_continuous(expand = expansion(mult = 0.22)) +
+  scale_x_continuous(expand = expansion(mult = 0.18)) +
+  scale_y_continuous(expand = expansion(mult = 0.18)) +
   labs(
     title = "Bird Detections",
     subtitle = paste0("Last 24 Hours: ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
@@ -163,13 +135,13 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
     plot.margin = margin(15, 15, 15, 15)
   )
 
-# Draw woodblock art where available, or a subtle woodblock medallion if missing
+# Draw woodblock art (sized inside 80% of padded cell so birds & labels never touch)
 for (i in seq_len(nrow(flock_df))) {
   if (flock_df$has_art[i]) {
     img <- rasters[[i]]
     h_px <- nrow(img)
     w_px <- ncol(img)
-    scale_factor <- (flock_df$radius[i] * 1.55) / sqrt(h_px^2 + w_px^2)
+    scale_factor <- (flock_df$radius[i] * 1.45) / sqrt(h_px^2 + w_px^2)
     half_w <- (w_px * scale_factor) / 2
     half_h <- (h_px * scale_factor) / 2
     
@@ -177,24 +149,24 @@ for (i in seq_len(nrow(flock_df))) {
       img,
       xmin = flock_df$x_wide[i] - half_w,
       xmax = flock_df$x_wide[i] + half_w,
-      ymin = flock_df$y[i] - half_h,
-      ymax = flock_df$y[i] + half_h
+      ymin = flock_df$y[i] - half_h + flock_df$radius[i] * 0.12,
+      ymax = flock_df$y[i] + half_h + flock_df$radius[i] * 0.12
     )
   } else {
     p <- p + annotate(
       "point",
-      x = flock_df$x_wide[i], y = flock_df$y[i],
-      size = flock_df$radius[i] * 4.5, shape = 21,
+      x = flock_df$x_wide[i], y = flock_df$y[i] + flock_df$radius[i] * 0.12,
+      size = flock_df$radius[i] * 4.0, shape = 21,
       fill = "#e3d6be", color = "#8c7a65", stroke = 0.8
     )
   }
 }
 
-# Show ALL species labels (no check_overlap hiding small birds)
+# Place every species label cleanly in the reserved bottom space of its cell
 p <- p + geom_text(
   data = flock_df,
-  aes(x = x_wide, y = y - radius * 0.88, label = paste0(common_name, " (", detections, ")")),
-  size = 2.7, family = "serif", color = "#3b3228"
+  aes(x = x_wide, y = y - radius * 0.85, label = paste0(common_name, " (", detections, ")")),
+  size = 2.6, family = "serif", color = "#3b3228"
 )
 
-ggsave("avian_visitors.png", plot = p, width = 11, height = 7.5, dpi = 200, bg = "#f6f0e2")
+ggsave("avian_visitors.png", plot = p, width = 12, height = 8, dpi = 200, bg = "#f6f0e2")
