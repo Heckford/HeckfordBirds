@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avian Visitors — Arbutus (#29794)</title>
+  <style>
+    body {
+      background-color: #f6f0e2;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    img {
+      max-width: 98vw;
+      max-height: 98vh;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <img id="collage" src="avian_visitors.png" alt="Arbutus 24-Hour Bird Detections">
+  <script>
+    // Refreshes the image in visitors' browsers every 5 minutes (300,000 ms)
+    setInterval(function() {
+      document.getElementById("collage").src = "avian_visitors.png?t=" + Date.now();
+    }, 300000);
+  </script>
+</body>
+</html>
