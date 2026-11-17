@@ -33,11 +33,11 @@ jobs:
           git config user.email "github-actions[bot]@://github.com"
           git add HeckfordBirds.png
           if ! git diff --staged --quiet; then
-            if [ "$(git log -1 --pretty=%s)" = "Update Arbutus bird collage" ]; then
+            if [ "$(git log -1 --pretty=%s)" = "Update bird collage" ]; then
               git commit --amend --no-edit
               git push --force
             else
-              git commit -m "Update Arbutus bird collage"
+              git commit -m "Update bird collage"
               git push
             fi
           fi
