@@ -3,7 +3,7 @@ name: Update Bird Collage
 on:
   schedule:
     - cron: '*/15 * * * *' # Runs every 15 minutes 24/7
-  workflow_dispatch:      # Adds a manual "Run workflow" button for instant testing
+  workflow_dispatch:       # Keeps your manual "Run workflow" button
 
 permissions:
   contents: write
@@ -20,24 +20,20 @@ jobs:
       - name: Install r-cran-png system package
         run: apt-get update -qq && apt-get install -y -qq r-cran-png
 
-      - name: Generate updated 24h collage
+      - name: Generate updated 48h collage
         env:
           BIRDWEATHER_TOKEN: ${{ secrets.BIRDWEATHER_TOKEN }}
           BIRDWEATHER_TOKEN_2: ${{ secrets.BIRDWEATHER_TOKEN_2 }}
         run: Rscript update_collage.R
 
-      - name: Publish updated PNG (overwrites previous image cleanly)
+      - name: Publish updated PNG and clickable map
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@://github.com"
-          git add HeckfordBirds.png
+          git pull --rebase
+          git add HeckfordBirds.png species_map.json
           if ! git diff --staged --quiet; then
-            if [ "$(git log -1 --pretty=%s)" = "Update bird collage" ]; then
-              git commit --amend --no-edit
-              git push --force
-            else
-              git commit -m "Update bird collage"
-              git push
-            fi
+            git commit -m "Update bird collage"
+            git push
           fi
