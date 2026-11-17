@@ -31,9 +31,9 @@ jobs:
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@://github.com"
-          git pull --rebase
           git add HeckfordBirds.png species_map.json
           if ! git diff --staged --quiet; then
             git commit -m "Update bird collage"
+            git pull --rebase -X ours
             git push
           fi
