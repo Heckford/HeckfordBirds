@@ -11,7 +11,7 @@ tokens <- c(Sys.getenv("BIRDWEATHER_TOKEN"), Sys.getenv("BIRDWEATHER_TOKEN_2"))
 tokens <- tokens[nchar(tokens) > 0]
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = length(tokens) > 0)
 
-# 1. Helper to fetch 24-hour species summary for a single station token
+# 1. Fetch 24-hour species summary for a single station token
 fetch_station_species <- function(tok) {
   species_url <- paste0(
     "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
@@ -110,31 +110,38 @@ for (i in seq_len(n)) {
     bird_w[i] <- flock_df$radius[i] * 1.25
     bird_h[i] <- flock_df$radius[i] * 1.05
   }
-  est_text_w <- nchar(flock_df$label_txt[i]) * 0.175
-  box_hw[i] <- max(bird_w[i], est_text_w) / 2 + 0.15
-  box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.12
+  est_text_w <- nchar(flock_df$label_txt[i]) * 0.165
+  box_hw[i] <- max(bird_w[i], est_text_w) / 2 + 0.12
+  box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.10
 }
 
-# 4. Pack non-overlapping rectangles tightly around center
+# 4. Concentric Center-First Rectangle Packing (fills every inner pocket before expanding!)
 cx <- numeric(n)
 cy <- numeric(n)
 
 if (n > 1) {
-  angles <- seq(0, 70 * pi, length.out = 10000)
+  radii_steps <- seq(0.1, 30, by = 0.08)
+  angles <- seq(0, 2 * pi, length.out = 180)[-180]
+  
   for (i in 2:n) {
-    rad <- 0
-    step <- 0.025
-    for (ang in angles) {
-      tx <- rad * cos(ang) * 1.55
-      ty <- rad * sin(ang)
-      overlap_x <- abs(tx - cx[1:(i - 1)]) < (box_hw[i] + box_hw[1:(i - 1)])
-      overlap_y <- abs(ty - cy[1:(i - 1)]) < (box_hh[i] + box_hh[1:(i - 1)])
-      if (!any(overlap_x & overlap_y)) {
-        cx[i] <- tx
-        cy[i] <- ty
-        break
+    placed <- FALSE
+    # Rotate starting angle per bird so species distribute evenly all around the center
+    rot_angles <- angles[((seq_along(angles) + (i * 37)) %% length(angles)) + 1]
+    
+    for (rad in radii_steps) {
+      for (ang in rot_angles) {
+        tx <- rad * cos(ang) * 1.55
+        ty <- rad * sin(ang)
+        overlap_x <- abs(tx - cx[1:(i - 1)]) < (box_hw[i] + box_hw[1:(i - 1)])
+        overlap_y <- abs(ty - cy[1:(i - 1)]) < (box_hh[i] + box_hh[1:(i - 1)])
+        if (!any(overlap_x & overlap_y)) {
+          cx[i] <- tx
+          cy[i] <- ty
+          placed <- TRUE
+          break
+        }
       }
-      rad <- rad + step
+      if (placed) break
     }
   }
 }
@@ -151,8 +158,8 @@ flock_df <- flock_df %>%
   )
 
 # Calculate exact outer edges including full text box widths so nothing is ever clipped
-x_limits <- c(min(flock_df$x_wide - flock_df$box_hw) - 0.5, max(flock_df$x_wide + flock_df$box_hw) + 0.5)
-y_limits <- c(min(flock_df$y - flock_df$box_hh) - 0.35, max(flock_df$y + flock_df$box_hh) + 0.35)
+x_limits <- c(min(flock_df$x_wide - flock_df$box_hw) - 0.4, max(flock_df$x_wide + flock_df$box_hw) + 0.4)
+y_limits <- c(min(flock_df$y - flock_df$box_hh) - 0.3, max(flock_df$y + flock_df$box_hh) + 0.3)
 
 # Generic perched bird silhouette coordinates
 bird_poly_template <- tibble(
@@ -180,7 +187,7 @@ bat_poly_template <- tibble(
   )
 )
 
-# 5. Render warm cream woodblock collage with guaranteed edge clearance
+# 5. Render warm cream woodblock collage
 bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
 total_calls <- sum(flock_df$detections)
 
@@ -202,7 +209,7 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
     plot.subtitle = element_text(
       hjust = 0.5, family = "serif", size = 11.5, color = "#6e6051", margin = margin(b = 8)
     ),
-    plot.margin = margin(12, 18, 14, 18)
+    plot.margin = margin(12, 16, 14, 16)
   )
 
 # Place woodblock bird art, flying bat silhouette, or fallback bird silhouette
