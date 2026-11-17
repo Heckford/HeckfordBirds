@@ -6,12 +6,11 @@ library(ggplot2)
 library(png)
 library(grid)
 
-# Read both Station Tokens from GitHub Secrets
 tokens <- c(Sys.getenv("BIRDWEATHER_TOKEN"), Sys.getenv("BIRDWEATHER_TOKEN_2"))
 tokens <- tokens[nchar(tokens) > 0]
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = length(tokens) > 0)
 
-# 1. Helper to fetch 48-hour species summary for a single station token
+# 1. Fetch 48-hour species summary for a single station token
 fetch_station_species <- function(tok) {
   species_url <- paste0(
     "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
@@ -44,7 +43,7 @@ fetch_station_species <- function(tok) {
     filter(!is.na(common_name), !is.na(sci_name), detections > 0)
 }
 
-# Fetch and combine detections across both devices
+# Fetch and combine detections across both devices (keeping BOTH birds and bats)
 all_stations_df <- bind_rows(lapply(tokens, fetch_station_species))
 stopifnot("No detections found across stations" = nrow(all_stations_df) > 0)
 
@@ -52,10 +51,12 @@ flock_df <- all_stations_df %>%
   mutate(clean_sci = sub("^(\\S+\\s+\\S+).*", "\\1", sci_name)) %>%
   group_by(common_name, clean_sci) %>%
   summarise(detections = sum(detections), .groups = "drop") %>%
-  arrange(desc(detections)) %>%
   mutate(
     is_bat = grepl("\\bbat\\b|myotis|flying fox", common_name, ignore.case = TRUE) |
-             grepl("^(Myotis|Lasionycteris|Eptesicus|Lasiurus|Corynorhinus|Antrozous|Tadarida)\\b", clean_sci),
+             grepl("^(Myotis|Lasionycteris|Eptesicus|Lasiurus|Corynorhinus|Antrozous|Tadarida)\\b", clean_sci)
+  ) %>%
+  arrange(desc(detections)) %>%
+  mutate(
     pose = ifelse(row_number() %% 2 == 1, 1, 2),
     scale_r = (detections^0.32)
   )
@@ -66,7 +67,33 @@ flock_df <- flock_df %>%
     label_txt = paste0(common_name, " (", detections, ")")
   )
 
-# 2. Fetch full-color woodblock PNGs with gentle pacing, retries & alternate pose fallback
+# 2. Fetch official 6-letter eBird species codes for birds
+ebird_tax_url <- paste0("https://", paste(c("api", "ebird", "org"), collapse = "."), "/v2/ref/taxonomy/ebird")
+tax_res <- try(GET(
+  url = ebird_tax_url,
+  query = list(fmt = "json", cat = "species"),
+  add_headers("User-Agent" = "Mozilla/5.0"),
+  timeout(15)
+), silent = TRUE)
+
+ebird_lookup <- tibble(sciName = character(), comName = character(), speciesCode = character())
+if (!inherits(tax_res, "try-error") && status_code(tax_res) == 200) {
+  ebird_lookup <- fromJSON(content(tax_res, as = "text", encoding = "UTF-8")) %>%
+    select(sciName, comName, speciesCode)
+}
+
+flock_df$ebird_code <- vapply(seq_len(nrow(flock_df)), function(idx) {
+  if (flock_df$is_bat[idx]) return("")
+  sci <- flock_df$clean_sci[idx]
+  com <- flock_df$common_name[idx]
+  m1 <- ebird_lookup$speciesCode[ebird_lookup$sciName == sci]
+  if (length(m1) > 0 && !is.na(m1[1])) return(m1[1])
+  m2 <- ebird_lookup$speciesCode[tolower(ebird_lookup$comName) == tolower(com)]
+  if (length(m2) > 0 && !is.na(m2[1])) return(m2[1])
+  return("")
+}, character(1))
+
+# 3. Fetch full-color woodblock PNGs for birds with gentle pacing & retries
 get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
   if (is_bat) return(NULL)
   cutout_url <- paste0(
@@ -77,7 +104,7 @@ get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
   poses_to_try <- unique(c(pose, 1, 2))
   for (p_try in poses_to_try) {
     for (attempt in 1:2) {
-      Sys.sleep(0.15) # Prevents rate-limiting across 40+ species
+      Sys.sleep(0.15)
       res <- try(GET(
         url = cutout_url,
         query = list(sci = sci_name, com = common_name, pose = p_try),
@@ -97,9 +124,8 @@ get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
 
 rasters <- mapply(get_bird_art, flock_df$clean_sci, flock_df$common_name, flock_df$pose, flock_df$is_bat, SIMPLIFY = FALSE)
 has_art <- !sapply(rasters, is.null)
-message("Woodblock art loaded for ", sum(has_art), " of ", nrow(flock_df), " species")
 
-# 3. Compute exact rectangular bounding box (illustration/silhouette + text width)
+# 4. Compute exact rectangular bounding box
 n <- nrow(flock_df)
 bird_w <- numeric(n)
 bird_h <- numeric(n)
@@ -126,7 +152,7 @@ for (i in seq_len(n)) {
   box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.10
 }
 
-# 4. Concentric Center-First Rectangle Packing
+# 5. Concentric Center-First Rectangle Packing
 cx <- numeric(n)
 cy <- numeric(n)
 
@@ -196,7 +222,7 @@ bat_poly_template <- tibble(
   )
 )
 
-# 5. Render warm cream woodblock collage
+# 6. Render warm cream woodblock collage
 bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
 total_calls <- sum(flock_df$detections)
 
@@ -204,7 +230,7 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
   geom_blank() +
   coord_equal(xlim = x_limits, ylim = y_limits, expand = FALSE, clip = "off") +
   labs(
-    title = "Bird & Bat Detections",
+    title = "Myrtle Rocks Bird & Bat Detections",
     subtitle = paste0("Last 48 Hours (", length(tokens), " Stations): ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
   ) +
   theme_void() +
@@ -221,7 +247,6 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
     plot.margin = margin(12, 16, 14, 16)
   )
 
-# Place woodblock bird art, flying bat silhouette, or fallback bird silhouette
 for (i in seq_len(n)) {
   y_bird_center <- flock_df$y[i] + (label_band / 2)
   if (flock_df$has_art[i]) {
@@ -265,7 +290,6 @@ for (i in seq_len(n)) {
   }
 }
 
-# Place every label cleanly beneath its own bird or bat
 p <- p + geom_text(
   data = flock_df,
   aes(x = x_wide, y = y - (bird_h / 2) - 0.06, label = label_txt),
@@ -273,3 +297,4 @@ p <- p + geom_text(
 )
 
 ggsave("HeckfordBirds.png", plot = p, width = 13, height = 8, dpi = 220, bg = "#f6f0e2")
+
