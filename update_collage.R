@@ -52,7 +52,7 @@ flock_df <- detections_df %>%
 
 message("Unique species found: ", nrow(flock_df))
 
-# 3. Fetch woodblock bird art and blend onto warm cream (#f6f0e2) via ImageMagick
+# 3. Fetch woodblock bird art and decode cleanly via ImageMagick PPM
 get_bird_art <- function(sci_name, common_name, pose = 1) {
   cutout_url <- paste0(
     "https://", paste(c("bird", "onethreenine", "net"), collapse = "."),
@@ -136,7 +136,7 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
   scale_x_continuous(expand = expansion(mult = 0.22)) +
   scale_y_continuous(expand = expansion(mult = 0.22)) +
   labs(
-    title = "Padgett Birds",
+    title = "Bird Detections",
     subtitle = paste0("Last 24 Hours: ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
   ) +
   theme_void() +
