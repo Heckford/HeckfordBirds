@@ -7,49 +7,34 @@ library(grid)
 station_token <- Sys.getenv("BIRDWEATHER_TOKEN")
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = nchar(station_token) > 0)
 
-# 1. Fetch ALL detections from the last 24 hours (with pagination)
+# 1. Fetch detections from the last 24 hours directly via BirdWeather's period="day" parameter
 api_url <- paste0(
   "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
   paste(c("api", "v1", "stations", station_token, "detections"), collapse = "/")
 )
 
-cutoff_utc <- Sys.time() - as.difftime(24, units = "hours")
-all_pages <- list()
-cursor_id <- NULL
+res <- GET(
+  url = api_url,
+  query = list(limit = 1000, period = "day"),
+  add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0")
+)
+stop_for_status(res)
+parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
+detections_df <- parsed$detections
 
-repeat {
-  q <- list(limit = 500, period = "day")
-  if (!is.null(cursor_id)) q$before <- cursor_id
-  
+# Fallback: if period="day" returned empty, fetch the latest 500 detections without period filter
+if (is.null(detections_df) || nrow(detections_df) == 0) {
   res <- GET(
     url = api_url,
-    query = q,
+    query = list(limit = 500),
     add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0")
   )
   stop_for_status(res)
   parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
-  batch <- parsed$detections
-  
-  if (is.null(batch) || nrow(batch) == 0) break
-  all_pages[[length(all_pages) + 1]] <- batch
-  
-  ts_col <- grep("^timestamp$", names(batch), value = TRUE)
-  if (length(ts_col) > 0) {
-    oldest_ts <- suppressWarnings(as.POSIXct(min(batch[[ts_col]], na.rm = TRUE), format = "%Y-%m-%dT%H:%M:%S", tz = "UTC"))
-    if (!is.na(oldest_ts) && oldest_ts < cutoff_utc) break
-  }
-  if (nrow(batch) < 500 || !"id" %in% names(batch)) break
-  cursor_id <- tail(batch$id, 1)
+  detections_df <- parsed$detections
 }
 
-detections_df <- bind_rows(all_pages)
-
-if ("timestamp" %in% names(detections_df)) {
-  ts_parsed <- suppressWarnings(as.POSIXct(detections_df$timestamp, format = "%Y-%m-%dT%H:%M:%S", tz = "UTC"))
-  if (any(!is.na(ts_parsed))) {
-    detections_df <- detections_df[!is.na(ts_parsed) & ts_parsed >= cutoff_utc, ]
-  }
-}
+stopifnot("No detections returned from BirdWeather API" = !is.null(detections_df) && nrow(detections_df) > 0)
 
 # 2. Summarize ALL detected species & apply Avian Visitors scaling (count^0.65)
 common_col <- grep("commonName|common_name", names(detections_df), value = TRUE)
@@ -83,14 +68,13 @@ get_bird_art <- function(sci_name, common_name, pose = 1) {
     tmp_ppm <- tempfile(fileext = ".ppm")
     writeBin(content(res, as = "raw"), tmp_png)
     
-    # Flatten transparent PNG onto warm cream background and convert to raw PPM
     status <- system2("convert", c(tmp_png, "-background", "#f6f0e2", "-alpha", "remove", "-compress", "none", tmp_ppm), stderr = FALSE)
     if (status == 0 && file.exists(tmp_ppm)) {
       lines <- readLines(tmp_ppm, warn = FALSE)
       lines <- lines[!grepl("^#", lines)]
       vals <- as.numeric(unlist(strsplit(paste(lines[-1], collapse = " "), "\\s+")))
       vals <- vals[!is.na(vals)]
-      w <- vals[1]; h <- vals[2]; maxv <- vals[3]
+      w <- vals; h <- vals; maxv <- vals
       rgb_vals <- vals[-(1:3)] / maxv
       arr <- array(rgb_vals, dim = c(3, w, h))
       arr <- aperm(arr, c(3, 2, 1))
