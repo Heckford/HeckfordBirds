@@ -9,17 +9,18 @@ library(grid)
 station_token <- Sys.getenv("BIRDWEATHER_TOKEN")
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = nchar(station_token) > 0)
 
-# 1. Fetch ALL detections from the last 24 hours (pages of 100)
+# 1. Fetch ALL detections from the last 24 hours (pages of 100 with timestamp cutoff)
 api_url <- paste0(
   "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
   paste(c("api", "v1", "stations", station_token, "detections"), collapse = "/")
 )
 
+cutoff_utc <- Sys.time() - as.difftime(24, units = "hours")
 all_pages <- list()
 cursor_id <- NULL
 
-for (page in 1:15) { # Up to 1,500 detections across the last 24 hours
-  q <- list(limit = 100, period = "day")
+for (page in 1:50) { # Up to 5,000 detections across the last 24 hours
+  q <- list(limit = 100)
   if (!is.null(cursor_id)) q$before <- cursor_id
   
   res <- GET(
@@ -33,11 +34,31 @@ for (page in 1:15) { # Up to 1,500 detections across the last 24 hours
   
   if (is.null(batch) || nrow(batch) == 0) break
   all_pages[[length(all_pages) + 1]] <- batch
+  
+  # Stop fetching older pages once timestamps pass the 24-hour window
+  if ("timestamp" %in% names(batch)) {
+    clean_ts <- sub("Z$", "+0000", batch$timestamp)
+    clean_ts <- sub("([+-][0-9]{2}):([0-9]{2})$", "\\1\\2", clean_ts)
+    parsed_ts <- suppressWarnings(as.POSIXct(clean_ts, format = "%Y-%m-%dT%H:%M:%OS%z", tz = "UTC"))
+    if (any(!is.na(parsed_ts)) && min(parsed_ts, na.rm = TRUE) < cutoff_utc) break
+  }
+  
   if (nrow(batch) < 100 || !"id" %in% names(batch)) break
   cursor_id <- tail(batch$id, 1)
 }
 
 detections_df <- bind_rows(all_pages)
+
+# Keep only detections within the exact last 24 hours
+if ("timestamp" %in% names(detections_df) && nrow(detections_df) > 0) {
+  clean_ts <- sub("Z$", "+0000", detections_df$timestamp)
+  clean_ts <- sub("([+-][0-9]{2}):([0-9]{2})$", "\\1\\2", clean_ts)
+  parsed_ts <- suppressWarnings(as.POSIXct(clean_ts, format = "%Y-%m-%dT%H:%M:%OS%z", tz = "UTC"))
+  if (any(!is.na(parsed_ts))) {
+    detections_df <- detections_df[!is.na(parsed_ts) & parsed_ts >= cutoff_utc, ]
+  }
+}
+
 message("Total 24h detections fetched: ", nrow(detections_df))
 
 # 2. Summarize ALL detected species & apply Avian Visitors scaling (count^0.65)
@@ -57,7 +78,7 @@ flock_df <- detections_df %>%
 
 message("Unique species found: ", nrow(flock_df))
 
-# 3. Fetch full-color woodblock PNGs directly with readPNG() (no convert/ImageMagick needed!)
+# 3. Fetch full-color woodblock PNGs directly with readPNG()
 get_bird_art <- function(sci_name, common_name, pose = 1) {
   cutout_url <- paste0(
     "https://", paste(c("bird", "onethreenine", "net"), collapse = "."),
@@ -84,7 +105,7 @@ message("Bird illustrations successfully decoded: ", sum(valid), " of ", nrow(fl
 flock_df <- flock_df[valid, ]
 rasters <- rasters[valid]
 
-# 4. Built-in center-out spiral circle packing
+# 4. Built-in center-out spiral circle packing (tighter cluster)
 pack_spiral <- function(areas) {
   r <- sqrt(areas / pi)
   n <- length(r)
@@ -111,7 +132,7 @@ pack_spiral <- function(areas) {
   tibble(x_wide = x, y = y, radius = r)
 }
 
-packing <- pack_spiral(flock_df$area_score * 1.35)
+packing <- pack_spiral(flock_df$area_score * 1.05)
 flock_df <- bind_cols(flock_df, packing)
 
 # 5. Render warm cream woodblock collage
@@ -158,10 +179,11 @@ for (i in seq_len(nrow(flock_df))) {
   )
 }
 
+# Show ALL species labels (no check_overlap hiding small birds)
 p <- p + geom_text(
   data = flock_df,
   aes(x = x_wide, y = y - radius * 0.88, label = paste0(common_name, " (", detections, ")")),
-  size = 2.9, family = "serif", color = "#3b3228", check_overlap = TRUE
+  size = 2.8, family = "serif", color = "#3b3228"
 )
 
 ggsave("avian_visitors.png", plot = p, width = 11, height = 7.5, dpi = 200, bg = "#f6f0e2")
