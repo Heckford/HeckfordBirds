@@ -2,38 +2,42 @@ library(httr)
 library(jsonlite)
 library(dplyr)
 library(ggplot2)
+library(png)
 library(grid)
 
 station_token <- Sys.getenv("BIRDWEATHER_TOKEN")
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = nchar(station_token) > 0)
 
-# 1. Fetch detections from the last 24 hours
+# 1. Fetch ALL detections from the last 24 hours (pages of 100)
 api_url <- paste0(
   "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
   paste(c("api", "v1", "stations", station_token, "detections"), collapse = "/")
 )
 
-res <- GET(
-  url = api_url,
-  query = list(limit = 1000, period = "day"),
-  add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0")
-)
-stop_for_status(res)
-parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
-detections_df <- parsed$detections
+all_pages <- list()
+cursor_id <- NULL
 
-if (is.null(detections_df) || nrow(detections_df) == 0) {
+for (page in 1:15) { # Up to 1,500 detections across the last 24 hours
+  q <- list(limit = 100, period = "day")
+  if (!is.null(cursor_id)) q$before <- cursor_id
+  
   res <- GET(
     url = api_url,
-    query = list(limit = 500),
+    query = q,
     add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0")
   )
   stop_for_status(res)
   parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
-  detections_df <- parsed$detections
+  batch <- parsed$detections
+  
+  if (is.null(batch) || nrow(batch) == 0) break
+  all_pages[[length(all_pages) + 1]] <- batch
+  if (nrow(batch) < 100 || !"id" %in% names(batch)) break
+  cursor_id <- tail(batch$id, 1)
 }
 
-message("Total raw detections fetched: ", nrow(detections_df))
+detections_df <- bind_rows(all_pages)
+message("Total 24h detections fetched: ", nrow(detections_df))
 
 # 2. Summarize ALL detected species & apply Avian Visitors scaling (count^0.65)
 common_col <- grep("commonName|common_name", names(detections_df), value = TRUE)
@@ -52,7 +56,7 @@ flock_df <- detections_df %>%
 
 message("Unique species found: ", nrow(flock_df))
 
-# 3. Fetch woodblock bird art and decode cleanly via ImageMagick PPM
+# 3. Fetch full-color woodblock PNGs directly with readPNG() (no convert/ImageMagick needed!)
 get_bird_art <- function(sci_name, common_name, pose = 1) {
   cutout_url <- paste0(
     "https://", paste(c("bird", "onethreenine", "net"), collapse = "."),
@@ -61,30 +65,13 @@ get_bird_art <- function(sci_name, common_name, pose = 1) {
   res <- try(GET(
     url = cutout_url,
     query = list(sci = sci_name, com = common_name, pose = pose),
-    add_headers("User-Agent" = "Mozilla/5.0")
+    add_headers("User-Agent" = "Mozilla/5.0"),
+    timeout(10)
   ), silent = TRUE)
   
   if (!inherits(res, "try-error") && status_code(res) == 200) {
-    tmp_png <- tempfile(fileext = ".png")
-    tmp_ppm <- tempfile(fileext = ".ppm")
-    writeBin(content(res, as = "raw"), tmp_png)
-    
-    status <- system2("convert", c(tmp_png, "-background", "#f6f0e2", "-alpha", "remove", "-compress", "none", tmp_ppm), stderr = FALSE)
-    if (status == 0 && file.exists(tmp_ppm)) {
-      lines <- readLines(tmp_ppm, warn = FALSE)
-      lines <- lines[!grepl("^#", lines)]
-      vals <- as.numeric(unlist(strsplit(paste(lines[-1], collapse = " "), "\\s+")))
-      vals <- vals[!is.na(vals)]
-      if (length(vals) > 3) {
-        w <- vals[1]
-        h <- vals[2]
-        maxv <- vals[3]
-        rgb_vals <- vals[-(1:3)] / maxv
-        arr <- array(rgb_vals, dim = c(3, w, h))
-        arr <- aperm(arr, c(3, 2, 1))
-        return(arr)
-      }
-    }
+    img <- try(readPNG(content(res, as = "raw")), silent = TRUE)
+    if (!inherits(img, "try-error")) return(img)
   }
   return(NULL)
 }
