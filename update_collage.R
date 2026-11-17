@@ -66,29 +66,38 @@ flock_df <- flock_df %>%
     label_txt = paste0(common_name, " (", detections, ")")
   )
 
-# 2. Fetch full-color woodblock PNGs for birds
+# 2. Fetch full-color woodblock PNGs with gentle pacing, retries & alternate pose fallback
 get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
   if (is_bat) return(NULL)
   cutout_url <- paste0(
     "https://", paste(c("bird", "onethreenine", "net"), collapse = "."),
     "/avian/api/cutout.php"
   )
-  res <- try(GET(
-    url = cutout_url,
-    query = list(sci = sci_name, com = common_name, pose = pose),
-    add_headers("User-Agent" = "Mozilla/5.0"),
-    timeout(10)
-  ), silent = TRUE)
   
-  if (!inherits(res, "try-error") && status_code(res) == 200) {
-    img <- try(readPNG(content(res, as = "raw")), silent = TRUE)
-    if (!inherits(img, "try-error")) return(img)
+  poses_to_try <- unique(c(pose, 1, 2))
+  for (p_try in poses_to_try) {
+    for (attempt in 1:2) {
+      Sys.sleep(0.15) # Prevents rate-limiting across 40+ species
+      res <- try(GET(
+        url = cutout_url,
+        query = list(sci = sci_name, com = common_name, pose = p_try),
+        add_headers("User-Agent" = "Mozilla/5.0"),
+        timeout(15)
+      ), silent = TRUE)
+      
+      if (!inherits(res, "try-error") && status_code(res) == 200) {
+        img <- try(readPNG(content(res, as = "raw")), silent = TRUE)
+        if (!inherits(img, "try-error")) return(img)
+      }
+      Sys.sleep(0.35)
+    }
   }
   return(NULL)
 }
 
 rasters <- mapply(get_bird_art, flock_df$clean_sci, flock_df$common_name, flock_df$pose, flock_df$is_bat, SIMPLIFY = FALSE)
 has_art <- !sapply(rasters, is.null)
+message("Woodblock art loaded for ", sum(has_art), " of ", nrow(flock_df), " species")
 
 # 3. Compute exact rectangular bounding box (illustration/silhouette + text width)
 n <- nrow(flock_df)
@@ -117,7 +126,7 @@ for (i in seq_len(n)) {
   box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.10
 }
 
-# 4. Concentric Center-First Rectangle Packing (fills every inner pocket before expanding!)
+# 4. Concentric Center-First Rectangle Packing
 cx <- numeric(n)
 cy <- numeric(n)
 
