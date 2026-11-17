@@ -23,9 +23,7 @@ res <- GET(
 stop_for_status(res)
 parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
 
-# Handle list structure returned by /species endpoint
 sp_df <- if (!is.null(parsed$species)) parsed$species else as.data.frame(parsed)
-message("Columns returned by /species: ", paste(names(sp_df), collapse = ", "))
 
 common_col <- grep("commonName|common_name", names(sp_df), value = TRUE)
 sci_col    <- grep("scientificName|scientific_name", names(sp_df), value = TRUE)
@@ -44,12 +42,17 @@ flock_df <- sp_df %>%
   arrange(desc(detections)) %>%
   mutate(
     pose = ifelse(row_number() %% 2 == 1, 1, 2),
-    area_score = detections^0.45
+    scale_r = (detections^0.32)
   )
 
-message("24-hour unique species fetched: ", nrow(flock_df))
+# Normalize radius so largest bird is ~2.3 units and smallest is ~0.90 units
+flock_df <- flock_df %>%
+  mutate(
+    radius = 0.90 + 1.40 * ((scale_r - min(scale_r)) / max(1e-6, max(scale_r) - min(scale_r))),
+    label_txt = paste0(common_name, " (", detections, ")")
+  )
 
-# 2. Fetch full-color woodblock PNGs (keeps ALL species even if a cutout is missing)
+# 2. Fetch full-color woodblock PNGs
 get_bird_art <- function(sci_name, common_name, pose = 1) {
   cutout_url <- paste0(
     "https://", paste(c("bird", "onethreenine", "net"), collapse = "."),
@@ -71,49 +74,74 @@ get_bird_art <- function(sci_name, common_name, pose = 1) {
 
 rasters <- mapply(get_bird_art, flock_df$clean_sci, flock_df$common_name, flock_df$pose, SIMPLIFY = FALSE)
 has_art <- !sapply(rasters, is.null)
-message("Woodblock art found for ", sum(has_art), " of ", nrow(flock_df), " species")
 
-# 3. True Non-Overlapping Elliptical Spiral Packing (accounts for both bird + text label)
-pack_spiral <- function(areas) {
-  r <- sqrt(areas / pi)
-  n <- length(r)
-  x <- numeric(n)
-  y <- numeric(n)
-  if (n > 1) {
-    angles <- seq(0, 40 * pi, length.out = 5000)
-    for (i in 2:n) {
-      step <- r[i] * 0.02
-      rad <- 0
-      for (ang in angles) {
-        cx <- rad * cos(ang) * 1.45
-        cy <- rad * sin(ang)
-        # Enforce strict spacing: horizontal gap >= 1.25x sum of radii, vertical >= 1.35x sum of radii
-        dx <- abs(cx - x[1:(i - 1)]) / ((r[i] + r[1:(i - 1)]) * 1.25)
-        dy <- abs(cy - y[1:(i - 1)]) / ((r[i] + r[1:(i - 1)]) * 1.35)
-        if (all(sqrt(dx^2 + dy^2) >= 1.0)) {
-          x[i] <- cx
-          y[i] <- cy
-          break
-        }
-        rad <- rad + step
-      }
-    }
+# 3. Compute exact rectangular bounding box (bird illustration + generous text width)
+n <- nrow(flock_df)
+bird_w <- numeric(n)
+bird_h <- numeric(n)
+box_hw <- numeric(n)
+box_hh <- numeric(n)
+label_band <- 0.45
+
+for (i in seq_len(n)) {
+  if (has_art[i]) {
+    h_px <- nrow(rasters[[i]])
+    w_px <- ncol(rasters[[i]])
+    sf <- (flock_df$radius[i] * 1.95) / sqrt(h_px^2 + w_px^2)
+    bird_w[i] <- w_px * sf
+    bird_h[i] <- h_px * sf
+  } else {
+    bird_w[i] <- flock_df$radius[i] * 0.95
+    bird_h[i] <- flock_df$radius[i] * 0.95
   }
-  tibble(x_wide = x, y = y, radius = r)
+  # Generous 0.165 width per character guarantees long labels NEVER touch neighbors
+  est_text_w <- nchar(flock_df$label_txt[i]) * 0.165
+  box_hw[i] <- max(bird_w[i], est_text_w) / 2 + 0.14
+  box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.12
 }
 
-packing <- pack_spiral(flock_df$area_score)
-flock_df <- bind_cols(flock_df, packing) %>% mutate(has_art = has_art)
+# 4. Pack non-overlapping rectangles tightly around center (no empty ring!)
+cx <- numeric(n)
+cy <- numeric(n)
 
-# 4. Render warm cream woodblock collage
+if (n > 1) {
+  angles <- seq(0, 70 * pi, length.out = 10000)
+  for (i in 2:n) {
+    rad <- 0
+    step <- 0.025
+    for (ang in angles) {
+      tx <- rad * cos(ang) * 1.55
+      ty <- rad * sin(ang)
+      overlap_x <- abs(tx - cx[1:(i - 1)]) < (box_hw[i] + box_hw[1:(i - 1)])
+      overlap_y <- abs(ty - cy[1:(i - 1)]) < (box_hh[i] + box_hh[1:(i - 1)])
+      if (!any(overlap_x & overlap_y)) {
+        cx[i] <- tx
+        cy[i] <- ty
+        break
+      }
+      rad <- rad + step
+    }
+  }
+}
+
+flock_df <- flock_df %>%
+  mutate(
+    x_wide = cx,
+    y = cy,
+    bird_w = bird_w,
+    bird_h = bird_h,
+    has_art = has_art
+  )
+
+# 5. Render warm cream woodblock collage filling the canvas cleanly
 bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
 total_calls <- sum(flock_df$detections)
 
 p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
   geom_blank() +
   coord_equal(expand = TRUE) +
-  scale_x_continuous(expand = expansion(mult = 0.18)) +
-  scale_y_continuous(expand = expansion(mult = 0.18)) +
+  scale_x_continuous(expand = expansion(mult = 0.05)) +
+  scale_y_continuous(expand = expansion(mult = 0.05)) +
   labs(
     title = "Bird Detections",
     subtitle = paste0("Last 24 Hours: ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
@@ -123,47 +151,45 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
     plot.background = element_rect(fill = "#f6f0e2", color = NA),
     panel.background = element_rect(fill = "#f6f0e2", color = NA),
     plot.title = element_text(
-      hjust = 0.5, family = "serif", size = 18, face = "bold",
-      color = "#2b241d", margin = margin(t = 15, b = 3)
+      hjust = 0.5, family = "serif", size = 20, face = "bold",
+      color = "#2b241d", margin = margin(t = 10, b = 2)
     ),
     plot.subtitle = element_text(
-      hjust = 0.5, family = "serif", size = 11, color = "#6e6051", margin = margin(b = 8)
+      hjust = 0.5, family = "serif", size = 11.5, color = "#6e6051", margin = margin(b = 6)
     ),
-    plot.margin = margin(15, 15, 15, 15)
+    plot.margin = margin(8, 8, 8, 8)
   )
 
-# Draw woodblock art (sized inside 80% of padded cell so birds & labels never touch)
-for (i in seq_len(nrow(flock_df))) {
+# Place each bird in the upper portion of its collision-free box
+for (i in seq_len(n)) {
+  y_bird_center <- flock_df$y[i] + (label_band / 2)
   if (flock_df$has_art[i]) {
     img <- rasters[[i]]
-    h_px <- nrow(img)
-    w_px <- ncol(img)
-    scale_factor <- (flock_df$radius[i] * 1.45) / sqrt(h_px^2 + w_px^2)
-    half_w <- (w_px * scale_factor) / 2
-    half_h <- (h_px * scale_factor) / 2
+    half_w <- flock_df$bird_w[i] / 2
+    half_h <- flock_df$bird_h[i] / 2
     
     p <- p + annotation_raster(
       img,
       xmin = flock_df$x_wide[i] - half_w,
       xmax = flock_df$x_wide[i] + half_w,
-      ymin = flock_df$y[i] - half_h + flock_df$radius[i] * 0.12,
-      ymax = flock_df$y[i] + half_h + flock_df$radius[i] * 0.12
+      ymin = y_bird_center - half_h,
+      ymax = y_bird_center + half_h
     )
   } else {
     p <- p + annotate(
       "point",
-      x = flock_df$x_wide[i], y = flock_df$y[i] + flock_df$radius[i] * 0.12,
-      size = flock_df$radius[i] * 4.0, shape = 21,
-      fill = "#e3d6be", color = "#8c7a65", stroke = 0.8
+      x = flock_df$x_wide[i], y = y_bird_center,
+      size = flock_df$radius[i] * 7.5, shape = 21,
+      fill = "#dfd0b4", color = "#7a6855", stroke = 1.1
     )
   }
 }
 
-# Place every species label cleanly in the reserved bottom space of its cell
+# Place every label cleanly beneath its own bird (zero overlap)
 p <- p + geom_text(
   data = flock_df,
-  aes(x = x_wide, y = y - radius * 0.85, label = paste0(common_name, " (", detections, ")")),
-  size = 2.6, family = "serif", color = "#3b3228"
+  aes(x = x_wide, y = y - (bird_h / 2) - 0.06, label = label_txt),
+  size = 2.9, family = "serif", color = "#3b3228", vjust = 1
 )
 
-ggsave("avian_visitors.png", plot = p, width = 12, height = 8, dpi = 200, bg = "#f6f0e2")
+ggsave("avian_visitors.png", plot = p, width = 13, height = 8, dpi = 220, bg = "#f6f0e2")
