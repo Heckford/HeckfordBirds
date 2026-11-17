@@ -52,7 +52,6 @@ flock_df <- all_stations_df %>%
   summarise(detections = sum(detections), .groups = "drop") %>%
   arrange(desc(detections)) %>%
   mutate(
-    # Identify bats automatically by common name or Pacific Northwest bat genera
     is_bat = grepl("\\bbat\\b|myotis|flying fox", common_name, ignore.case = TRUE) |
              grepl("^(Myotis|Lasionycteris|Eptesicus|Lasiurus|Corynorhinus|Antrozous|Tadarida)\\b", clean_sci),
     pose = ifelse(row_number() %% 2 == 1, 1, 2),
@@ -65,7 +64,7 @@ flock_df <- flock_df %>%
     label_txt = paste0(common_name, " (", detections, ")")
   )
 
-# 2. Fetch full-color woodblock PNGs for birds (skip lookup for bats)
+# 2. Fetch full-color woodblock PNGs for birds
 get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
   if (is_bat) return(NULL)
   cutout_url <- paste0(
@@ -105,14 +104,14 @@ for (i in seq_len(n)) {
     bird_w[i] <- w_px * sf
     bird_h[i] <- h_px * sf
   } else if (flock_df$is_bat[i]) {
-    bird_w[i] <- flock_df$radius[i] * 1.55 # Wider wingspan for flying bat silhouette
+    bird_w[i] <- flock_df$radius[i] * 1.55
     bird_h[i] <- flock_df$radius[i] * 0.85
   } else {
     bird_w[i] <- flock_df$radius[i] * 1.25
     bird_h[i] <- flock_df$radius[i] * 1.05
   }
-  est_text_w <- nchar(flock_df$label_txt[i]) * 0.165
-  box_hw[i] <- max(bird_w[i], est_text_w) / 2 + 0.14
+  est_text_w <- nchar(flock_df$label_txt[i]) * 0.175
+  box_hw[i] <- max(bird_w[i], est_text_w) / 2 + 0.15
   box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.12
 }
 
@@ -146,8 +145,14 @@ flock_df <- flock_df %>%
     y = cy,
     bird_w = bird_w,
     bird_h = bird_h,
+    box_hw = box_hw,
+    box_hh = box_hh,
     has_art = has_art
   )
+
+# Calculate exact outer edges including full text box widths so nothing is ever clipped
+x_limits <- c(min(flock_df$x_wide - flock_df$box_hw) - 0.5, max(flock_df$x_wide + flock_df$box_hw) + 0.5)
+y_limits <- c(min(flock_df$y - flock_df$box_hh) - 0.35, max(flock_df$y + flock_df$box_hh) + 0.35)
 
 # Generic perched bird silhouette coordinates
 bird_poly_template <- tibble(
@@ -161,7 +166,7 @@ bird_poly_template <- tibble(
   )
 )
 
-# Flying bat silhouette coordinates (spread scalloped wings + ears)
+# Flying bat silhouette coordinates
 bat_poly_template <- tibble(
   px = c(
      0.00, -0.04, -0.07, -0.14, -0.32, -0.50, -0.38, -0.26, -0.14,
@@ -175,15 +180,13 @@ bat_poly_template <- tibble(
   )
 )
 
-# 5. Render warm cream woodblock collage
+# 5. Render warm cream woodblock collage with guaranteed edge clearance
 bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
 total_calls <- sum(flock_df$detections)
 
 p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
   geom_blank() +
-  coord_equal(expand = TRUE) +
-  scale_x_continuous(expand = expansion(mult = 0.05)) +
-  scale_y_continuous(expand = expansion(mult = 0.05)) +
+  coord_equal(xlim = x_limits, ylim = y_limits, expand = FALSE, clip = "off") +
   labs(
     title = "Bird & Bat Detections",
     subtitle = paste0("Last 24 Hours (", length(tokens), " Stations): ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
@@ -194,12 +197,12 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
     panel.background = element_rect(fill = "#f6f0e2", color = NA),
     plot.title = element_text(
       hjust = 0.5, family = "serif", size = 20, face = "bold",
-      color = "#2b241d", margin = margin(t = 10, b = 2)
+      color = "#2b241d", margin = margin(t = 12, b = 2)
     ),
     plot.subtitle = element_text(
-      hjust = 0.5, family = "serif", size = 11.5, color = "#6e6051", margin = margin(b = 6)
+      hjust = 0.5, family = "serif", size = 11.5, color = "#6e6051", margin = margin(b = 8)
     ),
-    plot.margin = margin(8, 8, 8, 8)
+    plot.margin = margin(12, 18, 14, 18)
   )
 
 # Place woodblock bird art, flying bat silhouette, or fallback bird silhouette
@@ -218,7 +221,6 @@ for (i in seq_len(n)) {
       ymax = y_bird_center + half_h
     )
   } else if (flock_df$is_bat[i]) {
-    # Draw twilight slate-indigo flying bat silhouette
     poly_i <- bat_poly_template %>%
       mutate(
         x = flock_df$x_wide[i] + px * flock_df$bird_w[i],
@@ -232,7 +234,6 @@ for (i in seq_len(n)) {
       linewidth = 0.45
     )
   } else {
-    # Draw warm sepia perched bird silhouette
     poly_i <- bird_poly_template %>%
       mutate(
         x = flock_df$x_wide[i] + px * flock_df$bird_w[i],
