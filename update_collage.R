@@ -7,7 +7,7 @@ library(grid)
 station_token <- Sys.getenv("BIRDWEATHER_TOKEN")
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = nchar(station_token) > 0)
 
-# 1. Fetch detections from the last 24 hours directly via BirdWeather's period="day" parameter
+# 1. Fetch detections from the last 24 hours
 api_url <- paste0(
   "https://", paste(c("app", "birdweather", "com"), collapse = "."), "/",
   paste(c("api", "v1", "stations", station_token, "detections"), collapse = "/")
@@ -22,7 +22,6 @@ stop_for_status(res)
 parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
 detections_df <- parsed$detections
 
-# Fallback: if period="day" returned empty, fetch the latest 500 detections without period filter
 if (is.null(detections_df) || nrow(detections_df) == 0) {
   res <- GET(
     url = api_url,
@@ -51,7 +50,7 @@ flock_df <- detections_df %>%
     area_score = detections^0.65
   )
 
-# 3. Fetch woodblock bird art and blend onto warm cream (#f6f0e2) via built-in ImageMagick
+# 3. Fetch woodblock bird art and blend onto warm cream (#f6f0e2) via ImageMagick
 get_bird_art <- function(sci_name, common_name, pose = 1) {
   cutout_url <- paste0(
     "https://", paste(c("bird", "onethreenine", "net"), collapse = "."),
@@ -74,7 +73,7 @@ get_bird_art <- function(sci_name, common_name, pose = 1) {
       lines <- lines[!grepl("^#", lines)]
       vals <- as.numeric(unlist(strsplit(paste(lines[-1], collapse = " "), "\\s+")))
       vals <- vals[!is.na(vals)]
-      w <- vals; h <- vals; maxv <- vals
+      w <- vals[1]; h <- vals[2]; maxv <- vals[3]
       rgb_vals <- vals[-(1:3)] / maxv
       arr <- array(rgb_vals, dim = c(3, w, h))
       arr <- aperm(arr, c(3, 2, 1))
@@ -98,7 +97,7 @@ pack_spiral <- function(areas) {
   if (n > 1) {
     angles <- seq(0, 25 * pi, length.out = 2500)
     for (i in 2:n) {
-      step <- r * 0.04
+      step <- r[i] * 0.04
       rad <- 0
       for (ang in angles) {
         cx <- rad * cos(ang) * 1.5
@@ -129,7 +128,7 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
   scale_x_continuous(expand = expansion(mult = 0.22)) +
   scale_y_continuous(expand = expansion(mult = 0.22)) +
   labs(
-    title = "AVIAN VISITORS — ARBUTUS (#29794)",
+    title = "Bird Detections",
     subtitle = paste0("Last 24 Hours: ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
   ) +
   theme_void() +
