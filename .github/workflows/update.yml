@@ -27,6 +27,7 @@ jobs:
 
       - name: Publish updated PNG (overwrites previous image cleanly)
         run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@://github.com"
           git add avian_visitors.png
