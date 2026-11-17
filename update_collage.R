@@ -25,28 +25,25 @@ parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE
 
 # Handle list structure returned by /species endpoint
 sp_df <- if (!is.null(parsed$species)) parsed$species else as.data.frame(parsed)
+message("Columns returned by /species: ", paste(names(sp_df), collapse = ", "))
 
 common_col <- grep("commonName|common_name", names(sp_df), value = TRUE)
 sci_col    <- grep("scientificName|scientific_name", names(sp_df), value = TRUE)
-count_col  <- grep("detections.total|detections|count", names(sp_df), value = TRUE)
+count_col  <- grep("detections_count|detections.total|count|total", names(sp_df), value = TRUE)
 
 flock_df <- sp_df %>%
-  rename(
-    common_name = all_of(common_col),
-    sci_name = all_of(sci_col),
-    detections = all_of(count_col)
+  transmute(
+    common_name = as.character(.data[[common_col]]),
+    sci_name    = as.character(.data[[sci_col]]),
+    detections  = as.numeric(.data[[count_col]])
   ) %>%
   filter(!is.na(common_name), !is.na(sci_name), detections > 0) %>%
-  mutate(
-    clean_sci = sub("^(\\S+\\s+\\S+).*", "\\1", sci_name),
-    detections = as.numeric(detections)
-  ) %>%
+  mutate(clean_sci = sub("^(\\S+\\s+\\S+).*", "\\1", sci_name)) %>%
   group_by(common_name, clean_sci) %>%
   summarise(detections = sum(detections), .groups = "drop") %>%
   arrange(desc(detections)) %>%
   mutate(
     pose = ifelse(row_number() %% 2 == 1, 1, 2),
-    # Gentle exponent (0.45) keeps all 19 species readable without tiny specks or giant overlaps
     area_score = detections^0.45
   )
 
