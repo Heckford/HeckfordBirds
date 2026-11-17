@@ -1,0 +1,38 @@
+name: Update Bird Collage
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # Runs every 5 minutes 24/7
+  workflow_dispatch:      # Adds a manual "Run workflow" button for instant testing
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/tidyverse:4.4.1
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate updated 24h collage
+        env:
+          BIRDWEATHER_TOKEN: ${{ secrets.BIRDWEATHER_TOKEN }}
+        run: Rscript update_collage.R
+
+      - name: Publish updated PNG (overwrites previous image cleanly)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@://github.com"
+          git add avian_visitors.png
+          if ! git diff --staged --quiet; then
+            if [ "$(git log -1 --pretty=%s)" = "Update Arbutus bird collage" ]; then
+              git commit --amend --no-edit
+              git push --force
+            else
+              git commit -m "Update Arbutus bird collage"
+              git push
+            fi
+          fi
