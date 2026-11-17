@@ -23,6 +23,7 @@ jobs:
       - name: Generate updated 24h collage
         env:
           BIRDWEATHER_TOKEN: ${{ secrets.BIRDWEATHER_TOKEN }}
+          BIRDWEATHER_TOKEN_2: ${{ secrets.BIRDWEATHER_TOKEN_2 }}
         run: Rscript update_collage.R
 
       - name: Publish updated PNG (overwrites previous image cleanly)
