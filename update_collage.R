@@ -20,7 +20,7 @@ fetch_station_species <- function(tok) {
   
   res <- GET(
     url = species_url,
-    query = list(period = "day", limit = 200),
+    query = list(from = cutoff_48h, limit = 200),
     add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0")
   )
   stop_for_status(res)
@@ -196,7 +196,7 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
   coord_equal(xlim = x_limits, ylim = y_limits, expand = FALSE, clip = "off") +
   labs(
     title = "Bird & Bat Detections",
-    subtitle = paste0("Last 24 Hours (", length(tokens), " Stations): ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
+    subtitle = paste0("Last 48 Hours (", length(tokens), " Stations): ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
   ) +
   theme_void() +
   theme(
