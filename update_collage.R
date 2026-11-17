@@ -1,12 +1,7 @@
-if (!requireNamespace("png", quietly = TRUE)) {
-  install.packages("png", repos = "https://p3m.dev")
-}
-
 library(httr)
 library(jsonlite)
 library(dplyr)
 library(ggplot2)
-library(png)
 library(grid)
 
 station_token <- Sys.getenv("BIRDWEATHER_TOKEN")
@@ -71,7 +66,7 @@ flock_df <- detections_df %>%
     area_score = detections^0.65
   )
 
-# 3. Fetch full-color woodblock bird illustrations from Avian Visitors API
+# 3. Fetch woodblock bird art and blend onto warm cream (#f6f0e2) via built-in ImageMagick
 get_bird_art <- function(sci_name, common_name, pose = 1) {
   cutout_url <- paste0(
     "https://", paste(c("bird", "onethreenine", "net"), collapse = "."),
@@ -82,9 +77,25 @@ get_bird_art <- function(sci_name, common_name, pose = 1) {
     query = list(sci = sci_name, com = common_name, pose = pose),
     add_headers("User-Agent" = "Mozilla/5.0")
   ), silent = TRUE)
+  
   if (!inherits(res, "try-error") && status_code(res) == 200) {
-    img <- try(readPNG(content(res, as = "raw")), silent = TRUE)
-    if (!inherits(img, "try-error")) return(img)
+    tmp_png <- tempfile(fileext = ".png")
+    tmp_ppm <- tempfile(fileext = ".ppm")
+    writeBin(content(res, as = "raw"), tmp_png)
+    
+    # Flatten transparent PNG onto warm cream background and convert to raw PPM
+    status <- system2("convert", c(tmp_png, "-background", "#f6f0e2", "-alpha", "remove", "-compress", "none", tmp_ppm), stderr = FALSE)
+    if (status == 0 && file.exists(tmp_ppm)) {
+      lines <- readLines(tmp_ppm, warn = FALSE)
+      lines <- lines[!grepl("^#", lines)]
+      vals <- as.numeric(unlist(strsplit(paste(lines[-1], collapse = " "), "\\s+")))
+      vals <- vals[!is.na(vals)]
+      w <- vals[1]; h <- vals[2]; maxv <- vals[3]
+      rgb_vals <- vals[-(1:3)] / maxv
+      arr <- array(rgb_vals, dim = c(3, w, h))
+      arr <- aperm(arr, c(3, 2, 1))
+      return(arr)
+    }
   }
   return(NULL)
 }
@@ -94,7 +105,7 @@ valid <- !sapply(rasters, is.null)
 flock_df <- flock_df[valid, ]
 rasters <- rasters[valid]
 
-# 4. Built-in center-out spiral circle packing (replaces external packcircles package)
+# 4. Built-in center-out spiral circle packing
 pack_spiral <- function(areas) {
   r <- sqrt(areas / pi)
   n <- length(r)
@@ -103,10 +114,10 @@ pack_spiral <- function(areas) {
   if (n > 1) {
     angles <- seq(0, 25 * pi, length.out = 2500)
     for (i in 2:n) {
-      step <- r[1] * 0.04
+      step <- r * 0.04
       rad <- 0
       for (ang in angles) {
-        cx <- rad * cos(ang) * 1.5 # 1.5x horizontal landscape bias
+        cx <- rad * cos(ang) * 1.5
         cy <- rad * sin(ang)
         dists <- sqrt(((cx - x[1:(i - 1)]) / 1.5)^2 + (cy - y[1:(i - 1)])^2)
         if (all(dists >= (r[i] + r[1:(i - 1)]))) {
