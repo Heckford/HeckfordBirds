@@ -1,3 +1,7 @@
+if (!requireNamespace("png", quietly = TRUE)) {
+  install.packages("png", repos = "https://p3m.dev")
+}
+
 library(httr)
 library(jsonlite)
 library(dplyr)
