@@ -33,7 +33,7 @@ if (is.null(detections_df) || nrow(detections_df) == 0) {
   detections_df <- parsed$detections
 }
 
-stopifnot("No detections returned from BirdWeather API" = !is.null(detections_df) && nrow(detections_df) > 0)
+message("Total raw detections fetched: ", nrow(detections_df))
 
 # 2. Summarize ALL detected species & apply Avian Visitors scaling (count^0.65)
 common_col <- grep("commonName|common_name", names(detections_df), value = TRUE)
@@ -49,6 +49,8 @@ flock_df <- detections_df %>%
     pose = ifelse(row_number() %% 2 == 1, 1, 2),
     area_score = detections^0.65
   )
+
+message("Unique species found: ", nrow(flock_df))
 
 # 3. Fetch woodblock bird art and blend onto warm cream (#f6f0e2) via ImageMagick
 get_bird_art <- function(sci_name, common_name, pose = 1) {
@@ -73,11 +75,15 @@ get_bird_art <- function(sci_name, common_name, pose = 1) {
       lines <- lines[!grepl("^#", lines)]
       vals <- as.numeric(unlist(strsplit(paste(lines[-1], collapse = " "), "\\s+")))
       vals <- vals[!is.na(vals)]
-      w <- vals[1]; h <- vals[2]; maxv <- vals[3]
-      rgb_vals <- vals[-(1:3)] / maxv
-      arr <- array(rgb_vals, dim = c(3, w, h))
-      arr <- aperm(arr, c(3, 2, 1))
-      return(arr)
+      if (length(vals) > 3) {
+        w <- vals[1]
+        h <- vals[2]
+        maxv <- vals[3]
+        rgb_vals <- vals[-(1:3)] / maxv
+        arr <- array(rgb_vals, dim = c(3, w, h))
+        arr <- aperm(arr, c(3, 2, 1))
+        return(arr)
+      }
     }
   }
   return(NULL)
@@ -85,6 +91,8 @@ get_bird_art <- function(sci_name, common_name, pose = 1) {
 
 rasters <- mapply(get_bird_art, flock_df$clean_sci, flock_df$common_name, flock_df$pose, SIMPLIFY = FALSE)
 valid <- !sapply(rasters, is.null)
+message("Bird illustrations successfully decoded: ", sum(valid), " of ", nrow(flock_df))
+
 flock_df <- flock_df[valid, ]
 rasters <- rasters[valid]
 
@@ -128,7 +136,7 @@ p <- ggplot(flock_df, aes(x = x_wide, y = y)) +
   scale_x_continuous(expand = expansion(mult = 0.22)) +
   scale_y_continuous(expand = expansion(mult = 0.22)) +
   labs(
-    title = "Bird Detections",
+    title = "Padgett Birds",
     subtitle = paste0("Last 24 Hours: ", nrow(flock_df), " Species (", total_calls, " Detections) • Updated ", bc_time)
   ) +
   theme_void() +
