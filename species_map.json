@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 116,
+    "detections": 120,
     "left_pct": 34.449,
-    "top_pct": 31.461,
+    "top_pct": 31.428,
     "width_pct": 13.564,
-    "height_pct": 13.373,
+    "height_pct": 13.439,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
