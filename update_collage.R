@@ -198,3 +198,30 @@ render_flock_df <- function(flock_df, period_label, conf_label, png_file, json_f
   hotspots <- data.frame(common_name = flock_df$common_name, detections = flock_df$detections, left_pct = round(((ox + ((cx - box_hw) - x_min) * sc) / W) * 100, 3), top_pct = round(((oy + (y_max - (cy + box_hh)) * sc) / H) * 100, 3), width_pct = round(((2 * box_hw * sc) / W) * 100, 3), height_pct = round(((2 * box_hh * sc) / H) * 100, 3), site_name = ifelse(flock_df$is_bat, "iNaturalist", "eBird"), target_url = ifelse(flock_df$is_bat, paste0(inat_base, URLencode(flock_df$clean_sci)), ifelse(nchar(flock_df$ebird_code) > 0, paste0(ebird_sp, flock_df$ebird_code), paste0(ebird_ex, URLencode(flock_df$common_name)))), stringsAsFactors = FALSE)
   write_json(hotspots, json_file, pretty = TRUE, auto_unbox = TRUE)
 }
+current_year <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%Y")
+cutoff_ytd <- paste0(current_year, "-01-01T00:00:00Z")
+cutoff_48h_iso <- format(as.POSIXct(Sys.time() - as.difftime(48, units = "hours"), tz = "UTC"), "%Y-%m-%dT%H:%M:%SZ")
+cutoff_48h_utc <- as.POSIXct(Sys.time() - as.difftime(48, units = "hours"), tz = "UTC")
+
+sp_48h_raw <- bind_rows(lapply(tokens, fetch_species_summary, from_iso = cutoff_48h_iso))
+sp_48h_raw$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sp_48h_raw$sci_name)
+sp_48h_all <- aggregate(detections ~ common_name + clean_sci + tax_grp, data = sp_48h_raw, FUN = sum)
+render_flock_df(sp_48h_all, "Last 48 Hours", "All Detections", "HeckfordBirds_48h_0.png", "species_map_48h_0.json", compact_mode = FALSE)
+
+sp_ytd_raw <- bind_rows(lapply(tokens, fetch_species_summary, from_iso = cutoff_ytd))
+sp_ytd_raw$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sp_ytd_raw$sci_name)
+sp_ytd_all <- aggregate(detections ~ common_name + clean_sci + tax_grp, data = sp_ytd_raw, FUN = sum)
+render_flock_df(sp_ytd_all, paste0("Year to Date (", current_year, ")"), "All Detections", "HeckfordBirds_ytd_0.png", "species_map_ytd_0.json", compact_mode = TRUE)
+
+ytd_conf <- bind_rows(lapply(tokens, fetch_all_detections, from_iso = cutoff_ytd, min_conf = 0.60))
+det_48h_conf <- ytd_conf[is.na(ytd_conf$ts) | ytd_conf$ts >= cutoff_48h_utc, ]
+
+for (c_pct in c(60, 70, 80, 90)) {
+  sub_48 <- det_48h_conf[det_48h_conf$conf >= (c_pct / 100), ]
+  df_48 <- if (nrow(sub_48) > 0) { sub_48$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sub_48$sci_name); a <- aggregate(conf ~ common_name + clean_sci, data = sub_48, FUN = length); colnames(a) <- c("common_name", "clean_sci", "detections"); a } else data.frame(common_name = character(), clean_sci = character(), detections = numeric())
+  render_flock_df(df_48, "Last 48 Hours", paste0("≥", c_pct, "% Confidence"), paste0("HeckfordBirds_48h_", c_pct, ".png"), paste0("species_map_48h_", c_pct, ".json"), compact_mode = FALSE)
+  
+  sub_ytd <- ytd_conf[ytd_conf$conf >= (c_pct / 100), ]
+  df_ytd <- if (nrow(sub_ytd) > 0) { sub_ytd$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sub_ytd$sci_name); a <- aggregate(conf ~ common_name + clean_sci, data = sub_ytd, FUN = length); colnames(a) <- c("common_name", "clean_sci", "detections"); a } else data.frame(common_name = character(), clean_sci = character(), detections = numeric())
+  render_flock_df(df_ytd, paste0("Year to Date (", current_year, ")"), paste0("≥", c_pct, "% Confidence"), paste0("HeckfordBirds_ytd_", c_pct, ".png"), paste0("species_map_ytd_", c_pct, ".json"), compact_mode = TRUE)
+}
