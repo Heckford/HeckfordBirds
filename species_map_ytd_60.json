@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 14924,
+    "detections": 14925,
     "left_pct": 43.55,
     "top_pct": 49.674,
     "width_pct": 10.681,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 7241,
+    "detections": 7242,
     "left_pct": 42.078,
     "top_pct": 59.045,
     "width_pct": 11.36,
@@ -383,7 +383,7 @@
     "common_name": "Townsend's Warbler",
     "detections": 43,
     "left_pct": 40.695,
-    "top_pct": 24.445,
+    "top_pct": 24.446,
     "width_pct": 8.303,
     "height_pct": 5.828,
     "site_name": "eBird",
