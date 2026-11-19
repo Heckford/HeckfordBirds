@@ -121,33 +121,33 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 10,
+    "detections": 13,
     "left_pct": 24.062,
-    "top_pct": 26.969,
+    "top_pct": 26.747,
     "width_pct": 13.187,
-    "height_pct": 13.759,
+    "height_pct": 14.201,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
+  },
+  {
+    "common_name": "Herring Gull",
+    "detections": 9,
+    "left_pct": 37.13,
+    "top_pct": 77.31,
+    "width_pct": 9.761,
+    "height_pct": 11.179,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/euhgul1"
   },
   {
     "common_name": "Common Raven",
     "detections": 8,
     "left_pct": 78.643,
-    "top_pct": 50.784,
+    "top_pct": 51.399,
     "width_pct": 9.761,
-    "height_pct": 14.137,
+    "height_pct": 12.908,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comrav"
-  },
-  {
-    "common_name": "Herring Gull",
-    "detections": 8,
-    "left_pct": 37.13,
-    "top_pct": 77.073,
-    "width_pct": 9.761,
-    "height_pct": 11.653,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/euhgul1"
   },
   {
     "common_name": "Wood Duck",

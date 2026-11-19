@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 2379,
+    "detections": 2382,
     "left_pct": 25.116,
     "top_pct": 50.048,
     "width_pct": 7.084,
-    "height_pct": 7.655,
+    "height_pct": 7.656,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
@@ -231,11 +231,11 @@
   },
   {
     "common_name": "Herring Gull",
-    "detections": 275,
+    "detections": 278,
     "left_pct": 56.161,
-    "top_pct": 40.65,
+    "top_pct": 40.649,
     "width_pct": 5.413,
-    "height_pct": 5.351,
+    "height_pct": 5.354,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
   },
