@@ -5,11 +5,34 @@ tokens <- c(Sys.getenv("BIRDWEATHER_TOKEN"), Sys.getenv("BIRDWEATHER_TOKEN_2"))
 tokens <- tokens[nchar(tokens) > 0]
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = length(tokens) > 0)
 
-fetch_all_detections <- function(tok, from_iso, min_conf = 0.0) {
-  det_url <- paste0("https", "://", paste(c("app", "birdweather", "com"), collapse = "."), "/", paste(c("api", "v1", "stations", tok, "detections"), collapse = "/"))
-  all_rows <- list()
-  cursor_id <- NULL
+fetch_species_summary <- function(tok, from_iso) {
+  sp_url <- paste0("https", "://", paste(c("app", "birdweather", "com"), collapse = "."), "/", paste(c("api", "v1", "stations", tok, "species"), collapse = "/"))
+  all_pages <- list()
   pg <- 0
+  repeat {
+    pg <- pg + 1
+    res <- GET(url = sp_url, query = list(from = from_iso, limit = 100, page = pg), add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(20))
+    stop_for_status(res)
+    parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
+    sp_df <- if (!is.null(parsed$species)) parsed$species else as.data.frame(parsed)
+    if (is.null(sp_df) || nrow(sp_df) == 0) break
+    c_col <- grep("commonName|common_name", names(sp_df), value = TRUE)
+    s_col <- grep("scientificName|scientific_name", names(sp_df), value = TRUE)
+    n_col <- grep("detections_count|detections.total|count|total", names(sp_df), value = TRUE)
+    g_col <- grep("group|taxon|class|category", names(sp_df), value = TRUE)
+    grp_vals <- if (length(g_col) > 0) as.character(sp_df[[g_col]]) else rep("", nrow(sp_df))
+    df <- tibble(common_name = as.character(sp_df[[c_col]]), sci_name = as.character(sp_df[[s_col]]), detections = as.numeric(sp_df[[n_col]]), tax_grp = grp_vals)
+    df <- df[!is.na(df$common_name) & !is.na(df$sci_name) & df$detections > 0, ]
+    all_pages[[pg]] <- df
+    if (nrow(sp_df) < 100) break
+  }
+  if (length(all_pages) == 0) return(tibble(common_name = character(), sci_name = character(), detections = numeric(), tax_grp = character()))
+  bind_rows(all_pages)
+}
+
+fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
+  det_url <- paste0("https", "://", paste(c("app", "birdweather", "com"), collapse = "."), "/", paste(c("api", "v1", "stations", tok, "detections"), collapse = "/"))
+  all_rows <- list(); cursor_id <- NULL; pg <- 0
   repeat {
     pg <- pg + 1
     q_list <- list(from = from_iso, confidence = min_conf, limit = 100, order = "desc")
@@ -32,7 +55,7 @@ fetch_all_detections <- function(tok, from_iso, min_conf = 0.0) {
     ts_vals <- if (length(t_col) > 0) as.POSIXct(sub("Z$", "", d_df[[t_col]]), format = "%Y-%m-%dT%H:%M:%S", tz = "UTC") else rep(Sys.time(), nrow(d_df))
     conf_vals <- if (length(conf_col) > 0) as.numeric(d_df[[conf_col]]) else rep(1, nrow(d_df))
     sub_df <- tibble(common_name = as.character(d_df[[c_col]]), sci_name = as.character(d_df[[s_col]]), conf = conf_vals, ts = ts_vals)
-    sub_df <- sub_df[!is.na(sub_df$common_name) & !is.na(sub_df$sci_name), ]
+    sub_df <- sub_df[!is.na(sub_df$common_name) & !is.na(sub_df$sci_name) & sub_df$conf >= min_conf, ]
     all_rows[[pg]] <- sub_df
     if (nrow(d_df) < 100 || !"id" %in% names(d_df)) break
     new_cursor <- tail(d_df$id, 1)
@@ -40,7 +63,6 @@ fetch_all_detections <- function(tok, from_iso, min_conf = 0.0) {
     cursor_id <- new_cursor
     if (pg %% 25 == 0) Sys.sleep(0.2)
   }
-  message("Fetched ", pg, " pages for station")
   if (length(all_rows) == 0) return(tibble(common_name = character(), sci_name = character(), conf = numeric(), ts = as.POSIXct(character())))
   bind_rows(all_rows)
 }
@@ -49,7 +71,6 @@ ebird_tax_url <- paste0("https", "://", paste(c("api", "ebird", "org"), collapse
 tax_res <- try(GET(url = ebird_tax_url, query = list(fmt = "json", cat = "species"), add_headers("User-Agent" = "Mozilla/5.0"), timeout(15)), silent = TRUE)
 ebird_lookup <- data.frame(sciName = character(), comName = character(), speciesCode = character(), stringsAsFactors = FALSE)
 if (!inherits(tax_res, "try-error") && status_code(tax_res) == 200) ebird_lookup <- fromJSON(content(tax_res, as = "text", encoding = "UTF-8"))
-
 art_cache <- new.env(parent = emptyenv())
 get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
   if (is_bat) return(NULL)
@@ -74,21 +95,22 @@ get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
 bird_poly <- data.frame(px = c(-0.48,-0.25,-0.08,0.08,0.22,0.34,0.48,0.35,0.32,0.24,0.10,0.06,0.12,0.02,-0.04,-0.02,-0.16,-0.45,-0.36), py = c(-0.28,-0.08,0.14,0.22,0.38,0.34,0.28,0.22,0.08,-0.10,-0.22,-0.44,-0.46,-0.46,-0.24,-0.45,-0.22,-0.35,-0.26))
 bat_poly  <- data.frame(px = c(0.00,-0.04,-0.07,-0.14,-0.32,-0.50,-0.38,-0.26,-0.14,-0.06,0.00,0.06,0.14,0.26,0.38,0.50,0.32,0.14,0.07,0.04), py = c(0.18,0.34,0.22,0.32,0.42,0.12,-0.12,-0.05,-0.22,-0.15,-0.35,-0.15,-0.22,-0.05,-0.12,0.12,0.42,0.32,0.22,0.34))
 
-render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, compact_mode = FALSE) {
-  sub_df <- det_df[det_df$conf >= min_conf, ]
+is_bat_species <- function(common_name, clean_sci, tax_grp = "") {
+  grepl("bat|myotis|flying fox|pipistrelle", common_name, ignore.case = TRUE) |
+    grepl("^(Myotis|Aeorestes|Lasionycteris|Eptesicus|Lasiurus|Corynorhinus|Antrozous|Tadarida|Perimyotis|Parastrellus|Nyctinomops|Eumops|Chiroptera)\\b", clean_sci, ignore.case = TRUE) |
+    grepl("bat|chiroptera|mammalia", tax_grp, ignore.case = TRUE)
+}
+render_flock_df <- function(flock_df, period_label, conf_label, png_file, json_file, compact_mode = FALSE) {
   bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
-  conf_label <- ifelse(min_conf <= 0, "All Detections", paste0("≥", round(min_conf * 100), "% Confidence"))
-  if (nrow(sub_df) == 0) {
+  if (nrow(flock_df) == 0) {
     p_empty <- ggplot() + geom_text(aes(x = 0, y = 0, label = paste0("No detections (", conf_label, ") in ", period_label)), family = "serif", size = 6, color = "#5c4e3f") + theme_void() + theme(plot.background = element_rect(fill = "#f6f0e2", color = NA))
     ggsave(png_file, plot = p_empty, width = 13, height = 8, dpi = 220, bg = "#f6f0e2")
     write_json(list(), json_file, pretty = TRUE, auto_unbox = TRUE)
     return(invisible(NULL))
   }
-  sub_df$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sub_df$sci_name)
-  flock_df <- aggregate(conf ~ common_name + clean_sci, data = sub_df, FUN = length)
-  colnames(flock_df) <- c("common_name", "clean_sci", "detections")
+  if (!"tax_grp" %in% names(flock_df)) flock_df$tax_grp <- ""
   flock_df <- flock_df[order(-flock_df$detections), ]; rownames(flock_df) <- NULL
-  flock_df$is_bat <- grepl("\\bbat\\b|myotis|flying fox", flock_df$common_name, ignore.case = TRUE) | grepl("^(Myotis|Lasionycteris|Eptesicus|Lasiurus|Corynorhinus|Antrozous|Tadarida)\\b", flock_df$clean_sci)
+  flock_df$is_bat <- is_bat_species(flock_df$common_name, flock_df$clean_sci, flock_df$tax_grp)
   flock_df$pose <- ifelse(seq_len(nrow(flock_df)) %% 2 == 1, 1, 2)
   flock_df$scale_r <- flock_df$detections^ifelse(compact_mode, 0.25, 0.32)
   r_min <- ifelse(compact_mode, 0.62, 0.90); r_span <- ifelse(compact_mode, 0.88, 1.40)
@@ -118,8 +140,7 @@ render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, 
     box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.07
   }
   cx <- numeric(n); cy <- numeric(n)
-  bird_idx <- which(!flock_df$is_bat)
-  bat_idx  <- which(flock_df$is_bat)
+  bird_idx <- which(!flock_df$is_bat); bat_idx <- which(flock_df$is_bat)
   if (length(bird_idx) > 1) {
     radii_steps <- seq(0.1, 55, by = 0.08); angles <- seq(0, 2 * pi, length.out = 180)[-180]
     for (k in 2:length(bird_idx)) {
@@ -136,38 +157,26 @@ render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, 
   }
   bat_box <- NULL
   if (length(bat_idx) > 0) {
-    b_cols <- min(length(bat_idx), 2)
-    b_rows <- ceiling(length(bat_idx) / b_cols)
-    col_w <- max(box_hw[bat_idx]) * 2 + 0.16
-    row_h <- max(box_hh[bat_idx]) * 2 + 0.14
-    grid_w <- b_cols * col_w
-    grid_h <- b_rows * row_h + 0.42
+    b_cols <- min(length(bat_idx), 2); b_rows <- ceiling(length(bat_idx) / b_cols)
+    col_w <- max(box_hw[bat_idx]) * 2 + 0.16; row_h <- max(box_hh[bat_idx]) * 2 + 0.14
+    grid_w <- b_cols * col_w; grid_h <- b_rows * row_h + 0.42
     bx_right <- if (length(bird_idx) > 0) max(cx[bird_idx] + box_hw[bird_idx]) + 0.25 else (grid_w / 2)
     by_bot   <- if (length(bird_idx) > 0) min(cy[bird_idx] - box_hh[bird_idx]) - 0.15 else -(grid_h / 2)
-    bx_left  <- bx_right - grid_w
-    by_top   <- by_bot + grid_h
+    bx_left  <- bx_right - grid_w; by_top <- by_bot + grid_h
     if (length(bird_idx) > 0) {
-      while (any((cx[bird_idx] + box_hw[bird_idx] > bx_left - 0.12) & (cy[bird_idx] - box_hh[bird_idx] < by_top + 0.12))) {
-        bx_left <- bx_left + 0.25; bx_right <- bx_right + 0.25
-      }
+      while (any((cx[bird_idx] + box_hw[bird_idx] > bx_left - 0.12) & (cy[bird_idx] - box_hh[bird_idx] < by_top + 0.12))) { bx_left <- bx_left + 0.25; bx_right <- bx_right + 0.25 }
     }
     for (k in seq_along(bat_idx)) {
-      i <- bat_idx[k]
-      r_i <- (k - 1) %/% b_cols
-      c_i <- (k - 1) %% b_cols
-      cx[i] <- bx_left + (c_i + 0.5) * col_w
-      cy[i] <- (by_top - 0.42) - (r_i + 0.5) * row_h
+      i <- bat_idx[k]; r_i <- (k - 1) %/% b_cols; c_i <- (k - 1) %% b_cols
+      cx[i] <- bx_left + (c_i + 0.5) * col_w; cy[i] <- (by_top - 0.42) - (r_i + 0.5) * row_h
     }
     bat_box <- list(xmin = bx_left - 0.12, xmax = bx_right + 0.12, ymin = by_bot - 0.10, ymax = by_top + 0.08, xmid = (bx_left + bx_right) / 2, ytitle = by_top - 0.14)
   }
   flock_df$x_wide <- cx; flock_df$y <- cy
   x_min <- min(cx - box_hw) - 0.4; x_max <- max(cx + box_hw) + 0.4; y_min <- min(cy - box_hh) - 0.3; y_max <- max(cy + box_hh) + 0.3
-  if (!is.null(bat_box)) {
-    x_min <- min(x_min, bat_box$xmin - 0.25); x_max <- max(x_max, bat_box$xmax + 0.25)
-    y_min <- min(y_min, bat_box$ymin - 0.25); y_max <- max(y_max, bat_box$ymax + 0.25)
-  }
+  if (!is.null(bat_box)) { x_min <- min(x_min, bat_box$xmin - 0.25); x_max <- max(x_max, bat_box$xmax + 0.25); y_min <- min(y_min, bat_box$ymin - 0.25); y_max <- max(y_max, bat_box$ymax + 0.25) }
   p <- ggplot(flock_df, aes(x = x_wide, y = y)) + geom_blank() + coord_equal(xlim = c(x_min, x_max), ylim = c(y_min, y_max), expand = FALSE, clip = "off") +
-    labs(title = "Qathet: Myrtle Rocks Bird & Bat Detections", subtitle = paste0(period_label, " • ", conf_label, " (", length(tokens), " Stations): ", length(bird_idx), " Bird & ", length(bat_idx), " Bat Species (", sum(flock_df$detections), " Detections) • Updated ", bc_time)) +
+    labs(title = "Qathet: Myrtle Rock Bird and Bat Detections", subtitle = paste0(period_label, " • ", conf_label, " (", length(tokens), " Stations): ", length(bird_idx), " Bird & ", length(bat_idx), " Bat Species (", sum(flock_df$detections), " Detections) • Updated ", bc_time)) +
     theme_void() + theme(plot.background = element_rect(fill = "#f6f0e2", color = NA), panel.background = element_rect(fill = "#f6f0e2", color = NA), plot.title = element_text(hjust = 0.5, family = "serif", size = 20, face = "bold", color = "#2b241d", margin = margin(t = 12, b = 2)), plot.subtitle = element_text(hjust = 0.5, family = "serif", size = 11.5, color = "#6e6051", margin = margin(b = 8)), plot.margin = margin(12, 16, 14, 16))
   if (!is.null(bat_box)) {
     p <- p + annotate("rect", xmin = bat_box$xmin, xmax = bat_box$xmax, ymin = bat_box$ymin, ymax = bat_box$ymax, fill = "#eee5d3", color = "#cbbda6", linewidth = 0.6) +
@@ -189,17 +198,3 @@ render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, 
   hotspots <- data.frame(common_name = flock_df$common_name, detections = flock_df$detections, left_pct = round(((ox + ((cx - box_hw) - x_min) * sc) / W) * 100, 3), top_pct = round(((oy + (y_max - (cy + box_hh)) * sc) / H) * 100, 3), width_pct = round(((2 * box_hw * sc) / W) * 100, 3), height_pct = round(((2 * box_hh * sc) / H) * 100, 3), site_name = ifelse(flock_df$is_bat, "iNaturalist", "eBird"), target_url = ifelse(flock_df$is_bat, paste0(inat_base, URLencode(flock_df$clean_sci)), ifelse(nchar(flock_df$ebird_code) > 0, paste0(ebird_sp, flock_df$ebird_code), paste0(ebird_ex, URLencode(flock_df$common_name)))), stringsAsFactors = FALSE)
   write_json(hotspots, json_file, pretty = TRUE, auto_unbox = TRUE)
 }
-
-current_year <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%Y")
-cutoff_ytd <- paste0(current_year, "-01-01T00:00:00Z")
-cutoff_48h_utc <- as.POSIXct(Sys.time() - as.difftime(48, units = "hours"), tz = "UTC")
-
-ytd_all <- bind_rows(lapply(tokens, fetch_all_detections, from_iso = cutoff_ytd, min_conf = 0.0))
-stopifnot("No detections found" = nrow(ytd_all) > 0)
-det_48h_all <- ytd_all[is.na(ytd_all$ts) | ytd_all$ts >= cutoff_48h_utc, ]
-
-for (c_pct in c(0, 60, 70, 80, 90)) {
-  render_from_df(det_48h_all, "Last 48 Hours", c_pct / 100, paste0("HeckfordBirds_48h_", c_pct, ".png"), paste0("species_map_48h_", c_pct, ".json"), compact_mode = FALSE)
-  render_from_df(ytd_all, paste0("Year to Date (", current_year, ")"), c_pct / 100, paste0("HeckfordBirds_ytd_", c_pct, ".png"), paste0("species_map_ytd_", c_pct, ".json"), compact_mode = TRUE)
-}
-
