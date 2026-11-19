@@ -2,7 +2,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 228,
-    "left_pct": 46.985,
+    "left_pct": 43.651,
     "top_pct": 42.24,
     "width_pct": 13.14,
     "height_pct": 28.708,
@@ -12,7 +12,7 @@
   {
     "common_name": "Pacific Wren",
     "detections": 114,
-    "left_pct": 33.718,
+    "left_pct": 30.384,
     "top_pct": 45.113,
     "width_pct": 13.205,
     "height_pct": 17.773,
@@ -22,7 +22,7 @@
   {
     "common_name": "Northern Flicker",
     "detections": 107,
-    "left_pct": 60.195,
+    "left_pct": 56.861,
     "top_pct": 48.458,
     "width_pct": 15.102,
     "height_pct": 22.359,
@@ -32,7 +32,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 74,
-    "left_pct": 26.08,
+    "left_pct": 22.746,
     "top_pct": 62.932,
     "width_pct": 20.334,
     "height_pct": 19.978,
@@ -42,7 +42,7 @@
   {
     "common_name": "Anna's Hummingbird",
     "detections": 57,
-    "left_pct": 60.531,
+    "left_pct": 57.197,
     "top_pct": 29.175,
     "width_pct": 15.756,
     "height_pct": 18.969,
@@ -52,7 +52,7 @@
   {
     "common_name": "Bald Eagle",
     "detections": 48,
-    "left_pct": 48.786,
+    "left_pct": 45.452,
     "top_pct": 25.666,
     "width_pct": 10.735,
     "height_pct": 16.269,
@@ -62,7 +62,7 @@
   {
     "common_name": "Song Sparrow",
     "detections": 39,
-    "left_pct": 47.439,
+    "left_pct": 44.105,
     "top_pct": 70.953,
     "width_pct": 11.832,
     "height_pct": 16.884,
@@ -71,18 +71,18 @@
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 27,
-    "left_pct": 28.545,
-    "top_pct": 29.027,
+    "detections": 33,
+    "left_pct": 25.211,
+    "top_pct": 28.798,
     "width_pct": 18.372,
-    "height_pct": 15.531,
+    "height_pct": 15.989,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
   {
     "common_name": "Hairy Woodpecker",
     "detections": 23,
-    "left_pct": 59.869,
+    "left_pct": 56.535,
     "top_pct": 71.008,
     "width_pct": 14.448,
     "height_pct": 18.858,
@@ -92,7 +92,7 @@
   {
     "common_name": "Red-breasted Nuthatch",
     "detections": 21,
-    "left_pct": 15.911,
+    "left_pct": 12.577,
     "top_pct": 46.188,
     "width_pct": 17.718,
     "height_pct": 15.733,
@@ -102,7 +102,7 @@
   {
     "common_name": "Dark-eyed Junco",
     "detections": 10,
-    "left_pct": 75.394,
+    "left_pct": 72.06,
     "top_pct": 53.363,
     "width_pct": 13.794,
     "height_pct": 12.555,
@@ -112,7 +112,7 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 10,
-    "left_pct": 76.729,
+    "left_pct": 73.395,
     "top_pct": 42.346,
     "width_pct": 15.102,
     "height_pct": 10.717,
@@ -122,7 +122,7 @@
   {
     "common_name": "Common Raven",
     "detections": 7,
-    "left_pct": 75.467,
+    "left_pct": 72.133,
     "top_pct": 66.586,
     "width_pct": 11.178,
     "height_pct": 14.732,
@@ -132,7 +132,7 @@
   {
     "common_name": "Brown Creeper",
     "detections": 4,
-    "left_pct": 35.295,
+    "left_pct": 31.961,
     "top_pct": 83.329,
     "width_pct": 11.832,
     "height_pct": 12.364,
@@ -142,7 +142,7 @@
   {
     "common_name": "Wood Duck",
     "detections": 3,
-    "left_pct": 19.228,
+    "left_pct": 15.894,
     "top_pct": 33.755,
     "width_pct": 9.216,
     "height_pct": 12.408,
@@ -152,7 +152,7 @@
   {
     "common_name": "Spotted Towhee",
     "detections": 3,
-    "left_pct": 76.433,
+    "left_pct": 73.099,
     "top_pct": 28.244,
     "width_pct": 12.486,
     "height_pct": 13.94,
@@ -162,7 +162,7 @@
   {
     "common_name": "Common Loon",
     "detections": 2,
-    "left_pct": 59.542,
+    "left_pct": 56.208,
     "top_pct": 20.714,
     "width_pct": 10.524,
     "height_pct": 8.414,
@@ -172,8 +172,8 @@
   {
     "common_name": "Herring Gull",
     "detections": 2,
-    "left_pct": 36.781,
-    "top_pct": 17.661,
+    "left_pct": 11.503,
+    "top_pct": 62.503,
     "width_pct": 11.178,
     "height_pct": 11.204,
     "site_name": "eBird",
@@ -182,8 +182,8 @@
   {
     "common_name": "Golden-crowned Sparrow",
     "detections": 2,
-    "left_pct": 8.169,
-    "top_pct": 62.889,
+    "left_pct": 27.083,
+    "top_pct": 15.833,
     "width_pct": 17.718,
     "height_pct": 12.794,
     "site_name": "eBird",
@@ -192,7 +192,7 @@
   {
     "common_name": "Dunlin",
     "detections": 1,
-    "left_pct": 52.206,
+    "left_pct": 48.872,
     "top_pct": 13.432,
     "width_pct": 7.254,
     "height_pct": 12.005,
