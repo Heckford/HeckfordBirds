@@ -5,34 +5,39 @@ tokens <- c(Sys.getenv("BIRDWEATHER_TOKEN"), Sys.getenv("BIRDWEATHER_TOKEN_2"))
 tokens <- tokens[nchar(tokens) > 0]
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = length(tokens) > 0)
 
-fetch_detections_conf <- function(tok, from_iso, min_conf = 0.65, max_pages = 25) {
+fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
   det_url <- paste0("https", "://", paste(c("app", "birdweather", "com"), collapse = "."), "/", paste(c("api", "v1", "stations", tok, "detections"), collapse = "/"))
   all_rows <- list()
   cursor_id <- NULL
-  for (pg in seq_len(max_pages)) {
+  pg <- 0
+  repeat {
+    pg <- pg + 1
     q_list <- list(from = from_iso, confidence = min_conf, limit = 100, order = "desc")
     if (!is.null(cursor_id)) q_list$cursor <- cursor_id
-    res <- try(GET(url = det_url, query = q_list, add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(15)), silent = TRUE)
+    res <- try(GET(url = det_url, query = q_list, add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(20)), silent = TRUE)
     if (inherits(res, "try-error") || status_code(res) != 200) break
     parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
     d_df <- if (!is.null(parsed$detections)) parsed$detections else as.data.frame(parsed)
     if (is.null(d_df) || nrow(d_df) == 0) break
-    c_col <- grep("species\\.commonName|commonName|common_name", names(d_df), value = TRUE)[1]
-    s_col <- grep("species\\.scientificName|scientificName|scientific_name", names(d_df), value = TRUE)[1]
-    conf_col <- grep("^confidence$", names(d_df), value = TRUE)[1]
-    if (is.na(c_col) || is.na(s_col)) break
-    sub_df <- tibble(common_name = as.character(d_df[[c_col]]), sci_name = as.character(d_df[[s_col]]), conf = if (!is.na(conf_col)) as.numeric(d_df[[conf_col]]) else 1)
+    c_col <- grep("species\\.commonName|commonName|common_name", names(d_df), value = TRUE)
+    s_col <- grep("species\\.scientificName|scientificName|scientific_name", names(d_df), value = TRUE)
+    t_col <- grep("^timestamp$|createdAt|created_at", names(d_df), value = TRUE)
+    conf_col <- grep("^confidence$", names(d_df), value = TRUE)
+    if (length(c_col) == 0 || length(s_col) == 0) break
+    ts_vals <- if (length(t_col) > 0) as.POSIXct(sub("Z$", "", d_df[[t_col]]), format = "%Y-%m-%dT%H:%M:%S", tz = "UTC") else rep(Sys.time(), nrow(d_df))
+    conf_vals <- if (length(conf_col) > 0) as.numeric(d_df[[conf_col]]) else rep(1, nrow(d_df))
+    sub_df <- tibble(common_name = as.character(d_df[[c_col]]), sci_name = as.character(d_df[[s_col]]), conf = conf_vals, ts = ts_vals)
     sub_df <- sub_df[!is.na(sub_df$common_name) & !is.na(sub_df$sci_name) & sub_df$conf >= min_conf, ]
     all_rows[[pg]] <- sub_df
     if (nrow(d_df) < 100 || !"id" %in% names(d_df)) break
-    cursor_id <- tail(d_df$id, 1)
+    new_cursor <- tail(d_df$id, 1)
+    if (!is.null(cursor_id) && identical(new_cursor, cursor_id)) break
+    cursor_id <- new_cursor
+    if (pg %% 25 == 0) Sys.sleep(0.2)
   }
-  if (length(all_rows) == 0) return(tibble(common_name = character(), sci_name = character(), detections = numeric()))
-  comb <- bind_rows(all_rows)
-  if (nrow(comb) == 0) return(tibble(common_name = character(), sci_name = character(), detections = numeric()))
-  agg <- aggregate(conf ~ common_name + sci_name, data = comb, FUN = length)
-  names(agg)[3] <- "detections"
-  agg
+  message("Fetched ", pg, " pages for station")
+  if (length(all_rows) == 0) return(tibble(common_name = character(), sci_name = character(), conf = numeric(), ts = as.POSIXct(character())))
+  bind_rows(all_rows)
 }
 
 ebird_tax_url <- paste0("https", "://", paste(c("api", "ebird", "org"), collapse = "."), "/v2/ref/taxonomy/ebird")
@@ -63,23 +68,24 @@ get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
 
 bird_poly <- data.frame(px = c(-0.48,-0.25,-0.08,0.08,0.22,0.34,0.48,0.35,0.32,0.24,0.10,0.06,0.12,0.02,-0.04,-0.02,-0.16,-0.45,-0.36), py = c(-0.28,-0.08,0.14,0.22,0.38,0.34,0.28,0.22,0.08,-0.10,-0.22,-0.44,-0.46,-0.46,-0.24,-0.45,-0.22,-0.35,-0.26))
 bat_poly  <- data.frame(px = c(0.00,-0.04,-0.07,-0.14,-0.32,-0.50,-0.38,-0.26,-0.14,-0.06,0.00,0.06,0.14,0.26,0.38,0.50,0.32,0.14,0.07,0.04), py = c(0.18,0.34,0.22,0.32,0.42,0.12,-0.12,-0.05,-0.22,-0.15,-0.35,-0.15,-0.22,-0.05,-0.12,0.12,0.42,0.32,0.22,0.34))
-build_collage <- function(from_iso, period_label, min_conf, png_file, json_file, compact_mode = FALSE, max_pages = 25) {
-  raw_df <- bind_rows(lapply(tokens, fetch_detections_conf, from_iso = from_iso, min_conf = min_conf, max_pages = max_pages))
+render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, compact_mode = FALSE) {
+  sub_df <- det_df[det_df$conf >= min_conf, ]
   bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
   conf_pct <- round(min_conf * 100)
-  if (nrow(raw_df) == 0) {
+  if (nrow(sub_df) == 0) {
     p_empty <- ggplot() + geom_text(aes(x = 0, y = 0, label = paste0("No detections at ≥", conf_pct, "% confidence in ", period_label)), family = "serif", size = 6, color = "#5c4e3f") + theme_void() + theme(plot.background = element_rect(fill = "#f6f0e2", color = NA))
     ggsave(png_file, plot = p_empty, width = 13, height = 8, dpi = 220, bg = "#f6f0e2")
     write_json(list(), json_file, pretty = TRUE, auto_unbox = TRUE)
     return(invisible(NULL))
   }
-  raw_df$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", raw_df$sci_name)
-  flock_df <- aggregate(detections ~ common_name + clean_sci, data = raw_df, FUN = sum)
+  sub_df$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sub_df$sci_name)
+  flock_df <- aggregate(conf ~ common_name + clean_sci, data = sub_df, FUN = length)
+  names(flock_df) <- "detections"
   flock_df <- flock_df[order(-flock_df$detections), ]; rownames(flock_df) <- NULL
   flock_df$is_bat <- grepl("\\bbat\\b|myotis|flying fox", flock_df$common_name, ignore.case = TRUE) | grepl("^(Myotis|Lasionycteris|Eptesicus|Lasiurus|Corynorhinus|Antrozous|Tadarida)\\b", flock_df$clean_sci)
   flock_df$pose <- ifelse(seq_len(nrow(flock_df)) %% 2 == 1, 1, 2)
-  flock_df$scale_r <- flock_df$detections^ifelse(compact_mode, 0.26, 0.32)
-  r_min <- ifelse(compact_mode, 0.68, 0.90); r_span <- ifelse(compact_mode, 0.95, 1.40)
+  flock_df$scale_r <- flock_df$detections^ifelse(compact_mode, 0.25, 0.32)
+  r_min <- ifelse(compact_mode, 0.62, 0.90); r_span <- ifelse(compact_mode, 0.88, 1.40)
   flock_df$radius <- r_min + r_span * ((flock_df$scale_r - min(flock_df$scale_r)) / max(1e-6, max(flock_df$scale_r) - min(flock_df$scale_r)))
   flock_df$label_txt <- paste0(flock_df$common_name, " (", flock_df$detections, ")")
   flock_df$ebird_code <- vapply(seq_len(nrow(flock_df)), function(idx) {
@@ -93,7 +99,7 @@ build_collage <- function(from_iso, period_label, min_conf, png_file, json_file,
   rasters <- mapply(get_bird_art, flock_df$clean_sci, flock_df$common_name, flock_df$pose, flock_df$is_bat, SIMPLIFY = FALSE)
   has_art <- !sapply(rasters, is.null)
   n <- nrow(flock_df); bird_w <- numeric(n); bird_h <- numeric(n); box_hw <- numeric(n); box_hh <- numeric(n)
-  label_band <- ifelse(compact_mode, 0.36, 0.45); char_w <- ifelse(compact_mode, 0.13, 0.165)
+  label_band <- ifelse(compact_mode, 0.34, 0.45); char_w <- ifelse(compact_mode, 0.125, 0.165)
   for (i in seq_len(n)) {
     if (has_art[i]) {
       sf <- (flock_df$radius[i] * 1.95) / sqrt(nrow(rasters[[i]])^2 + ncol(rasters[[i]])^2)
@@ -102,12 +108,12 @@ build_collage <- function(from_iso, period_label, min_conf, png_file, json_file,
       bird_w[i] <- flock_df$radius[i] * ifelse(flock_df$is_bat[i], 1.55, 1.25)
       bird_h[i] <- flock_df$radius[i] * ifelse(flock_df$is_bat[i], 0.85, 1.05)
     }
-    box_hw[i] <- max(bird_w[i], nchar(flock_df$label_txt[i]) * char_w) / 2 + 0.10
-    box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.08
+    box_hw[i] <- max(bird_w[i], nchar(flock_df$label_txt[i]) * char_w) / 2 + 0.09
+    box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.07
   }
   cx <- numeric(n); cy <- numeric(n)
   if (n > 1) {
-    radii_steps <- seq(0.1, 45, by = 0.08); angles <- seq(0, 2 * pi, length.out = 180)[-180]
+    radii_steps <- seq(0.1, 55, by = 0.08); angles <- seq(0, 2 * pi, length.out = 180)[-180]
     for (i in 2:n) {
       placed <- FALSE; rot_angles <- angles[((seq_along(angles) + (i * 37)) %% length(angles)) + 1]
       for (rad in radii_steps) {
@@ -129,7 +135,7 @@ build_collage <- function(from_iso, period_label, min_conf, png_file, json_file,
     if (has_art[i]) { p <- p + annotation_raster(rasters[[i]], xmin = cx[i] - bird_w[i]/2, xmax = cx[i] + bird_w[i]/2, ymin = yc - bird_h[i]/2, ymax = yc + bird_h[i]/2) }
     else { tmpl <- if (flock_df$is_bat[i]) bat_poly else bird_poly; p <- p + geom_polygon(data = data.frame(x = cx[i] + tmpl$px * bird_w[i], y = yc + tmpl$py * bird_h[i]), aes(x = x, y = y), fill = ifelse(flock_df$is_bat[i], "#4a4e5c", "#7d6b57"), color = "#2b241d", linewidth = 0.45) }
   }
-  p <- p + geom_text(data = flock_df, aes(x = x_wide, y = y - (bird_h / 2) - 0.05, label = label_txt), size = ifelse(compact_mode, 2.35, 2.9), family = "serif", color = "#3b3228", vjust = 1)
+  p <- p + geom_text(data = flock_df, aes(x = x_wide, y = y - (bird_h / 2) - 0.05, label = label_txt), size = ifelse(compact_mode, 2.25, 2.9), family = "serif", color = "#3b3228", vjust = 1)
   ggsave(png_file, plot = p, width = 13, height = 8, dpi = 220, bg = "#f6f0e2")
   W <- 13; H <- 8; p_left <- 0.22; p_right <- W - 0.22; p_top <- 0.92; p_bot <- H - 0.19
   sc <- min((p_right - p_left) / (x_max - x_min), (p_bot - p_top) / (y_max - y_min))
@@ -141,12 +147,15 @@ build_collage <- function(from_iso, period_label, min_conf, png_file, json_file,
   write_json(hotspots, json_file, pretty = TRUE, auto_unbox = TRUE)
 }
 
-cutoff_48h <- format(as.POSIXct(Sys.time() - as.difftime(48, units = "hours"), tz = "UTC"), "%Y-%m-%dT%H:%M:%SZ")
 current_year <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%Y")
 cutoff_ytd <- paste0(current_year, "-01-01T00:00:00Z")
+cutoff_48h_utc <- as.POSIXct(Sys.time() - as.difftime(48, units = "hours"), tz = "UTC")
+
+ytd_all <- bind_rows(lapply(tokens, fetch_all_detections, from_iso = cutoff_ytd, min_conf = 0.60))
+stopifnot("No detections found" = nrow(ytd_all) > 0)
+det_48h_all <- ytd_all[is.na(ytd_all$ts) | ytd_all$ts >= cutoff_48h_utc, ]
 
 for (c_pct in c(60, 70, 80, 90)) {
-  build_collage(cutoff_48h, "Last 48 Hours", c_pct / 100, paste0("HeckfordBirds_48h_", c_pct, ".png"), paste0("species_map_48h_", c_pct, ".json"), compact_mode = FALSE, max_pages = 25)
-  build_collage(cutoff_ytd, paste0("Year to Date (", current_year, ")"), c_pct / 100, paste0("HeckfordBirds_ytd_", c_pct, ".png"), paste0("species_map_ytd_", c_pct, ".json"), compact_mode = TRUE, max_pages = 40)
+  render_from_df(det_48h_all, "Last 48 Hours", c_pct / 100, paste0("HeckfordBirds_48h_", c_pct, ".png"), paste0("species_map_48h_", c_pct, ".json"), compact_mode = FALSE)
+  render_from_df(ytd_all, paste0("Year to Date (", current_year, ")"), c_pct / 100, paste0("HeckfordBirds_ytd_", c_pct, ".png"), paste0("species_map_ytd_", c_pct, ".json"), compact_mode = TRUE)
 }
-
