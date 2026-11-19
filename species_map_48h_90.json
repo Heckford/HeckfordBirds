@@ -7,7 +7,7 @@
     "width_pct": 12.848,
     "height_pct": 28.027,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Steller's%20Jay"
+    "target_url": "https://ebird.org/species/stejay"
   },
   {
     "common_name": "Pacific Wren",
@@ -17,7 +17,7 @@
     "width_pct": 12.981,
     "height_pct": 17.477,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Pacific%20Wren"
+    "target_url": "https://ebird.org/species/pacwre1"
   },
   {
     "common_name": "Northern Flicker",
@@ -27,7 +27,7 @@
     "width_pct": 14.755,
     "height_pct": 21.889,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Northern%20Flicker"
+    "target_url": "https://ebird.org/species/norfli"
   },
   {
     "common_name": "Chestnut-backed Chickadee",
@@ -37,7 +37,7 @@
     "width_pct": 19.84,
     "height_pct": 20.125,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Chestnut-backed%20Chickadee"
+    "target_url": "https://ebird.org/species/chbchi"
   },
   {
     "common_name": "Anna's Hummingbird",
@@ -47,7 +47,7 @@
     "width_pct": 15.391,
     "height_pct": 18.531,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Anna's%20Hummingbird"
+    "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Bald Eagle",
@@ -57,7 +57,7 @@
     "width_pct": 10.525,
     "height_pct": 15.956,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Bald%20Eagle"
+    "target_url": "https://ebird.org/species/baleag"
   },
   {
     "common_name": "Golden-crowned Kinglet",
@@ -67,7 +67,7 @@
     "width_pct": 17.933,
     "height_pct": 14.7,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Golden-crowned%20Kinglet"
+    "target_url": "https://ebird.org/species/gockin"
   },
   {
     "common_name": "Song Sparrow",
@@ -77,7 +77,7 @@
     "width_pct": 11.577,
     "height_pct": 18.271,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Song%20Sparrow"
+    "target_url": "https://ebird.org/species/sonspa"
   },
   {
     "common_name": "Red-breasted Nuthatch",
@@ -87,7 +87,7 @@
     "width_pct": 17.298,
     "height_pct": 12.773,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Red-breasted%20Nuthatch"
+    "target_url": "https://ebird.org/species/rebnut"
   },
   {
     "common_name": "Hairy Woodpecker",
@@ -97,7 +97,7 @@
     "width_pct": 14.119,
     "height_pct": 15.877,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Hairy%20Woodpecker"
+    "target_url": "https://ebird.org/species/haiwoo"
   },
   {
     "common_name": "Belted Kingfisher",
@@ -107,7 +107,7 @@
     "width_pct": 14.755,
     "height_pct": 17.041,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Belted%20Kingfisher"
+    "target_url": "https://ebird.org/species/belkin1"
   },
   {
     "common_name": "Dark-eyed Junco",
@@ -117,7 +117,7 @@
     "width_pct": 13.484,
     "height_pct": 14.59,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Dark-eyed%20Junco"
+    "target_url": "https://ebird.org/species/daejun"
   },
   {
     "common_name": "Common Raven",
@@ -127,7 +127,7 @@
     "width_pct": 10.941,
     "height_pct": 14.451,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Common%20Raven"
+    "target_url": "https://ebird.org/species/comrav"
   },
   {
     "common_name": "Brown Creeper",
@@ -137,7 +137,7 @@
     "width_pct": 11.577,
     "height_pct": 12.146,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Brown%20Creeper"
+    "target_url": "https://ebird.org/species/brncre"
   },
   {
     "common_name": "Wood Duck",
@@ -147,7 +147,7 @@
     "width_pct": 9.034,
     "height_pct": 12.188,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Wood%20Duck"
+    "target_url": "https://ebird.org/species/wooduc"
   },
   {
     "common_name": "Common Loon",
@@ -157,7 +157,7 @@
     "width_pct": 10.305,
     "height_pct": 11.843,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Common%20Loon"
+    "target_url": "https://ebird.org/species/comloo"
   },
   {
     "common_name": "Herring Gull",
@@ -167,7 +167,7 @@
     "width_pct": 10.941,
     "height_pct": 11.588,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Herring%20Gull"
+    "target_url": "https://ebird.org/species/euhgul1"
   },
   {
     "common_name": "Golden-crowned Sparrow",
@@ -177,7 +177,7 @@
     "width_pct": 17.298,
     "height_pct": 11.604,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Golden-crowned%20Sparrow"
+    "target_url": "https://ebird.org/species/gocspa"
   },
   {
     "common_name": "Mallard",
@@ -187,7 +187,7 @@
     "width_pct": 7.763,
     "height_pct": 11.618,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Mallard"
+    "target_url": "https://ebird.org/species/mallar3"
   },
   {
     "common_name": "Dunlin",
@@ -197,6 +197,6 @@
     "width_pct": 7.127,
     "height_pct": 11.793,
     "site_name": "eBird",
-    "target_url": "https://ebird.org/explore?q=Dunlin"
+    "target_url": "https://ebird.org/species/dunlin"
   }
 ]
