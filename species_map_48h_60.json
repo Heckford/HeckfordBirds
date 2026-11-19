@@ -340,6 +340,16 @@
     "target_url": "https://ebird.org/species/cangoo"
   },
   {
+    "common_name": "Great Horned Owl",
+    "detections": 1,
+    "left_pct": 6.191,
+    "top_pct": 45.559,
+    "width_pct": 10.398,
+    "height_pct": 10.21,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/grhowl"
+  },
+  {
     "common_name": "Red-tailed Hawk",
     "detections": 1,
     "left_pct": 6.636,
