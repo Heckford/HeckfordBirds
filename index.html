@@ -90,10 +90,10 @@
   <div class="top-controls">
     <div class="toggle-pill" role="group" aria-label="Confidence Filter">
       <span class="pill-label">Confidence:</span>
-      <button id="conf-65" class="active" onclick="switchConf(65)">65%</button>
-      <button id="conf-75" onclick="switchConf(75)">75%</button>
-      <button id="conf-85" onclick="switchConf(85)">85%</button>
-      <button id="conf-95" onclick="switchConf(95)">95%</button>
+      <button id="conf-60" class="active" onclick="switchConf(60)">60%</button>
+      <button id="conf-70" onclick="switchConf(70)">70%</button>
+      <button id="conf-80" onclick="switchConf(80)">80%</button>
+      <button id="conf-90" onclick="switchConf(90)">90%</button>
     </div>
 
     <div class="toggle-pill" role="group" aria-label="Timeframe Toggle">
@@ -103,12 +103,13 @@
   </div>
 
   <div class="collage-wrapper" id="wrapper">
-    <img id="collage" src="HeckfordBirds_48h_65.png" alt="Myrtle Rocks Bird and Bat Detections">
+    <img id="collage" src="HeckfordBirds_48h_60.png" alt="Myrtle Rocks Bird and Bat Detections">
   </div>
 
   <script>
     let currentView = "48h";
-    let currentConf = 65;
+    let currentConf = 60;
+    const confLevels =;
 
     function switchView(view) {
       currentView = view;
@@ -119,7 +120,7 @@
 
     function switchConf(conf) {
       currentConf = conf;
-      [65, 75, 85, 95].forEach(c => {
+      confLevels.forEach(c => {
         document.getElementById("conf-" + c).classList.toggle("active", c === conf);
       });
       loadFreshCollage();
