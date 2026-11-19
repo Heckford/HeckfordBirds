@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 73,
+    "detections": 70,
     "left_pct": 68.321,
-    "top_pct": 48.788,
+    "top_pct": 48.856,
     "width_pct": 9.681,
-    "height_pct": 19.384,
+    "height_pct": 19.249,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
