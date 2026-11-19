@@ -5,7 +5,7 @@ tokens <- c(Sys.getenv("BIRDWEATHER_TOKEN"), Sys.getenv("BIRDWEATHER_TOKEN_2"))
 tokens <- tokens[nchar(tokens) > 0]
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = length(tokens) > 0)
 
-fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
+fetch_all_detections <- function(tok, from_iso, min_conf = 0.0) {
   det_url <- paste0("https", "://", paste(c("app", "birdweather", "com"), collapse = "."), "/", paste(c("api", "v1", "stations", tok, "detections"), collapse = "/"))
   all_rows <- list()
   cursor_id <- NULL
@@ -14,8 +14,13 @@ fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
     pg <- pg + 1
     q_list <- list(from = from_iso, confidence = min_conf, limit = 100, order = "desc")
     if (!is.null(cursor_id)) q_list$cursor <- cursor_id
-    res <- try(GET(url = det_url, query = q_list, add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(20)), silent = TRUE)
-    if (inherits(res, "try-error") || status_code(res) != 200) break
+    res <- NULL
+    for (att in 1:3) {
+      r_try <- try(GET(url = det_url, query = q_list, add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(25)), silent = TRUE)
+      if (!inherits(r_try, "try-error") && status_code(r_try) == 200) { res <- r_try; break }
+      Sys.sleep(0.5 * att)
+    }
+    if (is.null(res)) break
     parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
     d_df <- if (!is.null(parsed$detections)) parsed$detections else as.data.frame(parsed)
     if (is.null(d_df) || nrow(d_df) == 0) break
@@ -27,7 +32,7 @@ fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
     ts_vals <- if (length(t_col) > 0) as.POSIXct(sub("Z$", "", d_df[[t_col]]), format = "%Y-%m-%dT%H:%M:%S", tz = "UTC") else rep(Sys.time(), nrow(d_df))
     conf_vals <- if (length(conf_col) > 0) as.numeric(d_df[[conf_col]]) else rep(1, nrow(d_df))
     sub_df <- tibble(common_name = as.character(d_df[[c_col]]), sci_name = as.character(d_df[[s_col]]), conf = conf_vals, ts = ts_vals)
-    sub_df <- sub_df[!is.na(sub_df$common_name) & !is.na(sub_df$sci_name) & sub_df$conf >= min_conf, ]
+    sub_df <- sub_df[!is.na(sub_df$common_name) & !is.na(sub_df$sci_name), ]
     all_rows[[pg]] <- sub_df
     if (nrow(d_df) < 100 || !"id" %in% names(d_df)) break
     new_cursor <- tail(d_df$id, 1)
@@ -68,12 +73,13 @@ get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
 
 bird_poly <- data.frame(px = c(-0.48,-0.25,-0.08,0.08,0.22,0.34,0.48,0.35,0.32,0.24,0.10,0.06,0.12,0.02,-0.04,-0.02,-0.16,-0.45,-0.36), py = c(-0.28,-0.08,0.14,0.22,0.38,0.34,0.28,0.22,0.08,-0.10,-0.22,-0.44,-0.46,-0.46,-0.24,-0.45,-0.22,-0.35,-0.26))
 bat_poly  <- data.frame(px = c(0.00,-0.04,-0.07,-0.14,-0.32,-0.50,-0.38,-0.26,-0.14,-0.06,0.00,0.06,0.14,0.26,0.38,0.50,0.32,0.14,0.07,0.04), py = c(0.18,0.34,0.22,0.32,0.42,0.12,-0.12,-0.05,-0.22,-0.15,-0.35,-0.15,-0.22,-0.05,-0.12,0.12,0.42,0.32,0.22,0.34))
+
 render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, compact_mode = FALSE) {
   sub_df <- det_df[det_df$conf >= min_conf, ]
   bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
-  conf_pct <- round(min_conf * 100)
+  conf_label <- ifelse(min_conf <= 0, "All Detections", paste0("≥", round(min_conf * 100), "% Confidence"))
   if (nrow(sub_df) == 0) {
-    p_empty <- ggplot() + geom_text(aes(x = 0, y = 0, label = paste0("No detections at ≥", conf_pct, "% confidence in ", period_label)), family = "serif", size = 6, color = "#5c4e3f") + theme_void() + theme(plot.background = element_rect(fill = "#f6f0e2", color = NA))
+    p_empty <- ggplot() + geom_text(aes(x = 0, y = 0, label = paste0("No detections (", conf_label, ") in ", period_label)), family = "serif", size = 6, color = "#5c4e3f") + theme_void() + theme(plot.background = element_rect(fill = "#f6f0e2", color = NA))
     ggsave(png_file, plot = p_empty, width = 13, height = 8, dpi = 220, bg = "#f6f0e2")
     write_json(list(), json_file, pretty = TRUE, auto_unbox = TRUE)
     return(invisible(NULL))
@@ -128,7 +134,7 @@ render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, 
   flock_df$x_wide <- cx; flock_df$y <- cy
   x_min <- min(cx - box_hw) - 0.4; x_max <- max(cx + box_hw) + 0.4; y_min <- min(cy - box_hh) - 0.3; y_max <- max(cy + box_hh) + 0.3
   p <- ggplot(flock_df, aes(x = x_wide, y = y)) + geom_blank() + coord_equal(xlim = c(x_min, x_max), ylim = c(y_min, y_max), expand = FALSE, clip = "off") +
-    labs(title = "Myrtle Rocks Bird & Bat Detections", subtitle = paste0(period_label, " • ≥", conf_pct, "% Confidence (", length(tokens), " Stations): ", n, " Species (", sum(flock_df$detections), " Detections) • Updated ", bc_time)) +
+    labs(title = "Myrtle Rocks Bird & Bat Detections", subtitle = paste0(period_label, " • ", conf_label, " (", length(tokens), " Stations): ", n, " Species (", sum(flock_df$detections), " Detections) • Updated ", bc_time)) +
     theme_void() + theme(plot.background = element_rect(fill = "#f6f0e2", color = NA), panel.background = element_rect(fill = "#f6f0e2", color = NA), plot.title = element_text(hjust = 0.5, family = "serif", size = 20, face = "bold", color = "#2b241d", margin = margin(t = 12, b = 2)), plot.subtitle = element_text(hjust = 0.5, family = "serif", size = 11.5, color = "#6e6051", margin = margin(b = 8)), plot.margin = margin(12, 16, 14, 16))
   for (i in seq_len(n)) {
     yc <- cy[i] + (label_band / 2)
@@ -151,11 +157,11 @@ current_year <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%Y")
 cutoff_ytd <- paste0(current_year, "-01-01T00:00:00Z")
 cutoff_48h_utc <- as.POSIXct(Sys.time() - as.difftime(48, units = "hours"), tz = "UTC")
 
-ytd_all <- bind_rows(lapply(tokens, fetch_all_detections, from_iso = cutoff_ytd, min_conf = 0.60))
+ytd_all <- bind_rows(lapply(tokens, fetch_all_detections, from_iso = cutoff_ytd, min_conf = 0.0))
 stopifnot("No detections found" = nrow(ytd_all) > 0)
 det_48h_all <- ytd_all[is.na(ytd_all$ts) | ytd_all$ts >= cutoff_48h_utc, ]
 
-for (c_pct in c(60, 70, 80, 90)) {
+for (c_pct in c(0, 60, 70, 80, 90)) {
   render_from_df(det_48h_all, "Last 48 Hours", c_pct / 100, paste0("HeckfordBirds_48h_", c_pct, ".png"), paste0("species_map_48h_", c_pct, ".json"), compact_mode = FALSE)
   render_from_df(ytd_all, paste0("Year to Date (", current_year, ")"), c_pct / 100, paste0("HeckfordBirds_ytd_", c_pct, ".png"), paste0("species_map_ytd_", c_pct, ".json"), compact_mode = TRUE)
 }
