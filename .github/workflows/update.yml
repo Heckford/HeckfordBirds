@@ -1,9 +1,7 @@
 name: Update Bird Collage
 
 on:
-  schedule:
-    - cron: '*/15 * * * *' # Runs every 15 minutes 24/7
-  workflow_dispatch:       # Keeps your manual "Run workflow" button
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -20,56 +18,18 @@ jobs:
       - name: Install r-cran-png system package
         run: apt-get update -qq && apt-get install -y -qq r-cran-png
 
-      - name: Generate updated 48h collage
+      - name: Generate updated 48h and YTD collages
         env:
           BIRDWEATHER_TOKEN: ${{ secrets.BIRDWEATHER_TOKEN }}
           BIRDWEATHER_TOKEN_2: ${{ secrets.BIRDWEATHER_TOKEN_2 }}
         run: Rscript update_collage.R
 
-      - name: Publish updated PNG and clickable map
+      - name: Publish updated PNGs and clickable maps
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@://github.com"
           git add HeckfordBirds.png species_map.json HeckfordBirds_YTD.png species_map_ytd.json
-          if ! git diff --staged --quiet; then
-            git commit -m "Update bird collage"
-            git pull --rebase -X ours
-            git push
-          finame: Update Bird Collage
-
-on:
-  schedule:
-    - cron: '*/15 * * * *' # Runs every 15 minutes 24/7
-  workflow_dispatch:       # Keeps your manual "Run workflow" button
-
-permissions:
-  contents: write
-
-jobs:
-  render:
-    runs-on: ubuntu-latest
-    container:
-      image: rocker/tidyverse:4.4.1
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install r-cran-png system package
-        run: apt-get update -qq && apt-get install -y -qq r-cran-png
-
-      - name: Generate updated 48h collage
-        env:
-          BIRDWEATHER_TOKEN: ${{ secrets.BIRDWEATHER_TOKEN }}
-          BIRDWEATHER_TOKEN_2: ${{ secrets.BIRDWEATHER_TOKEN_2 }}
-        run: Rscript update_collage.R
-
-      - name: Publish updated PNG and clickable map
-        run: |
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@://github.com"
-          git add HeckfordBirds.png species_map.json
           if ! git diff --staged --quiet; then
             git commit -m "Update bird collage"
             git pull --rebase -X ours
