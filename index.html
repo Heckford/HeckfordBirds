@@ -90,7 +90,8 @@
   <div class="top-controls">
     <div class="toggle-pill" role="group" aria-label="Confidence Filter">
       <span class="pill-label">Confidence:</span>
-      <button id="conf-60" class="active" onclick="switchConf(60)">60%</button>
+      <button id="conf-0" class="active" onclick="switchConf(0)">All</button>
+      <button id="conf-60" onclick="switchConf(60)">60%</button>
       <button id="conf-70" onclick="switchConf(70)">70%</button>
       <button id="conf-80" onclick="switchConf(80)">80%</button>
       <button id="conf-90" onclick="switchConf(90)">90%</button>
@@ -103,14 +104,13 @@
   </div>
 
   <div class="collage-wrapper" id="wrapper">
-    <img id="collage" src="HeckfordBirds_48h_60.png" alt="Myrtle Rocks Bird and Bat Detections">
+    <img id="collage" src="HeckfordBirds_48h_0.png" alt="Myrtle Rocks Bird and Bat Detections">
   </div>
 
   <script>
     let currentView = "48h";
-    let currentConf = 60;
-    const confLevels = new Array(60, 70, 80, 90);
-
+    let currentConf = 0;
+    const confLevels = new Array(0, 60, 70, 80, 90);
 
     function switchView(view) {
       currentView = view;
