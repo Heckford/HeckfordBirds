@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 28238,
+    "detections": 28239,
     "left_pct": 39.056,
     "top_pct": 50.824,
     "width_pct": 8.755,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 22828,
+    "detections": 22830,
     "left_pct": 37.677,
     "top_pct": 58.512,
     "width_pct": 9.59,
@@ -33,7 +33,7 @@
     "common_name": "Red-breasted Nuthatch",
     "detections": 8897,
     "left_pct": 40.64,
-    "top_pct": 42.971,
+    "top_pct": 42.972,
     "width_pct": 8.198,
     "height_pct": 7.807,
     "site_name": "eBird",
