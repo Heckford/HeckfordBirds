@@ -80,7 +80,7 @@ render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, 
   }
   sub_df$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sub_df$sci_name)
   flock_df <- aggregate(conf ~ common_name + clean_sci, data = sub_df, FUN = length)
-  names(flock_df) <- "detections"
+  names(flock_df)[3] <- "detections"
   flock_df <- flock_df[order(-flock_df$detections), ]; rownames(flock_df) <- NULL
   flock_df$is_bat <- grepl("\\bbat\\b|myotis|flying fox", flock_df$common_name, ignore.case = TRUE) | grepl("^(Myotis|Lasionycteris|Eptesicus|Lasiurus|Corynorhinus|Antrozous|Tadarida)\\b", flock_df$clean_sci)
   flock_df$pose <- ifelse(seq_len(nrow(flock_df)) %% 2 == 1, 1, 2)
