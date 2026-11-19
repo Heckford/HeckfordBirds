@@ -145,7 +145,8 @@ cutoff_48h <- format(as.POSIXct(Sys.time() - as.difftime(48, units = "hours"), t
 current_year <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%Y")
 cutoff_ytd <- paste0(current_year, "-01-01T00:00:00Z")
 
-for (c_pct in c(65, 75, 85, 95)) {
+for (c_pct in c(60, 70, 80, 90)) {
   build_collage(cutoff_48h, "Last 48 Hours", c_pct / 100, paste0("HeckfordBirds_48h_", c_pct, ".png"), paste0("species_map_48h_", c_pct, ".json"), compact_mode = FALSE, max_pages = 25)
   build_collage(cutoff_ytd, paste0("Year to Date (", current_year, ")"), c_pct / 100, paste0("HeckfordBirds_ytd_", c_pct, ".png"), paste0("species_map_ytd_", c_pct, ".json"), compact_mode = TRUE, max_pages = 40)
 }
+
