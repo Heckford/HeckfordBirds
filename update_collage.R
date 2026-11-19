@@ -86,7 +86,7 @@ render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, 
   }
   sub_df$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sub_df$sci_name)
   flock_df <- aggregate(conf ~ common_name + clean_sci, data = sub_df, FUN = length)
-  names(flock_df)[3] <- "detections"
+  names(flock_df) <- "detections"
   flock_df <- flock_df[order(-flock_df$detections), ]; rownames(flock_df) <- NULL
   flock_df$is_bat <- grepl("\\bbat\\b|myotis|flying fox", flock_df$common_name, ignore.case = TRUE) | grepl("^(Myotis|Lasionycteris|Eptesicus|Lasiurus|Corynorhinus|Antrozous|Tadarida)\\b", flock_df$clean_sci)
   flock_df$pose <- ifelse(seq_len(nrow(flock_df)) %% 2 == 1, 1, 2)
@@ -118,24 +118,61 @@ render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, 
     box_hh[i] <- (bird_h[i] + label_band) / 2 + 0.07
   }
   cx <- numeric(n); cy <- numeric(n)
-  if (n > 1) {
+  bird_idx <- which(!flock_df$is_bat)
+  bat_idx  <- which(flock_df$is_bat)
+  if (length(bird_idx) > 1) {
     radii_steps <- seq(0.1, 55, by = 0.08); angles <- seq(0, 2 * pi, length.out = 180)[-180]
-    for (i in 2:n) {
-      placed <- FALSE; rot_angles <- angles[((seq_along(angles) + (i * 37)) %% length(angles)) + 1]
+    for (k in 2:length(bird_idx)) {
+      i <- bird_idx[k]; placed_ids <- bird_idx[1:(k - 1)]
+      placed <- FALSE; rot_angles <- angles[((seq_along(angles) + (k * 37)) %% length(angles)) + 1]
       for (rad in radii_steps) {
         for (ang in rot_angles) {
           tx <- rad * cos(ang) * 1.62; ty <- rad * sin(ang)
-          if (!any((abs(tx - cx[1:(i - 1)]) < (box_hw[i] + box_hw[1:(i - 1)])) & (abs(ty - cy[1:(i - 1)]) < (box_hh[i] + box_hh[1:(i - 1)])))) { cx[i] <- tx; cy[i] <- ty; placed <- TRUE; break }
+          if (!any((abs(tx - cx[placed_ids]) < (box_hw[i] + box_hw[placed_ids])) & (abs(ty - cy[placed_ids]) < (box_hh[i] + box_hh[placed_ids])))) { cx[i] <- tx; cy[i] <- ty; placed <- TRUE; break }
         }
         if (placed) break
       }
     }
   }
+  bat_box <- NULL
+  if (length(bat_idx) > 0) {
+    b_cols <- min(length(bat_idx), 2)
+    b_rows <- ceiling(length(bat_idx) / b_cols)
+    col_w <- max(box_hw[bat_idx]) * 2 + 0.16
+    row_h <- max(box_hh[bat_idx]) * 2 + 0.14
+    grid_w <- b_cols * col_w
+    grid_h <- b_rows * row_h + 0.42
+    bx_right <- if (length(bird_idx) > 0) max(cx[bird_idx] + box_hw[bird_idx]) + 0.25 else (grid_w / 2)
+    by_bot   <- if (length(bird_idx) > 0) min(cy[bird_idx] - box_hh[bird_idx]) - 0.15 else -(grid_h / 2)
+    bx_left  <- bx_right - grid_w
+    by_top   <- by_bot + grid_h
+    if (length(bird_idx) > 0) {
+      while (any((cx[bird_idx] + box_hw[bird_idx] > bx_left - 0.12) & (cy[bird_idx] - box_hh[bird_idx] < by_top + 0.12))) {
+        bx_left <- bx_left + 0.25; bx_right <- bx_right + 0.25
+      }
+    }
+    for (k in seq_along(bat_idx)) {
+      i <- bat_idx[k]
+      r_i <- (k - 1) %/% b_cols
+      c_i <- (k - 1) %% b_cols
+      cx[i] <- bx_left + (c_i + 0.5) * col_w
+      cy[i] <- (by_top - 0.42) - (r_i + 0.5) * row_h
+    }
+    bat_box <- list(xmin = bx_left - 0.12, xmax = bx_right + 0.12, ymin = by_bot - 0.10, ymax = by_top + 0.08, xmid = (bx_left + bx_right) / 2, ytitle = by_top - 0.14)
+  }
   flock_df$x_wide <- cx; flock_df$y <- cy
   x_min <- min(cx - box_hw) - 0.4; x_max <- max(cx + box_hw) + 0.4; y_min <- min(cy - box_hh) - 0.3; y_max <- max(cy + box_hh) + 0.3
+  if (!is.null(bat_box)) {
+    x_min <- min(x_min, bat_box$xmin - 0.25); x_max <- max(x_max, bat_box$xmax + 0.25)
+    y_min <- min(y_min, bat_box$ymin - 0.25); y_max <- max(y_max, bat_box$ymax + 0.25)
+  }
   p <- ggplot(flock_df, aes(x = x_wide, y = y)) + geom_blank() + coord_equal(xlim = c(x_min, x_max), ylim = c(y_min, y_max), expand = FALSE, clip = "off") +
-    labs(title = "Myrtle Rocks Bird & Bat Detections", subtitle = paste0(period_label, " • ", conf_label, " (", length(tokens), " Stations): ", n, " Species (", sum(flock_df$detections), " Detections) • Updated ", bc_time)) +
+    labs(title = "Myrtle Rocks Bird & Bat Detections", subtitle = paste0(period_label, " • ", conf_label, " (", length(tokens), " Stations): ", length(bird_idx), " Bird & ", length(bat_idx), " Bat Species (", sum(flock_df$detections), " Detections) • Updated ", bc_time)) +
     theme_void() + theme(plot.background = element_rect(fill = "#f6f0e2", color = NA), panel.background = element_rect(fill = "#f6f0e2", color = NA), plot.title = element_text(hjust = 0.5, family = "serif", size = 20, face = "bold", color = "#2b241d", margin = margin(t = 12, b = 2)), plot.subtitle = element_text(hjust = 0.5, family = "serif", size = 11.5, color = "#6e6051", margin = margin(b = 8)), plot.margin = margin(12, 16, 14, 16))
+  if (!is.null(bat_box)) {
+    p <- p + annotate("rect", xmin = bat_box$xmin, xmax = bat_box$xmax, ymin = bat_box$ymin, ymax = bat_box$ymax, fill = "#eee5d3", color = "#cbbda6", linewidth = 0.6) +
+      annotate("text", x = bat_box$xmid, y = bat_box$ytitle, label = "Bats", family = "serif", fontface = "bold", size = 3.4, color = "#3b3228")
+  }
   for (i in seq_len(n)) {
     yc <- cy[i] + (label_band / 2)
     if (has_art[i]) { p <- p + annotation_raster(rasters[[i]], xmin = cx[i] - bird_w[i]/2, xmax = cx[i] + bird_w[i]/2, ymin = yc - bird_h[i]/2, ymax = yc + bird_h[i]/2) }
@@ -165,3 +202,4 @@ for (c_pct in c(0, 60, 70, 80, 90)) {
   render_from_df(det_48h_all, "Last 48 Hours", c_pct / 100, paste0("HeckfordBirds_48h_", c_pct, ".png"), paste0("species_map_48h_", c_pct, ".json"), compact_mode = FALSE)
   render_from_df(ytd_all, paste0("Year to Date (", current_year, ")"), c_pct / 100, paste0("HeckfordBirds_ytd_", c_pct, ".png"), paste0("species_map_ytd_", c_pct, ".json"), compact_mode = TRUE)
 }
+
