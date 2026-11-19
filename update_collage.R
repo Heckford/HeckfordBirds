@@ -167,7 +167,7 @@ render_from_df <- function(det_df, period_label, min_conf, png_file, json_file, 
     y_min <- min(y_min, bat_box$ymin - 0.25); y_max <- max(y_max, bat_box$ymax + 0.25)
   }
   p <- ggplot(flock_df, aes(x = x_wide, y = y)) + geom_blank() + coord_equal(xlim = c(x_min, x_max), ylim = c(y_min, y_max), expand = FALSE, clip = "off") +
-    labs(title = "Myrtle Rocks Bird & Bat Detections", subtitle = paste0(period_label, " • ", conf_label, " (", length(tokens), " Stations): ", length(bird_idx), " Bird & ", length(bat_idx), " Bat Species (", sum(flock_df$detections), " Detections) • Updated ", bc_time)) +
+    labs(title = "Qathet: Myrtle Rocks Bird & Bat Detections", subtitle = paste0(period_label, " • ", conf_label, " (", length(tokens), " Stations): ", length(bird_idx), " Bird & ", length(bat_idx), " Bat Species (", sum(flock_df$detections), " Detections) • Updated ", bc_time)) +
     theme_void() + theme(plot.background = element_rect(fill = "#f6f0e2", color = NA), panel.background = element_rect(fill = "#f6f0e2", color = NA), plot.title = element_text(hjust = 0.5, family = "serif", size = 20, face = "bold", color = "#2b241d", margin = margin(t = 12, b = 2)), plot.subtitle = element_text(hjust = 0.5, family = "serif", size = 11.5, color = "#6e6051", margin = margin(b = 8)), plot.margin = margin(12, 16, 14, 16))
   if (!is.null(bat_box)) {
     p <- p + annotate("rect", xmin = bat_box$xmin, xmax = bat_box$xmax, ymin = bat_box$ymin, ymax = bat_box$ymax, fill = "#eee5d3", color = "#cbbda6", linewidth = 0.6) +
