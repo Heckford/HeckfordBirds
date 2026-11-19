@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 14896,
+    "detections": 14898,
     "left_pct": 44.604,
     "top_pct": 50.302,
     "width_pct": 10.613,
@@ -55,7 +55,7 @@
     "left_pct": 37.721,
     "top_pct": 39.926,
     "width_pct": 9.938,
-    "height_pct": 9.118,
+    "height_pct": 9.117,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
@@ -75,7 +75,7 @@
     "left_pct": 35.014,
     "top_pct": 58.623,
     "width_pct": 7.913,
-    "height_pct": 9.315,
+    "height_pct": 9.314,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -115,7 +115,7 @@
     "left_pct": 49.171,
     "top_pct": 35.373,
     "width_pct": 8.25,
-    "height_pct": 5.96,
+    "height_pct": 5.959,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
@@ -153,7 +153,7 @@
     "common_name": "Glaucous-winged Gull",
     "detections": 414,
     "left_pct": 28.136,
-    "top_pct": 40.847,
+    "top_pct": 40.848,
     "width_pct": 9.263,
     "height_pct": 7.394,
     "site_name": "eBird",
@@ -211,11 +211,11 @@
   },
   {
     "common_name": "Cedar Waxwing",
-    "detections": 171,
+    "detections": 172,
     "left_pct": 52.624,
-    "top_pct": 70.833,
+    "top_pct": 70.832,
     "width_pct": 6.9,
-    "height_pct": 7.215,
+    "height_pct": 7.218,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/cedwax"
   },
@@ -315,7 +315,7 @@
     "left_pct": 38.056,
     "top_pct": 75.197,
     "width_pct": 7.575,
-    "height_pct": 7.582,
+    "height_pct": 7.581,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/grbher3"
   },
@@ -345,7 +345,7 @@
     "left_pct": 45.892,
     "top_pct": 78.1,
     "width_pct": 7.575,
-    "height_pct": 6.531,
+    "height_pct": 6.53,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/savspa"
   },
