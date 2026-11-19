@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2586,
+    "detections": 2612,
     "left_pct": 55.845,
-    "top_pct": 52.997,
+    "top_pct": 52.994,
     "width_pct": 6.422,
-    "height_pct": 7.9,
+    "height_pct": 7.907,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
@@ -441,11 +441,11 @@
   },
   {
     "common_name": "Great Horned Owl",
-    "detections": 83,
+    "detections": 86,
     "left_pct": 17.206,
-    "top_pct": 43.142,
+    "top_pct": 43.135,
     "width_pct": 6.422,
-    "height_pct": 6.592,
+    "height_pct": 6.604,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/grhowl"
   },

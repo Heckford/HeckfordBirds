@@ -121,11 +121,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 526,
+    "detections": 528,
     "left_pct": 50.1,
-    "top_pct": 31.977,
+    "top_pct": 31.976,
     "width_pct": 7.149,
-    "height_pct": 7.965,
+    "height_pct": 7.967,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
