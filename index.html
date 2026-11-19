@@ -15,31 +15,46 @@
       min-height: 100vh;
       font-family: Georgia, "Times New Roman", serif;
     }
-    .view-toggle {
+    .top-controls {
       position: fixed;
       top: 14px;
+      left: 18px;
       right: 18px;
       z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+    .toggle-pill {
+      pointer-events: auto;
       display: inline-flex;
+      align-items: center;
       background-color: #ebe2ce;
       border: 1px solid #cbbda6;
       border-radius: 999px;
       padding: 3px;
       box-shadow: 0 2px 6px rgba(43, 36, 29, 0.08);
     }
-    .view-toggle button {
+    .pill-label {
+      color: #6e6051;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 0 10px 0 12px;
+    }
+    .toggle-pill button {
       background: transparent;
       border: none;
       color: #5c4e3f;
       font-family: inherit;
       font-size: 13px;
       font-weight: 600;
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 999px;
       cursor: pointer;
       transition: background-color 0.15s ease, color 0.15s ease;
     }
-    .view-toggle button.active {
+    .toggle-pill button.active {
       background-color: #3b3228;
       color: #f6f0e2;
     }
@@ -47,10 +62,11 @@
       position: relative;
       display: inline-block;
       line-height: 0;
+      margin-top: 38px;
     }
     img {
       max-width: 98vw;
-      max-height: 96vh;
+      max-height: 92vh;
       height: auto;
       display: block;
     }
@@ -64,20 +80,35 @@
       background-color: rgba(43, 36, 29, 0.06);
       box-shadow: 0 0 0 1px rgba(43, 36, 29, 0.18);
     }
+    @media (max-width: 720px) {
+      .top-controls { flex-direction: column; gap: 8px; }
+      .collage-wrapper { margin-top: 84px; }
+    }
   </style>
 </head>
 <body>
-  <div class="view-toggle" role="group" aria-label="Timeframe Toggle">
-    <button id="btn-48h" class="active" onclick="switchView('48h')">Last 48 Hours</button>
-    <button id="btn-ytd" onclick="switchView('ytd')">Year to Date</button>
+  <div class="top-controls">
+    <div class="toggle-pill" role="group" aria-label="Confidence Filter">
+      <span class="pill-label">Confidence:</span>
+      <button id="conf-65" class="active" onclick="switchConf(65)">65%</button>
+      <button id="conf-75" onclick="switchConf(75)">75%</button>
+      <button id="conf-85" onclick="switchConf(85)">85%</button>
+      <button id="conf-95" onclick="switchConf(95)">95%</button>
+    </div>
+
+    <div class="toggle-pill" role="group" aria-label="Timeframe Toggle">
+      <button id="btn-48h" class="active" onclick="switchView('48h')">Last 48 Hours</button>
+      <button id="btn-ytd" onclick="switchView('ytd')">Year to Date</button>
+    </div>
   </div>
 
   <div class="collage-wrapper" id="wrapper">
-    <img id="collage" src="HeckfordBirds.png" alt="Myrtle Rocks Bird and Bat Detections">
+    <img id="collage" src="HeckfordBirds_48h_65.png" alt="Myrtle Rocks Bird and Bat Detections">
   </div>
 
   <script>
     let currentView = "48h";
+    let currentConf = 65;
 
     function switchView(view) {
       currentView = view;
@@ -86,10 +117,18 @@
       loadFreshCollage();
     }
 
+    function switchConf(conf) {
+      currentConf = conf;
+      [65, 75, 85, 95].forEach(c => {
+        document.getElementById("conf-" + c).classList.toggle("active", c === conf);
+      });
+      loadFreshCollage();
+    }
+
     async function loadFreshCollage() {
       const ts = Date.now();
-      const pngFile  = currentView === "ytd" ? "HeckfordBirds_YTD.png" : "HeckfordBirds.png";
-      const jsonFile = currentView === "ytd" ? "species_map_ytd.json" : "species_map.json";
+      const pngFile  = `HeckfordBirds_${currentView}_${currentConf}.png`;
+      const jsonFile = `species_map_${currentView}_${currentConf}.json`;
 
       document.getElementById("collage").src = pngFile + "?t=" + ts;
 
