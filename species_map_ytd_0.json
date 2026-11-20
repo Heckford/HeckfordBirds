@@ -711,11 +711,11 @@
   },
   {
     "common_name": "Ring-billed Gull",
-    "detections": 23,
+    "detections": 24,
     "left_pct": 63.828,
-    "top_pct": 74.004,
+    "top_pct": 74,
     "width_pct": 6.422,
-    "height_pct": 5.167,
+    "height_pct": 5.175,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/ribgul"
   },
