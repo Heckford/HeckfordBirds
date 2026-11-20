@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 147,
+    "detections": 146,
     "left_pct": 39.561,
-    "top_pct": 67.549,
+    "top_pct": 67.559,
     "width_pct": 16.646,
-    "height_pct": 17.378,
+    "height_pct": 17.357,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 67,
-    "left_pct": 58.955,
-    "top_pct": 31.926,
-    "width_pct": 9.71,
-    "height_pct": 14.63,
+    "detections": 65,
+    "left_pct": 58.982,
+    "top_pct": 31.96,
+    "width_pct": 9.654,
+    "height_pct": 14.561,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },

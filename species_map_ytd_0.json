@@ -261,11 +261,11 @@
   },
   {
     "common_name": "Great Blue Heron",
-    "detections": 238,
+    "detections": 239,
     "left_pct": 62.388,
-    "top_pct": 54.914,
+    "top_pct": 54.913,
     "width_pct": 6.708,
-    "height_pct": 7.452,
+    "height_pct": 7.454,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/grbher3"
   },
