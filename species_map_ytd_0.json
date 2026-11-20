@@ -441,11 +441,11 @@
   },
   {
     "common_name": "Great Horned Owl",
-    "detections": 86,
+    "detections": 88,
     "left_pct": 17.251,
-    "top_pct": 43.136,
+    "top_pct": 43.132,
     "width_pct": 6.422,
-    "height_pct": 6.603,
+    "height_pct": 6.611,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/grhowl"
   },
