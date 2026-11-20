@@ -21,11 +21,11 @@
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 144,
+    "detections": 143,
     "left_pct": 58.675,
-    "top_pct": 50.46,
+    "top_pct": 50.47,
     "width_pct": 16.703,
-    "height_pct": 16.126,
+    "height_pct": 16.105,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 119,
+    "detections": 115,
     "left_pct": 32.58,
-    "top_pct": 61.162,
+    "top_pct": 61.221,
     "width_pct": 14.407,
-    "height_pct": 18.962,
+    "height_pct": 18.843,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
