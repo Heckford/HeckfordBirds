@@ -1,9 +1,9 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 28528,
+    "detections": 28529,
     "left_pct": 5.924,
-    "top_pct": 26.656,
+    "top_pct": 26.657,
     "width_pct": 6.989,
     "height_pct": 7.002,
     "site_name": "eBird",
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 23384,
+    "detections": 23387,
     "left_pct": 13.391,
     "top_pct": 26.069,
     "width_pct": 7.872,
@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 4454,
+    "detections": 4494,
     "left_pct": 79.859,
-    "top_pct": 49.098,
+    "top_pct": 49.095,
     "width_pct": 5.812,
-    "height_pct": 6.882,
+    "height_pct": 6.888,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -75,7 +75,7 @@
     "left_pct": 38.257,
     "top_pct": 26.714,
     "width_pct": 4.929,
-    "height_pct": 6.887,
+    "height_pct": 6.886,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },

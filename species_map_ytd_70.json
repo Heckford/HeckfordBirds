@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 9965,
+    "detections": 9967,
     "left_pct": 5.611,
     "top_pct": 24.629,
     "width_pct": 8.543,
@@ -11,18 +11,18 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 5946,
+    "detections": 5950,
     "left_pct": 14.738,
     "top_pct": 24.09,
     "width_pct": 9.622,
-    "height_pct": 9.637,
+    "height_pct": 9.638,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/chbchi"
   },
   {
     "common_name": "Northern Flicker",
     "detections": 4975,
-    "left_pct": 74.313,
+    "left_pct": 74.314,
     "top_pct": 55.815,
     "width_pct": 6.385,
     "height_pct": 9.846,
@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2189,
+    "detections": 2192,
     "left_pct": 81.283,
-    "top_pct": 56.42,
+    "top_pct": 56.419,
     "width_pct": 7.104,
-    "height_pct": 8.637,
+    "height_pct": 8.638,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -95,7 +95,7 @@
     "left_pct": 50.686,
     "top_pct": 15.281,
     "width_pct": 4.226,
-    "height_pct": 7.159,
+    "height_pct": 7.158,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
@@ -115,7 +115,7 @@
     "left_pct": 17.076,
     "top_pct": 35.244,
     "width_pct": 5.306,
-    "height_pct": 7.323,
+    "height_pct": 7.322,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/varthr"
   },
@@ -144,7 +144,7 @@
     "detections": 343,
     "left_pct": 51.353,
     "top_pct": 50.773,
-    "width_pct": 7.823,
+    "width_pct": 7.824,
     "height_pct": 7.406,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/glwgul"
@@ -193,7 +193,7 @@
     "common_name": "Common Raven",
     "detections": 141,
     "left_pct": 40.277,
-    "top_pct": 35.007,
+    "top_pct": 35.008,
     "width_pct": 4.946,
     "height_pct": 7.796,
     "site_name": "eBird",
@@ -214,7 +214,7 @@
     "detections": 94,
     "left_pct": 4.284,
     "top_pct": 44.655,
-    "width_pct": 7.823,
+    "width_pct": 7.824,
     "height_pct": 5.726,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/ruckin"
@@ -252,7 +252,7 @@
   {
     "common_name": "Hermit Thrush",
     "detections": 83,
-    "left_pct": 24.473,
+    "left_pct": 24.472,
     "top_pct": 44.207,
     "width_pct": 5.306,
     "height_pct": 6.623,
@@ -312,7 +312,7 @@
   {
     "common_name": "Cackling Goose",
     "detections": 42,
-    "left_pct": 90.477,
+    "left_pct": 90.478,
     "top_pct": 16.211,
     "width_pct": 5.665,
     "height_pct": 5.638,
@@ -323,7 +323,7 @@
     "common_name": "Evening Grosbeak",
     "detections": 39,
     "left_pct": 39.49,
-    "top_pct": 44.129,
+    "top_pct": 44.13,
     "width_pct": 6.385,
     "height_pct": 6.778,
     "site_name": "eBird",
@@ -362,7 +362,7 @@
   {
     "common_name": "Green-winged Teal",
     "detections": 29,
-    "left_pct": 85.464,
+    "left_pct": 85.465,
     "top_pct": 24.344,
     "width_pct": 6.744,
     "height_pct": 5.765,
@@ -372,7 +372,7 @@
   {
     "common_name": "Mallard",
     "detections": 27,
-    "left_pct": 92.793,
+    "left_pct": 92.794,
     "top_pct": 24.335,
     "width_pct": 3.192,
     "height_pct": 5.783,
@@ -464,7 +464,7 @@
     "detections": 14,
     "left_pct": 29.823,
     "top_pct": 51.856,
-    "width_pct": 7.823,
+    "width_pct": 7.824,
     "height_pct": 6.484,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/cowscj1"
@@ -482,7 +482,7 @@
   {
     "common_name": "Townsend's Warbler",
     "detections": 14,
-    "left_pct": 4.105,
+    "left_pct": 4.104,
     "top_pct": 59.728,
     "width_pct": 7.104,
     "height_pct": 5.567,
@@ -493,7 +493,7 @@
     "common_name": "Eurasian Collared-Dove",
     "detections": 13,
     "left_pct": 87.712,
-    "top_pct": 67.701,
+    "top_pct": 67.7,
     "width_pct": 8.543,
     "height_pct": 5.717,
     "site_name": "eBird",
@@ -502,7 +502,7 @@
   {
     "common_name": "Pileated Woodpecker",
     "detections": 11,
-    "left_pct": 74.313,
+    "left_pct": 74.314,
     "top_pct": 75.457,
     "width_pct": 7.464,
     "height_pct": 6.568,
@@ -572,7 +572,7 @@
   {
     "common_name": "Red Crossbill",
     "detections": 8,
-    "left_pct": 20.921,
+    "left_pct": 20.92,
     "top_pct": 59.561,
     "width_pct": 5.306,
     "height_pct": 5.902,
@@ -603,7 +603,7 @@
     "common_name": "Bats",
     "detections": 6,
     "left_pct": 55.73,
-    "top_pct": 90.208,
+    "top_pct": 90.207,
     "width_pct": 2.906,
     "height_pct": 4.805,
     "site_name": "iNaturalist",
@@ -682,7 +682,7 @@
   {
     "common_name": "Yellow-rumped Warbler",
     "detections": 5,
-    "left_pct": 11.254,
+    "left_pct": 11.253,
     "top_pct": 66.728,
     "width_pct": 8.183,
     "height_pct": 5.861,
@@ -742,7 +742,7 @@
   {
     "common_name": "Red-tailed Hawk",
     "detections": 2,
-    "left_pct": 65.343,
+    "left_pct": 65.344,
     "top_pct": 31.221,
     "width_pct": 6.025,
     "height_pct": 6.61,
@@ -782,7 +782,7 @@
   {
     "common_name": "Whimbrel",
     "detections": 2,
-    "left_pct": 65.343,
+    "left_pct": 65.344,
     "top_pct": 66.023,
     "width_pct": 3.507,
     "height_pct": 5.147,
@@ -852,7 +852,7 @@
   {
     "common_name": "Brewer's Blackbird",
     "detections": 1,
-    "left_pct": 17.324,
+    "left_pct": 17.323,
     "top_pct": 73.576,
     "width_pct": 7.104,
     "height_pct": 5.778,
@@ -892,7 +892,7 @@
   {
     "common_name": "Gadwall",
     "detections": 1,
-    "left_pct": 92.995,
+    "left_pct": 92.996,
     "top_pct": 38.751,
     "width_pct": 3.147,
     "height_pct": 5.607,
@@ -904,7 +904,7 @@
     "detections": 1,
     "left_pct": 25.012,
     "top_pct": 73.892,
-    "width_pct": 7.823,
+    "width_pct": 7.824,
     "height_pct": 5.146,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/towsol"
