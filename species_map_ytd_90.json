@@ -21,21 +21,21 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 2593,
+    "detections": 2594,
     "left_pct": 13.203,
     "top_pct": 29.845,
     "width_pct": 10.518,
-    "height_pct": 8.827,
+    "height_pct": 8.828,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/chbchi"
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 1926,
+    "detections": 1932,
     "left_pct": 24.36,
-    "top_pct": 29.378,
+    "top_pct": 29.376,
     "width_pct": 9.339,
-    "height_pct": 9.761,
+    "height_pct": 9.765,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
