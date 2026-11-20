@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 106,
+    "detections": 105,
     "left_pct": 32.087,
-    "top_pct": 60.744,
+    "top_pct": 60.76,
     "width_pct": 14.4,
-    "height_pct": 18.628,
+    "height_pct": 18.596,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 29,
+    "detections": 26,
     "left_pct": 18.762,
-    "top_pct": 44.072,
+    "top_pct": 44.186,
     "width_pct": 15.547,
-    "height_pct": 14.506,
+    "height_pct": 14.276,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
