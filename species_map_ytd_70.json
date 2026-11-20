@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 2811,
+    "detections": 2813,
     "left_pct": 30.835,
-    "top_pct": 24.693,
+    "top_pct": 24.692,
     "width_pct": 4.946,
-    "height_pct": 8.431,
+    "height_pct": 8.432,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2165,
+    "detections": 2189,
     "left_pct": 81.283,
-    "top_pct": 56.424,
+    "top_pct": 56.42,
     "width_pct": 7.104,
-    "height_pct": 8.628,
+    "height_pct": 8.637,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
