@@ -340,6 +340,16 @@
     "target_url": "https://ebird.org/species/gnwtea"
   },
   {
+    "common_name": "American Robin",
+    "detections": 143,
+    "left_pct": 38.551,
+    "top_pct": 43.486,
+    "width_pct": 4.635,
+    "height_pct": 5.179,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/amerob"
+  },
+  {
     "common_name": "Mallard",
     "detections": 125,
     "left_pct": 89.734,

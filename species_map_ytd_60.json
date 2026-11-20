@@ -390,6 +390,16 @@
     "target_url": "https://ebird.org/species/houfin"
   },
   {
+    "common_name": "Green-winged Teal",
+    "detections": 42,
+    "left_pct": 89.261,
+    "top_pct": 23.377,
+    "width_pct": 6.668,
+    "height_pct": 6.437,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/gnwtea"
+  },
+  {
     "common_name": "Townsend's Warbler",
     "detections": 41,
     "left_pct": 21.72,

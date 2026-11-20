@@ -150,6 +150,16 @@
     "target_url": "https://ebird.org/species/varthr"
   },
   {
+    "common_name": "Green-winged Teal",
+    "detections": 28,
+    "left_pct": 71.608,
+    "top_pct": 16.282,
+    "width_pct": 8.307,
+    "height_pct": 9.706,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/gnwtea"
+  },
+  {
     "common_name": "Wood Duck",
     "detections": 23,
     "left_pct": 71.546,
