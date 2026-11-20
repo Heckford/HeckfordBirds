@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 28773,
+    "detections": 28774,
     "left_pct": 5.919,
     "top_pct": 26.728,
     "width_pct": 6.99,
@@ -23,7 +23,7 @@
     "common_name": "Steller's Jay",
     "detections": 11152,
     "left_pct": 21.738,
-    "top_pct": 25.938,
+    "top_pct": 25.939,
     "width_pct": 4.341,
     "height_pct": 8.583,
     "site_name": "eBird",
@@ -75,7 +75,7 @@
     "left_pct": 38.255,
     "top_pct": 26.789,
     "width_pct": 4.93,
-    "height_pct": 6.883,
+    "height_pct": 6.882,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -402,7 +402,7 @@
   {
     "common_name": "Orange-crowned Warbler",
     "detections": 105,
-    "left_pct": 8.476,
+    "left_pct": 8.475,
     "top_pct": 49.825,
     "width_pct": 6.99,
     "height_pct": 4.763,
