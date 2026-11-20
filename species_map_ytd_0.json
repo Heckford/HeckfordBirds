@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 28407,
+    "detections": 28408,
     "left_pct": 39.98,
     "top_pct": 49.396,
     "width_pct": 9.012,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 23020,
+    "detections": 23022,
     "left_pct": 38.56,
     "top_pct": 57.308,
     "width_pct": 9.872,
@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Northern Flicker",
-    "detections": 8538,
+    "detections": 8543,
     "left_pct": 32.946,
     "top_pct": 47.976,
     "width_pct": 7.005,
-    "height_pct": 8.739,
+    "height_pct": 8.74,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
   },
@@ -325,7 +325,7 @@
     "left_pct": 56.465,
     "top_pct": 66.13,
     "width_pct": 6.146,
-    "height_pct": 5.974,
+    "height_pct": 5.973,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/amerob"
   },

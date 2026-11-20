@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 7262,
+    "detections": 7264,
     "left_pct": 42.209,
     "top_pct": 59.08,
     "width_pct": 11.068,
@@ -21,11 +21,11 @@
   },
   {
     "common_name": "Northern Flicker",
-    "detections": 5203,
+    "detections": 5214,
     "left_pct": 54.061,
-    "top_pct": 50.699,
+    "top_pct": 50.697,
     "width_pct": 8.089,
-    "height_pct": 10.244,
+    "height_pct": 10.247,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
   },
