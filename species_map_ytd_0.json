@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 28301,
+    "detections": 28305,
     "left_pct": 40.381,
     "top_pct": 50.998,
     "width_pct": 8.998,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 22845,
+    "detections": 22850,
     "left_pct": 38.964,
     "top_pct": 58.9,
     "width_pct": 9.856,
@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2612,
+    "detections": 2615,
     "left_pct": 55.845,
     "top_pct": 52.994,
     "width_pct": 6.422,
-    "height_pct": 7.906,
+    "height_pct": 7.907,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
@@ -165,7 +165,7 @@
     "left_pct": 32.622,
     "top_pct": 66.441,
     "width_pct": 5.85,
-    "height_pct": 6.178,
+    "height_pct": 6.177,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/varthr"
   },
@@ -385,7 +385,7 @@
     "left_pct": 37.987,
     "top_pct": 29.186,
     "width_pct": 5.277,
-    "height_pct": 5.712,
+    "height_pct": 5.711,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/houfin"
   },
@@ -495,7 +495,7 @@
     "left_pct": 33.937,
     "top_pct": 78.048,
     "width_pct": 6.422,
-    "height_pct": 5.837,
+    "height_pct": 5.836,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/evegro"
   },
@@ -685,7 +685,7 @@
     "left_pct": 39.815,
     "top_pct": 23.362,
     "width_pct": 3.56,
-    "height_pct": 5.638,
+    "height_pct": 5.637,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/osprey"
   },
@@ -813,7 +813,7 @@
     "common_name": "Big Brown Bat",
     "detections": 14,
     "left_pct": 88.368,
-    "top_pct": 81.169,
+    "top_pct": 81.17,
     "width_pct": 5.564,
     "height_pct": 3.964,
     "site_name": "iNaturalist",
