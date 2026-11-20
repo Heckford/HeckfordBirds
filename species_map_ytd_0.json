@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 28305,
+    "detections": 28309,
     "left_pct": 41.77,
     "top_pct": 49.382,
     "width_pct": 9.105,
@@ -73,7 +73,7 @@
     "common_name": "Dark-eyed Junco",
     "detections": 4153,
     "left_pct": 52.156,
-    "top_pct": 41.635,
+    "top_pct": 41.636,
     "width_pct": 6.788,
     "height_pct": 7.809,
     "site_name": "eBird",
@@ -85,17 +85,17 @@
     "left_pct": 50.59,
     "top_pct": 59.501,
     "width_pct": 5.919,
-    "height_pct": 7.914,
+    "height_pct": 7.913,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comrav"
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2615,
+    "detections": 2618,
     "left_pct": 57.418,
-    "top_pct": 51.402,
+    "top_pct": 51.401,
     "width_pct": 6.499,
-    "height_pct": 8.001,
+    "height_pct": 8.002,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
@@ -131,7 +131,7 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 1224,
+    "detections": 1225,
     "left_pct": 56.554,
     "top_pct": 59.747,
     "width_pct": 5.34,
@@ -185,7 +185,7 @@
     "left_pct": 52.585,
     "top_pct": 33.95,
     "width_pct": 6.788,
-    "height_pct": 7.438,
+    "height_pct": 7.437,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/haiwoo"
   },
@@ -275,7 +275,7 @@
     "left_pct": 25.292,
     "top_pct": 65.214,
     "width_pct": 8.526,
-    "height_pct": 5.787,
+    "height_pct": 5.786,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gocspa"
   },
@@ -305,7 +305,7 @@
     "left_pct": 42.148,
     "top_pct": 73.735,
     "width_pct": 7.947,
-    "height_pct": 5.197,
+    "height_pct": 5.196,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/ruckin"
   },
@@ -335,7 +335,7 @@
     "left_pct": 45.077,
     "top_pct": 26.621,
     "width_pct": 7.078,
-    "height_pct": 5.979,
+    "height_pct": 5.978,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gnwtea"
   },
@@ -775,7 +775,7 @@
     "left_pct": 60.141,
     "top_pct": 23.343,
     "width_pct": 6.499,
-    "height_pct": 4.558,
+    "height_pct": 4.557,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/marmur"
   },

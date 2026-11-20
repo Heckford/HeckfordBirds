@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 14809,
+    "detections": 14819,
     "left_pct": 42.213,
     "top_pct": 49.475,
     "width_pct": 10.428,
@@ -15,7 +15,7 @@
     "left_pct": 40.775,
     "top_pct": 58.629,
     "width_pct": 11.091,
-    "height_pct": 10.184,
+    "height_pct": 10.183,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/chbchi"
   },
@@ -23,9 +23,9 @@
     "common_name": "Northern Flicker",
     "detections": 5203,
     "left_pct": 52.652,
-    "top_pct": 50.219,
+    "top_pct": 50.22,
     "width_pct": 8.106,
-    "height_pct": 10.272,
+    "height_pct": 10.271,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
   },
@@ -43,7 +43,7 @@
     "common_name": "Song Sparrow",
     "detections": 3994,
     "left_pct": 35.419,
-    "top_pct": 48.5,
+    "top_pct": 48.501,
     "width_pct": 6.779,
     "height_pct": 8.944,
     "site_name": "eBird",
@@ -55,7 +55,7 @@
     "left_pct": 35.449,
     "top_pct": 39.278,
     "width_pct": 9.765,
-    "height_pct": 8.962,
+    "height_pct": 8.961,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
@@ -75,7 +75,7 @@
     "left_pct": 32.789,
     "top_pct": 57.65,
     "width_pct": 7.774,
-    "height_pct": 9.154,
+    "height_pct": 9.153,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -85,13 +85,13 @@
     "left_pct": 51.913,
     "top_pct": 60.567,
     "width_pct": 6.779,
-    "height_pct": 8.936,
+    "height_pct": 8.935,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 967,
+    "detections": 968,
     "left_pct": 29.6,
     "top_pct": 47.466,
     "width_pct": 5.784,
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 928,
+    "detections": 930,
     "left_pct": 60.765,
-    "top_pct": 51.196,
+    "top_pct": 51.195,
     "width_pct": 7.111,
-    "height_pct": 8.071,
+    "height_pct": 8.072,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
@@ -125,17 +125,17 @@
     "left_pct": 58.813,
     "top_pct": 61.205,
     "width_pct": 6.779,
-    "height_pct": 7.368,
+    "height_pct": 7.367,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/varthr"
   },
   {
     "common_name": "Brown Creeper",
-    "detections": 437,
+    "detections": 442,
     "left_pct": 43.234,
-    "top_pct": 68.848,
+    "top_pct": 68.845,
     "width_pct": 6.779,
-    "height_pct": 7.085,
+    "height_pct": 7.09,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/brncre"
   },
@@ -145,7 +145,7 @@
     "left_pct": 38.583,
     "top_pct": 30.587,
     "width_pct": 7.774,
-    "height_pct": 8.682,
+    "height_pct": 8.681,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/haiwoo"
   },
@@ -153,9 +153,9 @@
     "common_name": "Glaucous-winged Gull",
     "detections": 410,
     "left_pct": 26.031,
-    "top_pct": 40.186,
+    "top_pct": 40.187,
     "width_pct": 9.101,
-    "height_pct": 7.263,
+    "height_pct": 7.262,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/glwgul"
   },
@@ -163,7 +163,7 @@
     "common_name": "Myotis Bats",
     "detections": 336,
     "left_pct": 80.942,
-    "top_pct": 84.416,
+    "top_pct": 84.417,
     "width_pct": 6.116,
     "height_pct": 5.397,
     "site_name": "iNaturalist",
@@ -185,7 +185,7 @@
     "left_pct": 61.878,
     "top_pct": 44.056,
     "width_pct": 6.779,
-    "height_pct": 6.862,
+    "height_pct": 6.861,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/amecro"
   },
@@ -195,7 +195,7 @@
     "left_pct": 33.924,
     "top_pct": 66.863,
     "width_pct": 6.116,
-    "height_pct": 7.017,
+    "height_pct": 7.016,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pinsis"
   },
@@ -205,7 +205,7 @@
     "left_pct": 55.313,
     "top_pct": 33.955,
     "width_pct": 6.448,
-    "height_pct": 6.732,
+    "height_pct": 6.731,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
   },
@@ -215,7 +215,7 @@
     "left_pct": 50.467,
     "top_pct": 69.795,
     "width_pct": 6.448,
-    "height_pct": 8.111,
+    "height_pct": 8.11,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comrav"
   },
@@ -341,11 +341,11 @@
   },
   {
     "common_name": "Savannah Sparrow",
-    "detections": 52,
+    "detections": 53,
     "left_pct": 18.49,
-    "top_pct": 54.86,
+    "top_pct": 54.857,
     "width_pct": 7.443,
-    "height_pct": 6.418,
+    "height_pct": 6.424,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/savspa"
   },
@@ -435,7 +435,7 @@
     "left_pct": 61.869,
     "top_pct": 29.436,
     "width_pct": 8.769,
-    "height_pct": 6.863,
+    "height_pct": 6.862,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/cowscj1"
   },
@@ -525,7 +525,7 @@
     "left_pct": 72.455,
     "top_pct": 38.828,
     "width_pct": 7.443,
-    "height_pct": 6.977,
+    "height_pct": 6.976,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/perfal"
   },
@@ -663,9 +663,9 @@
     "common_name": "House Sparrow",
     "detections": 8,
     "left_pct": 11.458,
-    "top_pct": 43.533,
+    "top_pct": 43.534,
     "width_pct": 6.116,
-    "height_pct": 5.682,
+    "height_pct": 5.681,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/houspa"
   },

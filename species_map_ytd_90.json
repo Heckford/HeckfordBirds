@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 1884,
+    "detections": 1886,
     "left_pct": 41.835,
-    "top_pct": 36.327,
+    "top_pct": 36.326,
     "width_pct": 11.997,
-    "height_pct": 11.387,
+    "height_pct": 11.388,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
@@ -211,11 +211,11 @@
   },
   {
     "common_name": "Brown Creeper",
-    "detections": 41,
+    "detections": 42,
     "left_pct": 48.722,
-    "top_pct": 73.829,
+    "top_pct": 73.822,
     "width_pct": 7.662,
-    "height_pct": 7.775,
+    "height_pct": 7.789,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/brncre"
   },
