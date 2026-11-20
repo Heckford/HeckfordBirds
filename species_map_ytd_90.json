@@ -21,21 +21,21 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 2517,
+    "detections": 2549,
     "left_pct": 13.204,
-    "top_pct": 29.859,
+    "top_pct": 29.852,
     "width_pct": 10.518,
-    "height_pct": 8.799,
+    "height_pct": 8.812,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/chbchi"
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 1901,
+    "detections": 1909,
     "left_pct": 24.361,
-    "top_pct": 29.384,
+    "top_pct": 29.382,
     "width_pct": 9.339,
-    "height_pct": 9.748,
+    "height_pct": 9.753,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 360,
+    "detections": 364,
     "left_pct": 18.669,
-    "top_pct": 40.817,
+    "top_pct": 40.814,
     "width_pct": 6.586,
-    "height_pct": 7.673,
+    "height_pct": 7.681,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -171,11 +171,11 @@
   },
   {
     "common_name": "Downy Woodpecker",
-    "detections": 50,
+    "detections": 51,
     "left_pct": 85.907,
-    "top_pct": 65.314,
+    "top_pct": 65.31,
     "width_pct": 6.979,
-    "height_pct": 6.878,
+    "height_pct": 6.887,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/dowwoo"
   },
