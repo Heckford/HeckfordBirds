@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 2087,
+    "detections": 2090,
     "left_pct": 43.465,
-    "top_pct": 40.354,
+    "top_pct": 40.353,
     "width_pct": 10.584,
-    "height_pct": 8.248,
+    "height_pct": 8.249,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
@@ -81,11 +81,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 1062,
+    "detections": 1063,
     "left_pct": 28.859,
-    "top_pct": 57.42,
+    "top_pct": 57.419,
     "width_pct": 8.427,
-    "height_pct": 8.27,
+    "height_pct": 8.271,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },

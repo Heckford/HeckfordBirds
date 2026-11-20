@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 23022,
+    "detections": 23023,
     "left_pct": 38.56,
     "top_pct": 57.308,
     "width_pct": 9.872,
@@ -31,7 +31,7 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 8903,
+    "detections": 8907,
     "left_pct": 41.611,
     "top_pct": 41.314,
     "width_pct": 8.439,
@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Northern Flicker",
-    "detections": 8543,
+    "detections": 8549,
     "left_pct": 32.946,
-    "top_pct": 47.976,
+    "top_pct": 47.975,
     "width_pct": 7.005,
-    "height_pct": 8.74,
+    "height_pct": 8.741,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
   },
@@ -61,9 +61,9 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 4438,
+    "detections": 4440,
     "left_pct": 30.933,
-    "top_pct": 56.91,
+    "top_pct": 56.909,
     "width_pct": 7.579,
     "height_pct": 7.735,
     "site_name": "eBird",
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4153,
+    "detections": 4156,
     "left_pct": 50.26,
-    "top_pct": 41.73,
+    "top_pct": 41.729,
     "width_pct": 6.719,
-    "height_pct": 7.726,
+    "height_pct": 7.727,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
