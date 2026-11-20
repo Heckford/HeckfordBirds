@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 1895,
+    "detections": 1897,
     "left_pct": 4.94,
-    "top_pct": 34.612,
+    "top_pct": 34.611,
     "width_pct": 6.024,
-    "height_pct": 8.565,
+    "height_pct": 8.566,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -210,24 +210,24 @@
     "target_url": "https://ebird.org/species/dowwoo"
   },
   {
-    "common_name": "American Crow",
+    "common_name": "Ruby-crowned Kinglet",
     "detections": 94,
     "left_pct": 4.288,
-    "top_pct": 44.133,
-    "width_pct": 5.305,
-    "height_pct": 6.751,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/amecro"
-  },
-  {
-    "common_name": "Ruby-crowned Kinglet",
-    "detections": 91,
-    "left_pct": 10.178,
-    "top_pct": 44.496,
+    "top_pct": 44.645,
     "width_pct": 7.823,
-    "height_pct": 6.025,
+    "height_pct": 5.727,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/ruckin"
+  },
+  {
+    "common_name": "American Crow",
+    "detections": 94,
+    "left_pct": 12.695,
+    "top_pct": 44.236,
+    "width_pct": 5.305,
+    "height_pct": 6.545,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/amecro"
   },
   {
     "common_name": "Cedar Waxwing",
