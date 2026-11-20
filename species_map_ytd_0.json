@@ -121,11 +121,11 @@
   },
   {
     "common_name": "Brown Creeper",
-    "detections": 1368,
+    "detections": 1427,
     "left_pct": 29.153,
-    "top_pct": 39.086,
+    "top_pct": 39.07,
     "width_pct": 6.146,
-    "height_pct": 8.437,
+    "height_pct": 8.469,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/brncre"
   },
