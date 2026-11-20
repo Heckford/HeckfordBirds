@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 28418,
+    "detections": 28419,
     "left_pct": 5.927,
     "top_pct": 26.656,
     "width_pct": 6.988,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 23174,
+    "detections": 23175,
     "left_pct": 13.393,
     "top_pct": 26.071,
     "width_pct": 7.871,
@@ -442,7 +442,7 @@
   {
     "common_name": "Wood Duck",
     "detections": 90,
-    "left_pct": 81.181,
+    "left_pct": 81.182,
     "top_pct": 22.399,
     "width_pct": 3.163,
     "height_pct": 5.181,
@@ -462,7 +462,7 @@
   {
     "common_name": "Pileated Woodpecker",
     "detections": 75,
-    "left_pct": 85.558,
+    "left_pct": 85.559,
     "top_pct": 57.565,
     "width_pct": 6.106,
     "height_pct": 5.648,
@@ -532,7 +532,7 @@
   {
     "common_name": "Common Loon",
     "detections": 56,
-    "left_pct": 89.935,
+    "left_pct": 89.936,
     "top_pct": 22.433,
     "width_pct": 3.752,
     "height_pct": 5.114,
@@ -592,7 +592,7 @@
   {
     "common_name": "Red Crossbill",
     "detections": 39,
-    "left_pct": 34.758,
+    "left_pct": 34.757,
     "top_pct": 56.076,
     "width_pct": 4.34,
     "height_pct": 4.989,
@@ -783,7 +783,7 @@
     "common_name": "Brewer's Blackbird",
     "detections": 17,
     "left_pct": 13.099,
-    "top_pct": 62.324,
+    "top_pct": 62.323,
     "width_pct": 5.811,
     "height_pct": 4.542,
     "site_name": "eBird",
