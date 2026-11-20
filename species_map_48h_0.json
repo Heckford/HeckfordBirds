@@ -290,6 +290,16 @@
     "target_url": "https://ebird.org/species/cangoo"
   },
   {
+    "common_name": "Ruby-crowned Kinglet",
+    "detections": 4,
+    "left_pct": 17.313,
+    "top_pct": 62.855,
+    "width_pct": 9.481,
+    "height_pct": 6.83,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/ruckin"
+  },
+  {
     "common_name": "Great Blue Heron",
     "detections": 3,
     "left_pct": 14.849,

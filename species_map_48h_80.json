@@ -40,6 +40,16 @@
     "target_url": "https://ebird.org/species/pacwre1"
   },
   {
+    "common_name": "Anna's Hummingbird",
+    "detections": 41,
+    "left_pct": 73.693,
+    "top_pct": 49.728,
+    "width_pct": 11.999,
+    "height_pct": 13.194,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/annhum"
+  },
+  {
     "common_name": "Steller's Jay",
     "detections": 38,
     "left_pct": 42.878,
@@ -68,6 +78,16 @@
     "height_pct": 17.985,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
+  },
+  {
+    "common_name": "Dark-eyed Junco",
+    "detections": 28,
+    "left_pct": 35.047,
+    "top_pct": 37.076,
+    "width_pct": 10.144,
+    "height_pct": 15.291,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/daejun"
   },
   {
     "common_name": "Evening Grosbeak",

@@ -50,6 +50,16 @@
     "target_url": "https://ebird.org/species/brncre"
   },
   {
+    "common_name": "Dark-eyed Junco",
+    "detections": 51,
+    "left_pct": 7.95,
+    "top_pct": 38.951,
+    "width_pct": 9.538,
+    "height_pct": 15.073,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/daejun"
+  },
+  {
     "common_name": "Steller's Jay",
     "detections": 42,
     "left_pct": 33.094,
