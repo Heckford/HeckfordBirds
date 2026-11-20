@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 5553,
+    "detections": 5554,
     "left_pct": 44.414,
     "top_pct": 49.033,
     "width_pct": 11.105,
@@ -21,11 +21,11 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 4143,
+    "detections": 4151,
     "left_pct": 41.367,
-    "top_pct": 59.087,
+    "top_pct": 59.086,
     "width_pct": 12.2,
-    "height_pct": 9.213,
+    "height_pct": 9.215,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/chbchi"
   },
@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 2085,
+    "detections": 2087,
     "left_pct": 47.163,
     "top_pct": 40.642,
     "width_pct": 10.741,
-    "height_pct": 8.369,
+    "height_pct": 8.37,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
@@ -65,7 +65,7 @@
     "left_pct": 58.04,
     "top_pct": 39.45,
     "width_pct": 9.646,
-    "height_pct": 10.274,
+    "height_pct": 10.273,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -75,7 +75,7 @@
     "left_pct": 39.579,
     "top_pct": 36.434,
     "width_pct": 7.457,
-    "height_pct": 8.621,
+    "height_pct": 8.62,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -85,7 +85,7 @@
     "left_pct": 32.341,
     "top_pct": 57.96,
     "width_pct": 8.552,
-    "height_pct": 8.393,
+    "height_pct": 8.392,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -153,7 +153,7 @@
     "common_name": "Spotted Towhee",
     "detections": 232,
     "left_pct": 31.658,
-    "top_pct": 35.861,
+    "top_pct": 35.862,
     "width_pct": 7.822,
     "height_pct": 9.224,
     "site_name": "eBird",
@@ -161,11 +161,11 @@
   },
   {
     "common_name": "Brown Creeper",
-    "detections": 133,
+    "detections": 152,
     "left_pct": 33.295,
-    "top_pct": 66.514,
+    "top_pct": 66.457,
     "width_pct": 7.457,
-    "height_pct": 9.912,
+    "height_pct": 10.025,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/brncre"
   },
@@ -325,7 +325,7 @@
     "left_pct": 71.504,
     "top_pct": 61.186,
     "width_pct": 8.187,
-    "height_pct": 8.776,
+    "height_pct": 8.775,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/grbher3"
   },
@@ -375,7 +375,7 @@
     "left_pct": 50.17,
     "top_pct": 78.466,
     "width_pct": 8.916,
-    "height_pct": 6.741,
+    "height_pct": 6.74,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/nopowl"
   },
@@ -445,7 +445,7 @@
     "left_pct": 74.265,
     "top_pct": 38.304,
     "width_pct": 8.187,
-    "height_pct": 5.983,
+    "height_pct": 5.982,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gnwtea"
   },
