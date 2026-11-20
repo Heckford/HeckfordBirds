@@ -661,11 +661,11 @@
   },
   {
     "common_name": "Greater White-fronted Goose",
-    "detections": 27,
+    "detections": 28,
     "left_pct": 24.21,
-    "top_pct": 25.167,
+    "top_pct": 25.163,
     "width_pct": 9.57,
-    "height_pct": 5.653,
+    "height_pct": 5.661,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gwfgoo"
   },
@@ -1232,8 +1232,8 @@
   {
     "common_name": "Sooty Shearwater",
     "detections": 1,
-    "left_pct": 19.86,
-    "top_pct": 20.958,
+    "left_pct": 17.685,
+    "top_pct": 22.585,
     "width_pct": 6.136,
     "height_pct": 4.208,
     "site_name": "eBird",
