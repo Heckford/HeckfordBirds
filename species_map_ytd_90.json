@@ -21,21 +21,21 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 2407,
+    "detections": 2413,
     "left_pct": 50.998,
-    "top_pct": 51.299,
+    "top_pct": 51.297,
     "width_pct": 13.18,
-    "height_pct": 10.081,
+    "height_pct": 10.084,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/chbchi"
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 1893,
+    "detections": 1896,
     "left_pct": 41.835,
-    "top_pct": 36.323,
+    "top_pct": 36.322,
     "width_pct": 11.997,
-    "height_pct": 11.394,
+    "height_pct": 11.396,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 1028,
+    "detections": 1032,
     "left_pct": 33.698,
-    "top_pct": 37.681,
+    "top_pct": 37.679,
     "width_pct": 8.056,
-    "height_pct": 9.64,
+    "height_pct": 9.645,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
