@@ -21,11 +21,11 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 2422,
+    "detections": 2425,
     "left_pct": 51.432,
-    "top_pct": 49.732,
+    "top_pct": 49.731,
     "width_pct": 13.56,
-    "height_pct": 10.358,
+    "height_pct": 10.359,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/chbchi"
   },
