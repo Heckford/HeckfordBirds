@@ -61,7 +61,7 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 4450,
+    "detections": 4454,
     "left_pct": 79.858,
     "top_pct": 49.094,
     "width_pct": 5.812,
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 2429,
+    "detections": 2438,
     "left_pct": 13.19,
-    "top_pct": 35.496,
+    "top_pct": 35.495,
     "width_pct": 4.046,
-    "height_pct": 6.667,
+    "height_pct": 6.669,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -320,22 +320,12 @@
     "target_url": "https://ebird.org/species/savspa"
   },
   {
-    "common_name": "American Robin",
-    "detections": 143,
-    "left_pct": 38.551,
-    "top_pct": 43.317,
-    "width_pct": 4.635,
-    "height_pct": 5.518,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/amerob"
-  },
-  {
     "common_name": "Green-winged Teal",
-    "detections": 132,
+    "detections": 145,
     "left_pct": 83.739,
-    "top_pct": 15.187,
+    "top_pct": 15.487,
     "width_pct": 5.517,
-    "height_pct": 5.487,
+    "height_pct": 4.886,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gnwtea"
   },
