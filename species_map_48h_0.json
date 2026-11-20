@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 259,
+    "detections": 260,
     "left_pct": 43.708,
-    "top_pct": 62.09,
+    "top_pct": 62.085,
     "width_pct": 8.691,
-    "height_pct": 14.761,
+    "height_pct": 14.77,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -131,11 +131,11 @@
   },
   {
     "common_name": "Evening Grosbeak",
-    "detections": 29,
+    "detections": 33,
     "left_pct": 23.783,
-    "top_pct": 62.32,
+    "top_pct": 62.239,
     "width_pct": 10.057,
-    "height_pct": 10.958,
+    "height_pct": 11.118,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/evegro"
   },

@@ -21,11 +21,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 29,
+    "detections": 27,
     "left_pct": 58.026,
-    "top_pct": 47.181,
+    "top_pct": 47.32,
     "width_pct": 11.981,
-    "height_pct": 20.393,
+    "height_pct": 20.114,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -62,8 +62,8 @@
   {
     "common_name": "Anna's Hummingbird",
     "detections": 13,
-    "left_pct": 59.355,
-    "top_pct": 29.678,
+    "left_pct": 58.946,
+    "top_pct": 30,
     "width_pct": 15.954,
     "height_pct": 17.218,
     "site_name": "eBird",
@@ -82,8 +82,8 @@
   {
     "common_name": "Dark-eyed Junco",
     "detections": 9,
-    "left_pct": 53.865,
-    "top_pct": 68.003,
+    "left_pct": 53.592,
+    "top_pct": 67.559,
     "width_pct": 13.305,
     "height_pct": 13.675,
     "site_name": "eBird",
@@ -122,8 +122,8 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 3,
-    "left_pct": 67.374,
-    "top_pct": 67.84,
+    "left_pct": 66.965,
+    "top_pct": 67.517,
     "width_pct": 14.63,
     "height_pct": 14.805,
     "site_name": "eBird",
@@ -172,8 +172,8 @@
   {
     "common_name": "Song Sparrow",
     "detections": 1,
-    "left_pct": 75.697,
-    "top_pct": 36.553,
+    "left_pct": 75.202,
+    "top_pct": 36.715,
     "width_pct": 11.318,
     "height_pct": 12.485,
     "site_name": "eBird",
