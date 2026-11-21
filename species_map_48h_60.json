@@ -70,24 +70,24 @@
     "target_url": "https://ebird.org/species/pacwre1"
   },
   {
-    "common_name": "Spotted Towhee",
-    "detections": 32,
-    "left_pct": 24.644,
-    "top_pct": 38.266,
-    "width_pct": 9.075,
-    "height_pct": 13.699,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/spotow"
-  },
-  {
     "common_name": "Evening Grosbeak",
     "detections": 31,
-    "left_pct": 34.485,
-    "top_pct": 38.464,
+    "left_pct": 24.644,
+    "top_pct": 38.58,
     "width_pct": 10.253,
-    "height_pct": 13.304,
+    "height_pct": 13.072,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/evegro"
+  },
+  {
+    "common_name": "Spotted Towhee",
+    "detections": 31,
+    "left_pct": 35.664,
+    "top_pct": 38.791,
+    "width_pct": 9.075,
+    "height_pct": 12.65,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/spotow"
   },
   {
     "common_name": "Varied Thrush",
