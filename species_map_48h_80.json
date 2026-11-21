@@ -11,11 +11,11 @@
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 148,
+    "detections": 147,
     "left_pct": 22.564,
-    "top_pct": 21.223,
+    "top_pct": 21.232,
     "width_pct": 15.96,
-    "height_pct": 17.596,
+    "height_pct": 17.578,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 47,
+    "detections": 44,
     "left_pct": 39.411,
-    "top_pct": 23.054,
+    "top_pct": 23.107,
     "width_pct": 9.14,
-    "height_pct": 13.933,
+    "height_pct": 13.828,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
