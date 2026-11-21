@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 28985,
+    "detections": 28987,
     "left_pct": 5.918,
     "top_pct": 26.766,
     "width_pct": 6.99,
@@ -13,7 +13,7 @@
     "common_name": "Chestnut-backed Chickadee",
     "detections": 23863,
     "left_pct": 13.386,
-    "top_pct": 26.176,
+    "top_pct": 26.177,
     "width_pct": 7.873,
     "height_pct": 8.182,
     "site_name": "eBird",
@@ -21,7 +21,7 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 11194,
+    "detections": 11195,
     "left_pct": 21.737,
     "top_pct": 25.978,
     "width_pct": 4.341,
@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 6761,
+    "detections": 6784,
     "left_pct": 33.73,
-    "top_pct": 26.561,
+    "top_pct": 26.559,
     "width_pct": 4.047,
-    "height_pct": 7.414,
+    "height_pct": 7.417,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
@@ -91,7 +91,7 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2675,
+    "detections": 2676,
     "left_pct": 8.07,
     "top_pct": 35.483,
     "width_pct": 4.635,
@@ -131,11 +131,11 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 1238,
+    "detections": 1245,
     "left_pct": 52.235,
-    "top_pct": 14.607,
+    "top_pct": 14.606,
     "width_pct": 3.458,
-    "height_pct": 5.631,
+    "height_pct": 5.633,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
@@ -675,7 +675,7 @@
     "left_pct": 73.278,
     "top_pct": 70.312,
     "width_pct": 4.635,
-    "height_pct": 5.171,
+    "height_pct": 5.17,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sancra"
   },
@@ -792,7 +792,7 @@
   {
     "common_name": "Red-tailed Hawk",
     "detections": 14,
-    "left_pct": 64.43,
+    "left_pct": 64.431,
     "top_pct": 27.724,
     "width_pct": 4.93,
     "height_pct": 5.024,
@@ -992,7 +992,7 @@
   {
     "common_name": "Black-throated Gray Warbler",
     "detections": 4,
-    "left_pct": 30.254,
+    "left_pct": 30.253,
     "top_pct": 68.243,
     "width_pct": 8.461,
     "height_pct": 4.228,
