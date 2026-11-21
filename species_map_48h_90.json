@@ -12,7 +12,7 @@
   {
     "common_name": "Northern Flicker",
     "detections": 70,
-    "left_pct": 50.555,
+    "left_pct": 50.172,
     "top_pct": 43.932,
     "width_pct": 13.316,
     "height_pct": 20.343,
@@ -21,11 +21,11 @@
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 66,
+    "detections": 65,
     "left_pct": 27.023,
-    "top_pct": 20.638,
+    "top_pct": 20.654,
     "width_pct": 17.907,
-    "height_pct": 16.271,
+    "height_pct": 16.24,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
@@ -70,24 +70,24 @@
     "target_url": "https://ebird.org/species/evegro"
   },
   {
-    "common_name": "Belted Kingfisher",
-    "detections": 13,
-    "left_pct": 64.865,
-    "top_pct": 48.058,
-    "width_pct": 14.081,
-    "height_pct": 12.091,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/belkin1"
-  },
-  {
     "common_name": "Anna's Hummingbird",
-    "detections": 9,
-    "left_pct": 50.172,
-    "top_pct": 65.78,
+    "detections": 14,
+    "left_pct": 64.483,
+    "top_pct": 47.399,
     "width_pct": 14.846,
-    "height_pct": 15.382,
+    "height_pct": 13.407,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
+  },
+  {
+    "common_name": "Belted Kingfisher",
+    "detections": 13,
+    "left_pct": 50.555,
+    "top_pct": 65.767,
+    "width_pct": 14.081,
+    "height_pct": 17.027,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/belkin1"
   },
   {
     "common_name": "Red-breasted Nuthatch",
@@ -122,7 +122,7 @@
   {
     "common_name": "Spotted Towhee",
     "detections": 4,
-    "left_pct": 9.766,
+    "left_pct": 4.091,
     "top_pct": 77.165,
     "width_pct": 11.785,
     "height_pct": 14.255,
@@ -142,7 +142,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 3,
-    "left_pct": 22.546,
+    "left_pct": 16.871,
     "top_pct": 76.354,
     "width_pct": 11.02,
     "height_pct": 15.877,
@@ -160,12 +160,22 @@
     "target_url": "https://ebird.org/species/truswa"
   },
   {
+    "common_name": "Song Sparrow",
+    "detections": 2,
+    "left_pct": 28.885,
+    "top_pct": 77.702,
+    "width_pct": 10.255,
+    "height_pct": 13.182,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/sonspa"
+  },
+  {
     "common_name": "Downy Woodpecker",
     "detections": 1,
-    "left_pct": 66.013,
-    "top_pct": 65.767,
+    "left_pct": 65.631,
+    "top_pct": 68.276,
     "width_pct": 13.316,
-    "height_pct": 15.41,
+    "height_pct": 12.009,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/dowwoo"
   },
@@ -173,19 +183,19 @@
     "common_name": "Merlin",
     "detections": 1,
     "left_pct": 66.779,
-    "top_pct": 19.833,
+    "top_pct": 19.433,
     "width_pct": 5.663,
-    "height_pct": 13.823,
+    "height_pct": 14.622,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/merlin"
   },
   {
     "common_name": "Bushtit",
     "detections": 1,
-    "left_pct": 34.561,
-    "top_pct": 77.836,
-    "width_pct": 6.428,
-    "height_pct": 12.914,
+    "left_pct": 40.135,
+    "top_pct": 78.529,
+    "width_pct": 6.53,
+    "height_pct": 11.527,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/bushti"
   }

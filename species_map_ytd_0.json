@@ -51,21 +51,21 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 6724,
+    "detections": 6747,
     "left_pct": 33.787,
-    "top_pct": 26.658,
+    "top_pct": 26.657,
     "width_pct": 4.033,
-    "height_pct": 7.386,
+    "height_pct": 7.389,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 4511,
+    "detections": 4564,
     "left_pct": 79.961,
-    "top_pct": 49.04,
+    "top_pct": 49.037,
     "width_pct": 5.792,
-    "height_pct": 6.859,
+    "height_pct": 6.866,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -571,11 +571,11 @@
   },
   {
     "common_name": "California Scrub-Jay",
-    "detections": 45,
+    "detections": 46,
     "left_pct": 21.597,
-    "top_pct": 55.779,
+    "top_pct": 55.777,
     "width_pct": 6.379,
-    "height_pct": 5.461,
+    "height_pct": 5.466,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/cowscj1"
   },
