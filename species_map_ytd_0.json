@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 23826,
+    "detections": 23827,
     "left_pct": 13.514,
     "top_pct": 26.274,
     "width_pct": 7.845,
@@ -201,11 +201,11 @@
   },
   {
     "common_name": "Killdeer",
-    "detections": 394,
+    "detections": 395,
     "left_pct": 56.388,
     "top_pct": 43.694,
     "width_pct": 2.86,
-    "height_pct": 5.726,
+    "height_pct": 5.727,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/killde"
   },

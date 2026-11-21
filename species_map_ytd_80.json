@@ -142,7 +142,7 @@
   {
     "common_name": "Glaucous-winged Gull",
     "detections": 248,
-    "left_pct": 50.452,
+    "left_pct": 50.45,
     "top_pct": 51.105,
     "width_pct": 7.793,
     "height_pct": 7.471,
@@ -171,11 +171,11 @@
   },
   {
     "common_name": "Killdeer",
-    "detections": 106,
-    "left_pct": 58.827,
-    "top_pct": 51.672,
-    "width_pct": 3.597,
-    "height_pct": 6.338,
+    "detections": 107,
+    "left_pct": 58.825,
+    "top_pct": 51.67,
+    "width_pct": 3.6,
+    "height_pct": 6.341,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/killde"
   },
@@ -262,7 +262,7 @@
   {
     "common_name": "Herring Gull",
     "detections": 37,
-    "left_pct": 63.006,
+    "left_pct": 63.008,
     "top_pct": 51.689,
     "width_pct": 4.926,
     "height_pct": 6.303,
