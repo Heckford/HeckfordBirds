@@ -250,24 +250,24 @@
     "target_url": "https://www.inaturalist.org/taxa/search?q=Vespertilionidae"
   },
   {
+    "common_name": "Herring Gull",
+    "detections": 42,
+    "left_pct": 63.008,
+    "top_pct": 51.801,
+    "width_pct": 4.927,
+    "height_pct": 6.081,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/euhgul1"
+  },
+  {
     "common_name": "Golden-crowned Sparrow",
     "detections": 39,
     "left_pct": 17.518,
-    "top_pct": 48.144,
+    "top_pct": 47.925,
     "width_pct": 8.51,
-    "height_pct": 6.327,
+    "height_pct": 6.766,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gocspa"
-  },
-  {
-    "common_name": "Herring Gull",
-    "detections": 37,
-    "left_pct": 63.008,
-    "top_pct": 51.689,
-    "width_pct": 4.927,
-    "height_pct": 6.303,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/euhgul1"
   },
   {
     "common_name": "American Crow",
