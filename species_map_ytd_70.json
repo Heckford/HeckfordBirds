@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 822,
+    "detections": 823,
     "left_pct": 49.192,
     "top_pct": 15.886,
     "width_pct": 4.163,
-    "height_pct": 7.061,
+    "height_pct": 7.062,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
@@ -361,11 +361,11 @@
   },
   {
     "common_name": "Mallard",
-    "detections": 27,
+    "detections": 29,
     "left_pct": 83.537,
-    "top_pct": 24.34,
+    "top_pct": 24.331,
     "width_pct": 3.1,
-    "height_pct": 6.33,
+    "height_pct": 6.349,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/mallar3"
   },
