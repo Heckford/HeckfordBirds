@@ -2,7 +2,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 1078,
-    "left_pct": 3.534,
+    "left_pct": 3.647,
     "top_pct": 19.622,
     "width_pct": 13.233,
     "height_pct": 12.956,
@@ -12,7 +12,7 @@
   {
     "common_name": "Golden-crowned Kinglet",
     "detections": 900,
-    "left_pct": 17.418,
+    "left_pct": 17.532,
     "top_pct": 18.816,
     "width_pct": 11.729,
     "height_pct": 14.568,
@@ -40,24 +40,24 @@
     "target_url": "https://ebird.org/species/norfli"
   },
   {
-    "common_name": "Dark-eyed Junco",
-    "detections": 177,
-    "left_pct": 29.799,
-    "top_pct": 20.731,
-    "width_pct": 8.22,
-    "height_pct": 10.739,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/daejun"
-  },
-  {
     "common_name": "Pacific Wren",
-    "detections": 167,
-    "left_pct": 38.671,
-    "top_pct": 20.776,
-    "width_pct": 6.944,
-    "height_pct": 10.647,
+    "detections": 184,
+    "left_pct": 29.913,
+    "top_pct": 19.669,
+    "width_pct": 6.717,
+    "height_pct": 12.861,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
+  },
+  {
+    "common_name": "Dark-eyed Junco",
+    "detections": 177,
+    "left_pct": 37.281,
+    "top_pct": 19.794,
+    "width_pct": 8.22,
+    "height_pct": 12.611,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/daejun"
   },
   {
     "common_name": "Brown Creeper",
@@ -70,24 +70,24 @@
     "target_url": "https://ebird.org/species/brncre"
   },
   {
-    "common_name": "Steller's Jay",
-    "detections": 85,
-    "left_pct": 10.84,
-    "top_pct": 36.319,
-    "width_pct": 7.218,
-    "height_pct": 10.639,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/stejay"
-  },
-  {
     "common_name": "Spotted Towhee",
-    "detections": 78,
-    "left_pct": 18.71,
-    "top_pct": 35.984,
+    "detections": 90,
+    "left_pct": 10.84,
+    "top_pct": 35.428,
     "width_pct": 7.719,
-    "height_pct": 11.309,
+    "height_pct": 12.421,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
+  },
+  {
+    "common_name": "Steller's Jay",
+    "detections": 86,
+    "left_pct": 19.211,
+    "top_pct": 35.042,
+    "width_pct": 7.218,
+    "height_pct": 13.192,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/stejay"
   },
   {
     "common_name": "Bald Eagle",
