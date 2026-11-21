@@ -120,14 +120,34 @@
     "target_url": "https://ebird.org/species/varthr"
   },
   {
+    "common_name": "Song Sparrow",
+    "detections": 23,
+    "left_pct": 37.86,
+    "top_pct": 54.57,
+    "width_pct": 8.263,
+    "height_pct": 12.331,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/sonspa"
+  },
+  {
     "common_name": "Green-winged Teal",
     "detections": 17,
     "left_pct": 71.691,
-    "top_pct": 19.804,
+    "top_pct": 19.023,
     "width_pct": 11.347,
-    "height_pct": 11.052,
+    "height_pct": 12.615,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gnwtea"
+  },
+  {
+    "common_name": "Bald Eagle",
+    "detections": 17,
+    "left_pct": 48.59,
+    "top_pct": 18.578,
+    "width_pct": 7.03,
+    "height_pct": 13.538,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/baleag"
   },
   {
     "common_name": "Belted Kingfisher",
@@ -138,26 +158,6 @@
     "height_pct": 9.587,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
-  },
-  {
-    "common_name": "Song Sparrow",
-    "detections": 17,
-    "left_pct": 37.86,
-    "top_pct": 54.723,
-    "width_pct": 8.263,
-    "height_pct": 12.024,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/sonspa"
-  },
-  {
-    "common_name": "Bald Eagle",
-    "detections": 12,
-    "left_pct": 48.59,
-    "top_pct": 18.993,
-    "width_pct": 7.03,
-    "height_pct": 11.09,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/baleag"
   },
   {
     "common_name": "Ruby-crowned Kinglet",
@@ -173,7 +173,7 @@
     "common_name": "Herring Gull",
     "detections": 5,
     "left_pct": 53.739,
-    "top_pct": 51.124,
+    "top_pct": 52.741,
     "width_pct": 8.263,
     "height_pct": 10.458,
     "site_name": "eBird",
@@ -233,7 +233,7 @@
     "common_name": "Killdeer",
     "detections": 2,
     "left_pct": 54.972,
-    "top_pct": 62.785,
+    "top_pct": 64.402,
     "width_pct": 5.797,
     "height_pct": 9.895,
     "site_name": "eBird",
@@ -243,7 +243,7 @@
     "common_name": "Great Horned Owl",
     "detections": 1,
     "left_pct": 56.421,
-    "top_pct": 18.578,
+    "top_pct": 19.386,
     "width_pct": 10.73,
     "height_pct": 11.921,
     "site_name": "eBird",
@@ -273,7 +273,7 @@
     "common_name": "Merlin",
     "detections": 1,
     "left_pct": 49.206,
-    "top_pct": 32.085,
+    "top_pct": 33.703,
     "width_pct": 4.563,
     "height_pct": 11.139,
     "site_name": "eBird",
@@ -283,7 +283,7 @@
     "common_name": "Northern Pygmy-Owl",
     "detections": 1,
     "left_pct": 54.571,
-    "top_pct": 31.701,
+    "top_pct": 33.318,
     "width_pct": 11.963,
     "height_pct": 11.908,
     "site_name": "eBird",

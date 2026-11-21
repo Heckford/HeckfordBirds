@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 6747,
+    "detections": 6761,
     "left_pct": 33.73,
     "top_pct": 26.561,
     "width_pct": 4.047,
-    "height_pct": 7.413,
+    "height_pct": 7.414,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
@@ -231,11 +231,11 @@
   },
   {
     "common_name": "Herring Gull",
-    "detections": 290,
+    "detections": 291,
     "left_pct": 59.758,
-    "top_pct": 43.797,
+    "top_pct": 43.796,
     "width_pct": 4.047,
-    "height_pct": 5.166,
+    "height_pct": 5.167,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
   },

@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 3854,
+    "detections": 3863,
     "left_pct": 29.811,
-    "top_pct": 25.242,
+    "top_pct": 25.241,
     "width_pct": 4.773,
-    "height_pct": 8.087,
+    "height_pct": 8.089,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 972,
+    "detections": 977,
     "left_pct": 49.837,
-    "top_pct": 17.27,
+    "top_pct": 17.268,
     "width_pct": 4.079,
-    "height_pct": 6.811,
+    "height_pct": 6.813,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
