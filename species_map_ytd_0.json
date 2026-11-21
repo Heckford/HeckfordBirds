@@ -131,11 +131,11 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 1227,
+    "detections": 1234,
     "left_pct": 52.235,
-    "top_pct": 14.608,
+    "top_pct": 14.607,
     "width_pct": 3.458,
-    "height_pct": 5.63,
+    "height_pct": 5.632,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
@@ -430,24 +430,24 @@
     "target_url": "https://ebird.org/species/blkoys"
   },
   {
+    "common_name": "Wood Duck",
+    "detections": 91,
+    "left_pct": 81.39,
+    "top_pct": 22.502,
+    "width_pct": 3.164,
+    "height_pct": 4.98,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/wooduc"
+  },
+  {
     "common_name": "White-throated Sparrow",
     "detections": 91,
     "left_pct": 20.763,
-    "top_pct": 49.864,
+    "top_pct": 49.992,
     "width_pct": 6.99,
-    "height_pct": 4.755,
+    "height_pct": 4.499,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/whtspa"
-  },
-  {
-    "common_name": "Wood Duck",
-    "detections": 90,
-    "left_pct": 81.39,
-    "top_pct": 22.402,
-    "width_pct": 3.164,
-    "height_pct": 5.18,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/wooduc"
   },
   {
     "common_name": "Great Horned Owl",
