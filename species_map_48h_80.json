@@ -40,24 +40,24 @@
     "target_url": "https://ebird.org/species/pacwre1"
   },
   {
-    "common_name": "Anna's Hummingbird",
-    "detections": 32,
-    "left_pct": 82.476,
-    "top_pct": 57.907,
-    "width_pct": 13.993,
-    "height_pct": 15.914,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/annhum"
-  },
-  {
     "common_name": "Dark-eyed Junco",
     "detections": 31,
     "left_pct": 17.741,
-    "top_pct": 41.261,
+    "top_pct": 42.377,
     "width_pct": 11.829,
-    "height_pct": 15.938,
+    "height_pct": 13.706,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
+  },
+  {
+    "common_name": "Anna's Hummingbird",
+    "detections": 27,
+    "left_pct": 82.476,
+    "top_pct": 59.348,
+    "width_pct": 13.993,
+    "height_pct": 13.032,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Brown Creeper",

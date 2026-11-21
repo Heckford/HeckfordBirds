@@ -30,22 +30,12 @@
     "target_url": "https://ebird.org/species/norfli"
   },
   {
-    "common_name": "Anna's Hummingbird",
-    "detections": 55,
-    "left_pct": 82.914,
-    "top_pct": 64.423,
-    "width_pct": 12.042,
-    "height_pct": 11.745,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/annhum"
-  },
-  {
     "common_name": "Dark-eyed Junco",
     "detections": 54,
     "left_pct": 35.801,
-    "top_pct": 21.668,
+    "top_pct": 20.655,
     "width_pct": 10.18,
-    "height_pct": 12.186,
+    "height_pct": 14.21,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -53,11 +43,21 @@
     "common_name": "Pacific Wren",
     "detections": 50,
     "left_pct": 9.793,
-    "top_pct": 39.242,
+    "top_pct": 38.13,
     "width_pct": 8.318,
-    "height_pct": 12.071,
+    "height_pct": 14.295,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
+  },
+  {
+    "common_name": "Anna's Hummingbird",
+    "detections": 43,
+    "left_pct": 82.914,
+    "top_pct": 64.559,
+    "width_pct": 12.042,
+    "height_pct": 11.474,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Brown Creeper",

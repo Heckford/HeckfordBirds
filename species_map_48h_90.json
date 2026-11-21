@@ -81,11 +81,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 11,
+    "detections": 10,
     "left_pct": 50.172,
     "top_pct": 66.577,
     "width_pct": 14.846,
-    "height_pct": 15.667,
+    "height_pct": 15.53,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -153,7 +153,7 @@
     "common_name": "Downy Woodpecker",
     "detections": 1,
     "left_pct": 66.013,
-    "top_pct": 68.407,
+    "top_pct": 68.338,
     "width_pct": 13.316,
     "height_pct": 12.009,
     "site_name": "eBird",
