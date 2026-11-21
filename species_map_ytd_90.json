@@ -2,7 +2,7 @@
   {
     "common_name": "Northern Flicker",
     "detections": 2862,
-    "left_pct": 73.467,
+    "left_pct": 73.469,
     "top_pct": 51.374,
     "width_pct": 6.99,
     "height_pct": 11.677,
@@ -51,18 +51,18 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 1050,
-    "left_pct": 7.039,
-    "top_pct": 39.828,
-    "width_pct": 5.559,
-    "height_pct": 8.487,
+    "detections": 1054,
+    "left_pct": 7.037,
+    "top_pct": 39.827,
+    "width_pct": 5.562,
+    "height_pct": 8.49,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
   {
     "common_name": "Belted Kingfisher",
     "detections": 674,
-    "left_pct": 81.098,
+    "left_pct": 81.099,
     "top_pct": 52.142,
     "width_pct": 7.384,
     "height_pct": 10.14,
@@ -72,7 +72,7 @@
   {
     "common_name": "Anna's Hummingbird",
     "detections": 635,
-    "left_pct": 69.455,
+    "left_pct": 69.457,
     "top_pct": 64.275,
     "width_pct": 7.778,
     "height_pct": 7.796,
@@ -82,7 +82,7 @@
   {
     "common_name": "Song Sparrow",
     "detections": 506,
-    "left_pct": 13.237,
+    "left_pct": 13.239,
     "top_pct": 39.689,
     "width_pct": 5.415,
     "height_pct": 8.764,
@@ -92,7 +92,7 @@
   {
     "common_name": "Bald Eagle",
     "detections": 451,
-    "left_pct": 46.711,
+    "left_pct": 46.712,
     "top_pct": 15.64,
     "width_pct": 4.827,
     "height_pct": 8.188,
@@ -102,7 +102,7 @@
   {
     "common_name": "Dark-eyed Junco",
     "detections": 375,
-    "left_pct": 19.292,
+    "left_pct": 19.294,
     "top_pct": 40.206,
     "width_pct": 6.597,
     "height_pct": 7.731,
@@ -112,7 +112,7 @@
   {
     "common_name": "Varied Thrush",
     "detections": 263,
-    "left_pct": 26.529,
+    "left_pct": 26.53,
     "top_pct": 39.958,
     "width_pct": 5.809,
     "height_pct": 8.227,
@@ -122,7 +122,7 @@
   {
     "common_name": "Myotis Bats",
     "detections": 232,
-    "left_pct": 51.216,
+    "left_pct": 51.218,
     "top_pct": 82.059,
     "width_pct": 5.021,
     "height_pct": 6.408,
@@ -132,7 +132,7 @@
   {
     "common_name": "Hairy Woodpecker",
     "detections": 202,
-    "left_pct": 77.873,
+    "left_pct": 77.875,
     "top_pct": 64.011,
     "width_pct": 6.99,
     "height_pct": 8.325,
@@ -142,7 +142,7 @@
   {
     "common_name": "Glaucous-winged Gull",
     "detections": 153,
-    "left_pct": 50.035,
+    "left_pct": 50.036,
     "top_pct": 53.691,
     "width_pct": 8.566,
     "height_pct": 8.256,
@@ -152,7 +152,7 @@
   {
     "common_name": "Common Raven",
     "detections": 69,
-    "left_pct": 32.978,
+    "left_pct": 32.979,
     "top_pct": 39.731,
     "width_pct": 5.415,
     "height_pct": 8.682,
@@ -162,7 +162,7 @@
   {
     "common_name": "Pine Siskin",
     "detections": 54,
-    "left_pct": 39.033,
+    "left_pct": 39.034,
     "top_pct": 40.399,
     "width_pct": 5.021,
     "height_pct": 7.344,
@@ -172,7 +172,7 @@
   {
     "common_name": "Downy Woodpecker",
     "detections": 51,
-    "left_pct": 85.503,
+    "left_pct": 85.505,
     "top_pct": 64.719,
     "width_pct": 6.99,
     "height_pct": 6.908,
@@ -202,7 +202,7 @@
   {
     "common_name": "Killdeer",
     "detections": 44,
-    "left_pct": 59.241,
+    "left_pct": 59.242,
     "top_pct": 54.062,
     "width_pct": 3.84,
     "height_pct": 7.513,
@@ -212,7 +212,7 @@
   {
     "common_name": "Snow Goose",
     "detections": 42,
-    "left_pct": 68.988,
+    "left_pct": 68.989,
     "top_pct": 15.958,
     "width_pct": 4.627,
     "height_pct": 6.434,
@@ -222,7 +222,7 @@
   {
     "common_name": "Vesper Bats",
     "detections": 39,
-    "left_pct": 56.878,
+    "left_pct": 56.879,
     "top_pct": 82.38,
     "width_pct": 5.021,
     "height_pct": 5.766,
@@ -232,7 +232,7 @@
   {
     "common_name": "Trumpeter Swan",
     "detections": 30,
-    "left_pct": 74.255,
+    "left_pct": 74.256,
     "top_pct": 15.64,
     "width_pct": 6.203,
     "height_pct": 7.069,
@@ -262,7 +262,7 @@
   {
     "common_name": "Cackling Goose",
     "detections": 18,
-    "left_pct": 81.098,
+    "left_pct": 81.099,
     "top_pct": 16.095,
     "width_pct": 6.203,
     "height_pct": 6.159,
@@ -302,7 +302,7 @@
   {
     "common_name": "Common Loon",
     "detections": 8,
-    "left_pct": 87.94,
+    "left_pct": 87.942,
     "top_pct": 16.637,
     "width_pct": 5.021,
     "height_pct": 5.074,
@@ -312,7 +312,7 @@
   {
     "common_name": "Greater White-fronted Goose",
     "detections": 7,
-    "left_pct": 72.877,
+    "left_pct": 72.878,
     "top_pct": 23.669,
     "width_pct": 11.322,
     "height_pct": 6.278,
@@ -322,7 +322,7 @@
   {
     "common_name": "Herring Gull",
     "detections": 7,
-    "left_pct": 51.977,
+    "left_pct": 51.978,
     "top_pct": 62.907,
     "width_pct": 5.415,
     "height_pct": 6.526,
@@ -332,7 +332,7 @@
   {
     "common_name": "Cooper's Hawk",
     "detections": 6,
-    "left_pct": 52.178,
+    "left_pct": 52.179,
     "top_pct": 16.185,
     "width_pct": 5.809,
     "height_pct": 7.097,
@@ -342,7 +342,7 @@
   {
     "common_name": "Bats",
     "detections": 6,
-    "left_pct": 51.699,
+    "left_pct": 51.7,
     "top_pct": 89.427,
     "width_pct": 3.268,
     "height_pct": 5.338,
@@ -352,7 +352,7 @@
   {
     "common_name": "Wood Duck",
     "detections": 5,
-    "left_pct": 84.839,
+    "left_pct": 84.84,
     "top_pct": 23.672,
     "width_pct": 4.234,
     "height_pct": 6.272,
@@ -362,7 +362,7 @@
   {
     "common_name": "Green-winged Teal",
     "detections": 5,
-    "left_pct": 70.637,
+    "left_pct": 70.638,
     "top_pct": 31.519,
     "width_pct": 7.384,
     "height_pct": 6.05,
@@ -382,7 +382,7 @@
   {
     "common_name": "Northern Pygmy-Owl",
     "detections": 5,
-    "left_pct": 58.626,
+    "left_pct": 58.628,
     "top_pct": 15.977,
     "width_pct": 7.778,
     "height_pct": 7.514,
@@ -392,7 +392,7 @@
   {
     "common_name": "Great Blue Heron",
     "detections": 4,
-    "left_pct": 78.661,
+    "left_pct": 78.662,
     "top_pct": 30.907,
     "width_pct": 6.99,
     "height_pct": 7.273,
@@ -402,7 +402,7 @@
   {
     "common_name": "Dunlin",
     "detections": 3,
-    "left_pct": 58.032,
+    "left_pct": 58.033,
     "top_pct": 63.094,
     "width_pct": 3.107,
     "height_pct": 6.151,
@@ -412,7 +412,7 @@
   {
     "common_name": "Tundra Swan",
     "detections": 3,
-    "left_pct": 86.291,
+    "left_pct": 86.293,
     "top_pct": 31.675,
     "width_pct": 5.021,
     "height_pct": 5.738,
@@ -422,7 +422,7 @@
   {
     "common_name": "Pileated Woodpecker",
     "detections": 3,
-    "left_pct": 71.892,
+    "left_pct": 71.893,
     "top_pct": 73.295,
     "width_pct": 8.172,
     "height_pct": 6.976,
@@ -432,7 +432,7 @@
   {
     "common_name": "Mallard",
     "detections": 2,
-    "left_pct": 73.197,
+    "left_pct": 73.198,
     "top_pct": 39.309,
     "width_pct": 3.446,
     "height_pct": 5.896,
@@ -452,7 +452,7 @@
   {
     "common_name": "Canada Goose",
     "detections": 2,
-    "left_pct": 77.282,
+    "left_pct": 77.284,
     "top_pct": 39.14,
     "width_pct": 5.415,
     "height_pct": 6.234,
@@ -462,7 +462,7 @@
   {
     "common_name": "Merlin",
     "detections": 2,
-    "left_pct": 46.023,
+    "left_pct": 46.024,
     "top_pct": 24.788,
     "width_pct": 3.052,
     "height_pct": 7.167,
@@ -472,7 +472,7 @@
   {
     "common_name": "Black Oystercatcher",
     "detections": 2,
-    "left_pct": 52.472,
+    "left_pct": 52.473,
     "top_pct": 70.393,
     "width_pct": 8.172,
     "height_pct": 5.667,
@@ -502,7 +502,7 @@
   {
     "common_name": "Eurasian Collared-Dove",
     "detections": 2,
-    "left_pct": 80.704,
+    "left_pct": 80.705,
     "top_pct": 73.859,
     "width_pct": 9.353,
     "height_pct": 5.848,
@@ -522,7 +522,7 @@
   {
     "common_name": "Sharp-shinned Hawk",
     "detections": 1,
-    "left_pct": 49.715,
+    "left_pct": 49.716,
     "top_pct": 24.796,
     "width_pct": 7.778,
     "height_pct": 7.149,
@@ -532,7 +532,7 @@
   {
     "common_name": "Northern Saw-whet Owl",
     "detections": 1,
-    "left_pct": 58.133,
+    "left_pct": 58.134,
     "top_pct": 25.155,
     "width_pct": 8.959,
     "height_pct": 6.432,
@@ -552,7 +552,7 @@
   {
     "common_name": "Great Horned Owl",
     "detections": 1,
-    "left_pct": 47.401,
+    "left_pct": 47.403,
     "top_pct": 32.914,
     "width_pct": 6.99,
     "height_pct": 6.682,
@@ -562,7 +562,7 @@
   {
     "common_name": "Big Brown Bat",
     "detections": 1,
-    "left_pct": 55.607,
+    "left_pct": 55.609,
     "top_pct": 89.556,
     "width_pct": 5.809,
     "height_pct": 5.08,
@@ -572,7 +572,7 @@
   {
     "common_name": "Peregrine Falcon",
     "detections": 1,
-    "left_pct": 55.032,
+    "left_pct": 55.033,
     "top_pct": 33.179,
     "width_pct": 6.99,
     "height_pct": 6.152,
@@ -612,7 +612,7 @@
   {
     "common_name": "Osprey",
     "detections": 1,
-    "left_pct": 62.662,
+    "left_pct": 62.663,
     "top_pct": 32.983,
     "width_pct": 3.052,
     "height_pct": 6.545,
@@ -622,7 +622,7 @@
   {
     "common_name": "Horned Grebe",
     "detections": 1,
-    "left_pct": 83.337,
+    "left_pct": 83.339,
     "top_pct": 39.477,
     "width_pct": 5.415,
     "height_pct": 5.56,
@@ -642,7 +642,7 @@
   {
     "common_name": "Barred Owl",
     "detections": 1,
-    "left_pct": 54.244,
+    "left_pct": 54.245,
     "top_pct": 40.556,
     "width_pct": 4.627,
     "height_pct": 7.135,

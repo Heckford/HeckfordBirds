@@ -81,11 +81,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 1942,
+    "detections": 1948,
     "left_pct": 11.022,
-    "top_pct": 35.08,
+    "top_pct": 35.079,
     "width_pct": 4.773,
-    "height_pct": 8.121,
+    "height_pct": 8.124,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 902,
+    "detections": 905,
     "left_pct": 16.359,
-    "top_pct": 35.436,
+    "top_pct": 35.435,
     "width_pct": 5.468,
-    "height_pct": 7.409,
+    "height_pct": 7.411,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },

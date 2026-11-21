@@ -31,21 +31,21 @@
   },
   {
     "common_name": "Northern Flicker",
-    "detections": 185,
+    "detections": 190,
     "left_pct": 82.443,
-    "top_pct": 64.007,
+    "top_pct": 63.984,
     "width_pct": 8.722,
-    "height_pct": 13.255,
+    "height_pct": 13.3,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 173,
+    "detections": 177,
     "left_pct": 29.904,
-    "top_pct": 20.782,
+    "top_pct": 20.768,
     "width_pct": 8.22,
-    "height_pct": 10.714,
+    "height_pct": 10.742,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 75,
+    "detections": 78,
     "left_pct": 10.84,
-    "top_pct": 35.591,
+    "top_pct": 35.566,
     "width_pct": 7.719,
-    "height_pct": 12.182,
+    "height_pct": 12.233,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
@@ -132,7 +132,7 @@
   {
     "common_name": "Song Sparrow",
     "detections": 34,
-    "left_pct": 4.391,
+    "left_pct": 4.105,
     "top_pct": 49.939,
     "width_pct": 6.717,
     "height_pct": 10.969,
@@ -142,7 +142,7 @@
   {
     "common_name": "Evening Grosbeak",
     "detections": 33,
-    "left_pct": 11.76,
+    "left_pct": 11.474,
     "top_pct": 49.94,
     "width_pct": 8.722,
     "height_pct": 10.967,
@@ -172,7 +172,7 @@
   {
     "common_name": "Ruby-crowned Kinglet",
     "detections": 15,
-    "left_pct": 21.133,
+    "left_pct": 20.847,
     "top_pct": 51.322,
     "width_pct": 10.727,
     "height_pct": 8.202,
@@ -190,24 +190,24 @@
     "target_url": "https://ebird.org/species/mallar3"
   },
   {
-    "common_name": "American Crow",
-    "detections": 8,
-    "left_pct": 32.511,
-    "top_pct": 50.729,
-    "width_pct": 7.218,
-    "height_pct": 9.388,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/amecro"
-  },
-  {
     "common_name": "Bushtit",
-    "detections": 8,
-    "left_pct": 40.381,
-    "top_pct": 50.777,
-    "width_pct": 4.376,
-    "height_pct": 9.293,
+    "detections": 9,
+    "left_pct": 32.225,
+    "top_pct": 51.283,
+    "width_pct": 4.948,
+    "height_pct": 8.28,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/bushti"
+  },
+  {
+    "common_name": "American Crow",
+    "detections": 8,
+    "left_pct": 37.825,
+    "top_pct": 50.877,
+    "width_pct": 7.218,
+    "height_pct": 9.092,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/amecro"
   },
   {
     "common_name": "Cedar Waxwing",
