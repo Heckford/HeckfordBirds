@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 963,
+    "detections": 968,
     "left_pct": 49.721,
-    "top_pct": 16.119,
+    "top_pct": 16.118,
     "width_pct": 4.192,
-    "height_pct": 6.999,
+    "height_pct": 7.002,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
@@ -291,11 +291,11 @@
   },
   {
     "common_name": "Wood Duck",
-    "detections": 63,
+    "detections": 64,
     "left_pct": 84.105,
-    "top_pct": 16.701,
+    "top_pct": 16.699,
     "width_pct": 3.835,
-    "height_pct": 6.067,
+    "height_pct": 6.071,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/wooduc"
   },
