@@ -21,11 +21,11 @@
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 79,
+    "detections": 81,
     "left_pct": 3.87,
-    "top_pct": 40.107,
+    "top_pct": 40.082,
     "width_pct": 17.573,
-    "height_pct": 16.005,
+    "height_pct": 16.054,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
