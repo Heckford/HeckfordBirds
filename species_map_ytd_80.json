@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 5638,
+    "detections": 5639,
     "left_pct": 7.487,
     "top_pct": 28.251,
     "width_pct": 8.505,
@@ -62,7 +62,7 @@
   {
     "common_name": "Pacific Wren",
     "detections": 1435,
-    "left_pct": 6.816,
+    "left_pct": 6.815,
     "top_pct": 38.332,
     "width_pct": 4.924,
     "height_pct": 8.866,
@@ -72,7 +72,7 @@
   {
     "common_name": "Anna's Hummingbird",
     "detections": 1431,
-    "left_pct": 78.502,
+    "left_pct": 78.503,
     "top_pct": 50.826,
     "width_pct": 7.072,
     "height_pct": 7.202,
@@ -105,7 +105,7 @@
     "left_pct": 50.257,
     "top_pct": 15.264,
     "width_pct": 4.208,
-    "height_pct": 8.709,
+    "height_pct": 8.708,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
@@ -113,7 +113,7 @@
     "common_name": "Varied Thrush",
     "detections": 418,
     "left_pct": 18.901,
-    "top_pct": 39.065,
+    "top_pct": 39.064,
     "width_pct": 5.282,
     "height_pct": 7.401,
     "site_name": "eBird",
@@ -202,7 +202,7 @@
   {
     "common_name": "Downy Woodpecker",
     "detections": 73,
-    "left_pct": 78.502,
+    "left_pct": 78.503,
     "top_pct": 60.654,
     "width_pct": 6.356,
     "height_pct": 8.069,
@@ -252,7 +252,7 @@
   {
     "common_name": "Herring Gull",
     "detections": 39,
-    "left_pct": 62.928,
+    "left_pct": 62.929,
     "top_pct": 51.786,
     "width_pct": 4.924,
     "height_pct": 6.052,
@@ -532,8 +532,8 @@
   {
     "common_name": "Townsend's Warbler",
     "detections": 5,
-    "left_pct": 6.704,
-    "top_pct": 63.214,
+    "left_pct": 6.703,
+    "top_pct": 63.213,
     "width_pct": 7.072,
     "height_pct": 5.627,
     "site_name": "eBird",
@@ -573,7 +573,7 @@
     "common_name": "Pine Grosbeak",
     "detections": 4,
     "left_pct": 30.383,
-    "top_pct": 63.153,
+    "top_pct": 63.152,
     "width_pct": 5.282,
     "height_pct": 5.749,
     "site_name": "eBird",
@@ -622,7 +622,7 @@
   {
     "common_name": "Peregrine Falcon",
     "detections": 2,
-    "left_pct": 62.768,
+    "left_pct": 62.769,
     "top_pct": 25.089,
     "width_pct": 6.356,
     "height_pct": 6.369,
@@ -633,7 +633,7 @@
     "common_name": "Purple Finch",
     "detections": 2,
     "left_pct": 36.247,
-    "top_pct": 63.165,
+    "top_pct": 63.164,
     "width_pct": 4.924,
     "height_pct": 5.725,
     "site_name": "eBird",
@@ -733,7 +733,7 @@
     "common_name": "Sharp-shinned Hawk",
     "detections": 1,
     "left_pct": 53.615,
-    "top_pct": 33.073,
+    "top_pct": 33.072,
     "width_pct": 7.072,
     "height_pct": 5.624,
     "site_name": "eBird",
@@ -772,7 +772,7 @@
   {
     "common_name": "Brewer's Blackbird",
     "detections": 1,
-    "left_pct": 12.747,
+    "left_pct": 12.746,
     "top_pct": 76.894,
     "width_pct": 7.072,
     "height_pct": 5.752,
