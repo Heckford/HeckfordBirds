@@ -201,11 +201,11 @@
   },
   {
     "common_name": "Killdeer",
-    "detections": 393,
+    "detections": 394,
     "left_pct": 56.208,
     "top_pct": 43.503,
     "width_pct": 2.869,
-    "height_pct": 5.746,
+    "height_pct": 5.747,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/killde"
   },
