@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 134,
+    "detections": 131,
     "left_pct": 85.484,
-    "top_pct": 64.588,
+    "top_pct": 64.604,
     "width_pct": 11.334,
-    "height_pct": 12.297,
+    "height_pct": 12.263,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
