@@ -2,7 +2,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 1078,
-    "left_pct": 3.594,
+    "left_pct": 3.534,
     "top_pct": 19.622,
     "width_pct": 13.233,
     "height_pct": 12.956,
@@ -12,7 +12,7 @@
   {
     "common_name": "Golden-crowned Kinglet",
     "detections": 900,
-    "left_pct": 17.478,
+    "left_pct": 17.418,
     "top_pct": 18.816,
     "width_pct": 11.729,
     "height_pct": 14.568,
@@ -31,18 +31,18 @@
   },
   {
     "common_name": "Northern Flicker",
-    "detections": 190,
+    "detections": 192,
     "left_pct": 82.443,
-    "top_pct": 64.325,
+    "top_pct": 64.316,
     "width_pct": 8.722,
-    "height_pct": 13.295,
+    "height_pct": 13.313,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
   },
   {
     "common_name": "Dark-eyed Junco",
     "detections": 177,
-    "left_pct": 29.859,
+    "left_pct": 29.799,
     "top_pct": 20.731,
     "width_pct": 8.22,
     "height_pct": 10.739,
@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 149,
-    "left_pct": 38.731,
-    "top_pct": 20.844,
-    "width_pct": 6.824,
-    "height_pct": 10.513,
+    "detections": 167,
+    "left_pct": 38.671,
+    "top_pct": 20.776,
+    "width_pct": 6.944,
+    "height_pct": 10.647,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },

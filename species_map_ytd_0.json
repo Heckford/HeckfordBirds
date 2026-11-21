@@ -41,7 +41,7 @@
   },
   {
     "common_name": "Northern Flicker",
-    "detections": 8692,
+    "detections": 8694,
     "left_pct": 74.363,
     "top_pct": 48.78,
     "width_pct": 5.224,
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 2455,
+    "detections": 2473,
     "left_pct": 13.183,
-    "top_pct": 35.664,
+    "top_pct": 35.663,
     "width_pct": 4.047,
-    "height_pct": 6.664,
+    "height_pct": 6.668,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -473,7 +473,7 @@
     "common_name": "Eurasian Collared-Dove",
     "detections": 75,
     "left_pct": 74.069,
-    "top_pct": 64.598,
+    "top_pct": 64.599,
     "width_pct": 6.99,
     "height_pct": 4.861,
     "site_name": "eBird",
