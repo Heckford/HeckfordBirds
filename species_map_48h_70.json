@@ -2,7 +2,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 515,
-    "left_pct": 6.344,
+    "left_pct": 6.534,
     "top_pct": 18.437,
     "width_pct": 16.179,
     "height_pct": 15.841,
@@ -12,7 +12,7 @@
   {
     "common_name": "Golden-crowned Kinglet",
     "detections": 268,
-    "left_pct": 23.32,
+    "left_pct": 23.51,
     "top_pct": 18.104,
     "width_pct": 14.341,
     "height_pct": 16.508,
@@ -30,24 +30,24 @@
     "target_url": "https://ebird.org/species/norfli"
   },
   {
-    "common_name": "Pacific Wren",
-    "detections": 93,
-    "left_pct": 38.457,
-    "top_pct": 19.792,
-    "width_pct": 8.592,
-    "height_pct": 13.132,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/pacwre1"
-  },
-  {
     "common_name": "Anna's Hummingbird",
     "detections": 88,
     "left_pct": 84.856,
-    "top_pct": 52.287,
+    "top_pct": 53.644,
     "width_pct": 11.889,
-    "height_pct": 15.266,
+    "height_pct": 12.552,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
+  },
+  {
+    "common_name": "Pacific Wren",
+    "detections": 88,
+    "left_pct": 38.647,
+    "top_pct": 18.571,
+    "width_pct": 8.212,
+    "height_pct": 15.573,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/pacwre1"
   },
   {
     "common_name": "Dark-eyed Junco",
