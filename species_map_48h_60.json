@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 89,
+    "detections": 79,
     "left_pct": 83.515,
-    "top_pct": 64.639,
+    "top_pct": 64.716,
     "width_pct": 11.432,
-    "height_pct": 11.834,
+    "height_pct": 11.68,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -202,7 +202,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 3,
-    "left_pct": 3.636,
+    "left_pct": 3.873,
     "top_pct": 66.462,
     "width_pct": 8.485,
     "height_pct": 12.058,
@@ -230,24 +230,24 @@
     "target_url": "https://ebird.org/species/belkin1"
   },
   {
-    "common_name": "Bushtit",
-    "detections": 3,
-    "left_pct": 12.888,
-    "top_pct": 67.838,
-    "width_pct": 5.422,
-    "height_pct": 9.305,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/bushti"
-  },
-  {
     "common_name": "Savannah Sparrow",
     "detections": 2,
-    "left_pct": 19.076,
-    "top_pct": 67.416,
+    "left_pct": 13.124,
+    "top_pct": 67.154,
     "width_pct": 10.253,
-    "height_pct": 10.149,
+    "height_pct": 10.672,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/savspa"
+  },
+  {
+    "common_name": "Bushtit",
+    "detections": 2,
+    "left_pct": 24.143,
+    "top_pct": 67.363,
+    "width_pct": 4.95,
+    "height_pct": 10.256,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/bushti"
   },
   {
     "common_name": "Common Goldeneye",
@@ -262,7 +262,7 @@
   {
     "common_name": "Hermit Thrush",
     "detections": 1,
-    "left_pct": 30.095,
+    "left_pct": 29.859,
     "top_pct": 67.391,
     "width_pct": 8.485,
     "height_pct": 10.199,
@@ -282,7 +282,7 @@
   {
     "common_name": "American Crow",
     "detections": 1,
-    "left_pct": 39.347,
+    "left_pct": 39.111,
     "top_pct": 67.619,
     "width_pct": 8.485,
     "height_pct": 9.743,

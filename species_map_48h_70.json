@@ -30,24 +30,24 @@
     "target_url": "https://ebird.org/species/norfli"
   },
   {
-    "common_name": "Anna's Hummingbird",
-    "detections": 62,
-    "left_pct": 83.661,
-    "top_pct": 65.335,
-    "width_pct": 12.315,
-    "height_pct": 12.501,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/annhum"
-  },
-  {
     "common_name": "Dark-eyed Junco",
     "detections": 54,
     "left_pct": 37.288,
-    "top_pct": 19.867,
+    "top_pct": 18.785,
     "width_pct": 10.411,
-    "height_pct": 12.809,
+    "height_pct": 14.972,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
+  },
+  {
+    "common_name": "Anna's Hummingbird",
+    "detections": 53,
+    "left_pct": 83.661,
+    "top_pct": 64.153,
+    "width_pct": 12.315,
+    "height_pct": 14.865,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Pacific Wren",
@@ -172,7 +172,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 3,
-    "left_pct": 7.973,
+    "left_pct": 8.068,
     "top_pct": 69.828,
     "width_pct": 9.141,
     "height_pct": 10.807,
@@ -191,18 +191,18 @@
   },
   {
     "common_name": "Bushtit",
-    "detections": 3,
-    "left_pct": 17.94,
-    "top_pct": 70.201,
-    "width_pct": 5.876,
-    "height_pct": 10.062,
+    "detections": 2,
+    "left_pct": 18.034,
+    "top_pct": 70.304,
+    "width_pct": 5.687,
+    "height_pct": 9.856,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/bushti"
   },
   {
     "common_name": "Cedar Waxwing",
     "detections": 1,
-    "left_pct": 24.641,
+    "left_pct": 24.547,
     "top_pct": 69.797,
     "width_pct": 9.141,
     "height_pct": 10.871,
@@ -282,7 +282,7 @@
   {
     "common_name": "House Sparrow",
     "detections": 1,
-    "left_pct": 34.608,
+    "left_pct": 34.513,
     "top_pct": 70.114,
     "width_pct": 9.141,
     "height_pct": 10.235,
