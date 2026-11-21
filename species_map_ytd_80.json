@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 5541,
+    "detections": 5542,
     "left_pct": 7.53,
     "top_pct": 28.414,
     "width_pct": 8.51,
@@ -31,7 +31,7 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 3467,
+    "detections": 3470,
     "left_pct": 26.789,
     "top_pct": 28.28,
     "width_pct": 5.285,
@@ -45,24 +45,24 @@
     "left_pct": 32.656,
     "top_pct": 29.038,
     "width_pct": 8.151,
-    "height_pct": 7.28,
+    "height_pct": 7.279,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 1570,
+    "detections": 1574,
     "left_pct": 41.39,
-    "top_pct": 28.108,
+    "top_pct": 28.107,
     "width_pct": 4.927,
-    "height_pct": 9.138,
+    "height_pct": 9.14,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
   {
     "common_name": "Anna's Hummingbird",
     "detections": 1430,
-    "left_pct": 78.518,
+    "left_pct": 78.519,
     "top_pct": 56.112,
     "width_pct": 7.076,
     "height_pct": 8.713,
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 1422,
+    "detections": 1427,
     "left_pct": 6.858,
-    "top_pct": 39.029,
+    "top_pct": 39.028,
     "width_pct": 4.927,
-    "height_pct": 7.484,
+    "height_pct": 7.487,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -202,7 +202,7 @@
   {
     "common_name": "Downy Woodpecker",
     "detections": 73,
-    "left_pct": 78.518,
+    "left_pct": 78.519,
     "top_pct": 66.694,
     "width_pct": 6.36,
     "height_pct": 8.08,
@@ -212,7 +212,7 @@
   {
     "common_name": "Ruby-crowned Kinglet",
     "detections": 62,
-    "left_pct": 9.143,
+    "left_pct": 9.142,
     "top_pct": 48.453,
     "width_pct": 7.793,
     "height_pct": 5.709,
@@ -255,7 +255,7 @@
     "left_pct": 17.518,
     "top_pct": 48.144,
     "width_pct": 8.51,
-    "height_pct": 6.328,
+    "height_pct": 6.327,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gocspa"
   },
@@ -352,7 +352,7 @@
   {
     "common_name": "American Robin",
     "detections": 14,
-    "left_pct": 14.943,
+    "left_pct": 14.942,
     "top_pct": 55.831,
     "width_pct": 5.643,
     "height_pct": 5.985,
@@ -442,7 +442,7 @@
   {
     "common_name": "California Scrub-Jay",
     "detections": 8,
-    "left_pct": 26.319,
+    "left_pct": 26.318,
     "top_pct": 55.627,
     "width_pct": 7.793,
     "height_pct": 6.393,
@@ -473,7 +473,7 @@
     "common_name": "Pileated Woodpecker",
     "detections": 7,
     "left_pct": 85.461,
-    "top_pct": 67.649,
+    "top_pct": 67.648,
     "width_pct": 7.435,
     "height_pct": 6.171,
     "site_name": "eBird",
@@ -672,7 +672,7 @@
   {
     "common_name": "Fox Sparrow",
     "detections": 2,
-    "left_pct": 18.414,
+    "left_pct": 18.413,
     "top_pct": 69.861,
     "width_pct": 4.568,
     "height_pct": 5.731,
@@ -683,7 +683,7 @@
     "common_name": "Rufous Hummingbird",
     "detections": 2,
     "left_pct": 80.31,
-    "top_pct": 75.895,
+    "top_pct": 75.894,
     "width_pct": 7.076,
     "height_pct": 5.671,
     "site_name": "eBird",
