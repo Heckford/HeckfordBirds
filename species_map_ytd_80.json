@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 5530,
+    "detections": 5531,
     "left_pct": 7.532,
     "top_pct": 28.414,
     "width_pct": 8.509,
@@ -22,10 +22,10 @@
   {
     "common_name": "Northern Flicker",
     "detections": 4188,
-    "left_pct": 71.575,
+    "left_pct": 71.576,
     "top_pct": 55.332,
     "width_pct": 6.36,
-    "height_pct": 10.274,
+    "height_pct": 10.273,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
   },
@@ -45,7 +45,7 @@
     "left_pct": 32.657,
     "top_pct": 29.037,
     "width_pct": 8.151,
-    "height_pct": 7.281,
+    "height_pct": 7.28,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
@@ -65,7 +65,7 @@
     "left_pct": 78.517,
     "top_pct": 56.111,
     "width_pct": 7.076,
-    "height_pct": 8.715,
+    "height_pct": 8.714,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -75,7 +75,7 @@
     "left_pct": 6.86,
     "top_pct": 39.029,
     "width_pct": 4.926,
-    "height_pct": 7.483,
+    "height_pct": 7.482,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -122,7 +122,7 @@
   {
     "common_name": "Hairy Woodpecker",
     "detections": 311,
-    "left_pct": 71.575,
+    "left_pct": 71.576,
     "top_pct": 66.479,
     "width_pct": 6.36,
     "height_pct": 8.511,
@@ -232,7 +232,7 @@
   {
     "common_name": "Trumpeter Swan",
     "detections": 54,
-    "left_pct": 78.696,
+    "left_pct": 78.697,
     "top_pct": 15.266,
     "width_pct": 5.643,
     "height_pct": 6.48,
@@ -302,7 +302,7 @@
   {
     "common_name": "Evening Grosbeak",
     "detections": 31,
-    "left_pct": 38.345,
+    "left_pct": 38.344,
     "top_pct": 47.905,
     "width_pct": 6.36,
     "height_pct": 6.804,
@@ -313,7 +313,7 @@
     "common_name": "Cedar Waxwing",
     "detections": 28,
     "left_pct": 9.077,
-    "top_pct": 55.583,
+    "top_pct": 55.582,
     "width_pct": 5.285,
     "height_pct": 6.482,
     "site_name": "eBird",
@@ -362,7 +362,7 @@
   {
     "common_name": "Common Loon",
     "detections": 12,
-    "left_pct": 75.337,
+    "left_pct": 75.338,
     "top_pct": 31.915,
     "width_pct": 4.568,
     "height_pct": 4.628,
@@ -422,7 +422,7 @@
   {
     "common_name": "Mallard",
     "detections": 8,
-    "left_pct": 85.996,
+    "left_pct": 85.997,
     "top_pct": 31.143,
     "width_pct": 3.135,
     "height_pct": 6.171,
@@ -442,7 +442,7 @@
   {
     "common_name": "California Scrub-Jay",
     "detections": 8,
-    "left_pct": 26.32,
+    "left_pct": 26.319,
     "top_pct": 55.627,
     "width_pct": 7.793,
     "height_pct": 6.393,
@@ -463,7 +463,7 @@
     "common_name": "Great Horned Owl",
     "detections": 7,
     "left_pct": 49.183,
-    "top_pct": 24.867,
+    "top_pct": 24.866,
     "width_pct": 6.36,
     "height_pct": 6.863,
     "site_name": "eBird",
@@ -475,7 +475,7 @@
     "left_pct": 85.459,
     "top_pct": 67.649,
     "width_pct": 7.434,
-    "height_pct": 6.17,
+    "height_pct": 6.171,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pilwoo"
   },
@@ -552,7 +552,7 @@
   {
     "common_name": "Orange-crowned Warbler",
     "detections": 4,
-    "left_pct": 14.407,
+    "left_pct": 14.406,
     "top_pct": 63.282,
     "width_pct": 8.509,
     "height_pct": 5.166,
@@ -603,7 +603,7 @@
     "common_name": "Merlin",
     "detections": 3,
     "left_pct": 59.483,
-    "top_pct": 25.009,
+    "top_pct": 25.008,
     "width_pct": 2.777,
     "height_pct": 6.579,
     "site_name": "eBird",
@@ -633,7 +633,7 @@
     "common_name": "Purple Finch",
     "detections": 2,
     "left_pct": 36.307,
-    "top_pct": 63.001,
+    "top_pct": 63,
     "width_pct": 4.926,
     "height_pct": 5.729,
     "site_name": "eBird",
@@ -703,7 +703,7 @@
     "common_name": "Barred Owl",
     "detections": 2,
     "left_pct": 48.892,
-    "top_pct": 32.603,
+    "top_pct": 32.602,
     "width_pct": 4.21,
     "height_pct": 6.622,
     "site_name": "eBird",

@@ -710,24 +710,24 @@
     "target_url": "https://ebird.org/species/bkcchi"
   },
   {
+    "common_name": "Tundra Swan",
+    "detections": 24,
+    "left_pct": 80.745,
+    "top_pct": 29.143,
+    "width_pct": 3.752,
+    "height_pct": 4.424,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/tunswa"
+  },
+  {
     "common_name": "Ring-billed Gull",
     "detections": 24,
     "left_pct": 59.026,
-    "top_pct": 50.473,
+    "top_pct": 50.588,
     "width_pct": 5.224,
-    "height_pct": 4.904,
+    "height_pct": 4.675,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/ribgul"
-  },
-  {
-    "common_name": "Tundra Swan",
-    "detections": 23,
-    "left_pct": 80.745,
-    "top_pct": 29.146,
-    "width_pct": 3.752,
-    "height_pct": 4.418,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/tunswa"
   },
   {
     "common_name": "Merlin",
