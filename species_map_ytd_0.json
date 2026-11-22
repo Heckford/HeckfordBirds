@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29312,
+    "detections": 29313,
     "left_pct": 6.126,
     "top_pct": 26.9,
     "width_pct": 6.957,
@@ -51,7 +51,7 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 6811,
+    "detections": 6813,
     "left_pct": 33.807,
     "top_pct": 26.696,
     "width_pct": 4.028,
@@ -91,9 +91,9 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2685,
+    "detections": 2687,
     "left_pct": 8.268,
-    "top_pct": 35.574,
+    "top_pct": 35.573,
     "width_pct": 4.613,
     "height_pct": 6.99,
     "site_name": "eBird",
@@ -172,7 +172,7 @@
   {
     "common_name": "Myotis Bats",
     "detections": 793,
-    "left_pct": 54.459,
+    "left_pct": 54.46,
     "top_pct": 77.244,
     "width_pct": 3.735,
     "height_pct": 4.544,
@@ -183,7 +183,7 @@
     "common_name": "Hairy Woodpecker",
     "detections": 573,
     "left_pct": 74.248,
-    "top_pct": 56.928,
+    "top_pct": 56.927,
     "width_pct": 5.199,
     "height_pct": 6.551,
     "site_name": "eBird",
@@ -302,7 +302,7 @@
   {
     "common_name": "Green-winged Teal",
     "detections": 164,
-    "left_pct": 83.786,
+    "left_pct": 83.787,
     "top_pct": 15.455,
     "width_pct": 5.492,
     "height_pct": 4.885,
@@ -571,11 +571,11 @@
   },
   {
     "common_name": "California Scrub-Jay",
-    "detections": 47,
+    "detections": 48,
     "left_pct": 21.633,
-    "top_pct": 55.769,
+    "top_pct": 55.767,
     "width_pct": 6.371,
-    "height_pct": 5.461,
+    "height_pct": 5.466,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/cowscj1"
   },
@@ -583,7 +583,7 @@
     "common_name": "Bushtit",
     "detections": 47,
     "left_pct": 28.48,
-    "top_pct": 55.95,
+    "top_pct": 55.949,
     "width_pct": 2.563,
     "height_pct": 5.101,
     "site_name": "eBird",
@@ -643,7 +643,7 @@
     "common_name": "Greater Yellowlegs",
     "detections": 31,
     "left_pct": 52.847,
-    "top_pct": 50.238,
+    "top_pct": 50.237,
     "width_pct": 5.785,
     "height_pct": 5.806,
     "site_name": "eBird",
@@ -932,7 +932,7 @@
   {
     "common_name": "American Pipit",
     "detections": 4,
-    "left_pct": 7.939,
+    "left_pct": 7.938,
     "top_pct": 67.846,
     "width_pct": 4.613,
     "height_pct": 4.862,
