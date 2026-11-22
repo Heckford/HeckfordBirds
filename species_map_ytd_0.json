@@ -301,11 +301,11 @@
   },
   {
     "common_name": "Green-winged Teal",
-    "detections": 163,
+    "detections": 164,
     "left_pct": 83.788,
     "top_pct": 15.456,
     "width_pct": 5.493,
-    "height_pct": 4.884,
+    "height_pct": 4.886,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gnwtea"
   },
