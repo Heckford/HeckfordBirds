@@ -71,9 +71,9 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4318,
+    "detections": 4322,
     "left_pct": 38.308,
-    "top_pct": 26.963,
+    "top_pct": 26.962,
     "width_pct": 4.907,
     "height_pct": 6.844,
     "site_name": "eBird",
@@ -1162,7 +1162,7 @@
   {
     "common_name": "Lincoln's Sparrow",
     "detections": 2,
-    "left_pct": 9.102,
+    "left_pct": 6.557,
     "top_pct": 79.584,
     "width_pct": 5.493,
     "height_pct": 4.084,
@@ -1172,7 +1172,7 @@
   {
     "common_name": "Clark's Nutcracker",
     "detections": 2,
-    "left_pct": 15.072,
+    "left_pct": 12.526,
     "top_pct": 79.346,
     "width_pct": 5.786,
     "height_pct": 4.559,
@@ -1252,7 +1252,7 @@
   {
     "common_name": "Western Wood-Pewee",
     "detections": 1,
-    "left_pct": 21.334,
+    "left_pct": 18.789,
     "top_pct": 79.357,
     "width_pct": 5.786,
     "height_pct": 4.538,
@@ -1282,7 +1282,7 @@
   {
     "common_name": "Snow Bunting",
     "detections": 1,
-    "left_pct": 27.596,
+    "left_pct": 25.051,
     "top_pct": 79.558,
     "width_pct": 4.028,
     "height_pct": 4.136,
@@ -1312,7 +1312,7 @@
   {
     "common_name": "American Redstart",
     "detections": 1,
-    "left_pct": 32.101,
+    "left_pct": 29.556,
     "top_pct": 79.299,
     "width_pct": 5.493,
     "height_pct": 4.654,
@@ -1320,12 +1320,22 @@
     "target_url": "https://ebird.org/species/amered"
   },
   {
+    "common_name": "Pygmy Nuthatch",
+    "detections": 1,
+    "left_pct": 35.525,
+    "top_pct": 79.383,
+    "width_pct": 4.614,
+    "height_pct": 4.486,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/pygnut"
+  },
+  {
     "common_name": "American Tree Sparrow",
     "detections": 1,
-    "left_pct": 38.07,
-    "top_pct": 79.464,
+    "left_pct": 40.616,
+    "top_pct": 79.39,
     "width_pct": 6.665,
-    "height_pct": 4.324,
+    "height_pct": 4.473,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/amtspa"
   },
