@@ -41,21 +41,21 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 69,
+    "detections": 67,
     "left_pct": 3.657,
-    "top_pct": 37.671,
+    "top_pct": 37.691,
     "width_pct": 10.394,
-    "height_pct": 12.677,
+    "height_pct": 12.639,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 66,
+    "detections": 65,
     "left_pct": 80.975,
-    "top_pct": 64.507,
+    "top_pct": 64.517,
     "width_pct": 12.295,
-    "height_pct": 12.138,
+    "height_pct": 12.119,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -81,11 +81,11 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 35,
+    "detections": 32,
     "left_pct": 34.14,
-    "top_pct": 38.422,
+    "top_pct": 38.464,
     "width_pct": 14.196,
-    "height_pct": 11.175,
+    "height_pct": 11.092,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
