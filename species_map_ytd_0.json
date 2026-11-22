@@ -341,11 +341,11 @@
   },
   {
     "common_name": "Mallard",
-    "detections": 129,
+    "detections": 130,
     "left_pct": 89.757,
-    "top_pct": 15.189,
+    "top_pct": 15.188,
     "width_pct": 2.563,
-    "height_pct": 5.419,
+    "height_pct": 5.421,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/mallar3"
   },

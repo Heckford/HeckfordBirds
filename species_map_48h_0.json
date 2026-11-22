@@ -122,7 +122,7 @@
   {
     "common_name": "Green-winged Teal",
     "detections": 39,
-    "left_pct": 70.992,
+    "left_pct": 70.974,
     "top_pct": 21.878,
     "width_pct": 9.096,
     "height_pct": 9.153,
@@ -181,11 +181,11 @@
   },
   {
     "common_name": "Mallard",
-    "detections": 9,
-    "left_pct": 80.731,
-    "top_pct": 21.766,
-    "width_pct": 4.209,
-    "height_pct": 9.376,
+    "detections": 10,
+    "left_pct": 80.713,
+    "top_pct": 21.737,
+    "width_pct": 4.246,
+    "height_pct": 9.435,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/mallar3"
   },
@@ -202,7 +202,7 @@
   {
     "common_name": "Great Blue Heron",
     "detections": 4,
-    "left_pct": 85.583,
+    "left_pct": 85.601,
     "top_pct": 21.112,
     "width_pct": 8.601,
     "height_pct": 10.686,
