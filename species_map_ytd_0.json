@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 24491,
+    "detections": 24492,
     "left_pct": 13.552,
     "top_pct": 26.311,
     "width_pct": 7.837,
@@ -61,7 +61,7 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 4575,
+    "detections": 4577,
     "left_pct": 79.929,
     "top_pct": 48.978,
     "width_pct": 5.786,

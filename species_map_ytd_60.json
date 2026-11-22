@@ -41,7 +41,7 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 3688,
+    "detections": 3690,
     "left_pct": 30.625,
     "top_pct": 24.67,
     "width_pct": 4.911,
@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2999,
+    "detections": 3001,
     "left_pct": 80.499,
     "top_pct": 56.43,
     "width_pct": 7.055,
-    "height_pct": 8.531,
+    "height_pct": 8.532,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },

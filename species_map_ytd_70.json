@@ -51,17 +51,17 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 2571,
+    "detections": 2573,
     "left_pct": 38.343,
     "top_pct": 25.021,
     "width_pct": 4.89,
-    "height_pct": 9.025,
+    "height_pct": 9.026,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2184,
+    "detections": 2185,
     "left_pct": 80.994,
     "top_pct": 50.943,
     "width_pct": 7.023,
