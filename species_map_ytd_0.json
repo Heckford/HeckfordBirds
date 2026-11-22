@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29703,
+    "detections": 29706,
     "left_pct": 6.118,
     "top_pct": 26.901,
     "width_pct": 6.958,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 24453,
+    "detections": 24459,
     "left_pct": 13.552,
     "top_pct": 26.314,
     "width_pct": 7.837,
@@ -31,7 +31,7 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 8970,
+    "detections": 8973,
     "left_pct": 26.663,
     "top_pct": 26.858,
     "width_pct": 6.665,
@@ -51,7 +51,7 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 6862,
+    "detections": 6863,
     "left_pct": 33.804,
     "top_pct": 26.699,
     "width_pct": 4.028,
@@ -61,7 +61,7 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 4573,
+    "detections": 4574,
     "left_pct": 79.929,
     "top_pct": 48.977,
     "width_pct": 5.786,
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4288,
+    "detections": 4314,
     "left_pct": 38.308,
-    "top_pct": 26.967,
+    "top_pct": 26.965,
     "width_pct": 4.907,
-    "height_pct": 6.84,
+    "height_pct": 6.843,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -131,11 +131,11 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 1275,
+    "detections": 1279,
     "left_pct": 52.225,
-    "top_pct": 14.589,
+    "top_pct": 14.588,
     "width_pct": 3.442,
-    "height_pct": 5.608,
+    "height_pct": 5.609,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
@@ -283,7 +283,7 @@
     "common_name": "Ruby-crowned Kinglet",
     "detections": 174,
     "left_pct": 13.845,
-    "top_pct": 43.702,
+    "top_pct": 43.701,
     "width_pct": 6.372,
     "height_pct": 4.864,
     "site_name": "eBird",
@@ -583,7 +583,7 @@
     "common_name": "Bushtit",
     "detections": 47,
     "left_pct": 28.475,
-    "top_pct": 55.942,
+    "top_pct": 55.941,
     "width_pct": 2.564,
     "height_pct": 5.101,
     "site_name": "eBird",
@@ -702,7 +702,7 @@
   {
     "common_name": "Black-capped Chickadee",
     "detections": 25,
-    "left_pct": 36.313,
+    "left_pct": 36.312,
     "top_pct": 56.184,
     "width_pct": 6.958,
     "height_pct": 4.616,
@@ -1032,7 +1032,7 @@
   {
     "common_name": "Sooty Grouse",
     "detections": 3,
-    "left_pct": 83.939,
+    "left_pct": 83.94,
     "top_pct": 70.469,
     "width_pct": 4.028,
     "height_pct": 4.205,
@@ -1173,7 +1173,7 @@
     "common_name": "Clark's Nutcracker",
     "detections": 2,
     "left_pct": 15.072,
-    "top_pct": 79.345,
+    "top_pct": 79.344,
     "width_pct": 5.786,
     "height_pct": 4.559,
     "site_name": "eBird",
