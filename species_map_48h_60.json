@@ -31,21 +31,21 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 85,
+    "detections": 84,
     "left_pct": 80.746,
-    "top_pct": 66.304,
+    "top_pct": 66.312,
     "width_pct": 12.821,
-    "height_pct": 12.887,
+    "height_pct": 12.872,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 80,
+    "detections": 79,
     "left_pct": 38.006,
-    "top_pct": 19.304,
+    "top_pct": 19.315,
     "width_pct": 8.855,
-    "height_pct": 15.794,
+    "height_pct": 15.771,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },

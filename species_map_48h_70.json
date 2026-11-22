@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 74,
+    "detections": 73,
     "left_pct": 41.456,
-    "top_pct": 20.636,
+    "top_pct": 20.645,
     "width_pct": 8.465,
-    "height_pct": 12.811,
+    "height_pct": 12.792,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
