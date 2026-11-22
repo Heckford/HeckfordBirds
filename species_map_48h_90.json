@@ -2,7 +2,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 417,
-    "left_pct": 9.393,
+    "left_pct": 9.383,
     "top_pct": 17.815,
     "width_pct": 19.826,
     "height_pct": 19.411,
@@ -11,11 +11,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 90,
-    "left_pct": 30.195,
-    "top_pct": 19.319,
-    "width_pct": 10.808,
-    "height_pct": 16.405,
+    "detections": 91,
+    "left_pct": 30.185,
+    "top_pct": 19.307,
+    "width_pct": 10.829,
+    "height_pct": 16.428,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
