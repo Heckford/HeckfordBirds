@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 638,
+    "detections": 650,
     "left_pct": 85.509,
-    "top_pct": 54.503,
+    "top_pct": 54.496,
     "width_pct": 7.795,
-    "height_pct": 7.823,
+    "height_pct": 7.836,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 376,
+    "detections": 381,
     "left_pct": 19.112,
-    "top_pct": 41.838,
+    "top_pct": 41.834,
     "width_pct": 6.611,
-    "height_pct": 7.757,
+    "height_pct": 7.765,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
