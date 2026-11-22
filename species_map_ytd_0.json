@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29230,
+    "detections": 29231,
     "left_pct": 6.124,
     "top_pct": 26.896,
     "width_pct": 6.957,
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 2523,
+    "detections": 2539,
     "left_pct": 13.355,
-    "top_pct": 35.746,
+    "top_pct": 35.744,
     "width_pct": 4.028,
-    "height_pct": 6.643,
+    "height_pct": 6.646,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -372,7 +372,7 @@
   {
     "common_name": "Snow Goose",
     "detections": 112,
-    "left_pct": 77.325,
+    "left_pct": 77.326,
     "top_pct": 22.608,
     "width_pct": 3.442,
     "height_pct": 4.631,
@@ -983,7 +983,7 @@
     "common_name": "Mountain Chickadee",
     "detections": 4,
     "left_pct": 24.084,
-    "top_pct": 68.127,
+    "top_pct": 68.126,
     "width_pct": 5.785,
     "height_pct": 4.306,
     "site_name": "eBird",
@@ -1192,7 +1192,7 @@
   {
     "common_name": "Pied-billed Grebe",
     "detections": 2,
-    "left_pct": 87.413,
+    "left_pct": 87.414,
     "top_pct": 34.721,
     "width_pct": 5.493,
     "height_pct": 4.445,
@@ -1282,7 +1282,7 @@
   {
     "common_name": "Snow Bunting",
     "detections": 1,
-    "left_pct": 27.6,
+    "left_pct": 27.599,
     "top_pct": 79.567,
     "width_pct": 4.028,
     "height_pct": 4.135,
