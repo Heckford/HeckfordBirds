@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29310,
+    "detections": 29311,
     "left_pct": 6.126,
     "top_pct": 26.9,
     "width_pct": 6.957,
@@ -31,7 +31,7 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 8960,
+    "detections": 8961,
     "left_pct": 26.667,
     "top_pct": 26.853,
     "width_pct": 6.664,
@@ -51,7 +51,7 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 6784,
+    "detections": 6786,
     "left_pct": 33.807,
     "top_pct": 26.698,
     "width_pct": 4.028,
@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2681,
+    "detections": 2683,
     "left_pct": 8.268,
     "top_pct": 35.574,
     "width_pct": 4.613,
-    "height_pct": 6.989,
+    "height_pct": 6.99,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
@@ -222,7 +222,7 @@
   {
     "common_name": "Canada Goose",
     "detections": 332,
-    "left_pct": 73.607,
+    "left_pct": 73.608,
     "top_pct": 15.007,
     "width_pct": 4.028,
     "height_pct": 5.782,
@@ -1023,7 +1023,7 @@
     "common_name": "Common Goldeneye",
     "detections": 3,
     "left_pct": 78.697,
-    "top_pct": 34.596,
+    "top_pct": 34.595,
     "width_pct": 5.199,
     "height_pct": 4.69,
     "site_name": "eBird",
