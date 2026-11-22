@@ -70,42 +70,42 @@
     "target_url": "https://ebird.org/species/brncre"
   },
   {
+    "common_name": "Song Sparrow",
+    "detections": 77,
+    "left_pct": 11.112,
+    "top_pct": 40.961,
+    "width_pct": 6.557,
+    "height_pct": 11.406,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/sonspa"
+  },
+  {
     "common_name": "Spotted Towhee",
     "detections": 71,
-    "left_pct": 11.112,
-    "top_pct": 40.842,
+    "left_pct": 18.305,
+    "top_pct": 41.275,
     "width_pct": 7.535,
-    "height_pct": 11.646,
+    "height_pct": 10.778,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
   {
     "common_name": "Red-breasted Nuthatch",
     "detections": 64,
-    "left_pct": 19.283,
-    "top_pct": 42.283,
+    "left_pct": 26.476,
+    "top_pct": 41.431,
     "width_pct": 10.961,
-    "height_pct": 8.762,
+    "height_pct": 10.467,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rebnut"
   },
   {
-    "common_name": "Song Sparrow",
-    "detections": 62,
-    "left_pct": 30.88,
-    "top_pct": 41.081,
-    "width_pct": 6.557,
-    "height_pct": 11.167,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/sonspa"
-  },
-  {
     "common_name": "Steller's Jay",
-    "detections": 53,
+    "detections": 60,
     "left_pct": 38.073,
-    "top_pct": 40.633,
+    "top_pct": 40.559,
     "width_pct": 7.046,
-    "height_pct": 12.063,
+    "height_pct": 12.21,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
