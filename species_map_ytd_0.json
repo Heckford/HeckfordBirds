@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 6813,
+    "detections": 6842,
     "left_pct": 33.807,
-    "top_pct": 26.696,
+    "top_pct": 26.695,
     "width_pct": 4.028,
-    "height_pct": 7.377,
+    "height_pct": 7.38,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2687,
+    "detections": 2688,
     "left_pct": 8.268,
     "top_pct": 35.573,
     "width_pct": 4.613,
-    "height_pct": 6.99,
+    "height_pct": 6.991,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
@@ -111,7 +111,7 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 2410,
+    "detections": 2411,
     "left_pct": 86.185,
     "top_pct": 49.942,
     "width_pct": 5.492,
@@ -751,11 +751,11 @@
   },
   {
     "common_name": "House Sparrow",
-    "detections": 22,
+    "detections": 23,
     "left_pct": 43.748,
-    "top_pct": 55.947,
+    "top_pct": 55.943,
     "width_pct": 4.321,
-    "height_pct": 5.106,
+    "height_pct": 5.113,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/houspa"
   },
