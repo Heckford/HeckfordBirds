@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 3863,
+    "detections": 3870,
     "left_pct": 23.851,
-    "top_pct": 25.369,
+    "top_pct": 25.368,
     "width_pct": 5.245,
-    "height_pct": 8.33,
+    "height_pct": 8.332,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -61,21 +61,21 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2185,
+    "detections": 2196,
     "left_pct": 80.994,
-    "top_pct": 50.943,
+    "top_pct": 50.941,
     "width_pct": 7.023,
-    "height_pct": 8.552,
+    "height_pct": 8.556,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 1930,
+    "detections": 1965,
     "left_pct": 4.07,
-    "top_pct": 35.222,
+    "top_pct": 35.215,
     "width_pct": 5.957,
-    "height_pct": 8.494,
+    "height_pct": 8.508,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
