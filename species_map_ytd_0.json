@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29313,
+    "detections": 29316,
     "left_pct": 6.126,
     "top_pct": 26.9,
     "width_pct": 6.957,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 24118,
+    "detections": 24119,
     "left_pct": 13.559,
     "top_pct": 26.313,
     "width_pct": 7.836,
@@ -22,10 +22,10 @@
   {
     "common_name": "Steller's Jay",
     "detections": 11212,
-    "left_pct": 21.871,
-    "top_pct": 26.119,
+    "left_pct": 21.87,
+    "top_pct": 26.12,
     "width_pct": 4.321,
-    "height_pct": 8.531,
+    "height_pct": 8.53,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 6842,
+    "detections": 6862,
     "left_pct": 33.807,
-    "top_pct": 26.695,
+    "top_pct": 26.694,
     "width_pct": 4.028,
-    "height_pct": 7.38,
+    "height_pct": 7.382,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
@@ -85,7 +85,7 @@
     "left_pct": 43.693,
     "top_pct": 26.931,
     "width_pct": 4.028,
-    "height_pct": 6.908,
+    "height_pct": 6.907,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comrav"
   },
@@ -102,7 +102,7 @@
   {
     "common_name": "Pacific Wren",
     "detections": 2539,
-    "left_pct": 13.358,
+    "left_pct": 13.357,
     "top_pct": 35.746,
     "width_pct": 4.028,
     "height_pct": 6.644,
@@ -362,7 +362,7 @@
   {
     "common_name": "Trumpeter Swan",
     "detections": 115,
-    "left_pct": 72.234,
+    "left_pct": 72.235,
     "top_pct": 21.93,
     "width_pct": 4.613,
     "height_pct": 5.982,
@@ -572,7 +572,7 @@
   {
     "common_name": "California Scrub-Jay",
     "detections": 48,
-    "left_pct": 21.633,
+    "left_pct": 21.632,
     "top_pct": 55.767,
     "width_pct": 6.371,
     "height_pct": 5.466,
@@ -582,7 +582,7 @@
   {
     "common_name": "Bushtit",
     "detections": 47,
-    "left_pct": 28.48,
+    "left_pct": 28.479,
     "top_pct": 55.949,
     "width_pct": 2.563,
     "height_pct": 5.101,
@@ -873,7 +873,7 @@
     "common_name": "Pine Grosbeak",
     "detections": 8,
     "left_pct": 34.942,
-    "top_pct": 62.138,
+    "top_pct": 62.137,
     "width_pct": 4.321,
     "height_pct": 4.71,
     "site_name": "eBird",
@@ -1205,7 +1205,7 @@
     "left_pct": 53.597,
     "top_pct": 68.112,
     "width_pct": 5.492,
-    "height_pct": 4.669,
+    "height_pct": 4.67,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/lesyel"
   },
