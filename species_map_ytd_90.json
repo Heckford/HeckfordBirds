@@ -31,9 +31,9 @@
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 1816,
+    "detections": 1817,
     "left_pct": 24.811,
-    "top_pct": 29.12,
+    "top_pct": 29.119,
     "width_pct": 9.374,
     "height_pct": 9.784,
     "site_name": "eBird",
@@ -41,9 +41,9 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 1128,
+    "detections": 1129,
     "left_pct": 34.826,
-    "top_pct": 29.986,
+    "top_pct": 29.985,
     "width_pct": 8.98,
     "height_pct": 8.052,
     "site_name": "eBird",
@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 656,
+    "detections": 667,
     "left_pct": 76.959,
-    "top_pct": 53.344,
+    "top_pct": 53.336,
     "width_pct": 7.401,
-    "height_pct": 10.146,
+    "height_pct": 10.164,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },

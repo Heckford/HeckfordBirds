@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29231,
+    "detections": 29232,
     "left_pct": 6.124,
     "top_pct": 26.896,
     "width_pct": 6.957,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 24089,
+    "detections": 24091,
     "left_pct": 13.557,
     "top_pct": 26.309,
     "width_pct": 7.836,
@@ -31,7 +31,7 @@
   },
   {
     "common_name": "Red-breasted Nuthatch",
-    "detections": 8959,
+    "detections": 8960,
     "left_pct": 26.666,
     "top_pct": 26.849,
     "width_pct": 6.664,
@@ -64,7 +64,7 @@
     "detections": 4566,
     "left_pct": 79.925,
     "top_pct": 48.984,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 6.852,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2678,
+    "detections": 2680,
     "left_pct": 8.266,
     "top_pct": 35.572,
     "width_pct": 4.614,
-    "height_pct": 6.99,
+    "height_pct": 6.991,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
@@ -111,11 +111,11 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 2399,
+    "detections": 2410,
     "left_pct": 86.187,
     "top_pct": 49.947,
     "width_pct": 5.493,
-    "height_pct": 4.926,
+    "height_pct": 4.927,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
@@ -272,7 +272,7 @@
   {
     "common_name": "Golden-crowned Sparrow",
     "detections": 217,
-    "left_pct": 6.417,
+    "left_pct": 6.416,
     "top_pct": 43.492,
     "width_pct": 6.957,
     "height_pct": 5.297,
@@ -314,7 +314,7 @@
     "detections": 162,
     "left_pct": 26.666,
     "top_pct": 43.614,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 5.053,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/towwar"
@@ -394,7 +394,7 @@
     "detections": 109,
     "left_pct": 56.143,
     "top_pct": 14.77,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 5.248,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/nopowl"
@@ -564,18 +564,18 @@
     "detections": 52,
     "left_pct": 15.369,
     "top_pct": 55.703,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 5.599,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/amegfi"
   },
   {
     "common_name": "California Scrub-Jay",
-    "detections": 46,
+    "detections": 47,
     "left_pct": 21.631,
-    "top_pct": 55.773,
+    "top_pct": 55.771,
     "width_pct": 6.371,
-    "height_pct": 5.458,
+    "height_pct": 5.462,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/cowscj1"
   },
@@ -604,7 +604,7 @@
     "detections": 38,
     "left_pct": 50.412,
     "top_pct": 20.922,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 5.85,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/shshaw"
@@ -634,7 +634,7 @@
     "detections": 34,
     "left_pct": 86.187,
     "top_pct": 64.587,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 4.334,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rufhum"
@@ -644,7 +644,7 @@
     "detections": 31,
     "left_pct": 52.723,
     "top_pct": 50.233,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 5.807,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/greyel"
@@ -784,7 +784,7 @@
     "detections": 17,
     "left_pct": 7.149,
     "top_pct": 62.236,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 4.519,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/brebla"
@@ -884,7 +884,7 @@
     "detections": 8,
     "left_pct": 60.006,
     "top_pct": 56.98,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 4.613,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/solsan"
@@ -984,7 +984,7 @@
     "detections": 4,
     "left_pct": 24.084,
     "top_pct": 68.126,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 4.306,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/mouchi"
@@ -1174,7 +1174,7 @@
     "detections": 2,
     "left_pct": 15.076,
     "top_pct": 79.355,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 4.559,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/clanut"
@@ -1254,7 +1254,7 @@
     "detections": 1,
     "left_pct": 21.338,
     "top_pct": 79.366,
-    "width_pct": 5.785,
+    "width_pct": 5.786,
     "height_pct": 4.538,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/wewpew"
