@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 14371,
+    "detections": 14372,
     "left_pct": 5.576,
     "top_pct": 24.541,
     "width_pct": 8.483,
@@ -75,7 +75,7 @@
     "left_pct": 4.728,
     "top_pct": 34.397,
     "width_pct": 5.982,
-    "height_pct": 8.551,
+    "height_pct": 8.55,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -185,7 +185,7 @@
     "left_pct": 34.685,
     "top_pct": 35.343,
     "width_pct": 5.268,
-    "height_pct": 6.66,
+    "height_pct": 6.659,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/amecro"
   },
@@ -215,7 +215,7 @@
     "left_pct": 61.261,
     "top_pct": 50.895,
     "width_pct": 4.911,
-    "height_pct": 6.274,
+    "height_pct": 6.273,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
   },
@@ -313,7 +313,7 @@
     "common_name": "American Robin",
     "detections": 56,
     "left_pct": 39.395,
-    "top_pct": 44.298,
+    "top_pct": 44.297,
     "width_pct": 5.625,
     "height_pct": 6.168,
     "site_name": "eBird",
@@ -863,7 +863,7 @@
     "common_name": "Townsend's Solitaire",
     "detections": 2,
     "left_pct": 15.957,
-    "top_pct": 73.978,
+    "top_pct": 73.977,
     "width_pct": 7.768,
     "height_pct": 5.173,
     "site_name": "eBird",
@@ -1003,7 +1003,7 @@
     "common_name": "Virginia Rail",
     "detections": 1,
     "left_pct": 85.387,
-    "top_pct": 82.5,
+    "top_pct": 82.499,
     "width_pct": 5.268,
     "height_pct": 5.478,
     "site_name": "eBird",
