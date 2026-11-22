@@ -122,7 +122,7 @@
   {
     "common_name": "Spotted Towhee",
     "detections": 6,
-    "left_pct": 9.659,
+    "left_pct": 13.321,
     "top_pct": 77.695,
     "width_pct": 11.629,
     "height_pct": 14.522,
@@ -132,7 +132,7 @@
   {
     "common_name": "Brown Creeper",
     "detections": 5,
-    "left_pct": 22.269,
+    "left_pct": 25.931,
     "top_pct": 78.195,
     "width_pct": 10.873,
     "height_pct": 13.522,
@@ -198,15 +198,5 @@
     "height_pct": 12.623,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comloo"
-  },
-  {
-    "common_name": "Bushtit",
-    "detections": 1,
-    "left_pct": 34.124,
-    "top_pct": 78.585,
-    "width_pct": 6.343,
-    "height_pct": 12.743,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/bushti"
   }
 ]
