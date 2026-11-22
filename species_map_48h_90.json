@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 5,
+    "detections": 6,
     "left_pct": 74.346,
     "top_pct": 55.022,
     "width_pct": 14.911,
-    "height_pct": 12.666,
+    "height_pct": 12.863,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -113,7 +113,7 @@
     "common_name": "Northern Flicker",
     "detections": 5,
     "left_pct": 75.115,
-    "top_pct": 69.187,
+    "top_pct": 69.384,
     "width_pct": 13.374,
     "height_pct": 15.705,
     "site_name": "eBird",

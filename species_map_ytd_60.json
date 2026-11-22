@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 14424,
+    "detections": 14425,
     "left_pct": 5.577,
     "top_pct": 24.511,
     "width_pct": 8.483,
@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2992,
+    "detections": 2998,
     "left_pct": 80.499,
     "top_pct": 56.431,
     "width_pct": 7.054,
-    "height_pct": 8.545,
+    "height_pct": 8.546,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -155,7 +155,7 @@
     "left_pct": 48.772,
     "top_pct": 50.628,
     "width_pct": 7.768,
-    "height_pct": 6.947,
+    "height_pct": 6.946,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/glwgul"
   },
@@ -563,7 +563,7 @@
     "common_name": "American Goldfinch",
     "detections": 14,
     "left_pct": 15.533,
-    "top_pct": 59.438,
+    "top_pct": 59.437,
     "width_pct": 7.054,
     "height_pct": 6.606,
     "site_name": "eBird",
@@ -753,7 +753,7 @@
     "common_name": "Black-capped Chickadee",
     "detections": 5,
     "left_pct": 32.119,
-    "top_pct": 67.104,
+    "top_pct": 67.103,
     "width_pct": 8.483,
     "height_pct": 5.56,
     "site_name": "eBird",
@@ -1003,7 +1003,7 @@
     "common_name": "Virginia Rail",
     "detections": 1,
     "left_pct": 85.387,
-    "top_pct": 82.425,
+    "top_pct": 82.424,
     "width_pct": 5.268,
     "height_pct": 5.478,
     "site_name": "eBird",
