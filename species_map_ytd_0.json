@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29311,
+    "detections": 29312,
     "left_pct": 6.126,
     "top_pct": 26.9,
     "width_pct": 6.957,
@@ -581,11 +581,11 @@
   },
   {
     "common_name": "Bushtit",
-    "detections": 46,
+    "detections": 47,
     "left_pct": 28.48,
-    "top_pct": 55.951,
+    "top_pct": 55.949,
     "width_pct": 2.563,
-    "height_pct": 5.097,
+    "height_pct": 5.101,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/bushti"
   },
@@ -1015,7 +1015,7 @@
     "left_pct": 73.022,
     "top_pct": 34.811,
     "width_pct": 5.199,
-    "height_pct": 4.258,
+    "height_pct": 4.259,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norpin"
   },

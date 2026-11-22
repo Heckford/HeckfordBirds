@@ -133,7 +133,7 @@
     "common_name": "Herring Gull",
     "detections": 5,
     "left_pct": 56.102,
-    "top_pct": 46.548,
+    "top_pct": 48.096,
     "width_pct": 7.733,
     "height_pct": 9.972,
     "site_name": "eBird",
@@ -170,22 +170,12 @@
     "target_url": "https://ebird.org/species/grbher3"
   },
   {
-    "common_name": "Killdeer",
-    "detections": 2,
-    "left_pct": 57.257,
-    "top_pct": 57.645,
-    "width_pct": 5.424,
-    "height_pct": 9.327,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/killde"
-  },
-  {
     "common_name": "Merlin",
     "detections": 2,
     "left_pct": 61.731,
-    "top_pct": 16.602,
+    "top_pct": 16.923,
     "width_pct": 4.27,
-    "height_pct": 11.482,
+    "height_pct": 10.838,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/merlin"
   },
@@ -195,7 +185,7 @@
     "left_pct": 54.371,
     "top_pct": 29.457,
     "width_pct": 11.195,
-    "height_pct": 10.058,
+    "height_pct": 11.606,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/nopowl"
   },
@@ -203,9 +193,9 @@
     "common_name": "California Scrub-Jay",
     "detections": 1,
     "left_pct": 29.931,
-    "top_pct": 59.943,
+    "top_pct": 59.876,
     "width_pct": 12.349,
-    "height_pct": 10.304,
+    "height_pct": 10.438,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/cowscj1"
   },
@@ -213,9 +203,9 @@
     "common_name": "Cedar Waxwing",
     "detections": 1,
     "left_pct": 43.03,
-    "top_pct": 60.157,
+    "top_pct": 60.154,
     "width_pct": 8.31,
-    "height_pct": 9.876,
+    "height_pct": 9.882,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/cedwax"
   },
@@ -223,11 +213,21 @@
     "common_name": "Common Goldeneye",
     "detections": 1,
     "left_pct": 79.014,
-    "top_pct": 28.191,
+    "top_pct": 28.26,
     "width_pct": 10.041,
-    "height_pct": 9.633,
+    "height_pct": 9.494,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comgol"
+  },
+  {
+    "common_name": "Killdeer",
+    "detections": 1,
+    "left_pct": 57.257,
+    "top_pct": 59.193,
+    "width_pct": 5.424,
+    "height_pct": 9.902,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/killde"
   },
   {
     "common_name": "Ruby-crowned Kinglet",
