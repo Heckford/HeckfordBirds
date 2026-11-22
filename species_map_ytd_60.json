@@ -91,9 +91,9 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 995,
+    "detections": 996,
     "left_pct": 49.77,
-    "top_pct": 15.868,
+    "top_pct": 15.867,
     "width_pct": 4.197,
     "height_pct": 7.032,
     "site_name": "eBird",
@@ -281,11 +281,11 @@
   },
   {
     "common_name": "Wood Duck",
-    "detections": 64,
+    "detections": 65,
     "left_pct": 77.445,
-    "top_pct": 15.834,
+    "top_pct": 15.832,
     "width_pct": 3.84,
-    "height_pct": 6.329,
+    "height_pct": 6.334,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/wooduc"
   },
@@ -451,11 +451,11 @@
   },
   {
     "common_name": "Dunlin",
-    "detections": 28,
+    "detections": 29,
     "left_pct": 66.752,
-    "top_pct": 50.897,
+    "top_pct": 50.893,
     "width_pct": 2.768,
-    "height_pct": 6.407,
+    "height_pct": 6.416,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/dunlin"
   },

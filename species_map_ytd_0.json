@@ -91,7 +91,7 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2680,
+    "detections": 2681,
     "left_pct": 8.264,
     "top_pct": 35.572,
     "width_pct": 4.614,
@@ -131,7 +131,7 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 1274,
+    "detections": 1275,
     "left_pct": 52.225,
     "top_pct": 14.588,
     "width_pct": 3.442,
@@ -421,11 +421,11 @@
   },
   {
     "common_name": "Wood Duck",
-    "detections": 92,
+    "detections": 93,
     "left_pct": 81.245,
-    "top_pct": 22.344,
+    "top_pct": 22.342,
     "width_pct": 3.149,
-    "height_pct": 5.158,
+    "height_pct": 5.16,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/wooduc"
   },
@@ -540,24 +540,24 @@
     "target_url": "https://ebird.org/species/comloo"
   },
   {
+    "common_name": "Dunlin",
+    "detections": 53,
+    "left_pct": 49.844,
+    "top_pct": 50.71,
+    "width_pct": 2.527,
+    "height_pct": 4.852,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/dunlin"
+  },
+  {
     "common_name": "Fox Sparrow",
     "detections": 53,
     "left_pct": 11.157,
-    "top_pct": 56.011,
+    "top_pct": 55.966,
     "width_pct": 3.735,
-    "height_pct": 4.978,
+    "height_pct": 5.069,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/foxspa"
-  },
-  {
-    "common_name": "Dunlin",
-    "detections": 52,
-    "left_pct": 49.969,
-    "top_pct": 50.493,
-    "width_pct": 2.278,
-    "height_pct": 5.287,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/dunlin"
   },
   {
     "common_name": "American Goldfinch",
@@ -642,7 +642,7 @@
   {
     "common_name": "Greater Yellowlegs",
     "detections": 31,
-    "left_pct": 52.723,
+    "left_pct": 52.847,
     "top_pct": 50.233,
     "width_pct": 5.786,
     "height_pct": 5.807,
@@ -732,7 +732,7 @@
   {
     "common_name": "Ring-billed Gull",
     "detections": 24,
-    "left_pct": 58.984,
+    "left_pct": 59.109,
     "top_pct": 50.696,
     "width_pct": 5.2,
     "height_pct": 4.88,
@@ -772,7 +772,7 @@
   {
     "common_name": "Marbled Murrelet",
     "detections": 17,
-    "left_pct": 64.66,
+    "left_pct": 64.785,
     "top_pct": 50.955,
     "width_pct": 5.2,
     "height_pct": 4.362,
