@@ -2,7 +2,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 611,
-    "left_pct": 6.671,
+    "left_pct": 6.685,
     "top_pct": 17.782,
     "width_pct": 17.071,
     "height_pct": 16.714,
@@ -12,7 +12,7 @@
   {
     "common_name": "Golden-crowned Kinglet",
     "detections": 450,
-    "left_pct": 24.583,
+    "left_pct": 24.597,
     "top_pct": 16.938,
     "width_pct": 15.131,
     "height_pct": 18.403,
@@ -22,7 +22,7 @@
   {
     "common_name": "Dark-eyed Junco",
     "detections": 204,
-    "left_pct": 40.555,
+    "left_pct": 40.569,
     "top_pct": 18.614,
     "width_pct": 10.605,
     "height_pct": 15.05,
@@ -32,7 +32,7 @@
   {
     "common_name": "Pacific Wren",
     "detections": 155,
-    "left_pct": 6.61,
+    "left_pct": 6.624,
     "top_pct": 38.104,
     "width_pct": 9.629,
     "height_pct": 14.486,
@@ -42,7 +42,7 @@
   {
     "common_name": "Anna's Hummingbird",
     "detections": 89,
-    "left_pct": 75.611,
+    "left_pct": 75.597,
     "top_pct": 46.827,
     "width_pct": 12.545,
     "height_pct": 15.829,
@@ -52,7 +52,7 @@
   {
     "common_name": "Song Sparrow",
     "detections": 83,
-    "left_pct": 17.079,
+    "left_pct": 17.093,
     "top_pct": 37.189,
     "width_pct": 8.665,
     "height_pct": 16.316,
@@ -62,7 +62,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 67,
-    "left_pct": 26.585,
+    "left_pct": 26.599,
     "top_pct": 36.602,
     "width_pct": 9.312,
     "height_pct": 17.49,
@@ -71,18 +71,18 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 37,
-    "left_pct": 54.297,
+    "detections": 36,
+    "left_pct": 54.31,
     "top_pct": 16.938,
-    "width_pct": 7.476,
-    "height_pct": 12.904,
+    "width_pct": 7.448,
+    "height_pct": 12.87,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
   {
     "common_name": "Red-breasted Nuthatch",
     "detections": 30,
-    "left_pct": 36.737,
+    "left_pct": 36.751,
     "top_pct": 39.64,
     "width_pct": 14.485,
     "height_pct": 11.414,
@@ -92,7 +92,7 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 28,
-    "left_pct": 69.888,
+    "left_pct": 69.874,
     "top_pct": 65.892,
     "width_pct": 11.898,
     "height_pct": 10.522,
@@ -102,7 +102,7 @@
   {
     "common_name": "Northern Flicker",
     "detections": 26,
-    "left_pct": 82.627,
+    "left_pct": 82.613,
     "top_pct": 63.917,
     "width_pct": 11.252,
     "height_pct": 14.471,
@@ -112,7 +112,7 @@
   {
     "common_name": "Brown Creeper",
     "detections": 11,
-    "left_pct": 6.445,
+    "left_pct": 6.459,
     "top_pct": 55.712,
     "width_pct": 9.312,
     "height_pct": 11.992,
@@ -122,7 +122,7 @@
   {
     "common_name": "Spotted Towhee",
     "detections": 11,
-    "left_pct": 16.597,
+    "left_pct": 16.611,
     "top_pct": 55.353,
     "width_pct": 9.958,
     "height_pct": 12.71,
@@ -133,7 +133,7 @@
     "common_name": "Herring Gull",
     "detections": 5,
     "left_pct": 56.515,
-    "top_pct": 49.844,
+    "top_pct": 49.81,
     "width_pct": 8.665,
     "height_pct": 11.014,
     "site_name": "eBird",
@@ -142,7 +142,7 @@
   {
     "common_name": "Green-winged Teal",
     "detections": 3,
-    "left_pct": 75.934,
+    "left_pct": 75.92,
     "top_pct": 16.938,
     "width_pct": 11.898,
     "height_pct": 10.444,
@@ -152,7 +152,7 @@
   {
     "common_name": "Mallard",
     "detections": 2,
-    "left_pct": 74.626,
+    "left_pct": 74.612,
     "top_pct": 28.643,
     "width_pct": 5.655,
     "height_pct": 10.303,
@@ -162,7 +162,7 @@
   {
     "common_name": "California Scrub-Jay",
     "detections": 2,
-    "left_pct": 27.396,
+    "left_pct": 27.41,
     "top_pct": 55.744,
     "width_pct": 13.838,
     "height_pct": 11.929,
@@ -172,8 +172,8 @@
   {
     "common_name": "Merlin",
     "detections": 2,
-    "left_pct": 62.613,
-    "top_pct": 17.355,
+    "left_pct": 62.599,
+    "top_pct": 17.338,
     "width_pct": 4.785,
     "height_pct": 12.07,
     "site_name": "eBird",
@@ -182,7 +182,7 @@
   {
     "common_name": "Cedar Waxwing",
     "detections": 1,
-    "left_pct": 42.075,
+    "left_pct": 42.089,
     "top_pct": 56.172,
     "width_pct": 9.312,
     "height_pct": 11.073,
@@ -193,7 +193,7 @@
     "common_name": "Killdeer",
     "detections": 1,
     "left_pct": 57.808,
-    "top_pct": 62.119,
+    "top_pct": 62.084,
     "width_pct": 6.078,
     "height_pct": 10.092,
     "site_name": "eBird",
@@ -202,7 +202,7 @@
   {
     "common_name": "Ruby-crowned Kinglet",
     "detections": 1,
-    "left_pct": 6.122,
+    "left_pct": 6.135,
     "top_pct": 70.568,
     "width_pct": 13.838,
     "height_pct": 9.883,
@@ -212,7 +212,7 @@
   {
     "common_name": "Common Raven",
     "detections": 1,
-    "left_pct": 20.801,
+    "left_pct": 20.814,
     "top_pct": 69.324,
     "width_pct": 8.665,
     "height_pct": 12.371,
@@ -222,7 +222,7 @@
   {
     "common_name": "Common Loon",
     "detections": 1,
-    "left_pct": 81.122,
+    "left_pct": 81.108,
     "top_pct": 29.731,
     "width_pct": 8.018,
     "height_pct": 8.128,
@@ -233,7 +233,7 @@
     "common_name": "Northern Pygmy-Owl",
     "detections": 1,
     "left_pct": 54.575,
-    "top_pct": 31.103,
+    "top_pct": 31.069,
     "width_pct": 12.545,
     "height_pct": 10.86,
     "site_name": "eBird",
@@ -242,7 +242,7 @@
   {
     "common_name": "Varied Thrush",
     "detections": 1,
-    "left_pct": 30.306,
+    "left_pct": 30.32,
     "top_pct": 70.244,
     "width_pct": 9.312,
     "height_pct": 10.531,
@@ -252,7 +252,7 @@
   {
     "common_name": "Savannah Sparrow",
     "detections": 1,
-    "left_pct": 40.459,
+    "left_pct": 40.472,
     "top_pct": 69.837,
     "width_pct": 11.252,
     "height_pct": 11.345,
@@ -262,7 +262,7 @@
   {
     "common_name": "Bushtit",
     "detections": 1,
-    "left_pct": 26.2,
+    "left_pct": 26.214,
     "top_pct": 82.956,
     "width_pct": 5.432,
     "height_pct": 10.912,
