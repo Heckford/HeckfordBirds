@@ -61,9 +61,9 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 4673,
+    "detections": 4674,
     "left_pct": 79.929,
-    "top_pct": 48.972,
+    "top_pct": 48.971,
     "width_pct": 5.786,
     "height_pct": 6.858,
     "site_name": "eBird",
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4530,
+    "detections": 4589,
     "left_pct": 38.308,
-    "top_pct": 26.809,
+    "top_pct": 26.805,
     "width_pct": 4.907,
-    "height_pct": 6.872,
+    "height_pct": 6.88,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
