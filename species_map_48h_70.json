@@ -100,6 +100,16 @@
     "target_url": "https://ebird.org/species/rebnut"
   },
   {
+    "common_name": "Northern Flicker",
+    "detections": 17,
+    "left_pct": 78.442,
+    "top_pct": 65.835,
+    "width_pct": 12.179,
+    "height_pct": 15.51,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/norfli"
+  },
+  {
     "common_name": "Brown Creeper",
     "detections": 11,
     "left_pct": 9.413,

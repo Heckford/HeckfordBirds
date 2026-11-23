@@ -110,6 +110,16 @@
     "target_url": "https://ebird.org/species/belkin1"
   },
   {
+    "common_name": "Northern Flicker",
+    "detections": 10,
+    "left_pct": 76.048,
+    "top_pct": 78.229,
+    "width_pct": 12.388,
+    "height_pct": 15.26,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/norfli"
+  },
+  {
     "common_name": "Brown Creeper",
     "detections": 8,
     "left_pct": 23.2,
