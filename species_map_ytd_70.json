@@ -31,7 +31,7 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 4019,
+    "detections": 4021,
     "left_pct": 23.851,
     "top_pct": 25.052,
     "width_pct": 5.245,
@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2237,
+    "detections": 2238,
     "left_pct": 80.994,
     "top_pct": 50.668,
     "width_pct": 7.023,
-    "height_pct": 8.599,
+    "height_pct": 8.6,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },

@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 4342,
+    "detections": 4344,
     "left_pct": 25.675,
     "top_pct": 24.553,
     "width_pct": 5.295,
-    "height_pct": 8.209,
+    "height_pct": 8.21,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -61,7 +61,7 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 3070,
+    "detections": 3071,
     "left_pct": 80.36,
     "top_pct": 56.152,
     "width_pct": 7.089,
