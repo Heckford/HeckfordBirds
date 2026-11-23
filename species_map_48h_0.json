@@ -21,21 +21,21 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 374,
+    "detections": 378,
     "left_pct": 31.628,
-    "top_pct": 19.073,
+    "top_pct": 19.064,
     "width_pct": 8.934,
-    "height_pct": 13.051,
+    "height_pct": 13.07,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 256,
+    "detections": 259,
     "left_pct": 41.27,
-    "top_pct": 18.921,
+    "top_pct": 18.911,
     "width_pct": 7.845,
-    "height_pct": 13.356,
+    "height_pct": 13.377,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -342,7 +342,7 @@
   {
     "common_name": "Common Loon",
     "detections": 1,
-    "left_pct": 85.614,
+    "left_pct": 85.615,
     "top_pct": 41.024,
     "width_pct": 6.755,
     "height_pct": 6.847,
