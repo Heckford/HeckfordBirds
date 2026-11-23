@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 14215,
+    "detections": 14214,
     "left_pct": 6.381,
     "top_pct": 24.387,
     "width_pct": 8.525,
@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 4283,
+    "detections": 4303,
     "left_pct": 25.675,
-    "top_pct": 24.558,
+    "top_pct": 24.557,
     "width_pct": 5.295,
-    "height_pct": 8.199,
+    "height_pct": 8.202,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 867,
+    "detections": 868,
     "left_pct": 17.643,
     "top_pct": 34.684,
     "width_pct": 5.653,
-    "height_pct": 7.659,
+    "height_pct": 7.66,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
@@ -253,7 +253,7 @@
     "common_name": "Downy Woodpecker",
     "detections": 122,
     "left_pct": 79.822,
-    "top_pct": 67.084,
+    "top_pct": 67.085,
     "width_pct": 6.371,
     "height_pct": 6.185,
     "site_name": "eBird",
@@ -755,7 +755,7 @@
     "left_pct": 61.363,
     "top_pct": 32.015,
     "width_pct": 7.089,
-    "height_pct": 5.806,
+    "height_pct": 5.807,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/shshaw"
   },
@@ -923,7 +923,7 @@
     "common_name": "Brewer's Blackbird",
     "detections": 1,
     "left_pct": 31.44,
-    "top_pct": 74.062,
+    "top_pct": 74.063,
     "width_pct": 7.089,
     "height_pct": 5.239,
     "site_name": "eBird",
