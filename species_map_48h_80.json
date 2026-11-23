@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Northern Flicker",
-    "detections": 8,
+    "detections": 10,
     "left_pct": 72.317,
-    "top_pct": 76.756,
+    "top_pct": 76.55,
     "width_pct": 12.922,
-    "height_pct": 16.064,
+    "height_pct": 16.477,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
   },

@@ -1,8 +1,8 @@
 [
   {
     "common_name": "Northern Flicker",
-    "detections": 2820,
-    "left_pct": 72.895,
+    "detections": 2821,
+    "left_pct": 72.896,
     "top_pct": 51.816,
     "width_pct": 6.921,
     "height_pct": 11.561,
@@ -34,8 +34,8 @@
     "detections": 1837,
     "left_pct": 26.878,
     "top_pct": 29.163,
-    "width_pct": 9.26,
-    "height_pct": 9.681,
+    "width_pct": 9.261,
+    "height_pct": 9.68,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
@@ -43,7 +43,7 @@
     "common_name": "Pacific Wren",
     "detections": 1059,
     "left_pct": 36.772,
-    "top_pct": 28.993,
+    "top_pct": 28.994,
     "width_pct": 5.361,
     "height_pct": 10.019,
     "site_name": "eBird",
@@ -52,7 +52,7 @@
   {
     "common_name": "Red-breasted Nuthatch",
     "detections": 1056,
-    "left_pct": 8.462,
+    "left_pct": 8.461,
     "top_pct": 39.972,
     "width_pct": 8.871,
     "height_pct": 9.516,
@@ -115,7 +115,7 @@
     "left_pct": 31.126,
     "top_pct": 40.654,
     "width_pct": 5.751,
-    "height_pct": 8.152,
+    "height_pct": 8.151,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/varthr"
   },
@@ -152,7 +152,7 @@
   {
     "common_name": "Common Raven",
     "detections": 68,
-    "left_pct": 37.511,
+    "left_pct": 37.51,
     "top_pct": 40.433,
     "width_pct": 5.361,
     "height_pct": 8.593,
@@ -192,7 +192,7 @@
   {
     "common_name": "Brown Creeper",
     "detections": 45,
-    "left_pct": 20.647,
+    "left_pct": 20.646,
     "top_pct": 50.647,
     "width_pct": 5.751,
     "height_pct": 7.031,
@@ -242,7 +242,7 @@
   {
     "common_name": "Ruby-crowned Kinglet",
     "detections": 24,
-    "left_pct": 27.032,
+    "left_pct": 27.031,
     "top_pct": 50.971,
     "width_pct": 8.481,
     "height_pct": 6.383,
@@ -273,8 +273,8 @@
     "common_name": "Golden-crowned Sparrow",
     "detections": 10,
     "left_pct": 7.682,
-    "top_pct": 58.991,
-    "width_pct": 9.26,
+    "top_pct": 58.99,
+    "width_pct": 9.261,
     "height_pct": 6.573,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gocspa"
@@ -385,7 +385,7 @@
     "left_pct": 30.346,
     "top_pct": 58.99,
     "width_pct": 5.751,
-    "height_pct": 6.574,
+    "height_pct": 6.575,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/cedwax"
   },
@@ -402,7 +402,7 @@
   {
     "common_name": "Dunlin",
     "detections": 3,
-    "left_pct": 57.49,
+    "left_pct": 57.491,
     "top_pct": 63.116,
     "width_pct": 3.077,
     "height_pct": 6.091,
@@ -423,7 +423,7 @@
     "common_name": "Pileated Woodpecker",
     "detections": 3,
     "left_pct": 71.336,
-    "top_pct": 73.518,
+    "top_pct": 73.519,
     "width_pct": 8.091,
     "height_pct": 6.908,
     "site_name": "eBird",
@@ -482,7 +482,7 @@
   {
     "common_name": "Pine Grosbeak",
     "detections": 2,
-    "left_pct": 10.022,
+    "left_pct": 10.021,
     "top_pct": 66.667,
     "width_pct": 5.751,
     "height_pct": 7.071,
@@ -504,7 +504,7 @@
     "detections": 2,
     "left_pct": 80.06,
     "top_pct": 74.077,
-    "width_pct": 9.26,
+    "width_pct": 9.261,
     "height_pct": 5.79,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/eucdov"
@@ -512,7 +512,7 @@
   {
     "common_name": "American Robin",
     "detections": 2,
-    "left_pct": 20.452,
+    "left_pct": 20.451,
     "top_pct": 67.141,
     "width_pct": 6.141,
     "height_pct": 6.123,
@@ -525,7 +525,7 @@
     "left_pct": 49.257,
     "top_pct": 26.342,
     "width_pct": 7.701,
-    "height_pct": 7.078,
+    "height_pct": 7.079,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/shshaw"
   },
@@ -542,7 +542,7 @@
   {
     "common_name": "California Scrub-Jay",
     "detections": 1,
-    "left_pct": 27.227,
+    "left_pct": 27.226,
     "top_pct": 66.946,
     "width_pct": 8.481,
     "height_pct": 6.513,
@@ -573,7 +573,7 @@
     "common_name": "House Finch",
     "detections": 1,
     "left_pct": 36.341,
-    "top_pct": 67.232,
+    "top_pct": 67.231,
     "width_pct": 4.971,
     "height_pct": 5.942,
     "site_name": "eBird",
@@ -594,7 +594,7 @@
     "detections": 1,
     "left_pct": 20.062,
     "top_pct": 75.296,
-    "width_pct": 9.26,
+    "width_pct": 9.261,
     "height_pct": 5.505,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/whwcro"
@@ -612,7 +612,7 @@
   {
     "common_name": "Horned Grebe",
     "detections": 1,
-    "left_pct": 77.647,
+    "left_pct": 77.648,
     "top_pct": 40.371,
     "width_pct": 5.361,
     "height_pct": 5.505,
