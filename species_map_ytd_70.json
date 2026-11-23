@@ -61,9 +61,9 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2238,
+    "detections": 2239,
     "left_pct": 80.994,
-    "top_pct": 50.668,
+    "top_pct": 50.667,
     "width_pct": 7.023,
     "height_pct": 8.6,
     "site_name": "eBird",
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 2109,
+    "detections": 2107,
     "left_pct": 4.07,
     "top_pct": 34.92,
     "width_pct": 5.957,
-    "height_pct": 8.593,
+    "height_pct": 8.592,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 784,
+    "detections": 786,
     "left_pct": 88.595,
-    "top_pct": 50.777,
+    "top_pct": 50.776,
     "width_pct": 6.668,
-    "height_pct": 8.38,
+    "height_pct": 8.382,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
