@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29711,
+    "detections": 29712,
     "left_pct": 6.117,
     "top_pct": 26.894,
     "width_pct": 6.958,
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4637,
+    "detections": 4678,
     "left_pct": 38.308,
-    "top_pct": 26.937,
+    "top_pct": 26.934,
     "width_pct": 4.907,
-    "height_pct": 6.886,
+    "height_pct": 6.892,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
