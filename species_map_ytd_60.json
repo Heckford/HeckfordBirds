@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 4267,
+    "detections": 4283,
     "left_pct": 25.675,
-    "top_pct": 24.56,
+    "top_pct": 24.558,
     "width_pct": 5.295,
-    "height_pct": 8.196,
+    "height_pct": 8.199,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -101,9 +101,9 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 866,
+    "detections": 867,
     "left_pct": 17.643,
-    "top_pct": 34.685,
+    "top_pct": 34.684,
     "width_pct": 5.653,
     "height_pct": 7.659,
     "site_name": "eBird",

@@ -21,21 +21,21 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 371,
+    "detections": 374,
     "left_pct": 31.628,
-    "top_pct": 19.081,
+    "top_pct": 19.073,
     "width_pct": 8.934,
-    "height_pct": 13.037,
+    "height_pct": 13.051,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 203,
+    "detections": 221,
     "left_pct": 41.27,
-    "top_pct": 19.118,
+    "top_pct": 19.047,
     "width_pct": 7.845,
-    "height_pct": 12.963,
+    "height_pct": 13.103,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 32,
+    "detections": 33,
     "left_pct": 32.091,
-    "top_pct": 36.975,
+    "top_pct": 36.96,
     "width_pct": 8.389,
-    "height_pct": 11.423,
+    "height_pct": 11.454,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
   },
