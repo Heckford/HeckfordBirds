@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 44,
+    "detections": 46,
     "left_pct": 49.343,
-    "top_pct": 45.688,
+    "top_pct": 45.644,
     "width_pct": 8.399,
-    "height_pct": 14.703,
+    "height_pct": 14.791,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
