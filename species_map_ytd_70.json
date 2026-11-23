@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 3839,
+    "detections": 3853,
     "left_pct": 23.851,
-    "top_pct": 25.071,
+    "top_pct": 25.07,
     "width_pct": 5.245,
-    "height_pct": 8.354,
+    "height_pct": 8.357,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -231,11 +231,11 @@
   },
   {
     "common_name": "Herring Gull",
-    "detections": 88,
+    "detections": 89,
     "left_pct": 62.479,
-    "top_pct": 50.827,
+    "top_pct": 50.825,
     "width_pct": 4.89,
-    "height_pct": 6.145,
+    "height_pct": 6.149,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
   },
