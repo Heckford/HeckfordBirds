@@ -22,7 +22,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 54,
-    "left_pct": 21.673,
+    "left_pct": 21.701,
     "top_pct": 44.56,
     "width_pct": 11.163,
     "height_pct": 25.746,
@@ -31,18 +31,18 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 49,
-    "left_pct": 33.844,
-    "top_pct": 48.148,
-    "width_pct": 12.621,
-    "height_pct": 18.571,
+    "detections": 48,
+    "left_pct": 33.872,
+    "top_pct": 48.179,
+    "width_pct": 12.565,
+    "height_pct": 18.509,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
   {
     "common_name": "Dark-eyed Junco",
     "detections": 37,
-    "left_pct": 47.473,
+    "left_pct": 47.445,
     "top_pct": 48.539,
     "width_pct": 12.714,
     "height_pct": 17.789,
