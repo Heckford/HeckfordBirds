@@ -21,7 +21,7 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 11447,
+    "detections": 11448,
     "left_pct": 21.865,
     "top_pct": 26.11,
     "width_pct": 4.321,
@@ -61,7 +61,7 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 4675,
+    "detections": 4678,
     "left_pct": 79.929,
     "top_pct": 48.974,
     "width_pct": 5.786,
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4626,
+    "detections": 4637,
     "left_pct": 38.308,
-    "top_pct": 26.938,
+    "top_pct": 26.937,
     "width_pct": 4.907,
-    "height_pct": 6.885,
+    "height_pct": 6.886,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -111,7 +111,7 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 2414,
+    "detections": 2415,
     "left_pct": 86.192,
     "top_pct": 49.942,
     "width_pct": 5.493,
@@ -863,7 +863,7 @@
     "common_name": "Purple Finch",
     "detections": 8,
     "left_pct": 30.435,
-    "top_pct": 62.15,
+    "top_pct": 62.151,
     "width_pct": 4.028,
     "height_pct": 4.698,
     "site_name": "eBird",
