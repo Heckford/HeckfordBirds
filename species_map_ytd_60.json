@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 4239,
+    "detections": 4267,
     "left_pct": 25.675,
-    "top_pct": 24.562,
+    "top_pct": 24.56,
     "width_pct": 5.295,
-    "height_pct": 8.191,
+    "height_pct": 8.196,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 3123,
+    "detections": 3127,
     "left_pct": 37.071,
-    "top_pct": 24.32,
+    "top_pct": 24.319,
     "width_pct": 6.012,
-    "height_pct": 8.676,
+    "height_pct": 8.677,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },

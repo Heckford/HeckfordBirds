@@ -21,28 +21,28 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 200,
-    "left_pct": 17.009,
-    "top_pct": 44.784,
-    "width_pct": 11.495,
-    "height_pct": 16.511,
+    "detections": 204,
+    "left_pct": 16.786,
+    "top_pct": 44.757,
+    "width_pct": 11.543,
+    "height_pct": 16.565,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 118,
-    "left_pct": 29.318,
-    "top_pct": 44.852,
-    "width_pct": 9.767,
-    "height_pct": 16.374,
+    "detections": 144,
+    "left_pct": 29.144,
+    "top_pct": 44.589,
+    "width_pct": 10.164,
+    "height_pct": 16.9,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
   {
     "common_name": "Pacific Wren",
     "detections": 82,
-    "left_pct": 39.9,
+    "left_pct": 40.123,
     "top_pct": 44.412,
     "width_pct": 8.399,
     "height_pct": 17.254,
@@ -52,7 +52,7 @@
   {
     "common_name": "Anna's Hummingbird",
     "detections": 57,
-    "left_pct": 60.02,
+    "left_pct": 60.242,
     "top_pct": 53.334,
     "width_pct": 12.16,
     "height_pct": 13.142,
@@ -62,7 +62,7 @@
   {
     "common_name": "Song Sparrow",
     "detections": 46,
-    "left_pct": 49.114,
+    "left_pct": 49.336,
     "top_pct": 45.644,
     "width_pct": 8.399,
     "height_pct": 14.791,
@@ -72,7 +72,7 @@
   {
     "common_name": "Northern Flicker",
     "detections": 26,
-    "left_pct": 60.646,
+    "left_pct": 60.869,
     "top_pct": 67.698,
     "width_pct": 10.906,
     "height_pct": 15.129,
@@ -82,7 +82,7 @@
   {
     "common_name": "Bald Eagle",
     "detections": 26,
-    "left_pct": 62.527,
+    "left_pct": 62.749,
     "top_pct": 16.771,
     "width_pct": 7.145,
     "height_pct": 15.599,
@@ -92,7 +92,7 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 11,
-    "left_pct": 60.333,
+    "left_pct": 60.556,
     "top_pct": 84.049,
     "width_pct": 11.533,
     "height_pct": 9.935,
@@ -142,7 +142,7 @@
   {
     "common_name": "Northern Pygmy-Owl",
     "detections": 1,
-    "left_pct": 60.02,
+    "left_pct": 60.242,
     "top_pct": 33.592,
     "width_pct": 12.16,
     "height_pct": 12.103,
@@ -162,7 +162,7 @@
   {
     "common_name": "Herring Gull",
     "detections": 1,
-    "left_pct": 74.592,
+    "left_pct": 74.815,
     "top_pct": 16.771,
     "width_pct": 8.399,
     "height_pct": 10.29,
