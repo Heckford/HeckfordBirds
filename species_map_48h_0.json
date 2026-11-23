@@ -2,7 +2,7 @@
   {
     "common_name": "Golden-crowned Kinglet",
     "detections": 924,
-    "left_pct": 3.537,
+    "left_pct": 3.302,
     "top_pct": 18.274,
     "width_pct": 12.698,
     "height_pct": 14.702,
@@ -12,7 +12,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 904,
-    "left_pct": 16.94,
+    "left_pct": 16.705,
     "top_pct": 16.762,
     "width_pct": 14.325,
     "height_pct": 17.726,
@@ -22,7 +22,7 @@
   {
     "common_name": "Dark-eyed Junco",
     "detections": 345,
-    "left_pct": 31.971,
+    "left_pct": 31.736,
     "top_pct": 19.195,
     "width_pct": 8.899,
     "height_pct": 12.86,
@@ -30,34 +30,34 @@
     "target_url": "https://ebird.org/species/daejun"
   },
   {
+    "common_name": "Pacific Wren",
+    "detections": 175,
+    "left_pct": 41.341,
+    "top_pct": 19.737,
+    "width_pct": 7.742,
+    "height_pct": 11.777,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/pacwre1"
+  },
+  {
     "common_name": "Anna's Hummingbird",
     "detections": 166,
     "left_pct": 78.692,
     "top_pct": 54.646,
     "width_pct": 10.527,
-    "height_pct": 11.259,
+    "height_pct": 13.711,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Song Sparrow",
     "detections": 139,
-    "left_pct": 41.576,
-    "top_pct": 19.243,
+    "left_pct": 3.076,
+    "top_pct": 35.76,
     "width_pct": 7.271,
-    "height_pct": 12.764,
+    "height_pct": 13.949,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
-  },
-  {
-    "common_name": "Pacific Wren",
-    "detections": 116,
-    "left_pct": 3.076,
-    "top_pct": 37.115,
-    "width_pct": 7.271,
-    "height_pct": 11.24,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/pacwre1"
   },
   {
     "common_name": "Steller's Jay",
@@ -92,8 +92,8 @@
   {
     "common_name": "Northern Flicker",
     "detections": 35,
-    "left_pct": 79.234,
-    "top_pct": 66.963,
+    "left_pct": 73.889,
+    "top_pct": 69.415,
     "width_pct": 9.442,
     "height_pct": 12.137,
     "site_name": "eBird",
@@ -112,8 +112,8 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 30,
-    "left_pct": 78.963,
-    "top_pct": 80.159,
+    "left_pct": 84.037,
+    "top_pct": 71.15,
     "width_pct": 9.984,
     "height_pct": 8.668,
     "site_name": "eBird",

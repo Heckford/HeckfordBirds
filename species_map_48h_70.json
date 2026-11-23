@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 98,
-    "left_pct": 7.094,
-    "top_pct": 38.385,
-    "width_pct": 8.883,
-    "height_pct": 13.636,
+    "detections": 155,
+    "left_pct": 6.742,
+    "top_pct": 37.991,
+    "width_pct": 9.588,
+    "height_pct": 14.424,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
@@ -52,7 +52,7 @@
   {
     "common_name": "Song Sparrow",
     "detections": 83,
-    "left_pct": 16.815,
+    "left_pct": 17.167,
     "top_pct": 37.08,
     "width_pct": 8.628,
     "height_pct": 16.246,
@@ -62,7 +62,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 67,
-    "left_pct": 26.28,
+    "left_pct": 26.632,
     "top_pct": 36.495,
     "width_pct": 9.272,
     "height_pct": 17.416,
@@ -82,7 +82,7 @@
   {
     "common_name": "Red-breasted Nuthatch",
     "detections": 30,
-    "left_pct": 36.389,
+    "left_pct": 36.741,
     "top_pct": 39.52,
     "width_pct": 14.423,
     "height_pct": 11.365,

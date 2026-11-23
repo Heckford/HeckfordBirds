@@ -30,39 +30,39 @@
     "target_url": "https://ebird.org/species/daejun"
   },
   {
+    "common_name": "Pacific Wren",
+    "detections": 173,
+    "left_pct": 6.476,
+    "top_pct": 37.76,
+    "width_pct": 9.153,
+    "height_pct": 13.814,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/pacwre1"
+  },
+  {
     "common_name": "Anna's Hummingbird",
     "detections": 127,
-    "left_pct": 77.317,
+    "left_pct": 71.497,
     "top_pct": 60.727,
     "width_pct": 12.075,
-    "height_pct": 12.804,
+    "height_pct": 15.58,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Song Sparrow",
     "detections": 117,
-    "left_pct": 6.812,
-    "top_pct": 37.331,
+    "left_pct": 16.438,
+    "top_pct": 36.648,
     "width_pct": 8.34,
-    "height_pct": 14.673,
+    "height_pct": 16.038,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
   {
-    "common_name": "Pacific Wren",
-    "detections": 108,
-    "left_pct": 15.962,
-    "top_pct": 38.136,
-    "width_pct": 8.48,
-    "height_pct": 13.062,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/pacwre1"
-  },
-  {
     "common_name": "Steller's Jay",
     "detections": 76,
-    "left_pct": 25.251,
+    "left_pct": 25.588,
     "top_pct": 36.294,
     "width_pct": 8.963,
     "height_pct": 16.746,
@@ -82,7 +82,7 @@
   {
     "common_name": "Red-breasted Nuthatch",
     "detections": 38,
-    "left_pct": 35.024,
+    "left_pct": 35.36,
     "top_pct": 39.135,
     "width_pct": 13.942,
     "height_pct": 11.065,
@@ -92,8 +92,8 @@
   {
     "common_name": "Northern Flicker",
     "detections": 32,
-    "left_pct": 71.809,
-    "top_pct": 74.838,
+    "left_pct": 84.382,
+    "top_pct": 61.507,
     "width_pct": 10.83,
     "height_pct": 14.02,
     "site_name": "eBird",
@@ -102,8 +102,8 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 29,
-    "left_pct": 83.448,
-    "top_pct": 74.745,
+    "left_pct": 77.628,
+    "top_pct": 77.52,
     "width_pct": 11.453,
     "height_pct": 14.206,
     "site_name": "eBird",
