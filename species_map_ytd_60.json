@@ -31,21 +31,21 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 4168,
+    "detections": 4188,
     "left_pct": 25.675,
-    "top_pct": 24.569,
+    "top_pct": 24.567,
     "width_pct": 5.295,
-    "height_pct": 8.178,
+    "height_pct": 8.181,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 3638,
+    "detections": 3636,
     "left_pct": 31.553,
     "top_pct": 24.484,
     "width_pct": 4.936,
-    "height_pct": 8.348,
+    "height_pct": 8.347,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
