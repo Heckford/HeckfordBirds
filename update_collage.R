@@ -11,32 +11,40 @@ stopifnot("Missing BIRDWEATHER_TOKEN secret" = length(tokens) > 0)
 
 # Fetch full species summary table (used for "All" confidence level so 0 species drop out)
 fetch_species_summary <- function(tok, from_iso) {
-  sp_url <- paste0("https", "://", paste(c("app", "birdweather", "com"), collapse = "."), "/", paste(c("api", "v1", "stations", tok, "species"), collapse = "/"))
+  empty_res <- tibble(common_name = character(), sci_name = character(), detections = numeric(), tax_grp = character())
+  sp_url <- paste0("https://birdweather.com", tok, "/species")
   all_pages <- list(); pg <- 0
   repeat {
     pg <- pg + 1
-    res <- GET(url = sp_url, query = list(from = from_iso, limit = 100, page = pg), add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(20))
-    stop_for_status(res)
+    res <- NULL
+    for (att in 1:3) {
+      r_try <- try(GET(url = sp_url, query = list(from = from_iso, limit = 100, page = pg), add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(20)), silent = TRUE)
+      if (!inherits(r_try, "try-error") && status_code(r_try) == 200) { res <- r_try; break }
+      Sys.sleep(0.5 * att)
+    }
+    if (is.null(res)) break
     parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
-    sp_df <- if (!is.null(parsed$species)) parsed$species else as.data.frame(parsed)
-    if (is.null(sp_df) || nrow(sp_df) == 0) break
+    sp_df <- if (!is.null(parsed$species)) parsed$species else parsed
+    if (!is.data.frame(sp_df) || nrow(sp_df) == 0) break
     c_col <- grep("commonName|common_name", names(sp_df), value = TRUE)
     s_col <- grep("scientificName|scientific_name", names(sp_df), value = TRUE)
-    n_col <- grep("detections_count|detections.total|count|total", names(sp_df), value = TRUE)
+    n_col <- grep("detections_count|detections\\.total|count|total", names(sp_df), value = TRUE)
     g_col <- grep("group|taxon|class|category", names(sp_df), value = TRUE)
-    grp_vals <- if (length(g_col) > 0) as.character(sp_df[[g_col]]) else rep("", nrow(sp_df))
+    if (is.na(c_col) || is.na(s_col) || is.na(n_col)) break
+    grp_vals <- if (!is.na(g_col)) as.character(sp_df[[g_col]]) else rep("", nrow(sp_df))
     df <- tibble(common_name = as.character(sp_df[[c_col]]), sci_name = as.character(sp_df[[s_col]]), detections = as.numeric(sp_df[[n_col]]), tax_grp = grp_vals)
-    df <- df[!is.na(df$common_name) & !is.na(df$sci_name) & df$detections > 0, ]
+    df <- df[!is.na(df$common_name) & !is.na(df$sci_name) & !is.na(df$detections) & df$detections > 0, ]
     all_pages[[pg]] <- df
     if (nrow(sp_df) < 100) break
   }
-  if (length(all_pages) == 0) return(tibble(common_name = character(), sci_name = character(), detections = numeric(), tax_grp = character()))
+  if (length(all_pages) == 0) return(empty_res)
   bind_rows(all_pages)
 }
 
 # Fetch individual timestamped detections >= 60% confidence (used for 60/70/80/90% toggles)
 fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
-  det_url <- paste0("https", "://", paste(c("app", "birdweather", "com"), collapse = "."), "/", paste(c("api", "v1", "stations", tok, "detections"), collapse = "/"))
+  empty_res <- tibble(common_name = character(), sci_name = character(), conf = numeric(), ts = as.POSIXct(character()))
+  det_url <- paste0("https://birdweather.com", tok, "/detections")
   all_rows <- list(); cursor_id <- NULL; pg <- 0
   repeat {
     pg <- pg + 1
@@ -50,17 +58,17 @@ fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
     }
     if (is.null(res)) break
     parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
-    d_df <- if (!is.null(parsed$detections)) parsed$detections else as.data.frame(parsed)
-    if (is.null(d_df) || nrow(d_df) == 0) break
+    d_df <- if (!is.null(parsed$detections)) parsed$detections else parsed
+    if (!is.data.frame(d_df) || nrow(d_df) == 0) break
     c_col <- grep("species\\.commonName|commonName|common_name", names(d_df), value = TRUE)
     s_col <- grep("species\\.scientificName|scientificName|scientific_name", names(d_df), value = TRUE)
     t_col <- grep("^timestamp$|createdAt|created_at", names(d_df), value = TRUE)
     conf_col <- grep("^confidence$", names(d_df), value = TRUE)
-    if (length(c_col) == 0 || length(s_col) == 0) break
-    ts_vals <- if (length(t_col) > 0) as.POSIXct(sub("Z$", "", d_df[[t_col]]), format = "%Y-%m-%dT%H:%M:%S", tz = "UTC") else rep(Sys.time(), nrow(d_df))
-    conf_vals <- if (length(conf_col) > 0) as.numeric(d_df[[conf_col]]) else rep(1, nrow(d_df))
+    if (is.na(c_col) || is.na(s_col)) break
+    ts_vals <- if (!is.na(t_col)) as.POSIXct(sub("Z$", "", d_df[[t_col]]), format = "%Y-%m-%dT%H:%M:%S", tz = "UTC") else rep(Sys.time(), nrow(d_df))
+    conf_vals <- if (!is.na(conf_col)) as.numeric(d_df[[conf_col]]) else rep(1, nrow(d_df))
     sub_df <- tibble(common_name = as.character(d_df[[c_col]]), sci_name = as.character(d_df[[s_col]]), conf = conf_vals, ts = ts_vals)
-    sub_df <- sub_df[!is.na(sub_df$common_name) & !is.na(sub_df$sci_name) & sub_df$conf >= min_conf, ]
+    sub_df <- sub_df[!is.na(sub_df$common_name) & !is.na(sub_df$sci_name) & !is.na(sub_df$conf) & sub_df$conf >= min_conf, ]
     all_rows[[pg]] <- sub_df
     if (nrow(d_df) < 100 || !"id" %in% names(d_df)) break
     new_cursor <- tail(d_df$id, 1)
@@ -68,15 +76,14 @@ fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
     cursor_id <- new_cursor
     if (pg %% 25 == 0) Sys.sleep(0.2)
   }
-  if (length(all_rows) == 0) return(tibble(common_name = character(), sci_name = character(), conf = numeric(), ts = as.POSIXct(character())))
+  if (length(all_rows) == 0) return(empty_res)
   bind_rows(all_rows)
 }
-
 # ==============================================================================
 # SECTION 2: EBIRD TAXONOMY, WOODBLOCK ART CACHE & FALLBACK SILHOUETTES
 # ==============================================================================
 # Download official eBird taxonomy once per run (provides speciesCode links & taxonomic order)
-ebird_tax_url <- paste0("https", "://", paste(c("api", "ebird", "org"), collapse = "."), "/v2/ref/taxonomy/ebird")
+ebird_tax_url <- "https://ebird.org"
 tax_res <- try(GET(url = ebird_tax_url, query = list(fmt = "json", cat = "species"), add_headers("User-Agent" = "Mozilla/5.0"), timeout(15)), silent = TRUE)
 ebird_lookup <- data.frame(sciName = character(), comName = character(), speciesCode = character(), order = character(), stringsAsFactors = FALSE)
 if (!inherits(tax_res, "try-error") && status_code(tax_res) == 200) ebird_lookup <- fromJSON(content(tax_res, as = "text", encoding = "UTF-8"))
@@ -87,7 +94,7 @@ get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
   if (is_bat) return(NULL)
   ck <- paste0(sci_name, "_", pose)
   if (exists(ck, envir = art_cache)) return(get(ck, envir = art_cache))
-  cutout_url <- paste0("https", "://", paste(c("bird", "onethreenine", "net"), collapse = "."), "/avian/api/cutout.php")
+  cutout_url <- "https://onethreenine.net"
   for (p_try in unique(c(pose, 1, 2))) {
     for (attempt in 1:2) {
       Sys.sleep(0.10)
@@ -106,7 +113,6 @@ get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
 # Vector silhouettes used for bats and any bird lacking a woodblock PNG
 bird_poly <- data.frame(px = c(-0.48,-0.25,-0.08,0.08,0.22,0.34,0.48,0.35,0.32,0.24,0.10,0.06,0.12,0.02,-0.04,-0.02,-0.16,-0.45,-0.36), py = c(-0.28,-0.08,0.14,0.22,0.38,0.34,0.28,0.22,0.08,-0.10,-0.22,-0.44,-0.46,-0.46,-0.24,-0.45,-0.22,-0.35,-0.26))
 bat_poly  <- data.frame(px = c(0.00,-0.04,-0.07,-0.14,-0.32,-0.50,-0.38,-0.26,-0.14,-0.06,0.00,0.06,0.14,0.26,0.38,0.50,0.32,0.14,0.07,0.04), py = c(0.18,0.34,0.22,0.32,0.42,0.12,-0.12,-0.05,-0.22,-0.15,-0.35,-0.15,-0.22,-0.05,-0.12,0.12,0.42,0.32,0.22,0.34))
-
 # ==============================================================================
 # SECTION 3: TAXONOMIC GROUPING & HORIZONTAL FIELD-GUIDE ROW PACKER
 # ==============================================================================
@@ -148,10 +154,9 @@ pack_group_cluster <- function(sub_idx, box_hw, box_hh, aspect_bias = 1.15) {
   y_mid <- (max(ly + box_hh[sub_idx]) + min(ly - box_hh[sub_idx])) / 2
   list(lx = lx - x_mid, ly = ly - y_mid, w = hw_span + 0.52, h = hh_span + 1.25)
 }
-
 # ==============================================================================
 # SECTION 4A: TAXONOMY MATCHING, SIZING & GROUP PANEL POSITIONING
-# =============================================================================
+# ==============================================================================
 render_flock_df <- function(flock_df, period_label, conf_label, png_file, json_file, compact_mode = FALSE) {
   bc_time <- format(as.POSIXct(Sys.time(), tz = "America/Vancouver"), "%b %d, %I:%M %p %Z")
   if (nrow(flock_df) == 0) {
@@ -200,7 +205,6 @@ render_flock_df <- function(flock_df, period_label, conf_label, png_file, json_f
   # ============================================================================
   # SECTION 4B: PANEL PLACEMENT, GGPLOT DRAWING & HOTSPOT JSON EXPORT
   # ============================================================================
-  # Position Songbirds panel on left and secondary taxonomic panels on right
   cx <- numeric(n); cy <- numeric(n); panel_boxes <- list()
   song_idx <- which(flock_df$group_name == "Songbirds")
   right_groups <- c("Raptors", "Waterfowl & Seabirds", "Shorebirds & Gulls", "Woodpeckers & Other Birds", "Bats")
@@ -259,13 +263,12 @@ render_flock_df <- function(flock_df, period_label, conf_label, png_file, json_f
   W <- 13; H <- 8; p_left <- 0.22; p_right <- W - 0.22; p_top <- 0.92; p_bot <- H - 0.19
   sc <- min((p_right - p_left) / (x_max - x_min), (p_bot - p_top) / (y_max - y_min))
   ox <- p_left + ((p_right - p_left) - (x_max - x_min) * sc) / 2; oy <- p_top + ((p_bot - p_top) - (y_max - y_min) * sc) / 2
-  inat_base <- paste0("https", "://", paste(c("www", "inaturalist", "org"), collapse = "."), "/taxa/search?q=")
-  ebird_sp  <- paste0("https", "://", paste(c("ebird", "org"), collapse = "."), "/species/")
-  ebird_ex  <- paste0("https", "://", paste(c("ebird", "org"), collapse = "."), "/explore?q=")
-  hotspots <- data.frame(common_name = flock_df$common_name, detections = flock_df$detections, left_pct = round(((ox + ((cx - box_hw) - x_min) * sc) / W) * 100, 3), top_pct = round(((oy + (y_max - (cy + box_hh)) * sc) / H) * 100, 3), width_pct = round(((2 * box_hw * sc) / W) * 100, 3), height_pct = round(((2 * box_hh * sc) / H) * 100, 3), site_name = ifelse(flock_df$is_bat, "iNaturalist", "eBird"), target_url = ifelse(flock_df$is_bat, paste0(inat_base, URLencode(flock_df$clean_sci)), ifelse(nchar(flock_df$ebird_code) > 0, paste0(ebird_sp, flock_df$ebird_code), paste0(ebird_ex, URLencode(flock_df$common_name)))), stringsAsFactors = FALSE)
+  inat_base <- "https://inaturalist.org"
+  ebird_sp  <- "https://ebird.org"
+  ebird_ex  <- "https://ebird.org"
+  hotspots <- data.frame(common_name = flock_df$common_name, detections = flock_df$detections, left_pct = round(((ox + ((cx - box_hw) - x_min) * sc) / W) * 100, 3), top_pct = round(((oy + (y_max - (cy + box_hh)) * sc) / H) * 100, 3), width_pct = round(((2 * box_hw * sc) / W) * 100, 3), height_pct = round(((2 * box_hh * sc) / H) * 100, 3), site_name = ifelse(flock_df$is_bat, "iNaturalist", "eBird"), target_url = ifelse(flock_df$is_bat, paste0(inat_base, URLencode(flock_df$clean_sci, reserved = TRUE)), ifelse(nchar(flock_df$ebird_code) > 0, paste0(ebird_sp, flock_df$ebird_code), paste0(ebird_ex, URLencode(flock_df$common_name, reserved = TRUE)))), stringsAsFactors = FALSE)
   write_json(hotspots, json_file, pretty = TRUE, auto_unbox = TRUE)
 }
-
 # ==============================================================================
 # SECTION 5: TIMEFRAME CUTOFFS & EXECUTION LOOP (ALL, 60%, 70%, 80%, 90%)
 # ==============================================================================
@@ -276,13 +279,21 @@ cutoff_48h_utc <- as.POSIXct(Sys.time() - as.difftime(48, units = "hours"), tz =
 
 # 1. Generate "All Detections" (c = 0) from /species endpoint so 100% of species are included
 sp_48h_raw <- bind_rows(lapply(tokens, fetch_species_summary, from_iso = cutoff_48h_iso))
-sp_48h_raw$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sp_48h_raw$sci_name)
-sp_48h_all <- aggregate(detections ~ common_name + clean_sci + tax_grp, data = sp_48h_raw, FUN = sum)
+sp_48h_all <- if (nrow(sp_48h_raw) > 0) {
+  sp_48h_raw$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sp_48h_raw$sci_name)
+  aggregate(detections ~ common_name + clean_sci + tax_grp, data = sp_48h_raw, FUN = sum)
+} else {
+  data.frame(common_name = character(), clean_sci = character(), tax_grp = character(), detections = numeric())
+}
 render_flock_df(sp_48h_all, "Last 48 Hours", "All Detections", "HeckfordBirds_48h_0.png", "species_map_48h_0.json", compact_mode = FALSE)
 
 sp_ytd_raw <- bind_rows(lapply(tokens, fetch_species_summary, from_iso = cutoff_ytd))
-sp_ytd_raw$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sp_ytd_raw$sci_name)
-sp_ytd_all <- aggregate(detections ~ common_name + clean_sci + tax_grp, data = sp_ytd_raw, FUN = sum)
+sp_ytd_all <- if (nrow(sp_ytd_raw) > 0) {
+  sp_ytd_raw$clean_sci <- sub("^(\\S+\\s+\\S+).*", "\\1", sp_ytd_raw$sci_name)
+  aggregate(detections ~ common_name + clean_sci + tax_grp, data = sp_ytd_raw, FUN = sum)
+} else {
+  data.frame(common_name = character(), clean_sci = character(), tax_grp = character(), detections = numeric())
+}
 render_flock_df(sp_ytd_all, paste0("Year to Date (", current_year, ")"), "All Detections", "HeckfordBirds_ytd_0.png", "species_map_ytd_0.json", compact_mode = TRUE)
 
 # 2. Fetch individual detections >= 60% once, then filter 60%, 70%, 80%, 90% locally
