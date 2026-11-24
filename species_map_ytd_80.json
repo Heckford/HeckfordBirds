@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 3450,
+    "detections": 3520,
     "left_pct": 26.421,
-    "top_pct": 27.428,
+    "top_pct": 27.418,
     "width_pct": 5.328,
-    "height_pct": 8.935,
+    "height_pct": 8.955,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -152,7 +152,7 @@
   {
     "common_name": "Glaucous-winged Gull",
     "detections": 207,
-    "left_pct": 49.483,
+    "left_pct": 49.537,
     "top_pct": 50.605,
     "width_pct": 7.856,
     "height_pct": 7.164,
@@ -170,24 +170,24 @@
     "target_url": "https://ebird.org/species/brncre"
   },
   {
-    "common_name": "Killdeer",
-    "detections": 101,
-    "left_pct": 57.926,
-    "top_pct": 50.99,
-    "width_pct": 3.63,
-    "height_pct": 6.393,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/killde"
-  },
-  {
     "common_name": "Common Raven",
-    "detections": 99,
+    "detections": 109,
     "left_pct": 39.221,
-    "top_pct": 38.453,
+    "top_pct": 38.136,
     "width_pct": 4.966,
-    "height_pct": 7.332,
+    "height_pct": 7.967,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comrav"
+  },
+  {
+    "common_name": "Killdeer",
+    "detections": 101,
+    "left_pct": 57.98,
+    "top_pct": 50.652,
+    "width_pct": 3.522,
+    "height_pct": 7.068,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/killde"
   },
   {
     "common_name": "Pine Siskin",
@@ -232,7 +232,7 @@
   {
     "common_name": "Herring Gull",
     "detections": 42,
-    "left_pct": 62.143,
+    "left_pct": 62.089,
     "top_pct": 51.113,
     "width_pct": 4.966,
     "height_pct": 6.147,

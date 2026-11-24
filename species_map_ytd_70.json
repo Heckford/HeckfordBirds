@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 3883,
+    "detections": 3956,
     "left_pct": 24.562,
-    "top_pct": 24.593,
+    "top_pct": 24.585,
     "width_pct": 5.269,
-    "height_pct": 8.427,
+    "height_pct": 8.443,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
@@ -180,24 +180,24 @@
     "target_url": "https://ebird.org/species/killde"
   },
   {
-    "common_name": "Pine Siskin",
-    "detections": 145,
-    "left_pct": 34.653,
-    "top_pct": 35.495,
-    "width_pct": 4.555,
-    "height_pct": 6.703,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/pinsis"
-  },
-  {
     "common_name": "Common Raven",
-    "detections": 136,
-    "left_pct": 39.788,
-    "top_pct": 34.968,
+    "detections": 147,
+    "left_pct": 34.653,
+    "top_pct": 35.234,
     "width_pct": 4.912,
-    "height_pct": 7.758,
+    "height_pct": 7.224,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comrav"
+  },
+  {
+    "common_name": "Pine Siskin",
+    "detections": 145,
+    "left_pct": 40.146,
+    "top_pct": 35.434,
+    "width_pct": 4.555,
+    "height_pct": 6.824,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/pinsis"
   },
   {
     "common_name": "Downy Woodpecker",
