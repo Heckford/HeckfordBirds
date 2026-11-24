@@ -99,7 +99,6 @@ tax_res <- try(GET(url = ebird_tax_url, query = list(fmt = "json", cat = "specie
 ebird_lookup <- data.frame(sciName = character(), comName = character(), speciesCode = character(), order = character(), stringsAsFactors = FALSE)
 tax_parsed <- safe_from_json(tax_res)
 if (is.data.frame(tax_parsed) && nrow(tax_parsed) > 0) ebird_lookup <- tax_parsed
-)
 
 # Cache woodblock bird illustrations in memory so each species is downloaded only once
 art_cache <- new.env(parent = emptyenv())
