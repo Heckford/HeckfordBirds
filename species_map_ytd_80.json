@@ -31,11 +31,11 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 3428,
+    "detections": 3441,
     "left_pct": 26.421,
-    "top_pct": 27.431,
+    "top_pct": 27.429,
     "width_pct": 5.328,
-    "height_pct": 8.928,
+    "height_pct": 8.932,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
