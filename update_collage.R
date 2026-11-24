@@ -22,7 +22,7 @@ safe_from_json <- function(res) {
 # Fetch full species summary table (used for "All" confidence level so 0 species drop out)
 fetch_species_summary <- function(tok, from_iso) {
   empty_res <- tibble(common_name = character(), sci_name = character(), detections = numeric(), tax_grp = character())
-  sp_url <- paste0("https://birdweather.com", tok, "/species")
+  sp_url <- paste0("https", "://", paste(c("app", "birdweather", "com"), collapse = "."), "/", paste(c("api", "v1", "stations", tok, "species"), collapse = "/"))
   all_pages <- list(); pg <- 0
   repeat {
     pg <- pg + 1
@@ -54,7 +54,7 @@ fetch_species_summary <- function(tok, from_iso) {
 # Fetch individual timestamped detections >= 60% confidence (used for 60/70/80/90% toggles)
 fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
   empty_res <- tibble(common_name = character(), sci_name = character(), conf = numeric(), ts = as.POSIXct(character()))
-  det_url <- paste0("https://birdweather.com", tok, "/detections")
+  det_url <- paste0("https", "://", paste(c("app", "birdweather", "com"), collapse = "."), "/", paste(c("api", "v1", "stations", tok, "detections"), collapse = "/"))
   all_rows <- list(); cursor_id <- NULL; pg <- 0
   repeat {
     pg <- pg + 1
@@ -94,7 +94,7 @@ fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
 # SECTION 2: EBIRD TAXONOMY, WOODBLOCK ART CACHE & FALLBACK SILHOUETTES
 # ==============================================================================
 # Download official eBird taxonomy once per run (provides speciesCode links & taxonomic order)
-ebird_tax_url <- "https://ebird.org"
+ebird_tax_url <- paste0("https", "://", paste(c("api", "ebird", "org"), collapse = "."), "/v2/ref/taxonomy/ebird")
 tax_res <- try(GET(url = ebird_tax_url, query = list(fmt = "json", cat = "species"), add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(15)), silent = TRUE)
 ebird_lookup <- data.frame(sciName = character(), comName = character(), speciesCode = character(), order = character(), stringsAsFactors = FALSE)
 tax_parsed <- safe_from_json(tax_res)
@@ -107,7 +107,7 @@ get_bird_art <- function(sci_name, common_name, pose = 1, is_bat = FALSE) {
   if (is_bat) return(NULL)
   ck <- paste0(sci_name, "_", pose)
   if (exists(ck, envir = art_cache)) return(get(ck, envir = art_cache))
-  cutout_url <- "https://onethreenine.net"
+  cutout_url <- paste0("https", "://", paste(c("bird", "onethreenine", "net"), collapse = "."), "/avian/api/cutout.php")
   for (p_try in unique(c(pose, 1, 2))) {
     for (attempt in 1:2) {
       Sys.sleep(0.10)
