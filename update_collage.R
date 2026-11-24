@@ -184,7 +184,7 @@ render_flock_df <- function(flock_df, period_label, conf_label, png_file, json_f
   for (idx in seq_len(nrow(flock_df))) {
     m1 <- which(ebird_lookup$sciName == flock_df$clean_sci[idx])
     if (length(m1) == 0) m1 <- which(tolower(ebird_lookup$comName) == tolower(flock_df$common_name[idx]))
-    if (length(m1) > 0) { flock_df$ebird_code[idx] <- ebird_lookup$speciesCode[m1]; flock_df$ebird_order[idx] <- ebird_lookup$order[m1] }
+    if (length(m1) > 0) { flock_df$ebird_code[idx] <- ebird_lookup$speciesCode[m1[1]]; flock_df$ebird_order[idx] <- ebird_lookup$order[m1[1]] }
   }
   flock_df$group_name <- mapply(classify_species_group, flock_df$common_name, flock_df$clean_sci, flock_df$tax_grp, flock_df$ebird_order)
   flock_df$is_bat <- flock_df$group_name == "Bats"
