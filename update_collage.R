@@ -9,6 +9,16 @@ tokens <- c(Sys.getenv("BIRDWEATHER_TOKEN"), Sys.getenv("BIRDWEATHER_TOKEN_2"))
 tokens <- tokens[nchar(tokens) > 0]
 stopifnot("Missing BIRDWEATHER_TOKEN secret" = length(tokens) > 0)
 
+# Helper: parse HTTP response only if it is valid JSON (guards against HTML 200 pages)
+safe_from_json <- function(res) {
+  if (is.null(res) || inherits(res, "try-error") || status_code(res) != 200) return(NULL)
+  txt <- trimws(content(res, as = "text", encoding = "UTF-8"))
+  if (nchar(txt) == 0 || grepl("^<", txt)) return(NULL)
+  parsed <- try(fromJSON(txt, flatten = TRUE), silent = TRUE)
+  if (inherits(parsed, "try-error")) return(NULL)
+  parsed
+}
+
 # Fetch full species summary table (used for "All" confidence level so 0 species drop out)
 fetch_species_summary <- function(tok, from_iso) {
   empty_res <- tibble(common_name = character(), sci_name = character(), detections = numeric(), tax_grp = character())
@@ -16,20 +26,20 @@ fetch_species_summary <- function(tok, from_iso) {
   all_pages <- list(); pg <- 0
   repeat {
     pg <- pg + 1
-    res <- NULL
+    parsed <- NULL
     for (att in 1:3) {
       r_try <- try(GET(url = sp_url, query = list(from = from_iso, limit = 100, page = pg), add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(20)), silent = TRUE)
-      if (!inherits(r_try, "try-error") && status_code(r_try) == 200) { res <- r_try; break }
+      parsed <- safe_from_json(r_try)
+      if (!is.null(parsed)) break
       Sys.sleep(0.5 * att)
     }
-    if (is.null(res)) break
-    parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
+    if (is.null(parsed)) break
     sp_df <- if (!is.null(parsed$species)) parsed$species else parsed
     if (!is.data.frame(sp_df) || nrow(sp_df) == 0) break
-    c_col <- grep("commonName|common_name", names(sp_df), value = TRUE)
-    s_col <- grep("scientificName|scientific_name", names(sp_df), value = TRUE)
-    n_col <- grep("detections_count|detections\\.total|count|total", names(sp_df), value = TRUE)
-    g_col <- grep("group|taxon|class|category", names(sp_df), value = TRUE)
+    c_col <- grep("commonName|common_name", names(sp_df), value = TRUE)[1]
+    s_col <- grep("scientificName|scientific_name", names(sp_df), value = TRUE)[1]
+    n_col <- grep("detections_count|detections\\.total|count|total", names(sp_df), value = TRUE)[1]
+    g_col <- grep("group|taxon|class|category", names(sp_df), value = TRUE)[1]
     if (is.na(c_col) || is.na(s_col) || is.na(n_col)) break
     grp_vals <- if (!is.na(g_col)) as.character(sp_df[[g_col]]) else rep("", nrow(sp_df))
     df <- tibble(common_name = as.character(sp_df[[c_col]]), sci_name = as.character(sp_df[[s_col]]), detections = as.numeric(sp_df[[n_col]]), tax_grp = grp_vals)
@@ -50,20 +60,20 @@ fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
     pg <- pg + 1
     q_list <- list(from = from_iso, confidence = min_conf, limit = 100, order = "desc")
     if (!is.null(cursor_id)) q_list$cursor <- cursor_id
-    res <- NULL
+    parsed <- NULL
     for (att in 1:3) {
       r_try <- try(GET(url = det_url, query = q_list, add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(25)), silent = TRUE)
-      if (!inherits(r_try, "try-error") && status_code(r_try) == 200) { res <- r_try; break }
+      parsed <- safe_from_json(r_try)
+      if (!is.null(parsed)) break
       Sys.sleep(0.5 * att)
     }
-    if (is.null(res)) break
-    parsed <- fromJSON(content(res, as = "text", encoding = "UTF-8"), flatten = TRUE)
+    if (is.null(parsed)) break
     d_df <- if (!is.null(parsed$detections)) parsed$detections else parsed
     if (!is.data.frame(d_df) || nrow(d_df) == 0) break
-    c_col <- grep("species\\.commonName|commonName|common_name", names(d_df), value = TRUE)
-    s_col <- grep("species\\.scientificName|scientificName|scientific_name", names(d_df), value = TRUE)
-    t_col <- grep("^timestamp$|createdAt|created_at", names(d_df), value = TRUE)
-    conf_col <- grep("^confidence$", names(d_df), value = TRUE)
+    c_col <- grep("species\\.commonName|commonName|common_name", names(d_df), value = TRUE)[1]
+    s_col <- grep("species\\.scientificName|scientificName|scientific_name", names(d_df), value = TRUE)[1]
+    t_col <- grep("^timestamp$|createdAt|created_at", names(d_df), value = TRUE)[1]
+    conf_col <- grep("^confidence$", names(d_df), value = TRUE)[1]
     if (is.na(c_col) || is.na(s_col)) break
     ts_vals <- if (!is.na(t_col)) as.POSIXct(sub("Z$", "", d_df[[t_col]]), format = "%Y-%m-%dT%H:%M:%S", tz = "UTC") else rep(Sys.time(), nrow(d_df))
     conf_vals <- if (!is.na(conf_col)) as.numeric(d_df[[conf_col]]) else rep(1, nrow(d_df))
@@ -79,14 +89,17 @@ fetch_all_detections <- function(tok, from_iso, min_conf = 0.60) {
   if (length(all_rows) == 0) return(empty_res)
   bind_rows(all_rows)
 }
+
 # ==============================================================================
 # SECTION 2: EBIRD TAXONOMY, WOODBLOCK ART CACHE & FALLBACK SILHOUETTES
 # ==============================================================================
 # Download official eBird taxonomy once per run (provides speciesCode links & taxonomic order)
 ebird_tax_url <- "https://ebird.org"
-tax_res <- try(GET(url = ebird_tax_url, query = list(fmt = "json", cat = "species"), add_headers("User-Agent" = "Mozilla/5.0"), timeout(15)), silent = TRUE)
+tax_res <- try(GET(url = ebird_tax_url, query = list(fmt = "json", cat = "species"), add_headers("Accept" = "application/json", "User-Agent" = "Mozilla/5.0"), timeout(15)), silent = TRUE)
 ebird_lookup <- data.frame(sciName = character(), comName = character(), speciesCode = character(), order = character(), stringsAsFactors = FALSE)
-if (!inherits(tax_res, "try-error") && status_code(tax_res) == 200) ebird_lookup <- fromJSON(content(tax_res, as = "text", encoding = "UTF-8"))
+tax_parsed <- safe_from_json(tax_res)
+if (is.data.frame(tax_parsed) && nrow(tax_parsed) > 0) ebird_lookup <- tax_parsed
+)
 
 # Cache woodblock bird illustrations in memory so each species is downloaded only once
 art_cache <- new.env(parent = emptyenv())
