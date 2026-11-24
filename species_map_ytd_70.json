@@ -411,11 +411,11 @@
   },
   {
     "common_name": "Dunlin",
-    "detections": 18,
+    "detections": 19,
     "left_pct": 49.098,
-    "top_pct": 58.302,
+    "top_pct": 58.295,
     "width_pct": 2.768,
-    "height_pct": 6.365,
+    "height_pct": 6.379,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/dunlin"
   },

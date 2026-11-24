@@ -41,7 +41,7 @@
   },
   {
     "common_name": "Northern Flicker",
-    "detections": 8747,
+    "detections": 8748,
     "left_pct": 74.253,
     "top_pct": 48.598,
     "width_pct": 5.2,
@@ -541,11 +541,11 @@
   },
   {
     "common_name": "Dunlin",
-    "detections": 54,
-    "left_pct": 49.844,
-    "top_pct": 50.71,
-    "width_pct": 2.528,
-    "height_pct": 4.854,
+    "detections": 55,
+    "left_pct": 49.843,
+    "top_pct": 50.709,
+    "width_pct": 2.53,
+    "height_pct": 4.857,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/dunlin"
   },
@@ -642,7 +642,7 @@
   {
     "common_name": "Greater Yellowlegs",
     "detections": 31,
-    "left_pct": 52.848,
+    "left_pct": 52.849,
     "top_pct": 50.235,
     "width_pct": 5.786,
     "height_pct": 5.805,
@@ -732,7 +732,7 @@
   {
     "common_name": "Ring-billed Gull",
     "detections": 24,
-    "left_pct": 59.11,
+    "left_pct": 59.112,
     "top_pct": 50.698,
     "width_pct": 5.2,
     "height_pct": 4.879,
@@ -772,7 +772,7 @@
   {
     "common_name": "Marbled Murrelet",
     "detections": 17,
-    "left_pct": 64.787,
+    "left_pct": 64.788,
     "top_pct": 50.957,
     "width_pct": 5.2,
     "height_pct": 4.362,

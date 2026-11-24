@@ -90,12 +90,22 @@
     "target_url": "https://ebird.org/species/gockin"
   },
   {
+    "common_name": "Dunlin",
+    "detections": 1,
+    "left_pct": 82.345,
+    "top_pct": 19.311,
+    "width_pct": 6.873,
+    "height_pct": 16.19,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/dunlin"
+  },
+  {
     "common_name": "Rock Pigeon",
     "detections": 1,
     "left_pct": 62.608,
-    "top_pct": 73.112,
+    "top_pct": 72.204,
     "width_pct": 11.517,
-    "height_pct": 14.423,
+    "height_pct": 16.24,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rocpig"
   },
@@ -103,9 +113,9 @@
     "common_name": "Herring Gull",
     "detections": 1,
     "left_pct": 79.559,
-    "top_pct": 19.311,
+    "top_pct": 37.312,
     "width_pct": 12.446,
-    "height_pct": 15.249,
+    "height_pct": 14.627,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
   }
