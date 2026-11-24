@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 3174,
+    "detections": 3180,
     "left_pct": 36.958,
     "top_pct": 24.424,
     "width_pct": 5.993,
-    "height_pct": 8.688,
+    "height_pct": 8.69,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -301,11 +301,11 @@
   },
   {
     "common_name": "Savannah Sparrow",
-    "detections": 54,
+    "detections": 55,
     "left_pct": 38.815,
-    "top_pct": 44.121,
+    "top_pct": 44.118,
     "width_pct": 6.351,
-    "height_pct": 6.332,
+    "height_pct": 6.337,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/savspa"
   },
