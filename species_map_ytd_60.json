@@ -41,7 +41,7 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 3541,
+    "detections": 3543,
     "left_pct": 31.459,
     "top_pct": 24.342,
     "width_pct": 4.92,
@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 3169,
+    "detections": 3173,
     "left_pct": 36.961,
     "top_pct": 24.161,
     "width_pct": 5.994,
-    "height_pct": 8.687,
+    "height_pct": 8.688,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
