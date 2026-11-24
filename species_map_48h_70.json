@@ -2,37 +2,37 @@
   {
     "common_name": "Steller's Jay",
     "detections": 215,
-    "left_pct": 8.843,
-    "top_pct": 25.55,
+    "left_pct": 9.6,
+    "top_pct": 20.041,
     "width_pct": 13.105,
     "height_pct": 34.378,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
   {
-    "common_name": "Dark-eyed Junco",
-    "detections": 71,
-    "left_pct": 23.131,
-    "top_pct": 30.395,
-    "width_pct": 14.925,
-    "height_pct": 24.688,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/daejun"
-  },
-  {
     "common_name": "Pacific Wren",
     "detections": 57,
-    "left_pct": 10.664,
-    "top_pct": 61.703,
-    "width_pct": 12.195,
-    "height_pct": 24.238,
+    "left_pct": 23.888,
+    "top_pct": 27.115,
+    "width_pct": 13.411,
+    "height_pct": 20.23,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
   {
+    "common_name": "Dark-eyed Junco",
+    "detections": 37,
+    "left_pct": 9.298,
+    "top_pct": 56.194,
+    "width_pct": 14.925,
+    "height_pct": 19.132,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/daejun"
+  },
+  {
     "common_name": "Northern Flicker",
     "detections": 28,
-    "left_pct": 41.696,
+    "left_pct": 41.241,
     "top_pct": 51.542,
     "width_pct": 15.835,
     "height_pct": 22.552,
@@ -42,7 +42,7 @@
   {
     "common_name": "Bald Eagle",
     "detections": 14,
-    "left_pct": 53.39,
+    "left_pct": 52.935,
     "top_pct": 19.153,
     "width_pct": 10.374,
     "height_pct": 21.299,
@@ -52,7 +52,7 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 5,
-    "left_pct": 58.714,
+    "left_pct": 58.259,
     "top_pct": 55.997,
     "width_pct": 16.745,
     "height_pct": 13.642,
@@ -62,7 +62,7 @@
   {
     "common_name": "Anna's Hummingbird",
     "detections": 2,
-    "left_pct": 43.516,
+    "left_pct": 43.061,
     "top_pct": 75.869,
     "width_pct": 17.655,
     "height_pct": 16.469,
@@ -72,30 +72,40 @@
   {
     "common_name": "Song Sparrow",
     "detections": 2,
-    "left_pct": 24.041,
-    "top_pct": 65.309,
+    "left_pct": 25.406,
+    "top_pct": 57.247,
     "width_pct": 12.195,
     "height_pct": 17.026,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
   {
+    "common_name": "Golden-crowned Kinglet",
+    "detections": 2,
+    "left_pct": 12.802,
+    "top_pct": 77.1,
+    "width_pct": 21.295,
+    "height_pct": 14.35,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/gockin"
+  },
+  {
     "common_name": "Rock Pigeon",
     "detections": 1,
-    "left_pct": 62.354,
-    "top_pct": 76.148,
+    "left_pct": 61.899,
+    "top_pct": 77.038,
     "width_pct": 11.284,
-    "height_pct": 15.912,
+    "height_pct": 14.131,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/rocpig"
   },
   {
     "common_name": "Herring Gull",
     "detections": 1,
-    "left_pct": 78.962,
+    "left_pct": 78.507,
     "top_pct": 19.153,
     "width_pct": 12.195,
-    "height_pct": 14.332,
+    "height_pct": 14.941,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
   }
