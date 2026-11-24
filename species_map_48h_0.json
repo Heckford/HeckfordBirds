@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 16,
+    "detections": 18,
     "left_pct": 73.885,
     "top_pct": 66.881,
     "width_pct": 11.468,
-    "height_pct": 13.843,
+    "height_pct": 14.001,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
@@ -203,7 +203,7 @@
     "common_name": "Rock Pigeon",
     "detections": 1,
     "left_pct": 86.163,
-    "top_pct": 68.354,
+    "top_pct": 68.433,
     "width_pct": 7.728,
     "height_pct": 10.897,
     "site_name": "eBird",
