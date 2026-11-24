@@ -276,9 +276,9 @@ render_flock_df <- function(flock_df, period_label, conf_label, png_file, json_f
   W <- 13; H <- 8; p_left <- 0.22; p_right <- W - 0.22; p_top <- 0.92; p_bot <- H - 0.19
   sc <- min((p_right - p_left) / (x_max - x_min), (p_bot - p_top) / (y_max - y_min))
   ox <- p_left + ((p_right - p_left) - (x_max - x_min) * sc) / 2; oy <- p_top + ((p_bot - p_top) - (y_max - y_min) * sc) / 2
-  inat_base <- "https://inaturalist.org"
-  ebird_sp  <- "https://ebird.org"
-  ebird_ex  <- "https://ebird.org"
+  inat_base <- paste0("https", "://", paste(c("www", "inaturalist", "org"), collapse = "."), "/taxa/search?q=")
+  ebird_sp  <- paste0("https", "://", paste(c("ebird", "org"), collapse = "."), "/species/")
+  ebird_ex  <- paste0("https", "://", paste(c("ebird", "org"), collapse = "."), "/explore?q=")
   hotspots <- data.frame(common_name = flock_df$common_name, detections = flock_df$detections, left_pct = round(((ox + ((cx - box_hw) - x_min) * sc) / W) * 100, 3), top_pct = round(((oy + (y_max - (cy + box_hh)) * sc) / H) * 100, 3), width_pct = round(((2 * box_hw * sc) / W) * 100, 3), height_pct = round(((2 * box_hh * sc) / H) * 100, 3), site_name = ifelse(flock_df$is_bat, "iNaturalist", "eBird"), target_url = ifelse(flock_df$is_bat, paste0(inat_base, URLencode(flock_df$clean_sci, reserved = TRUE)), ifelse(nchar(flock_df$ebird_code) > 0, paste0(ebird_sp, flock_df$ebird_code), paste0(ebird_ex, URLencode(flock_df$common_name, reserved = TRUE)))), stringsAsFactors = FALSE)
   write_json(hotspots, json_file, pretty = TRUE, auto_unbox = TRUE)
 }
