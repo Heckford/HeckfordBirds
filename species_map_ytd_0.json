@@ -21,7 +21,7 @@
   },
   {
     "common_name": "Steller's Jay",
-    "detections": 11615,
+    "detections": 11616,
     "left_pct": 21.865,
     "top_pct": 25.864,
     "width_pct": 4.321,
@@ -1323,7 +1323,7 @@
     "common_name": "American Redstart",
     "detections": 1,
     "left_pct": 29.556,
-    "top_pct": 79.353,
+    "top_pct": 79.354,
     "width_pct": 5.493,
     "height_pct": 4.587,
     "site_name": "eBird",
