@@ -21,21 +21,21 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 2559,
+    "detections": 2560,
     "left_pct": 12.617,
     "top_pct": 27.863,
     "width_pct": 11.28,
-    "height_pct": 9.556,
+    "height_pct": 9.557,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/chbchi"
   },
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 1798,
+    "detections": 1800,
     "left_pct": 24.581,
     "top_pct": 27.39,
     "width_pct": 10.015,
-    "height_pct": 10.502,
+    "height_pct": 10.503,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 471,
+    "detections": 470,
     "left_pct": 15.067,
-    "top_pct": 40.562,
+    "top_pct": 40.563,
     "width_pct": 5.798,
-    "height_pct": 10.198,
+    "height_pct": 10.196,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
