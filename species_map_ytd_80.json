@@ -91,11 +91,11 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 731,
+    "detections": 732,
     "left_pct": 84.995,
     "top_pct": 50.141,
     "width_pct": 6.664,
-    "height_pct": 6.156,
+    "height_pct": 6.157,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
