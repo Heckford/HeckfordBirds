@@ -91,7 +91,7 @@
   },
   {
     "common_name": "Spotted Towhee",
-    "detections": 2691,
+    "detections": 2692,
     "left_pct": 8.487,
     "top_pct": 35.444,
     "width_pct": 4.589,
@@ -451,11 +451,11 @@
   },
   {
     "common_name": "Great Horned Owl",
-    "detections": 89,
+    "detections": 90,
     "left_pct": 62.338,
-    "top_pct": 14.77,
+    "top_pct": 14.769,
     "width_pct": 5.172,
-    "height_pct": 5.596,
+    "height_pct": 5.599,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/grhowl"
   },
