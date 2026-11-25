@@ -2,37 +2,37 @@
   {
     "common_name": "Steller's Jay",
     "detections": 148,
-    "left_pct": 15.707,
-    "top_pct": 23.339,
+    "left_pct": 17.254,
+    "top_pct": 25.617,
     "width_pct": 14.857,
     "height_pct": 38.975,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/stejay"
   },
   {
-    "common_name": "Dark-eyed Junco",
-    "detections": 21,
-    "left_pct": 31.905,
-    "top_pct": 30.567,
-    "width_pct": 16.92,
-    "height_pct": 24.52,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/daejun"
-  },
-  {
     "common_name": "Common Raven",
     "detections": 15,
-    "left_pct": 25.353,
-    "top_pct": 64.326,
+    "left_pct": 33.453,
+    "top_pct": 31.97,
     "width_pct": 13.825,
-    "height_pct": 24.143,
+    "height_pct": 26.27,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comrav"
   },
   {
+    "common_name": "Dark-eyed Junco",
+    "detections": 12,
+    "left_pct": 23.806,
+    "top_pct": 66.604,
+    "width_pct": 16.92,
+    "height_pct": 19.586,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/daejun"
+  },
+  {
     "common_name": "Bald Eagle",
     "detections": 5,
-    "left_pct": 56.563,
+    "left_pct": 55.016,
     "top_pct": 20.176,
     "width_pct": 11.762,
     "height_pct": 18.579,
@@ -42,7 +42,7 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 3,
-    "left_pct": 52.952,
+    "left_pct": 51.405,
     "top_pct": 70.85,
     "width_pct": 18.984,
     "height_pct": 20.781,
@@ -52,7 +52,7 @@
   {
     "common_name": "Barred Owl",
     "detections": 2,
-    "left_pct": 56.563,
+    "left_pct": 55.016,
     "top_pct": 40.767,
     "width_pct": 11.762,
     "height_pct": 17.509,
@@ -62,7 +62,7 @@
   {
     "common_name": "Dunlin",
     "detections": 1,
-    "left_pct": 75.909,
+    "left_pct": 74.361,
     "top_pct": 20.176,
     "width_pct": 8.385,
     "height_pct": 16.474,
