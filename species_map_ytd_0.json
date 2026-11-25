@@ -710,12 +710,22 @@
     "target_url": "https://ebird.org/species/coohaw"
   },
   {
+    "common_name": "Ring-billed Gull",
+    "detections": 25,
+    "left_pct": 59.106,
+    "top_pct": 50.725,
+    "width_pct": 5.197,
+    "height_pct": 4.882,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/ribgul"
+  },
+  {
     "common_name": "Black-capped Chickadee",
     "detections": 25,
     "left_pct": 36.321,
-    "top_pct": 55.914,
+    "top_pct": 55.966,
     "width_pct": 6.954,
-    "height_pct": 4.716,
+    "height_pct": 4.613,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/bkcchi"
   },
@@ -733,21 +743,11 @@
     "common_name": "Merlin",
     "detections": 24,
     "left_pct": 54.913,
-    "top_pct": 27.707,
+    "top_pct": 27.558,
     "width_pct": 2.269,
-    "height_pct": 5.323,
+    "height_pct": 5.62,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/merlin"
-  },
-  {
-    "common_name": "Ring-billed Gull",
-    "detections": 24,
-    "left_pct": 59.106,
-    "top_pct": 50.842,
-    "width_pct": 5.197,
-    "height_pct": 4.648,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/ribgul"
   },
   {
     "common_name": "House Sparrow",
