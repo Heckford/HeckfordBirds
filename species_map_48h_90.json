@@ -2,7 +2,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 118,
-    "left_pct": 22.764,
+    "left_pct": 25.478,
     "top_pct": 19.508,
     "width_pct": 13.713,
     "height_pct": 35.974,
@@ -10,30 +10,30 @@
     "target_url": "https://ebird.org/species/stejay"
   },
   {
-    "common_name": "Common Raven",
-    "detections": 10,
-    "left_pct": 37.715,
-    "top_pct": 25.776,
-    "width_pct": 12.761,
-    "height_pct": 23.439,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/comrav"
-  },
-  {
     "common_name": "Bald Eagle",
-    "detections": 4,
-    "left_pct": 59.999,
+    "detections": 13,
+    "left_pct": 65.807,
     "top_pct": 19.508,
-    "width_pct": 10.856,
-    "height_pct": 20.092,
+    "width_pct": 11.335,
+    "height_pct": 19.409,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
+  },
+  {
+    "common_name": "Common Raven",
+    "detections": 10,
+    "left_pct": 40.429,
+    "top_pct": 26.712,
+    "width_pct": 12.761,
+    "height_pct": 21.567,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/comrav"
   },
   {
     "common_name": "Belted Kingfisher",
     "detections": 3,
     "left_pct": 62.713,
-    "top_pct": 51.206,
+    "top_pct": 72.192,
     "width_pct": 17.522,
     "height_pct": 13.999,
     "site_name": "eBird",
@@ -42,7 +42,7 @@
   {
     "common_name": "Dark-eyed Junco",
     "detections": 2,
-    "left_pct": 17.051,
+    "left_pct": 19.765,
     "top_pct": 57.863,
     "width_pct": 15.618,
     "height_pct": 15.313,
@@ -52,7 +52,7 @@
   {
     "common_name": "Golden-crowned Kinglet",
     "detections": 2,
-    "left_pct": 33.906,
+    "left_pct": 36.62,
     "top_pct": 57.339,
     "width_pct": 22.284,
     "height_pct": 16.359,
@@ -62,8 +62,8 @@
   {
     "common_name": "Barred Owl",
     "detections": 2,
-    "left_pct": 72.093,
-    "top_pct": 19.648,
+    "left_pct": 66.046,
+    "top_pct": 40.774,
     "width_pct": 10.856,
     "height_pct": 19.812,
     "site_name": "eBird",
@@ -72,7 +72,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 1,
-    "left_pct": 24.05,
+    "left_pct": 26.764,
     "top_pct": 75.555,
     "width_pct": 25.141,
     "height_pct": 16.537,
