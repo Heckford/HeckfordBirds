@@ -541,11 +541,11 @@
   },
   {
     "common_name": "Dunlin",
-    "detections": 55,
-    "left_pct": 49.843,
-    "top_pct": 50.74,
-    "width_pct": 2.529,
-    "height_pct": 4.854,
+    "detections": 56,
+    "left_pct": 49.842,
+    "top_pct": 50.739,
+    "width_pct": 2.531,
+    "height_pct": 4.857,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/dunlin"
   },
@@ -642,7 +642,7 @@
   {
     "common_name": "Greater Yellowlegs",
     "detections": 31,
-    "left_pct": 52.847,
+    "left_pct": 52.848,
     "top_pct": 50.267,
     "width_pct": 5.783,
     "height_pct": 5.801,
@@ -712,7 +712,7 @@
   {
     "common_name": "Ring-billed Gull",
     "detections": 25,
-    "left_pct": 59.105,
+    "left_pct": 59.107,
     "top_pct": 50.726,
     "width_pct": 5.197,
     "height_pct": 4.882,
@@ -772,7 +772,7 @@
   {
     "common_name": "Marbled Murrelet",
     "detections": 17,
-    "left_pct": 64.778,
+    "left_pct": 64.779,
     "top_pct": 50.988,
     "width_pct": 5.197,
     "height_pct": 4.359,
