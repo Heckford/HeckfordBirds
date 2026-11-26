@@ -581,11 +581,11 @@
   },
   {
     "common_name": "Bushtit",
-    "detections": 47,
+    "detections": 48,
     "left_pct": 28.489,
-    "top_pct": 55.727,
+    "top_pct": 55.725,
     "width_pct": 2.562,
-    "height_pct": 5.097,
+    "height_pct": 5.101,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/bushti"
   },
