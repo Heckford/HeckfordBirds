@@ -381,11 +381,11 @@
   },
   {
     "common_name": "Northern Pygmy-Owl",
-    "detections": 9,
+    "detections": 10,
     "left_pct": 54.719,
-    "top_pct": 16.18,
+    "top_pct": 16.164,
     "width_pct": 7.018,
-    "height_pct": 6.882,
+    "height_pct": 6.914,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/nopowl"
   },
