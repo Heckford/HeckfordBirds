@@ -2,7 +2,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 39,
-    "left_pct": 7.525,
+    "left_pct": 11.076,
     "top_pct": 19.225,
     "width_pct": 13.227,
     "height_pct": 34.7,
@@ -12,7 +12,7 @@
   {
     "common_name": "Bald Eagle",
     "detections": 14,
-    "left_pct": 47.115,
+    "left_pct": 52.948,
     "top_pct": 19.225,
     "width_pct": 13.256,
     "height_pct": 21.612,
@@ -22,7 +22,7 @@
   {
     "common_name": "Golden-crowned Kinglet",
     "detections": 7,
-    "left_pct": 21.946,
+    "left_pct": 25.497,
     "top_pct": 27.5,
     "width_pct": 21.494,
     "height_pct": 18.15,
@@ -32,7 +32,7 @@
   {
     "common_name": "Dark-eyed Junco",
     "detections": 5,
-    "left_pct": 17.95,
+    "left_pct": 21.501,
     "top_pct": 55.716,
     "width_pct": 15.065,
     "height_pct": 20.198,
@@ -43,7 +43,7 @@
     "common_name": "Herring Gull",
     "detections": 4,
     "left_pct": 53.422,
-    "top_pct": 69.249,
+    "top_pct": 71.559,
     "width_pct": 12.309,
     "height_pct": 18.294,
     "site_name": "eBird",
@@ -52,7 +52,7 @@
   {
     "common_name": "Wood Duck",
     "detections": 3,
-    "left_pct": 79.248,
+    "left_pct": 75.697,
     "top_pct": 19.225,
     "width_pct": 9.553,
     "height_pct": 16.986,
@@ -62,7 +62,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 2,
-    "left_pct": 13.358,
+    "left_pct": 16.909,
     "top_pct": 77.705,
     "width_pct": 24.25,
     "height_pct": 14.584,
@@ -70,22 +70,12 @@
     "target_url": "https://ebird.org/species/chbchi"
   },
   {
-    "common_name": "Barred Owl",
-    "detections": 2,
-    "left_pct": 61.565,
-    "top_pct": 21.935,
-    "width_pct": 10.472,
-    "height_pct": 16.19,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/brdowl"
-  },
-  {
     "common_name": "Hairy Woodpecker",
     "detections": 1,
-    "left_pct": 76.033,
+    "left_pct": 72.482,
     "top_pct": 47.405,
     "width_pct": 15.983,
-    "height_pct": 17.557,
+    "height_pct": 15.637,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/haiwoo"
   },
@@ -95,17 +85,17 @@
     "left_pct": 50.666,
     "top_pct": 42.627,
     "width_pct": 17.82,
-    "height_pct": 15.427,
+    "height_pct": 17.737,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/nopowl"
   },
   {
     "common_name": "Belted Kingfisher",
     "detections": 1,
-    "left_pct": 75.574,
-    "top_pct": 66.753,
+    "left_pct": 72.023,
+    "top_pct": 64.833,
     "width_pct": 16.902,
-    "height_pct": 16.844,
+    "height_pct": 12.471,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   }
