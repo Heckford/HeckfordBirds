@@ -51,11 +51,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 3144,
+    "detections": 3169,
     "left_pct": 35.637,
-    "top_pct": 25.011,
+    "top_pct": 25.007,
     "width_pct": 5.858,
-    "height_pct": 8.541,
+    "height_pct": 8.547,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -131,11 +131,11 @@
   },
   {
     "common_name": "Brown Creeper",
-    "detections": 446,
+    "detections": 447,
     "left_pct": 28.512,
     "top_pct": 35.534,
     "width_pct": 5.158,
-    "height_pct": 6.759,
+    "height_pct": 6.76,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/brncre"
   },
@@ -241,11 +241,11 @@
   },
   {
     "common_name": "Ruby-crowned Kinglet",
-    "detections": 120,
+    "detections": 122,
     "left_pct": 20.402,
-    "top_pct": 44.45,
+    "top_pct": 44.447,
     "width_pct": 7.606,
-    "height_pct": 5.882,
+    "height_pct": 5.887,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/ruckin"
   },
@@ -322,7 +322,7 @@
   {
     "common_name": "Evening Grosbeak",
     "detections": 47,
-    "left_pct": 3.355,
+    "left_pct": 3.352,
     "top_pct": 51.761,
     "width_pct": 6.208,
     "height_pct": 6.596,
@@ -342,7 +342,7 @@
   {
     "common_name": "American Robin",
     "detections": 43,
-    "left_pct": 10.131,
+    "left_pct": 10.128,
     "top_pct": 51.871,
     "width_pct": 5.508,
     "height_pct": 6.376,
@@ -362,7 +362,7 @@
   {
     "common_name": "Orange-crowned Warbler",
     "detections": 34,
-    "left_pct": 16.207,
+    "left_pct": 16.204,
     "top_pct": 52.289,
     "width_pct": 8.306,
     "height_pct": 5.539,
@@ -372,7 +372,7 @@
   {
     "common_name": "California Scrub-Jay",
     "detections": 33,
-    "left_pct": 25.081,
+    "left_pct": 25.078,
     "top_pct": 51.773,
     "width_pct": 7.606,
     "height_pct": 6.571,
@@ -382,7 +382,7 @@
   {
     "common_name": "Townsend's Warbler",
     "detections": 33,
-    "left_pct": 33.256,
+    "left_pct": 33.253,
     "top_pct": 52.284,
     "width_pct": 6.907,
     "height_pct": 5.55,
@@ -431,11 +431,11 @@
   },
   {
     "common_name": "Bushtit",
-    "detections": 28,
-    "left_pct": 40.731,
-    "top_pct": 52.333,
-    "width_pct": 3.144,
-    "height_pct": 5.451,
+    "detections": 29,
+    "left_pct": 40.728,
+    "top_pct": 52.33,
+    "width_pct": 3.151,
+    "height_pct": 5.458,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/bushti"
   },
