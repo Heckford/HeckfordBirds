@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29760,
+    "detections": 29762,
     "left_pct": 6.146,
     "top_pct": 26.672,
     "width_pct": 6.954,
@@ -183,7 +183,7 @@
     "common_name": "Hairy Woodpecker",
     "detections": 584,
     "left_pct": 74.237,
-    "top_pct": 56.894,
+    "top_pct": 56.893,
     "width_pct": 5.197,
     "height_pct": 6.551,
     "site_name": "eBird",
@@ -342,7 +342,7 @@
   {
     "common_name": "Mallard",
     "detections": 131,
-    "left_pct": 89.736,
+    "left_pct": 89.737,
     "top_pct": 15.186,
     "width_pct": 2.562,
     "height_pct": 5.417,
@@ -583,7 +583,7 @@
     "common_name": "Bushtit",
     "detections": 48,
     "left_pct": 28.489,
-    "top_pct": 55.725,
+    "top_pct": 55.724,
     "width_pct": 2.562,
     "height_pct": 5.101,
     "site_name": "eBird",
