@@ -11,11 +11,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 22,
+    "detections": 21,
     "left_pct": 34.594,
-    "top_pct": 29.297,
+    "top_pct": 29.385,
     "width_pct": 12.392,
-    "height_pct": 20.579,
+    "height_pct": 20.403,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
