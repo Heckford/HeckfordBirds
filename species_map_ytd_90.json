@@ -310,24 +310,24 @@
     "target_url": "https://ebird.org/species/coohaw"
   },
   {
+    "common_name": "Wood Duck",
+    "detections": 6,
+    "left_pct": 88.928,
+    "top_pct": 24.872,
+    "width_pct": 4.51,
+    "height_pct": 6.742,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/wooduc"
+  },
+  {
     "common_name": "Herring Gull",
     "detections": 6,
     "left_pct": 52.478,
-    "top_pct": 60.224,
+    "top_pct": 60.088,
     "width_pct": 5.769,
-    "height_pct": 6.649,
+    "height_pct": 6.919,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
-  },
-  {
-    "common_name": "Wood Duck",
-    "detections": 5,
-    "left_pct": 88.928,
-    "top_pct": 24.768,
-    "width_pct": 4.51,
-    "height_pct": 6.95,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/wooduc"
   },
   {
     "common_name": "Green-winged Teal",
