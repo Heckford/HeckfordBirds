@@ -42,8 +42,8 @@
   {
     "common_name": "Herring Gull",
     "detections": 10,
-    "left_pct": 53.13,
-    "top_pct": 69.425,
+    "left_pct": 49.17,
+    "top_pct": 68.302,
     "width_pct": 11.258,
     "height_pct": 18.624,
     "site_name": "eBird",
@@ -72,7 +72,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 6,
-    "left_pct": 10.267,
+    "left_pct": 10.323,
     "top_pct": 74.363,
     "width_pct": 22.181,
     "height_pct": 18.381,
@@ -113,29 +113,39 @@
     "common_name": "Barred Owl",
     "detections": 2,
     "left_pct": 46.114,
-    "top_pct": 44.015,
+    "top_pct": 43.453,
     "width_pct": 9.578,
     "height_pct": 14.609,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/brdowl"
   },
   {
+    "common_name": "Dunlin",
+    "detections": 1,
+    "left_pct": 61.52,
+    "top_pct": 70.907,
+    "width_pct": 6.828,
+    "height_pct": 13.415,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/dunlin"
+  },
+  {
     "common_name": "Peregrine Falcon",
     "detections": 1,
     "left_pct": 56.784,
-    "top_pct": 43.453,
+    "top_pct": 43.79,
     "width_pct": 14.619,
-    "height_pct": 15.732,
+    "height_pct": 13.935,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/perfal"
   },
   {
     "common_name": "Bushtit",
     "detections": 1,
-    "left_pct": 33.54,
-    "top_pct": 77.226,
-    "width_pct": 7.169,
-    "height_pct": 12.655,
+    "left_pct": 33.596,
+    "top_pct": 76.465,
+    "width_pct": 7.057,
+    "height_pct": 14.178,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/bushti"
   }
