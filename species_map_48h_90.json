@@ -21,11 +21,11 @@
   },
   {
     "common_name": "Common Raven",
-    "detections": 10,
+    "detections": 4,
     "left_pct": 41.489,
-    "top_pct": 29.861,
+    "top_pct": 31.095,
     "width_pct": 11.348,
-    "height_pct": 20.125,
+    "height_pct": 17.658,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comrav"
   },
