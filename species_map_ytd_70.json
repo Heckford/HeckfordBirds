@@ -51,9 +51,9 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2223,
+    "detections": 2224,
     "left_pct": 80.21,
-    "top_pct": 56.078,
+    "top_pct": 56.077,
     "width_pct": 7.077,
     "height_pct": 7.243,
     "site_name": "eBird",
@@ -101,11 +101,11 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 746,
+    "detections": 751,
     "left_pct": 87.869,
-    "top_pct": 55.459,
+    "top_pct": 55.456,
     "width_pct": 6.719,
-    "height_pct": 8.48,
+    "height_pct": 8.485,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },

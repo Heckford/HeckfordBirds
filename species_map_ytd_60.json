@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 3042,
+    "detections": 3043,
     "left_pct": 80.939,
     "top_pct": 55.184,
     "width_pct": 6.907,
-    "height_pct": 8.473,
+    "height_pct": 8.474,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -100,24 +100,24 @@
     "target_url": "https://ebird.org/species/baleag"
   },
   {
+    "common_name": "Belted Kingfisher",
+    "detections": 776,
+    "left_pct": 88.415,
+    "top_pct": 55.393,
+    "width_pct": 6.557,
+    "height_pct": 8.054,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/belkin1"
+  },
+  {
     "common_name": "Spotted Towhee",
     "detections": 773,
     "left_pct": 16.708,
-    "top_pct": 35.188,
+    "top_pct": 34.901,
     "width_pct": 5.508,
-    "height_pct": 7.453,
+    "height_pct": 8.026,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/spotow"
-  },
-  {
-    "common_name": "Belted Kingfisher",
-    "detections": 771,
-    "left_pct": 88.415,
-    "top_pct": 56.551,
-    "width_pct": 6.557,
-    "height_pct": 5.74,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/belkin1"
   },
   {
     "common_name": "Varied Thrush",
