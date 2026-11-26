@@ -3,7 +3,7 @@
     "common_name": "Steller's Jay",
     "detections": 57,
     "left_pct": 24.054,
-    "top_pct": 24.65,
+    "top_pct": 24.852,
     "width_pct": 10.548,
     "height_pct": 27.671,
     "site_name": "eBird",
@@ -11,11 +11,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 28,
+    "detections": 25,
     "left_pct": 35.555,
-    "top_pct": 28.08,
+    "top_pct": 28.502,
     "width_pct": 12.013,
-    "height_pct": 20.812,
+    "height_pct": 20.371,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -23,7 +23,7 @@
     "common_name": "Golden-crowned Kinglet",
     "detections": 19,
     "left_pct": 21.857,
-    "top_pct": 54.793,
+    "top_pct": 54.995,
     "width_pct": 17.141,
     "height_pct": 16.263,
     "site_name": "eBird",
@@ -32,7 +32,7 @@
   {
     "common_name": "Bald Eagle",
     "detections": 17,
-    "left_pct": 55.259,
+    "left_pct": 52.695,
     "top_pct": 17.66,
     "width_pct": 10.285,
     "height_pct": 16.878,
@@ -42,7 +42,7 @@
   {
     "common_name": "Hairy Woodpecker",
     "detections": 8,
-    "left_pct": 61.61,
+    "left_pct": 59.046,
     "top_pct": 58.61,
     "width_pct": 12.746,
     "height_pct": 18.737,
@@ -53,7 +53,7 @@
     "common_name": "Common Raven",
     "detections": 7,
     "left_pct": 39.95,
-    "top_pct": 53.75,
+    "top_pct": 53.952,
     "width_pct": 9.816,
     "height_pct": 18.349,
     "site_name": "eBird",
@@ -62,7 +62,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 4,
-    "left_pct": 19.293,
+    "left_pct": 26.142,
     "top_pct": 73.729,
     "width_pct": 19.338,
     "height_pct": 12.448,
@@ -72,7 +72,7 @@
   {
     "common_name": "Northern Pygmy-Owl",
     "detections": 3,
-    "left_pct": 66.496,
+    "left_pct": 63.932,
     "top_pct": 19.1,
     "width_pct": 14.211,
     "height_pct": 13.998,
@@ -82,7 +82,7 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 2,
-    "left_pct": 61.244,
+    "left_pct": 58.68,
     "top_pct": 78.775,
     "width_pct": 13.478,
     "height_pct": 14.595,
@@ -92,7 +92,7 @@
   {
     "common_name": "Barred Owl",
     "detections": 2,
-    "left_pct": 56.959,
+    "left_pct": 54.395,
     "top_pct": 36.456,
     "width_pct": 8.351,
     "height_pct": 12.737,
@@ -102,21 +102,11 @@
   {
     "common_name": "Peregrine Falcon",
     "detections": 1,
-    "left_pct": 66.262,
+    "left_pct": 63.698,
     "top_pct": 35.966,
     "width_pct": 12.746,
     "height_pct": 13.716,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/perfal"
-  },
-  {
-    "common_name": "Savannah Sparrow",
-    "detections": 1,
-    "left_pct": 39.584,
-    "top_pct": 73.527,
-    "width_pct": 12.746,
-    "height_pct": 12.852,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/savspa"
   }
 ]
