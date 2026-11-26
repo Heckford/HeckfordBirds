@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4734,
+    "detections": 4737,
     "left_pct": 38.316,
     "top_pct": 27.193,
     "width_pct": 4.904,
-    "height_pct": 5.923,
+    "height_pct": 5.924,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -111,11 +111,11 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 2419,
+    "detections": 2424,
     "left_pct": 86.168,
     "top_pct": 49.916,
     "width_pct": 5.49,
-    "height_pct": 4.92,
+    "height_pct": 4.921,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
