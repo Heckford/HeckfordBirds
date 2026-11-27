@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29803,
+    "detections": 29804,
     "left_pct": 6.245,
     "top_pct": 26.743,
     "width_pct": 6.938,
@@ -231,11 +231,11 @@
   },
   {
     "common_name": "Herring Gull",
-    "detections": 302,
+    "detections": 303,
     "left_pct": 59.686,
-    "top_pct": 44.381,
+    "top_pct": 44.38,
     "width_pct": 4.017,
-    "height_pct": 5.132,
+    "height_pct": 5.133,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
   },
@@ -963,7 +963,7 @@
     "common_name": "Western Gull",
     "detections": 4,
     "left_pct": 66.222,
-    "top_pct": 57.133,
+    "top_pct": 57.132,
     "width_pct": 4.017,
     "height_pct": 4.701,
     "site_name": "eBird",
@@ -1025,7 +1025,7 @@
     "left_pct": 78.619,
     "top_pct": 34.527,
     "width_pct": 5.185,
-    "height_pct": 4.676,
+    "height_pct": 4.677,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/comgol"
   },
@@ -1052,7 +1052,7 @@
   {
     "common_name": "Black-headed Grosbeak",
     "detections": 3,
-    "left_pct": 13.804,
+    "left_pct": 13.803,
     "top_pct": 73.297,
     "width_pct": 6.646,
     "height_pct": 4.995,

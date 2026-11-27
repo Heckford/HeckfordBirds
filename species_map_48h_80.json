@@ -40,12 +40,22 @@
     "target_url": "https://ebird.org/species/daejun"
   },
   {
+    "common_name": "Wood Duck",
+    "detections": 5,
+    "left_pct": 70.916,
+    "top_pct": 17.514,
+    "width_pct": 7.765,
+    "height_pct": 15.095,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/wooduc"
+  },
+  {
     "common_name": "Belted Kingfisher",
     "detections": 5,
     "left_pct": 68.219,
-    "top_pct": 40.125,
+    "top_pct": 41.325,
     "width_pct": 13.159,
-    "height_pct": 16.908,
+    "height_pct": 11.865,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
@@ -55,19 +65,9 @@
     "left_pct": 53.379,
     "top_pct": 57.111,
     "width_pct": 9.583,
-    "height_pct": 13.668,
+    "height_pct": 14.338,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
-  },
-  {
-    "common_name": "Wood Duck",
-    "detections": 3,
-    "left_pct": 71.079,
-    "top_pct": 17.514,
-    "width_pct": 7.438,
-    "height_pct": 13.894,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/wooduc"
   },
   {
     "common_name": "Ruby-crowned Kinglet",
@@ -83,7 +83,7 @@
     "common_name": "Hairy Woodpecker",
     "detections": 2,
     "left_pct": 68.576,
-    "top_pct": 58.427,
+    "top_pct": 54.585,
     "width_pct": 12.444,
     "height_pct": 15.166,
     "site_name": "eBird",
@@ -93,7 +93,7 @@
     "common_name": "Anna's Hummingbird",
     "detections": 1,
     "left_pct": 67.861,
-    "top_pct": 74.987,
+    "top_pct": 71.145,
     "width_pct": 13.874,
     "height_pct": 10.557,
     "site_name": "eBird",

@@ -291,11 +291,11 @@
   },
   {
     "common_name": "Wood Duck",
-    "detections": 19,
+    "detections": 21,
     "left_pct": 78.069,
-    "top_pct": 15.488,
+    "top_pct": 15.475,
     "width_pct": 3.8,
-    "height_pct": 5.896,
+    "height_pct": 5.923,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/wooduc"
   },
