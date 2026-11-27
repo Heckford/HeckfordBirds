@@ -80,12 +80,22 @@
     "target_url": "https://ebird.org/species/rebnut"
   },
   {
+    "common_name": "Anna's Hummingbird",
+    "detections": 7,
+    "left_pct": 68.837,
+    "top_pct": 59.752,
+    "width_pct": 15.296,
+    "height_pct": 16.242,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/annhum"
+  },
+  {
     "common_name": "Herring Gull",
     "detections": 7,
     "left_pct": 54.908,
     "top_pct": 46.096,
     "width_pct": 10.565,
-    "height_pct": 15.347,
+    "height_pct": 14.643,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
   },
@@ -93,21 +103,11 @@
     "common_name": "Ruby-crowned Kinglet",
     "detections": 3,
     "left_pct": 34.553,
-    "top_pct": 63.364,
+    "top_pct": 63.019,
     "width_pct": 16.872,
-    "height_pct": 12.386,
+    "height_pct": 13.076,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/ruckin"
-  },
-  {
-    "common_name": "Anna's Hummingbird",
-    "detections": 2,
-    "left_pct": 68.837,
-    "top_pct": 59.752,
-    "width_pct": 15.296,
-    "height_pct": 14.37,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Brown Creeper",
@@ -123,7 +123,7 @@
     "common_name": "Hairy Woodpecker",
     "detections": 1,
     "left_pct": 69.626,
-    "top_pct": 75.659,
+    "top_pct": 77.532,
     "width_pct": 13.719,
     "height_pct": 15.069,
     "site_name": "eBird",
