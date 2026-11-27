@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 30213,
+    "detections": 30214,
     "left_pct": 6.263,
     "top_pct": 26.761,
     "width_pct": 6.935,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 24607,
+    "detections": 24608,
     "left_pct": 13.673,
     "top_pct": 26.181,
     "width_pct": 7.811,
@@ -61,7 +61,7 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4813,
+    "detections": 4815,
     "left_pct": 38.347,
     "top_pct": 27.281,
     "width_pct": 4.891,
@@ -692,7 +692,7 @@
   {
     "common_name": "Barred Owl",
     "detections": 26,
-    "left_pct": 65.523,
+    "left_pct": 65.524,
     "top_pct": 21.835,
     "width_pct": 3.431,
     "height_pct": 4.767,
@@ -943,7 +943,7 @@
     "common_name": "American Pipit",
     "detections": 4,
     "left_pct": 14.603,
-    "top_pct": 67.704,
+    "top_pct": 67.703,
     "width_pct": 4.599,
     "height_pct": 4.661,
     "site_name": "eBird",
@@ -1133,7 +1133,7 @@
     "common_name": "Northern Shrike",
     "detections": 2,
     "left_pct": 42.107,
-    "top_pct": 73.692,
+    "top_pct": 73.691,
     "width_pct": 4.891,
     "height_pct": 4.163,
     "site_name": "eBird",
@@ -1205,7 +1205,7 @@
     "left_pct": 53.624,
     "top_pct": 68.212,
     "width_pct": 5.475,
-    "height_pct": 4.654,
+    "height_pct": 4.655,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/lesyel"
   },
@@ -1232,7 +1232,7 @@
   {
     "common_name": "Sooty Shearwater",
     "detections": 1,
-    "left_pct": 77.477,
+    "left_pct": 77.478,
     "top_pct": 39.099,
     "width_pct": 5.183,
     "height_pct": 4.122,
