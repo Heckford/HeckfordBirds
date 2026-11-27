@@ -1,7 +1,7 @@
 [
   {
     "common_name": "Golden-crowned Kinglet",
-    "detections": 29981,
+    "detections": 29983,
     "left_pct": 6.268,
     "top_pct": 26.761,
     "width_pct": 6.934,
@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 24543,
+    "detections": 24545,
     "left_pct": 13.677,
     "top_pct": 26.179,
     "width_pct": 7.81,
@@ -303,7 +303,7 @@
     "common_name": "Savannah Sparrow",
     "detections": 169,
     "left_pct": 26.743,
-    "top_pct": 43.296,
+    "top_pct": 43.295,
     "width_pct": 5.183,
     "height_pct": 5.3,
     "site_name": "eBird",
@@ -333,7 +333,7 @@
     "common_name": "American Robin",
     "detections": 143,
     "left_pct": 38.64,
-    "top_pct": 43.381,
+    "top_pct": 43.38,
     "width_pct": 4.599,
     "height_pct": 5.13,
     "site_name": "eBird",
@@ -942,7 +942,7 @@
   {
     "common_name": "American Pipit",
     "detections": 4,
-    "left_pct": 14.608,
+    "left_pct": 14.607,
     "top_pct": 67.708,
     "width_pct": 4.599,
     "height_pct": 4.661,
@@ -952,7 +952,7 @@
   {
     "common_name": "Barn Swallow",
     "detections": 4,
-    "left_pct": 19.681,
+    "left_pct": 19.68,
     "top_pct": 67.579,
     "width_pct": 4.015,
     "height_pct": 4.919,
