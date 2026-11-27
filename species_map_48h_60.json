@@ -31,21 +31,21 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 43,
+    "detections": 48,
     "left_pct": 34.287,
-    "top_pct": 22.993,
+    "top_pct": 22.841,
     "width_pct": 11.765,
-    "height_pct": 18.367,
+    "height_pct": 18.67,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 29,
+    "detections": 30,
     "left_pct": 10.588,
-    "top_pct": 43.694,
+    "top_pct": 43.664,
     "width_pct": 18.939,
-    "height_pct": 14.085,
+    "height_pct": 14.144,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/chbchi"
   },

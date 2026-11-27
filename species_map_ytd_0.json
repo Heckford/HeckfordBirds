@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 24545,
+    "detections": 24547,
     "left_pct": 13.677,
     "top_pct": 26.177,
     "width_pct": 7.81,
@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4800,
+    "detections": 4805,
     "left_pct": 38.348,
     "top_pct": 27.278,
     "width_pct": 4.891,
-    "height_pct": 5.91,
+    "height_pct": 5.911,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
