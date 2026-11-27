@@ -101,17 +101,17 @@
   },
   {
     "common_name": "Pacific Wren",
-    "detections": 2636,
+    "detections": 2691,
     "left_pct": 13.476,
-    "top_pct": 35.58,
+    "top_pct": 35.574,
     "width_pct": 4.015,
-    "height_pct": 6.632,
+    "height_pct": 6.643,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/pacwre1"
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 2437,
+    "detections": 2438,
     "left_pct": 86.068,
     "top_pct": 49.007,
     "width_pct": 5.474,
