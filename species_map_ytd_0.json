@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 24521,
+    "detections": 24525,
     "left_pct": 13.678,
     "top_pct": 26.177,
     "width_pct": 7.81,
@@ -111,11 +111,11 @@
   },
   {
     "common_name": "Belted Kingfisher",
-    "detections": 2424,
+    "detections": 2430,
     "left_pct": 86.066,
-    "top_pct": 49.009,
+    "top_pct": 49.008,
     "width_pct": 5.474,
-    "height_pct": 4.906,
+    "height_pct": 4.907,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
