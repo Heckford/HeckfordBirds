@@ -2,7 +2,7 @@
   {
     "common_name": "Steller's Jay",
     "detections": 57,
-    "left_pct": 11.241,
+    "left_pct": 10.674,
     "top_pct": 17.597,
     "width_pct": 10.441,
     "height_pct": 27.39,
@@ -10,29 +10,29 @@
     "target_url": "https://ebird.org/species/stejay"
   },
   {
-    "common_name": "Dark-eyed Junco",
-    "detections": 56,
-    "left_pct": 22.624,
-    "top_pct": 19.472,
-    "width_pct": 11.916,
-    "height_pct": 23.64,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/daejun"
-  },
-  {
     "common_name": "Golden-crowned Kinglet",
     "detections": 54,
-    "left_pct": 35.483,
-    "top_pct": 21.573,
+    "left_pct": 22.058,
+    "top_pct": 20.562,
     "width_pct": 16.967,
-    "height_pct": 19.439,
+    "height_pct": 21.462,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/gockin"
   },
   {
+    "common_name": "Dark-eyed Junco",
+    "detections": 43,
+    "left_pct": 39.967,
+    "top_pct": 21.881,
+    "width_pct": 13.05,
+    "height_pct": 18.822,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/daejun"
+  },
+  {
     "common_name": "Bald Eagle",
     "detections": 32,
-    "left_pct": 57.74,
+    "left_pct": 58.307,
     "top_pct": 17.597,
     "width_pct": 11.771,
     "height_pct": 18.685,
@@ -42,7 +42,7 @@
   {
     "common_name": "Herring Gull",
     "detections": 10,
-    "left_pct": 55.35,
+    "left_pct": 55.917,
     "top_pct": 74.284,
     "width_pct": 9.716,
     "height_pct": 16.073,
@@ -62,7 +62,7 @@
   {
     "common_name": "Hairy Woodpecker",
     "detections": 9,
-    "left_pct": 75.418,
+    "left_pct": 75.985,
     "top_pct": 40.054,
     "width_pct": 12.616,
     "height_pct": 18.917,
@@ -72,7 +72,7 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 5,
-    "left_pct": 75.055,
+    "left_pct": 75.622,
     "top_pct": 60.385,
     "width_pct": 13.341,
     "height_pct": 11.617,
@@ -92,7 +92,7 @@
   {
     "common_name": "Wood Duck",
     "detections": 4,
-    "left_pct": 77.956,
+    "left_pct": 78.522,
     "top_pct": 17.597,
     "width_pct": 7.541,
     "height_pct": 13.62,
@@ -112,7 +112,7 @@
   {
     "common_name": "Anna's Hummingbird",
     "detections": 2,
-    "left_pct": 74.693,
+    "left_pct": 75.26,
     "top_pct": 73.417,
     "width_pct": 14.066,
     "height_pct": 11.481,
@@ -132,7 +132,7 @@
   {
     "common_name": "Northern Pygmy-Owl",
     "detections": 2,
-    "left_pct": 56.593,
+    "left_pct": 57.159,
     "top_pct": 37.697,
     "width_pct": 14.066,
     "height_pct": 13.167,
@@ -152,7 +152,7 @@
   {
     "common_name": "Great Horned Owl",
     "detections": 1,
-    "left_pct": 57.318,
+    "left_pct": 57.884,
     "top_pct": 52.277,
     "width_pct": 12.616,
     "height_pct": 13.17,
@@ -162,7 +162,7 @@
   {
     "common_name": "Dunlin",
     "detections": 1,
-    "left_pct": 66.009,
+    "left_pct": 66.576,
     "top_pct": 76.532,
     "width_pct": 5.893,
     "height_pct": 11.577,
