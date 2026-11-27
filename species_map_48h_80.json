@@ -90,24 +90,24 @@
     "target_url": "https://ebird.org/species/rebnut"
   },
   {
+    "common_name": "Anna's Hummingbird",
+    "detections": 4,
+    "left_pct": 61.432,
+    "top_pct": 68.525,
+    "width_pct": 16.278,
+    "height_pct": 13.646,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/annhum"
+  },
+  {
     "common_name": "Herring Gull",
     "detections": 4,
     "left_pct": 46.958,
     "top_pct": 46.465,
     "width_pct": 11.243,
-    "height_pct": 14.64,
+    "height_pct": 15.315,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/euhgul1"
-  },
-  {
-    "common_name": "Anna's Hummingbird",
-    "detections": 3,
-    "left_pct": 61.432,
-    "top_pct": 67.469,
-    "width_pct": 16.278,
-    "height_pct": 15.759,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/annhum"
   },
   {
     "common_name": "Song Sparrow",
