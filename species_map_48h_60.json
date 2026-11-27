@@ -160,6 +160,16 @@
     "target_url": "https://ebird.org/species/haiwoo"
   },
   {
+    "common_name": "Northern Pygmy-Owl",
+    "detections": 1,
+    "left_pct": 52.461,
+    "top_pct": 38.559,
+    "width_pct": 14.804,
+    "height_pct": 14.735,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/nopowl"
+  },
+  {
     "common_name": "Pacific Wren",
     "detections": 1,
     "left_pct": 29.988,

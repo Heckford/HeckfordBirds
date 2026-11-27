@@ -80,6 +80,16 @@
     "target_url": "https://ebird.org/species/euhgul1"
   },
   {
+    "common_name": "Song Sparrow",
+    "detections": 3,
+    "left_pct": 14.988,
+    "top_pct": 68.567,
+    "width_pct": 9.956,
+    "height_pct": 14.043,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/sonspa"
+  },
+  {
     "common_name": "Ruby-crowned Kinglet",
     "detections": 2,
     "left_pct": 17.604,
