@@ -2,8 +2,8 @@
   {
     "common_name": "Steller's Jay",
     "detections": 17,
-    "left_pct": 28.121,
-    "top_pct": 20.793,
+    "left_pct": 20.575,
+    "top_pct": 30.83,
     "width_pct": 12.28,
     "height_pct": 32.214,
     "site_name": "eBird",
@@ -12,7 +12,7 @@
   {
     "common_name": "Bald Eagle",
     "detections": 17,
-    "left_pct": 47.649,
+    "left_pct": 51.359,
     "top_pct": 18.671,
     "width_pct": 15.915,
     "height_pct": 24.553,
@@ -22,7 +22,7 @@
   {
     "common_name": "Belted Kingfisher",
     "detections": 4,
-    "left_pct": 47.762,
+    "left_pct": 51.471,
     "top_pct": 53.617,
     "width_pct": 15.691,
     "height_pct": 21.093,
@@ -30,29 +30,29 @@
     "target_url": "https://ebird.org/species/belkin1"
   },
   {
-    "common_name": "Golden-crowned Kinglet",
-    "detections": 4,
-    "left_pct": 24.284,
-    "top_pct": 54.669,
-    "width_pct": 19.954,
-    "height_pct": 18.26,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/gockin"
-  },
-  {
     "common_name": "Dark-eyed Junco",
     "detections": 3,
-    "left_pct": 27.269,
-    "top_pct": 74.592,
+    "left_pct": 33.963,
+    "top_pct": 37.671,
     "width_pct": 13.985,
-    "height_pct": 15.957,
+    "height_pct": 18.531,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
   {
+    "common_name": "Golden-crowned Kinglet",
+    "detections": 3,
+    "left_pct": 24.284,
+    "top_pct": 64.706,
+    "width_pct": 19.954,
+    "height_pct": 15.807,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/gockin"
+  },
+  {
     "common_name": "Wood Duck",
     "detections": 1,
-    "left_pct": 66.847,
+    "left_pct": 70.557,
     "top_pct": 18.671,
     "width_pct": 8.869,
     "height_pct": 13.626,
@@ -62,7 +62,7 @@
   {
     "common_name": "Hairy Woodpecker",
     "detections": 1,
-    "left_pct": 48.188,
+    "left_pct": 51.897,
     "top_pct": 76.373,
     "width_pct": 14.838,
     "height_pct": 16.299,
