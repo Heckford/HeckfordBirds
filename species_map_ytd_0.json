@@ -281,11 +281,11 @@
   },
   {
     "common_name": "Ruby-crowned Kinglet",
-    "detections": 176,
+    "detections": 178,
     "left_pct": 13.95,
-    "top_pct": 43.56,
+    "top_pct": 43.559,
     "width_pct": 6.354,
-    "height_pct": 4.851,
+    "height_pct": 4.854,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/ruckin"
   },
