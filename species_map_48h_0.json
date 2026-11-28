@@ -212,7 +212,7 @@
   {
     "common_name": "Evening Grosbeak",
     "detections": 1,
-    "left_pct": 7.165,
+    "left_pct": 10.045,
     "top_pct": 68.951,
     "width_pct": 11.137,
     "height_pct": 11.264,
@@ -222,7 +222,7 @@
   {
     "common_name": "Common Raven",
     "detections": 1,
-    "left_pct": 19.134,
+    "left_pct": 22.014,
     "top_pct": 68.891,
     "width_pct": 8.577,
     "height_pct": 11.386,
@@ -240,10 +240,20 @@
     "target_url": "https://ebird.org/species/haiwoo"
   },
   {
+    "common_name": "Red Crossbill",
+    "detections": 1,
+    "left_pct": 31.423,
+    "top_pct": 69.679,
+    "width_pct": 9.217,
+    "height_pct": 9.81,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/redcro"
+  },
+  {
     "common_name": "White-winged Crossbill",
     "detections": 1,
-    "left_pct": 28.542,
-    "top_pct": 69.841,
+    "left_pct": 10.909,
+    "top_pct": 81.524,
     "width_pct": 14.977,
     "height_pct": 9.486,
     "site_name": "eBird",
@@ -252,7 +262,7 @@
   {
     "common_name": "Black-billed Magpie",
     "detections": 1,
-    "left_pct": 18.814,
+    "left_pct": 26.718,
     "top_pct": 81.524,
     "width_pct": 13.057,
     "height_pct": 9.486,
