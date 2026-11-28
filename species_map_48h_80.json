@@ -30,22 +30,12 @@
     "target_url": "https://ebird.org/species/chbchi"
   },
   {
-    "common_name": "Bald Eagle",
-    "detections": 20,
-    "left_pct": 58.639,
-    "top_pct": 18.271,
-    "width_pct": 9.81,
-    "height_pct": 16.692,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/baleag"
-  },
-  {
     "common_name": "Belted Kingfisher",
     "detections": 17,
     "left_pct": 48.608,
-    "top_pct": 44.776,
+    "top_pct": 46.638,
     "width_pct": 14.815,
-    "height_pct": 19.515,
+    "height_pct": 13.63,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
@@ -53,11 +43,21 @@
     "common_name": "Northern Flicker",
     "detections": 15,
     "left_pct": 64.47,
-    "top_pct": 45.151,
+    "top_pct": 44.08,
     "width_pct": 14.01,
-    "height_pct": 18.764,
+    "height_pct": 18.747,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/norfli"
+  },
+  {
+    "common_name": "Bald Eagle",
+    "detections": 14,
+    "left_pct": 58.918,
+    "top_pct": 18.271,
+    "width_pct": 9.251,
+    "height_pct": 15.996,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/baleag"
   },
   {
     "common_name": "Dark-eyed Junco",
@@ -83,7 +83,7 @@
     "common_name": "Anna's Hummingbird",
     "detections": 7,
     "left_pct": 48.206,
-    "top_pct": 65.861,
+    "top_pct": 64.397,
     "width_pct": 15.62,
     "height_pct": 16.415,
     "site_name": "eBird",
@@ -133,7 +133,7 @@
     "common_name": "Hairy Woodpecker",
     "detections": 1,
     "left_pct": 64.872,
-    "top_pct": 67.215,
+    "top_pct": 65.751,
     "width_pct": 14.01,
     "height_pct": 13.706,
     "site_name": "eBird",
