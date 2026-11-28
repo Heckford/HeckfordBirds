@@ -41,17 +41,17 @@
   },
   {
     "common_name": "Song Sparrow",
-    "detections": 2382,
+    "detections": 2384,
     "left_pct": 32.116,
     "top_pct": 24.909,
     "width_pct": 4.94,
-    "height_pct": 8.411,
+    "height_pct": 8.412,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/sonspa"
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 2233,
+    "detections": 2235,
     "left_pct": 79.447,
     "top_pct": 56.161,
     "width_pct": 7.095,
@@ -61,11 +61,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 2122,
+    "detections": 2124,
     "left_pct": 37.639,
     "top_pct": 25.357,
     "width_pct": 6.017,
-    "height_pct": 7.515,
+    "height_pct": 7.516,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },

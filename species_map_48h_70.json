@@ -41,11 +41,11 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 30,
+    "detections": 32,
     "left_pct": 30.263,
-    "top_pct": 42.422,
+    "top_pct": 42.361,
     "width_pct": 13.473,
-    "height_pct": 16.383,
+    "height_pct": 16.504,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/daejun"
   },
@@ -81,11 +81,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 11,
+    "detections": 13,
     "left_pct": 62.357,
     "top_pct": 65.719,
     "width_pct": 15.937,
-    "height_pct": 17.027,
+    "height_pct": 17.318,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
@@ -143,7 +143,7 @@
     "common_name": "Hairy Woodpecker",
     "detections": 1,
     "left_pct": 79.362,
-    "top_pct": 66.382,
+    "top_pct": 66.527,
     "width_pct": 14.294,
     "height_pct": 15.702,
     "site_name": "eBird",

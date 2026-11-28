@@ -11,7 +11,7 @@
   },
   {
     "common_name": "Chestnut-backed Chickadee",
-    "detections": 24608,
+    "detections": 24610,
     "left_pct": 13.673,
     "top_pct": 26.181,
     "width_pct": 7.811,
@@ -61,7 +61,7 @@
   },
   {
     "common_name": "Dark-eyed Junco",
-    "detections": 4815,
+    "detections": 4820,
     "left_pct": 38.347,
     "top_pct": 27.281,
     "width_pct": 4.891,
@@ -71,11 +71,11 @@
   },
   {
     "common_name": "Anna's Hummingbird",
-    "detections": 4708,
+    "detections": 4713,
     "left_pct": 79.868,
     "top_pct": 48.619,
     "width_pct": 5.767,
-    "height_pct": 5.678,
+    "height_pct": 5.679,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/annhum"
   },
