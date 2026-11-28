@@ -2,7 +2,7 @@
   {
     "common_name": "Golden-crowned Kinglet",
     "detections": 284,
-    "left_pct": 11.903,
+    "left_pct": 12.203,
     "top_pct": 18.163,
     "width_pct": 18.541,
     "height_pct": 21.467,
@@ -12,7 +12,7 @@
   {
     "common_name": "Pacific Wren",
     "detections": 60,
-    "left_pct": 31.473,
+    "left_pct": 31.774,
     "top_pct": 20.316,
     "width_pct": 11.272,
     "height_pct": 17.161,
@@ -22,7 +22,7 @@
   {
     "common_name": "Chestnut-backed Chickadee",
     "detections": 54,
-    "left_pct": 9.853,
+    "left_pct": 10.153,
     "top_pct": 41.175,
     "width_pct": 20.918,
     "height_pct": 16.097,
@@ -31,18 +31,18 @@
   },
   {
     "common_name": "Bald Eagle",
-    "detections": 39,
-    "left_pct": 57.994,
+    "detections": 38,
+    "left_pct": 58.316,
     "top_pct": 18.163,
-    "width_pct": 10.129,
-    "height_pct": 17.018,
+    "width_pct": 10.086,
+    "height_pct": 16.964,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/baleag"
   },
   {
     "common_name": "Dark-eyed Junco",
     "detections": 32,
-    "left_pct": 31.801,
+    "left_pct": 32.101,
     "top_pct": 41.265,
     "width_pct": 12.994,
     "height_pct": 15.918,
@@ -50,30 +50,30 @@
     "target_url": "https://ebird.org/species/daejun"
   },
   {
-    "common_name": "Wood Duck",
-    "detections": 19,
-    "left_pct": 81.203,
-    "top_pct": 18.163,
-    "width_pct": 8.944,
-    "height_pct": 15.897,
-    "site_name": "eBird",
-    "target_url": "https://ebird.org/species/wooduc"
-  },
-  {
     "common_name": "Belted Kingfisher",
     "detections": 18,
-    "left_pct": 48.36,
-    "top_pct": 44.837,
+    "left_pct": 48.661,
+    "top_pct": 47.205,
     "width_pct": 14.579,
-    "height_pct": 18.531,
+    "height_pct": 13.031,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/belkin1"
   },
   {
+    "common_name": "Wood Duck",
+    "detections": 16,
+    "left_pct": 81.503,
+    "top_pct": 18.163,
+    "width_pct": 8.344,
+    "height_pct": 16.346,
+    "site_name": "eBird",
+    "target_url": "https://ebird.org/species/wooduc"
+  },
+  {
     "common_name": "Northern Flicker",
     "detections": 16,
-    "left_pct": 63.969,
-    "top_pct": 45.165,
+    "left_pct": 64.27,
+    "top_pct": 44.783,
     "width_pct": 13.787,
     "height_pct": 17.875,
     "site_name": "eBird",
@@ -82,8 +82,8 @@
   {
     "common_name": "Anna's Hummingbird",
     "detections": 13,
-    "left_pct": 47.964,
-    "top_pct": 64.913,
+    "left_pct": 48.265,
+    "top_pct": 64.203,
     "width_pct": 15.371,
     "height_pct": 16.703,
     "site_name": "eBird",
@@ -92,7 +92,7 @@
   {
     "common_name": "Song Sparrow",
     "detections": 9,
-    "left_pct": 12.626,
+    "left_pct": 12.927,
     "top_pct": 58.817,
     "width_pct": 10.617,
     "height_pct": 16.689,
@@ -102,7 +102,7 @@
   {
     "common_name": "Red-breasted Nuthatch",
     "detections": 9,
-    "left_pct": 24.274,
+    "left_pct": 24.574,
     "top_pct": 60.56,
     "width_pct": 17.748,
     "height_pct": 13.203,
@@ -112,7 +112,7 @@
   {
     "common_name": "Ruby-crowned Kinglet",
     "detections": 3,
-    "left_pct": 12.626,
+    "left_pct": 12.927,
     "top_pct": 78.917,
     "width_pct": 16.956,
     "height_pct": 12.239,
@@ -122,7 +122,7 @@
   {
     "common_name": "Brown Creeper",
     "detections": 1,
-    "left_pct": 30.612,
+    "left_pct": 30.913,
     "top_pct": 77.051,
     "width_pct": 11.41,
     "height_pct": 15.971,
@@ -132,8 +132,8 @@
   {
     "common_name": "Hairy Woodpecker",
     "detections": 1,
-    "left_pct": 64.366,
-    "top_pct": 66.521,
+    "left_pct": 64.666,
+    "top_pct": 65.81,
     "width_pct": 13.787,
     "height_pct": 13.488,
     "site_name": "eBird",
