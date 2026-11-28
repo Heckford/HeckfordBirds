@@ -301,11 +301,11 @@
   },
   {
     "common_name": "Savannah Sparrow",
-    "detections": 51,
+    "detections": 52,
     "left_pct": 39.27,
-    "top_pct": 43.881,
+    "top_pct": 43.878,
     "width_pct": 6.379,
-    "height_pct": 6.367,
+    "height_pct": 6.373,
     "site_name": "eBird",
     "target_url": "https://ebird.org/species/savspa"
   },
